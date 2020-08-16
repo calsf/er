@@ -62,6 +62,10 @@ move_down={
 2d_physics/layer_3="Elev1_Area"
 2d_physics/layer_4="Elev1_Boundary"
 2d_physics/layer_5="Elev1_Wall"
+2d_physics/layer_6="Elev2_Entry"
+2d_physics/layer_7="Elev2_Area"
+2d_physics/layer_8="Elev2_Boundary"
+2d_physics/layer_9="Elev2_Wall"
 
 [rendering]
 
