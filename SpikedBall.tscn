@@ -5,7 +5,7 @@
 [ext_resource path="res://HitboxProperties.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 6.15536, 4.39816 )
+extents = Vector2( 6.15536, 4.33475 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 6.55674, 4.64605 )

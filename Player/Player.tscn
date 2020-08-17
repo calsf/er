@@ -57,6 +57,8 @@ collision_layer = 0
 rotation = -1.5708
 shape = SubResource( 3 )
 
+[node name="Timer" type="Timer" parent="HurtboxArea2D"]
+
 [node name="DetectElevEntry" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 546
@@ -72,5 +74,6 @@ collision_mask = 1092
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectElevArea"]
 rotation = -1.5708
 shape = SubResource( 4 )
+[connection signal="timeout" from="HurtboxArea2D/Timer" to="." method="_on_Timer_timeout"]
 [connection signal="area_entered" from="DetectElevEntry" to="." method="_on_DetectElevEntry_area_entered"]
 [connection signal="area_exited" from="DetectElevArea" to="." method="_on_DetectElevArea_area_exited"]
