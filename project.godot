@@ -19,6 +19,10 @@ config/name="ss"
 run/main_scene="res://Level_1.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+GlobalConst="*res://GlobalConst.tscn"
+
 [display]
 
 window/size/width=640

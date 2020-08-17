@@ -23,6 +23,9 @@ height = 12.3822
 [node name="Player" type="KinematicBody2D"]
 collision_mask = 408
 script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Shadow" type="Sprite" parent="."]
 position = Vector2( 0, 2 )
@@ -35,15 +38,17 @@ texture = ExtResource( 2 )
 hframes = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-rotation = 1.5708
+position = Vector2( 0, -2 )
+rotation = -1.5708
 shape = SubResource( 1 )
 
-[node name="PlayerArea2D" type="Area2D" parent="."]
+[node name="OverlappingWallCheck" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 272
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerArea2D"]
-rotation = 1.5708
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OverlappingWallCheck"]
+position = Vector2( 0, -2 )
+rotation = -1.5708
 shape = SubResource( 2 )
 
 [node name="HurtboxArea2D" type="Area2D" parent="."]
@@ -51,7 +56,8 @@ collision_layer = 0
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxArea2D"]
-rotation = 1.5708
+position = Vector2( 0, -2 )
+rotation = -1.5708
 shape = SubResource( 3 )
 
 [node name="DetectElevEntry" type="Area2D" parent="."]
@@ -59,7 +65,8 @@ collision_layer = 0
 collision_mask = 34
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectElevEntry"]
-rotation = 1.5708
+position = Vector2( 0, -2 )
+rotation = -1.5708
 shape = SubResource( 4 )
 
 [node name="DetectElevArea" type="Area2D" parent="."]
@@ -67,7 +74,8 @@ collision_layer = 0
 collision_mask = 68
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectElevArea"]
-rotation = 1.5708
+position = Vector2( 0, -2 )
+rotation = -1.5708
 shape = SubResource( 4 )
 [connection signal="area_entered" from="DetectElevEntry" to="." method="_on_DetectElevEntry_area_entered"]
 [connection signal="area_exited" from="DetectElevArea" to="." method="_on_DetectElevArea_area_exited"]

@@ -1,3 +1,3 @@
 extends Node2D
 
-var elevation = 64
+var elevation = GlobalConst.ELEVATION_UNIT * 2
