@@ -61,7 +61,7 @@ move_down={
 
 [layer_names]
 
-2d_physics/layer_1="Player"
+2d_physics/layer_1="WorldObject"
 2d_physics/layer_2="Elev1_Entry"
 2d_physics/layer_3="Elev1_Area"
 2d_physics/layer_4="Elev1_Boundary"

@@ -3,6 +3,8 @@ extends KinematicBody2D
 const MAX_SPEED = 200
 const AIR_SPEED = 4
 const MAX_HEIGHT = 44
+const DECEL = 500
+const INVULN_TIME = .1
 
 var velocity = Vector2.ZERO
 var curr_speed = MAX_SPEED
@@ -11,6 +13,7 @@ var is_falling = false
 var has_double_jumped = false
 var has_jumped = false
 var is_tumbling = false
+var knockback = Vector2.ZERO
 
 var jump_height = MAX_HEIGHT
 var added_height = 0
@@ -26,7 +29,7 @@ onready var player_shadow = $Shadow
 onready var player_sprite = $PlayerSprite
 onready var collision_shape = $CollisionShape2D
 onready var overlapping_wall_area = $OverlappingWallCheck
-onready var hurtbox = $HurtboxArea2D/CollisionShape2D
+onready var hurtbox = $HurtboxArea2D
 
 func _physics_process(delta):
 	# Applies falling effect to player if they are caught inside a wall
@@ -37,21 +40,27 @@ func _physics_process(delta):
 		check_overlapping_wall()
 		return
 		
-	# Get input vector
-	var input_vector = Vector2.ZERO
-	input_vector.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
-	input_vector.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
-	input_vector = input_vector.normalized()
+	# Gradually decrease knockback value to 0 and apply current knockback
+	knockback = knockback.move_toward(Vector2.ZERO, DECEL * delta)
+	knockback = move_and_slide(knockback)
 	
-	# Set velocity based on input_vector
-	velocity = input_vector * curr_speed
+	# Only get input and move player if player is not in knockback state
+	if (knockback == Vector2.ZERO):
+		# Get input vector
+		var input_vector = Vector2.ZERO
+		input_vector.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
+		input_vector.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
+		input_vector = input_vector.normalized()
 		
-	# Move and slide using current velocity, set velocity to maintain velocity after collision
-	velocity = move_and_slide(velocity)
+		# Set velocity based on input_vector
+		velocity = input_vector * curr_speed
+		
+		# Move and slide using current velocity, set velocity to maintain velocity after collision
+		velocity = move_and_slide(velocity)
 		
 	# JUMPING AND FALLING MOVEMENT, ELSE PLAYER IS GROUNDED
+	# STILL ENABLED DURING KNOCKBACK BUT PLAYER INPUT TO JUMP SHOULD BE DISABLED
 	if is_jumping:
-		hurtbox.disabled = true
 		# Increase added height until reaches jump height
 		# Move player sprite up the same amount
 		if added_height < jump_height:
@@ -75,20 +84,12 @@ func _physics_process(delta):
 			has_double_jumped = false
 			last_ground_elevation = ground_elevation # When grounded, can set last ground elevation to current ground elevation
 			awaiting_new_ground_elevation = false	# No longer waiting for new ground elevation to be applied because player is grounded
-			hurtbox.disabled = false
 	else:
 		# When grounded, check if player ends up overlapping with a wall
 		check_overlapping_wall()
 	
 	# Calculate current elevation and then set collision masks accordingly
-	var curr_elevation = added_height
-	if !awaiting_new_ground_elevation:
-		# Use current ground elevation is grounded and not waiting for new ground elevation
-		curr_elevation += ground_elevation
-	else:
-		# Use last ground elevation if waiting for player to be grounded to set new ground elevation
-		curr_elevation += last_ground_elevation
-	set_elevation_collisions(curr_elevation)
+	set_elevation_collisions(get_curr_elevation())
 	
 	# Maintain sprite positions when grounded
 	if (added_height <= 0):
@@ -97,6 +98,16 @@ func _physics_process(delta):
 	
 	# Change player sprite's z index based on current height
 	player_sprite.z_index = (ground_elevation + added_height) / (GlobalConst.ELEVATION_UNIT + 4)
+	
+	# Check for overlapping WorldObject layer areas in hurtbox and apply hit
+	for area in hurtbox.get_overlapping_areas():
+		if (area.get_owner() != self):
+			var other_elev = area.get_owner().elevation
+			if (other_elev == get_curr_elevation()):
+				print("HIT")
+				velocity = Vector2.ZERO
+				knockback = (global_position - area.global_position).normalized() * (area.knockback_strength)
+				return
 	
 	#death_check()
 	
@@ -126,7 +137,7 @@ func check_overlapping_wall():
 		is_tumbling = true
 	else:
 		collision_shape.disabled = false
-		is_tumbling = false
+		is_tumbling = false	
 
 # Check if player is dead
 func death_check():
@@ -135,10 +146,25 @@ func death_check():
 		position = Vector2.ZERO
 		print("DEAD")
 		ground_elevation = 32
+		
+func get_curr_elevation():
+	# Calculate current elevation and then set collision masks accordingly
+	var curr_elevation = added_height
+	if !awaiting_new_ground_elevation:
+		# Use current ground elevation is grounded and not waiting for new ground elevation
+		curr_elevation += ground_elevation
+	else:
+		# Use last ground elevation if waiting for player to be grounded to set new ground elevation
+		curr_elevation += last_ground_elevation
+	return curr_elevation
 
 
 # Listen for button press
 func _input(event):
+	# If in knockback, do not listen for inputs
+	if (knockback > Vector2.ZERO):
+		return
+			
 	# Perform normal jump or double jump when button is pressed
 	if Input.is_action_just_pressed("jump") and !has_jumped:
 		has_jumped = true
