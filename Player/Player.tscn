@@ -21,7 +21,7 @@ radius = 3.64687
 height = 12.3822
 
 [node name="Player" type="KinematicBody2D"]
-collision_mask = 408
+collision_mask = 6552
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true
@@ -44,7 +44,7 @@ shape = SubResource( 1 )
 
 [node name="OverlappingWallCheck" type="Area2D" parent="."]
 collision_layer = 0
-collision_mask = 272
+collision_mask = 4368
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="OverlappingWallCheck"]
 position = Vector2( 0, -2 )
@@ -62,7 +62,7 @@ shape = SubResource( 3 )
 
 [node name="DetectElevEntry" type="Area2D" parent="."]
 collision_layer = 0
-collision_mask = 34
+collision_mask = 546
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectElevEntry"]
 position = Vector2( 0, -2 )
@@ -71,7 +71,7 @@ shape = SubResource( 4 )
 
 [node name="DetectElevArea" type="Area2D" parent="."]
 collision_layer = 0
-collision_mask = 68
+collision_mask = 1092
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectElevArea"]
 position = Vector2( 0, -2 )

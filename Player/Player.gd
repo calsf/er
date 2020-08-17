@@ -14,12 +14,13 @@ var is_tumbling = false
 
 var jump_height = MAX_HEIGHT
 var added_height = 0
-var elevations = [0, GlobalConst.ELEVATION_UNIT * 1, GlobalConst.ELEVATION_UNIT * 2]
+var elevations = [0, GlobalConst.ELEVATION_UNIT * 1, GlobalConst.ELEVATION_UNIT * 2, GlobalConst.ELEVATION_UNIT * 3]
 var ground_elevation = elevations[1]
+var last_ground_elevation = elevations[1]
 
 # when entered new elevation, waits to hit ground before assigning new ground elevation
 # uses added_height to determine height until no longer awaiting_new_elevation
-var awaiting_new_elevation = false
+var awaiting_new_ground_elevation = false
 
 onready var player_shadow = $Shadow
 onready var player_sprite = $PlayerSprite
@@ -72,7 +73,8 @@ func _physics_process(delta):
 			is_falling = false
 			has_jumped = false
 			has_double_jumped = false
-			awaiting_new_elevation = false	# No longer waiting for new ground elevation to be applied because player is grounded
+			last_ground_elevation = ground_elevation # When grounded, can set last ground elevation to current ground elevation
+			awaiting_new_ground_elevation = false	# No longer waiting for new ground elevation to be applied because player is grounded
 			hurtbox.disabled = false
 	else:
 		# When grounded, check if player ends up overlapping with a wall
@@ -80,8 +82,12 @@ func _physics_process(delta):
 	
 	# Calculate current elevation and then set collision masks accordingly
 	var curr_elevation = added_height
-	if !awaiting_new_elevation:
+	if !awaiting_new_ground_elevation:
+		# Use current ground elevation is grounded and not waiting for new ground elevation
 		curr_elevation += ground_elevation
+	else:
+		# Use last ground elevation if waiting for player to be grounded to set new ground elevation
+		curr_elevation += last_ground_elevation
 	set_elevation_collisions(curr_elevation)
 	
 	# Maintain sprite positions when grounded
@@ -100,11 +106,15 @@ func set_elevation_collisions(curr_elevation):
 	set_collision_mask_bit(3, curr_elevation < elevations[1] and ground_elevation < elevations[1])
 	# boundary mask layer of elevation 2
 	set_collision_mask_bit(7, curr_elevation < elevations[2] and ground_elevation < elevations[2])
+	# boundary mask layer of elevation 3
+	set_collision_mask_bit(11, curr_elevation < elevations[3] and ground_elevation < elevations[3])
 	
 	# wall mask layer of elevation 1
 	set_collision_mask_bit(4, get_collision_mask_bit(3))
 	# wall mask layer of elevation 2
 	set_collision_mask_bit(8, get_collision_mask_bit(7))
+	# wall mask layer of elevation 2
+	set_collision_mask_bit(12, get_collision_mask_bit(11))
 
 # Check if player is overlapping a wall and set tumbling state and collision shape accordingly
 func check_overlapping_wall():
@@ -152,9 +162,9 @@ func _on_DetectElevEntry_area_entered(area):
 	# Only enter elevations that are higher than current ground elevation
 	if ground_elevation < area_elev:
 		# When player enters elevation area, they may still be in air and thus awaiting for new ground elevation
-		# Player elevation should not include ground elevation if awaiting new elevation 
-		if (awaiting_new_elevation and added_height >= area_elev or 
-		!awaiting_new_elevation and ground_elevation + added_height >= area_elev):
+		# Player elevation should use last ground elevation instead of current ground elevation if awaiting new elevation 
+		if (awaiting_new_ground_elevation and last_ground_elevation + added_height >= area_elev or 
+		!awaiting_new_ground_elevation and ground_elevation + added_height >= area_elev):
 			# Set new ground elevation to the entered elevation
 			ground_elevation = area_elev
 			
@@ -164,7 +174,7 @@ func _on_DetectElevEntry_area_entered(area):
 			position.y -= GlobalConst.ELEVATION_UNIT
 			
 			# Entering new elevation must await for new ground elevation which will be set to false when player is grounded
-			awaiting_new_elevation = true
+			awaiting_new_ground_elevation = true
 
 # Detect elevation area exit
 func _on_DetectElevArea_area_exited(area):
