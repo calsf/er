@@ -1,17 +1,17 @@
 [gd_scene load_steps=27 format=2]
 
-[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Elevation1_Collision.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Elevations/1/tileset_1.png" type="Texture" id=3]
-[ext_resource path="res://Elevation2_Collision.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Elevation_Overlay.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Elevation3_Collision.tscn" type="PackedScene" id=6]
-[ext_resource path="res://SpikedBall.tscn" type="PackedScene" id=7]
-[ext_resource path="res://MovingSpikedBall.tscn" type="PackedScene" id=8]
+[ext_resource path="res://elevations/Elevation1Collision.tscn" type="PackedScene" id=1]
+[ext_resource path="res://elevations/Elevation3Collision.tscn" type="PackedScene" id=2]
+[ext_resource path="res://elevations/Elevation2Collision.tscn" type="PackedScene" id=3]
+[ext_resource path="res://world_objects/spiked_ball/SpikedBall.tscn" type="PackedScene" id=4]
+[ext_resource path="res://MovingSpikedBall.tscn" type="PackedScene" id=5]
+[ext_resource path="res://elevations/ElevationOverlay.tscn" type="PackedScene" id=6]
+[ext_resource path="res://player/Player.tscn" type="PackedScene" id=7]
+[ext_resource path="res://tilesets/tileset_1.png" type="Texture" id=8]
 
 [sub_resource type="TileSet" id=1]
 0/name = "tileset_1.png 0"
-0/texture = ExtResource( 3 )
+0/texture = ExtResource( 8 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 0, 0, 16, 16 )
@@ -25,7 +25,7 @@
 0/shapes = [  ]
 0/z_index = 0
 1/name = "tileset_1.png 1"
-1/texture = ExtResource( 3 )
+1/texture = ExtResource( 8 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
 1/region = Rect2( 16, 0, 16, 16 )
@@ -39,7 +39,7 @@
 1/shapes = [  ]
 1/z_index = 0
 2/name = "tileset_1.png 2"
-2/texture = ExtResource( 3 )
+2/texture = ExtResource( 8 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
 2/region = Rect2( 32, 0, 16, 16 )
@@ -55,7 +55,7 @@
 
 [sub_resource type="TileSet" id=2]
 0/name = "tileset_1.png 0"
-0/texture = ExtResource( 3 )
+0/texture = ExtResource( 8 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 0, 0, 16, 16 )
@@ -69,7 +69,7 @@
 0/shapes = [  ]
 0/z_index = 0
 1/name = "tileset_1.png 1"
-1/texture = ExtResource( 3 )
+1/texture = ExtResource( 8 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
 1/region = Rect2( 16, 0, 16, 16 )
@@ -83,7 +83,7 @@
 1/shapes = [  ]
 1/z_index = 0
 2/name = "tileset_1.png 2"
-2/texture = ExtResource( 3 )
+2/texture = ExtResource( 8 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
 2/region = Rect2( 32, 0, 16, 16 )
@@ -99,7 +99,7 @@
 
 [sub_resource type="TileSet" id=3]
 0/name = "tileset_1.png 0"
-0/texture = ExtResource( 3 )
+0/texture = ExtResource( 8 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 0, 0, 16, 16 )
@@ -113,7 +113,7 @@
 0/shapes = [  ]
 0/z_index = 0
 1/name = "tileset_1.png 1"
-1/texture = ExtResource( 3 )
+1/texture = ExtResource( 8 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
 1/region = Rect2( 16, 0, 16, 16 )
@@ -127,7 +127,7 @@
 1/shapes = [  ]
 1/z_index = 0
 2/name = "tileset_1.png 2"
-2/texture = ExtResource( 3 )
+2/texture = ExtResource( 8 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
 2/region = Rect2( 32, 0, 16, 16 )
@@ -143,7 +143,7 @@
 
 [sub_resource type="TileSet" id=4]
 0/name = "tileset_1.png 0"
-0/texture = ExtResource( 3 )
+0/texture = ExtResource( 8 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 0, 0, 16, 16 )
@@ -157,7 +157,7 @@
 0/shapes = [  ]
 0/z_index = 0
 1/name = "tileset_1.png 1"
-1/texture = ExtResource( 3 )
+1/texture = ExtResource( 8 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
 1/region = Rect2( 16, 0, 16, 16 )
@@ -171,7 +171,7 @@
 1/shapes = [  ]
 1/z_index = 0
 2/name = "tileset_1.png 2"
-2/texture = ExtResource( 3 )
+2/texture = ExtResource( 8 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
 2/region = Rect2( 32, 0, 16, 16 )
@@ -187,7 +187,7 @@
 
 [sub_resource type="TileSet" id=5]
 0/name = "tileset_1.png 0"
-0/texture = ExtResource( 3 )
+0/texture = ExtResource( 8 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 0, 0, 16, 16 )
@@ -201,7 +201,7 @@
 0/shapes = [  ]
 0/z_index = 0
 1/name = "tileset_1.png 1"
-1/texture = ExtResource( 3 )
+1/texture = ExtResource( 8 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
 1/region = Rect2( 16, 0, 16, 16 )
@@ -215,7 +215,7 @@
 1/shapes = [  ]
 1/z_index = 0
 2/name = "tileset_1.png 2"
-2/texture = ExtResource( 3 )
+2/texture = ExtResource( 8 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
 2/region = Rect2( 32, 0, 16, 16 )
@@ -231,7 +231,7 @@
 
 [sub_resource type="TileSet" id=6]
 0/name = "tileset_1.png 0"
-0/texture = ExtResource( 3 )
+0/texture = ExtResource( 8 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 0, 0, 16, 16 )
@@ -245,7 +245,7 @@
 0/shapes = [  ]
 0/z_index = 0
 1/name = "tileset_1.png 1"
-1/texture = ExtResource( 3 )
+1/texture = ExtResource( 8 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
 1/region = Rect2( 16, 0, 16, 16 )
@@ -259,7 +259,7 @@
 1/shapes = [  ]
 1/z_index = 0
 2/name = "tileset_1.png 2"
-2/texture = ExtResource( 3 )
+2/texture = ExtResource( 8 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
 2/region = Rect2( 32, 0, 16, 16 )
@@ -274,16 +274,16 @@
 2/z_index = 0
 
 [sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 159.071, 111.57 )
+extents = Vector2( 159, 111 )
 
 [sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 159.038, 110.839 )
+extents = Vector2( 159, 111 )
 
 [sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 161.234, 97.7371 )
+extents = Vector2( 160, 96 )
 
 [sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 160.619, 16.3536 )
+extents = Vector2( 160, 16 )
 
 [sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 48.7034, 79.625 )
@@ -309,9 +309,9 @@ extents = Vector2( 32.6241, 32.3232 )
 [sub_resource type="RectangleShape2D" id=18]
 extents = Vector2( 32.8443, 16.6638 )
 
-[node name="Level_1" type="Node2D"]
+[node name="Level1" type="Node2D"]
 
-[node name="Elevation1_Overlay" parent="." instance=ExtResource( 5 )]
+[node name="Elevation1Overlay" parent="." instance=ExtResource( 6 )]
 visible = false
 z_index = 1
 tile_set = SubResource( 1 )
@@ -319,7 +319,7 @@ collision_layer = 2147483648
 tile_data = PoolIntArray( -262137, 1, 0, -262136, 1, 0, -262135, 1, 0, -262134, 1, 0, -262133, 1, 0, -262132, 1, 0, -262131, 1, 0, -262130, 1, 0, -262129, 1, 0, -262128, 1, 0, -262127, 1, 0, -262126, 1, 0, -262125, 1, 0, -262124, 1, 0, -262123, 1, 0, -262122, 1, 0, -262121, 1, 0, -262120, 1, 0, -262119, 1, 0, -262118, 1, 0, -196601, 1, 0, -196600, 1, 0, -196599, 1, 0, -196598, 1, 0, -196597, 1, 0, -196596, 1, 0, -196595, 1, 0, -196594, 1, 0, -196593, 1, 0, -196592, 1, 0, -196591, 1, 0, -196590, 1, 0, -196589, 1, 0, -196588, 1, 0, -196587, 1, 0, -196586, 1, 0, -196585, 1, 0, -196584, 1, 0, -196583, 1, 0, -196582, 1, 0, -131065, 1, 0, -131064, 1, 0, -131063, 1, 0, -131062, 1, 0, -131061, 1, 0, -131060, 1, 0, -131059, 1, 0, -131058, 1, 0, -131057, 1, 0, -131056, 1, 0, -131055, 1, 0, -131054, 1, 0, -131053, 1, 0, -131052, 1, 0, -131051, 1, 0, -131050, 1, 0, -131049, 1, 0, -131048, 1, 0, -131047, 1, 0, -131046, 1, 0 )
 overlay_elevation = 32
 
-[node name="Elevation1_TileMap" type="TileMap" parent="."]
+[node name="Elevation1TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 2 )
 cell_size = Vector2( 16, 16 )
 collision_layer = 2147483648
@@ -327,14 +327,14 @@ collision_mask = 0
 format = 1
 tile_data = PoolIntArray( -262137, 1, 0, -262136, 1, 0, -262135, 1, 0, -262134, 1, 0, -262133, 1, 0, -262132, 1, 0, -262131, 1, 0, -262130, 1, 0, -262129, 1, 0, -262128, 1, 0, -262127, 1, 0, -262126, 1, 0, -262125, 1, 0, -262124, 1, 0, -262123, 1, 0, -262122, 1, 0, -262121, 1, 0, -262120, 1, 0, -262119, 1, 0, -262118, 1, 0, -196601, 1, 0, -196600, 1, 0, -196599, 1, 0, -196598, 1, 0, -196597, 1, 0, -196596, 1, 0, -196595, 1, 0, -196594, 1, 0, -196593, 1, 0, -196592, 1, 0, -196591, 1, 0, -196590, 1, 0, -196589, 1, 0, -196588, 1, 0, -196587, 1, 0, -196586, 1, 0, -196585, 1, 0, -196584, 1, 0, -196583, 1, 0, -196582, 1, 0, -131065, 1, 0, -131064, 1, 0, -131063, 1, 0, -131062, 1, 0, -131061, 1, 0, -131060, 1, 0, -131059, 1, 0, -131058, 1, 0, -131057, 1, 0, -131056, 1, 0, -131055, 1, 0, -131054, 1, 0, -131053, 1, 0, -131052, 1, 0, -131051, 1, 0, -131050, 1, 0, -131049, 1, 0, -131048, 1, 0, -131047, 1, 0, -131046, 1, 0, -65529, 1, 0, -65528, 1, 0, -65527, 1, 0, -65526, 1, 0, -65525, 1, 0, -65524, 1, 0, -65523, 1, 0, -65522, 1, 0, -65521, 1, 0, -65520, 1, 0, -65519, 1, 0, -65518, 1, 0, -65517, 1, 0, -65516, 1, 0, -65515, 1, 0, -65514, 1, 0, -65513, 1, 0, -65512, 1, 0, -65511, 1, 0, -65510, 1, 0, 7, 1, 0, 8, 1, 0, 9, 1, 0, 10, 1, 0, 11, 1, 0, 12, 1, 0, 13, 1, 0, 14, 1, 0, 15, 1, 0, 16, 1, 0, 17, 1, 0, 18, 1, 0, 19, 1, 0, 20, 1, 0, 21, 1, 0, 22, 1, 0, 23, 1, 0, 24, 1, 0, 25, 1, 0, 26, 1, 0, 65543, 1, 0, 65544, 1, 0, 65545, 1, 0, 65546, 1, 0, 65547, 1, 0, 65548, 1, 0, 65549, 1, 0, 65550, 1, 0, 65551, 1, 0, 65552, 1, 0, 65553, 1, 0, 65554, 1, 0, 65555, 1, 0, 65556, 1, 0, 65557, 1, 0, 65558, 1, 0, 65559, 1, 0, 65560, 1, 0, 65561, 1, 0, 65562, 1, 0, 131079, 1, 0, 131080, 1, 0, 131081, 1, 0, 131082, 1, 0, 131083, 1, 0, 131084, 1, 0, 131085, 1, 0, 131086, 1, 0, 131087, 1, 0, 131088, 1, 0, 131089, 1, 0, 131090, 1, 0, 131091, 1, 0, 131092, 1, 0, 131093, 1, 0, 131094, 1, 0, 131095, 1, 0, 131096, 1, 0, 131097, 1, 0, 131098, 1, 0, 196615, 1, 0, 196616, 1, 0, 196617, 1, 0, 196618, 1, 0, 196619, 1, 0, 196620, 1, 0, 196621, 1, 0, 196622, 1, 0, 196623, 1, 0, 196624, 1, 0, 196625, 1, 0, 196626, 1, 0, 196627, 1, 0, 196628, 1, 0, 196629, 1, 0, 196630, 1, 0, 196631, 1, 0, 196632, 1, 0, 196633, 1, 0, 196634, 1, 0, 262151, 1, 0, 262152, 1, 0, 262153, 1, 0, 262154, 1, 0, 262155, 1, 0, 262156, 1, 0, 262157, 1, 0, 262158, 1, 0, 262159, 1, 0, 262160, 1, 0, 262161, 1, 0, 262162, 1, 0, 262163, 1, 0, 262164, 1, 0, 262165, 1, 0, 262166, 1, 0, 262167, 1, 0, 262168, 1, 0, 262169, 1, 0, 262170, 1, 0, 327687, 1, 0, 327688, 1, 0, 327689, 1, 0, 327690, 1, 0, 327691, 1, 0, 327692, 1, 0, 327693, 1, 0, 327694, 1, 0, 327695, 1, 0, 327696, 1, 0, 327697, 1, 0, 327698, 1, 0, 327699, 1, 0, 327700, 1, 0, 327701, 1, 0, 327702, 1, 0, 327703, 1, 0, 327704, 1, 0, 327705, 1, 0, 327706, 1, 0, 393223, 1, 0, 393224, 1, 0, 393225, 1, 0, 393226, 1, 0, 393227, 1, 0, 393228, 1, 0, 393229, 1, 0, 393230, 1, 0, 393231, 1, 0, 393232, 1, 0, 393233, 1, 0, 393234, 1, 0, 393235, 1, 0, 393236, 1, 0, 393237, 1, 0, 393238, 1, 0, 393239, 1, 0, 393240, 1, 0, 393241, 1, 0, 393242, 1, 0, 458759, 1, 0, 458760, 1, 0, 458761, 1, 0, 458762, 1, 0, 458763, 1, 0, 458764, 1, 0, 458765, 1, 0, 458766, 1, 0, 458767, 1, 0, 458768, 1, 0, 458769, 1, 0, 458770, 1, 0, 458771, 1, 0, 458772, 1, 0, 458773, 1, 0, 458774, 1, 0, 458775, 1, 0, 458776, 1, 0, 458777, 1, 0, 458778, 1, 0, 524295, 1, 0, 524296, 1, 0, 524297, 1, 0, 524298, 1, 0, 524299, 1, 0, 524300, 1, 0, 524301, 1, 0, 524302, 1, 0, 524303, 1, 0, 524304, 1, 0, 524305, 1, 0, 524306, 1, 0, 524307, 1, 0, 524308, 1, 0, 524309, 1, 0, 524310, 1, 0, 524311, 1, 0, 524312, 1, 0, 524313, 1, 0, 524314, 1, 0, 589831, 1, 0, 589832, 1, 0, 589833, 1, 0, 589834, 1, 0, 589835, 1, 0, 589836, 1, 0, 589837, 1, 0, 589838, 1, 0, 589839, 1, 0, 589840, 1, 0, 589841, 1, 0, 589842, 1, 0, 589843, 1, 0, 589844, 1, 0, 589845, 1, 0, 589846, 1, 0, 589847, 1, 0, 589848, 1, 0, 589849, 1, 0, 589850, 1, 0, 655367, 2, 0, 655368, 2, 0, 655369, 2, 0, 655370, 2, 0, 655371, 2, 0, 655372, 2, 0, 655373, 2, 0, 655374, 2, 0, 655375, 2, 0, 655376, 2, 0, 655377, 2, 0, 655378, 2, 0, 655379, 2, 0, 655380, 2, 0, 655381, 2, 0, 655382, 2, 0, 655383, 2, 0, 655384, 2, 0, 655385, 2, 0, 655386, 2, 0, 720903, 2, 0, 720904, 2, 0, 720905, 2, 0, 720906, 2, 0, 720907, 2, 0, 720908, 2, 0, 720909, 2, 0, 720910, 2, 0, 720911, 2, 0, 720912, 2, 0, 720913, 2, 0, 720914, 2, 0, 720915, 2, 0, 720916, 2, 0, 720917, 2, 0, 720918, 2, 0, 720919, 2, 0, 720920, 2, 0, 720921, 2, 0, 720922, 2, 0 )
 
-[node name="Elevation2_Overlay" parent="." instance=ExtResource( 5 )]
+[node name="Elevation2Overlay" parent="." instance=ExtResource( 6 )]
 visible = false
 z_index = 2
 tile_set = SubResource( 3 )
 tile_data = PoolIntArray( -196594, 0, 0, -196593, 0, 0, -196592, 0, 0, -196591, 0, 0, -196590, 0, 0, -196589, 0, 0, -131058, 0, 0, -131057, 0, 0, -131056, 0, 0, -131055, 0, 0, -131054, 0, 0, -131053, 0, 0, -65522, 0, 0, -65521, 0, 0, -65520, 0, 0, -65519, 0, 0, -65518, 0, 0, -65517, 0, 0 )
 overlay_elevation = 64
 
-[node name="Elevation2_TileMap" type="TileMap" parent="."]
+[node name="Elevation2TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 4 )
 cell_size = Vector2( 16, 16 )
 collision_layer = 0
@@ -342,109 +342,125 @@ collision_mask = 0
 format = 1
 tile_data = PoolIntArray( -196594, 0, 0, -196593, 0, 0, -196592, 0, 0, -196591, 0, 0, -196590, 0, 0, -196589, 0, 0, -131058, 0, 0, -131057, 0, 0, -131056, 0, 0, -131055, 0, 0, -131054, 0, 0, -131053, 0, 0, -65522, 0, 0, -65521, 0, 0, -65520, 0, 0, -65519, 0, 0, -65518, 0, 0, -65517, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 0, 0, 18, 0, 0, 19, 0, 0, 65550, 0, 0, 65551, 0, 0, 65552, 0, 0, 65553, 0, 0, 65554, 0, 0, 65555, 0, 0, 131086, 0, 0, 131087, 0, 0, 131088, 0, 0, 131089, 0, 0, 131090, 0, 0, 131091, 0, 0, 196622, 0, 0, 196623, 0, 0, 196624, 0, 0, 196625, 0, 0, 196626, 0, 0, 196627, 0, 0, 262158, 0, 0, 262159, 0, 0, 262160, 0, 0, 262161, 0, 0, 262162, 0, 0, 262163, 0, 0, 327694, 0, 0, 327695, 0, 0, 327696, 0, 0, 327697, 0, 0, 327698, 0, 0, 327699, 0, 0, 393230, 0, 0, 393231, 0, 0, 393232, 0, 0, 393233, 0, 0, 393234, 0, 0, 393235, 0, 0, 458766, 2, 0, 458767, 2, 0, 458768, 2, 0, 458769, 2, 0, 458770, 2, 0, 458771, 2, 0, 524302, 2, 0, 524303, 2, 0, 524304, 2, 0, 524305, 2, 0, 524306, 2, 0, 524307, 2, 0 )
 
-[node name="Elevation3_Overlay" parent="." instance=ExtResource( 5 )]
+[node name="Elevation3Overlay" parent="." instance=ExtResource( 6 )]
 visible = false
 z_index = 3
 tile_set = SubResource( 5 )
 tile_data = PoolIntArray( -131057, 1, 0, -131056, 1, 0, -131055, 1, 0, -131054, 1, 0, -65521, 1, 0, -65520, 1, 0, -65519, 1, 0, -65518, 1, 0, 15, 1, 0, 16, 1, 0, 17, 1, 0, 18, 1, 0 )
 overlay_elevation = 96
 
-[node name="Elevation3_TileMap" type="TileMap" parent="."]
+[node name="Elevation3TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 6 )
 cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( -131057, 1, 0, -131056, 1, 0, -131055, 1, 0, -131054, 1, 0, -65521, 1, 0, -65520, 1, 0, -65519, 1, 0, -65518, 1, 0, 15, 1, 0, 16, 1, 0, 17, 1, 0, 18, 1, 0, 65551, 1, 0, 65552, 1, 0, 65553, 1, 0, 65554, 1, 0, 131087, 1, 0, 131088, 1, 0, 131089, 1, 0, 131090, 1, 0, 196623, 1, 0, 196624, 1, 0, 196625, 1, 0, 196626, 1, 0, 262159, 2, 0, 262160, 2, 0, 262161, 2, 0, 262162, 2, 0, 327695, 2, 0, 327696, 2, 0, 327697, 2, 0, 327698, 2, 0 )
 
-[node name="YSort" type="YSort" parent="."]
+[node name="YSortWorldObjects" type="YSort" parent="."]
 
-[node name="Camera2D" type="Camera2D" parent="YSort"]
+[node name="Player" parent="YSortWorldObjects" instance=ExtResource( 7 )]
+position = Vector2( 267.565, 217.418 )
+
+[node name="SpikedBalls" type="YSort" parent="YSortWorldObjects"]
+
+[node name="SpikedBall" parent="YSortWorldObjects/SpikedBalls" instance=ExtResource( 4 )]
+position = Vector2( 172.148, 24.3454 )
+
+[node name="Hitbox" parent="YSortWorldObjects/SpikedBalls/SpikedBall" index="2"]
+elevation = 32
+
+[node name="SpikedBall2" parent="YSortWorldObjects/SpikedBalls" instance=ExtResource( 4 )]
+position = Vector2( 171.008, 94.4931 )
+
+[node name="Hitbox" parent="YSortWorldObjects/SpikedBalls/SpikedBall2" index="2"]
+elevation = 32
+
+[node name="SpikedBall3" parent="YSortWorldObjects/SpikedBalls" instance=ExtResource( 4 )]
+position = Vector2( 224.09, 102.468 )
+
+[node name="Hitbox" parent="YSortWorldObjects/SpikedBalls/SpikedBall3" index="2"]
+elevation = 64
+
+[node name="Camera2D" type="Camera2D" parent="YSortWorldObjects"]
 position = Vector2( 253.244, 73.0754 )
 current = true
 
-[node name="MovingSpikedBall" parent="YSort" instance=ExtResource( 8 )]
-position = Vector2( 132.002, -21.4057 )
+[node name="MovingSpikedBall" parent="YSortWorldObjects" instance=ExtResource( 5 )]
+position = Vector2( 206.326, 9.91944 )
+pos_A = Vector2( 132, -21 )
+pos_B = Vector2( 206.3, 9.9 )
+move_speed = 75
+
+[node name="Hitbox" parent="YSortWorldObjects/MovingSpikedBall" index="2"]
 elevation = 32
 
-[node name="Movement" parent="YSort/MovingSpikedBall" index="0"]
-x1 = -42
-x2 = -21
-velocity = Vector2( 0, 15 )
+[node name="Elevation1Collisions" type="Node" parent="."]
 
-[node name="SpikedBall" parent="YSort" instance=ExtResource( 7 )]
-position = Vector2( 172.148, 24.3454 )
-elevation = 32
+[node name="Elevation1Collision" parent="Elevation1Collisions" instance=ExtResource( 1 )]
 
-[node name="SpikedBall2" parent="YSort" instance=ExtResource( 7 )]
-position = Vector2( 171.008, 94.4931 )
-elevation = 32
-
-[node name="SpikedBall3" parent="YSort" instance=ExtResource( 7 )]
-position = Vector2( 224.09, 102.468 )
-elevation = 64
-
-[node name="Player" parent="YSort" instance=ExtResource( 1 )]
-position = Vector2( 267.565, 217.418 )
-
-[node name="Elevation1_Collision" parent="." instance=ExtResource( 2 )]
-visible = false
-
-[node name="CollisionShape2D" parent="Elevation1_Collision/EntryArea1" index="0"]
-position = Vector2( 271.949, 80.677 )
+[node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision/EntryArea1" index="0"]
+position = Vector2( 272, 80 )
 shape = SubResource( 7 )
 
-[node name="CollisionShape2D" parent="Elevation1_Collision/ElevatedArea1" index="0"]
-position = Vector2( 271.141, 47.6687 )
+[node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision/ElevatedArea1" index="0"]
+position = Vector2( 272, 48 )
 shape = SubResource( 8 )
 
-[node name="CollisionShape2D" parent="Elevation1_Collision/BoundaryBody1" index="0"]
-position = Vector2( 271.625, 64.8392 )
+[node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision/BoundaryBody1" index="0"]
+position = Vector2( 272, 64 )
 shape = SubResource( 9 )
 
-[node name="CollisionShape2D" parent="Elevation1_Collision/WallBody1" index="0"]
-position = Vector2( 272.03, 177.009 )
+[node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision/WallBody1" index="0"]
+position = Vector2( 272, 176 )
 shape = SubResource( 10 )
 
-[node name="Elevation2_Collision" parent="." instance=ExtResource( 4 )]
+[node name="Elevation2Collision" parent="." instance=ExtResource( 3 )]
 visible = false
 
-[node name="CollisionShape2D" parent="Elevation2_Collision/EntryArea2" index="0"]
+[node name="CollisionShape2D" parent="Elevation2Collision/EntryArea2" index="0"]
 position = Vector2( 271.373, 64.0736 )
 shape = SubResource( 11 )
 
-[node name="CollisionShape2D" parent="Elevation2_Collision/ElevationArea2" index="0"]
+[node name="CollisionShape2D" parent="Elevation2Collision/ElevationArea2" index="0"]
 position = Vector2( 272.527, 31.6532 )
 shape = SubResource( 12 )
 
-[node name="CollisionShape2D" parent="Elevation2_Collision/BoundaryBody2" index="0"]
+[node name="CollisionShape2D" parent="Elevation2Collision/BoundaryBody2" index="0"]
 position = Vector2( 271.867, 48.2711 )
 shape = SubResource( 13 )
 
-[node name="CollisionShape2D" parent="Elevation2_Collision/WallBody2" index="0"]
+[node name="CollisionShape2D" parent="Elevation2Collision/WallBody2" index="0"]
 position = Vector2( 272.077, 128.532 )
 shape = SubResource( 14 )
 
-[node name="Elevation3_Collision" parent="." instance=ExtResource( 6 )]
+[node name="Elevation3Collision" parent="." instance=ExtResource( 2 )]
+visible = false
 
-[node name="CollisionShape2D" parent="Elevation3_Collision/EntryArea3" index="0"]
+[node name="CollisionShape2D" parent="Elevation3Collision/EntryArea3" index="0"]
 position = Vector2( 272.046, 48.0795 )
 shape = SubResource( 15 )
 
-[node name="CollisionShape2D" parent="Elevation3_Collision/ElevationArea3" index="0"]
+[node name="CollisionShape2D" parent="Elevation3Collision/ElevationArea3" index="0"]
 position = Vector2( 271.867, 16.1218 )
 shape = SubResource( 16 )
 
-[node name="CollisionShape2D" parent="Elevation3_Collision/BoundaryBody3" index="0"]
+[node name="CollisionShape2D" parent="Elevation3Collision/BoundaryBody3" index="0"]
 position = Vector2( 271.953, 31.9265 )
 shape = SubResource( 17 )
 
-[node name="CollisionShape2D" parent="Elevation3_Collision/WallBody3" index="0"]
+[node name="CollisionShape2D" parent="Elevation3Collision/WallBody3" index="0"]
 position = Vector2( 271.777, 80.2146 )
 shape = SubResource( 18 )
 
-[editable path="YSort/MovingSpikedBall"]
+[editable path="YSortWorldObjects/SpikedBalls/SpikedBall"]
 
-[editable path="Elevation1_Collision"]
+[editable path="YSortWorldObjects/SpikedBalls/SpikedBall2"]
 
-[editable path="Elevation2_Collision"]
+[editable path="YSortWorldObjects/SpikedBalls/SpikedBall3"]
 
-[editable path="Elevation3_Collision"]
+[editable path="YSortWorldObjects/MovingSpikedBall"]
+
+[editable path="Elevation1Collisions/Elevation1Collision"]
+
+[editable path="Elevation2Collision"]
+
+[editable path="Elevation3Collision"]

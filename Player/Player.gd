@@ -108,19 +108,22 @@ func _physics_process(delta):
 	# Check for overlapping WorldObject layer areas in hurtbox and apply hit
 	for area in hurtbox.get_overlapping_areas():
 		if (area.get_owner() != self):
-			var other_elev = area.get_owner().elevation
+			var other_elev = area.elevation
 			if (last_area_hit != area and other_elev == get_curr_elevation()):
 				# Init knockback vector to opposite of player input vector (current facing direction)
 				var knockback_vector = -input_vector
 				
-				# Apply knockback on x or y axis
-				# If player is farther from object's x position, player is at the side of object
-				# If player is farther from object's y position, player is above/below object
-				if (abs(global_position.x - area.get_owner().global_position.x) \
-				> abs(global_position.y - area.get_owner().global_position.y)):
-					knockback_vector.x = sign(global_position.x - area.get_owner().global_position.x)
-				else:
-					knockback_vector.y = sign(global_position.y - area.get_owner().global_position.y)
+				# Check for set knockback, always apply set knockback if it exists
+				if (area.has_set_knockback):
+					knockback_vector = area.get_owner().knockback_vector
+				elif (input_vector == Vector2.ZERO):	# If no set knockback, check if player is not moving
+					# Always apply other object's moving knockback vector if player is not moving
+					# If player is not moving, there is no way for them to collide with the moving object in the wrong direction
+					if (area.is_moving):
+						knockback_vector = area.get_owner().knockback_vector
+					else:
+						# Other object is not moving, has no set knockback, and player not moving
+						knockback_vector = global_position - area.get_owner().global_position
 				
 				# Use the higher knockback strength between current knockback strength and the area's knockback strength
 				if (area.knockback_strength > curr_knockback_strength):
@@ -139,16 +142,16 @@ func set_elevation_collisions(curr_elevation):
 	# boundary mask layer of elevation 1
 	set_collision_mask_bit(3, curr_elevation < elevations[1] and ground_elevation < elevations[1])
 	# boundary mask layer of elevation 2
-	set_collision_mask_bit(7, curr_elevation < elevations[2] and ground_elevation < elevations[2])
+	set_collision_mask_bit(5, curr_elevation < elevations[2] and ground_elevation < elevations[2])
 	# boundary mask layer of elevation 3
-	set_collision_mask_bit(11, curr_elevation < elevations[3] and ground_elevation < elevations[3])
+	set_collision_mask_bit(7, curr_elevation < elevations[3] and ground_elevation < elevations[3])
 	
 	# wall mask layer of elevation 1
 	set_collision_mask_bit(4, get_collision_mask_bit(3))
 	# wall mask layer of elevation 2
-	set_collision_mask_bit(8, get_collision_mask_bit(7))
+	set_collision_mask_bit(6, get_collision_mask_bit(5))
 	# wall mask layer of elevation 2
-	set_collision_mask_bit(12, get_collision_mask_bit(11))
+	set_collision_mask_bit(8, get_collision_mask_bit(7))
 
 # Check if player is overlapping a wall and set tumbling state and collision shape accordingly
 func check_overlapping_wall():

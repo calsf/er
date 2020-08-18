@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="ss"
-run/main_scene="res://Level_1.tscn"
+run/main_scene="res://Level1.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -62,18 +62,14 @@ move_down={
 [layer_names]
 
 2d_physics/layer_1="WorldObject"
-2d_physics/layer_2="Elev1_Entry"
-2d_physics/layer_3="Elev1_Area"
+2d_physics/layer_2="Elev_Entry"
+2d_physics/layer_3="Elev_Area"
 2d_physics/layer_4="Elev1_Boundary"
 2d_physics/layer_5="Elev1_Wall"
-2d_physics/layer_6="Elev2_Entry"
-2d_physics/layer_7="Elev2_Area"
-2d_physics/layer_8="Elev2_Boundary"
-2d_physics/layer_9="Elev2_Wall"
-2d_physics/layer_10="Elev3_Entry"
-2d_physics/layer_11="Elev3_Area"
-2d_physics/layer_12="Elev3_Boundary"
-2d_physics/layer_13="Elev3_Wall"
+2d_physics/layer_6="Elev2_Boundary"
+2d_physics/layer_7="Elev2_Wall"
+2d_physics/layer_8="Elev3_Boundary"
+2d_physics/layer_9="Elev3_Wall"
 
 [rendering]
 
