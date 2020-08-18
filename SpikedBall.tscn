@@ -5,13 +5,12 @@
 [ext_resource path="res://HitboxProperties.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 6.15536, 4.33475 )
+extents = Vector2( 4.8672, 3.38984 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 6.55674, 4.64605 )
 
 [node name="SpikedBall" type="StaticBody2D"]
-collision_layer = 0
 collision_mask = 2147483648
 script = ExtResource( 1 )
 
@@ -26,7 +25,7 @@ shape = SubResource( 1 )
 [node name="Hitbox" type="Area2D" parent="."]
 collision_mask = 0
 script = ExtResource( 3 )
-knockback_strength = 500
+knockback_strength = 400
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2( 0, -1.15 )

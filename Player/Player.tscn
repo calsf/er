@@ -12,9 +12,9 @@ height = 13.0237
 radius = 4.08499
 height = 13.4847
 
-[sub_resource type="CapsuleShape2D" id=3]
-radius = 4.02709
-height = 13.5312
+[sub_resource type="CapsuleShape2D" id=5]
+radius = 3.647
+height = 12.382
 
 [sub_resource type="CapsuleShape2D" id=4]
 radius = 3.64687
@@ -55,7 +55,7 @@ collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxArea2D"]
 rotation = -1.5708
-shape = SubResource( 3 )
+shape = SubResource( 5 )
 
 [node name="Timer" type="Timer" parent="HurtboxArea2D"]
 

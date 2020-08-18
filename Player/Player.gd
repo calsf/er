@@ -15,6 +15,7 @@ var has_jumped = false
 var is_tumbling = false
 var knockback = Vector2.ZERO
 var last_area_hit = null
+var curr_knockback_strength = 0
 
 var jump_height = MAX_HEIGHT
 var added_height = 0
@@ -38,13 +39,17 @@ func _physics_process(delta):
 	# Provides more accurate drop off from elevations as well
 	if is_tumbling and added_height <= 0:
 		velocity.y += 25
-		move_and_slide(velocity)
+		velocity = move_and_slide(velocity)
 		check_overlapping_wall()
 		return
 		
 	# Gradually decrease knockback value to 0 and apply current knockback
 	knockback = knockback.move_toward(Vector2.ZERO, DECEL * delta)
+	curr_knockback_strength -= clamp(DECEL * delta, 0, 9999)
 	knockback = move_and_slide(knockback)
+	
+	# Only collide with world objects when in knockback state
+	set_collision_mask_bit(0, knockback != Vector2.ZERO)
 	
 	# Get input vector
 	# Allow player to slightly affect movement while in knockback
@@ -105,8 +110,22 @@ func _physics_process(delta):
 		if (area.get_owner() != self):
 			var other_elev = area.get_owner().elevation
 			if (last_area_hit != area and other_elev == get_curr_elevation()):
-				print("HIT")
-				knockback = (hurtbox.global_position - area.global_position).normalized() * (area.knockback_strength)
+				# Init knockback vector to opposite of player input vector (current facing direction)
+				var knockback_vector = -input_vector
+				
+				# Apply knockback on x or y axis
+				# If player is farther from object's x position, player is at the side of object
+				# If player is farther from object's y position, player is above/below object
+				if (abs(global_position.x - area.get_owner().global_position.x) \
+				> abs(global_position.y - area.get_owner().global_position.y)):
+					knockback_vector.x = sign(global_position.x - area.get_owner().global_position.x)
+				else:
+					knockback_vector.y = sign(global_position.y - area.get_owner().global_position.y)
+				
+				# Use the higher knockback strength between current knockback strength and the area's knockback strength
+				if (area.knockback_strength > curr_knockback_strength):
+					curr_knockback_strength = area.knockback_strength
+				knockback = knockback_vector.normalized() * curr_knockback_strength
 				
 				# Prevent getting knocked back by this same area within INVULN_TIME
 				timer.start(INVULN_TIME)
@@ -180,11 +199,6 @@ func _input(event):
 		is_jumping = true
 		is_falling = false
 		
-
-# entry should include the wall, wall and boundary collisions should be slightly larger than area2d for entry/elev area
-# ENTRY AREA FOR ENTERING ELEVATION SHOULD BE ABOUT 32 PX EMPTY ON TOP
-# HAVE ANOTHER LAYERED TILE ABOVE ON TOP THAT WILL BE VISIBLE/INVISIBLE DEPENDING ON PLAYER'S ELEVATION
-
 # Detect elevation entry
 func _on_DetectElevEntry_area_entered(area):
 	var area_elev = area.get_owner().elevation	# Get elevation of entered area
@@ -219,6 +233,6 @@ func _on_DetectElevArea_area_exited(area):
 		# Set falling state to true
 		is_falling = true
 
-
+# Reset last area hit after timer
 func _on_Timer_timeout():
 	last_area_hit = null
