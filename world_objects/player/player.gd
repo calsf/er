@@ -43,9 +43,10 @@ func _physics_process(delta):
 		check_overlapping_wall()
 		return
 		
-	# Gradually decrease knockback value to 0 and apply current knockback
+	# Gradually decrease knockback value and knockback strength to 0 and apply current knockback
+	# The knockback and curr_knockback_strength should be equal or decreasing at same rate
 	knockback = knockback.move_toward(Vector2.ZERO, DECEL * delta)
-	curr_knockback_strength -= clamp(DECEL * delta, 0, 9999)
+	curr_knockback_strength = clamp(curr_knockback_strength - (DECEL * delta), 0, 9999)
 	knockback = move_and_slide(knockback)
 	
 	# Only collide with world objects when in knockback state
