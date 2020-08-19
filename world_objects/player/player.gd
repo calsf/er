@@ -1,30 +1,34 @@
 extends KinematicBody2D
 
-const MAX_SPEED = 200
+const MAX_SPEED = 125
 const AIR_SPEED = 4
 const MAX_HEIGHT = 44
 const DECEL = 500
 const INVULN_TIME = .1
 
+# Move speed properties
 var velocity = Vector2.ZERO
 var curr_speed = MAX_SPEED
-var is_jumping = false
-var is_falling = false
-var has_double_jumped = false
-var has_jumped = false
-var is_tumbling = false
+var walk_multiplier = .5
+
+# Knockback properties
 var knockback = Vector2.ZERO
 var last_area_hit = null
 var curr_knockback_strength = 0
 
-var jump_height = MAX_HEIGHT
-var added_height = 0
+# Jumping and elevation properties
+var is_jumping = false
+var is_falling = false
+var has_double_jumped = false
+var has_jumped = false
+var is_tumbling = false		# For falling down a wall
+var jump_height = MAX_HEIGHT	# The number of pixels to jump up
+var added_height = 0	# Current number of pixels above ground, grounded at 0
 var elevations = [0, GlobalConst.ELEVATION_UNIT * 1, GlobalConst.ELEVATION_UNIT * 2, GlobalConst.ELEVATION_UNIT * 3]
-var ground_elevation = elevations[1]
-var last_ground_elevation = elevations[1]
+var ground_elevation = elevations[1]	# The elevation of height in which player is considered grounded
+var last_ground_elevation = elevations[1]	# The previous ground elevation for when player enters a new elevation but is not yet grounded
 
-# when entered new elevation, waits to hit ground before assigning new ground elevation
-# uses added_height to determine height until no longer awaiting_new_elevation
+# When entered new elevation, need to wait to be grounded before assigning new ground elevation
 var awaiting_new_ground_elevation = false
 
 onready var player_shadow = $Shadow
@@ -33,6 +37,9 @@ onready var collision_shape = $CollisionShape2D
 onready var overlapping_wall_area = $OverlappingWallCheck
 onready var hurtbox = $HurtboxArea2D
 onready var timer = $HurtboxArea2D/Timer
+onready var animationPlayer = $AnimationPlayer
+onready var animationTree = $AnimationTree
+onready var animationState = animationTree.get("parameters/playback")
 
 func _physics_process(delta):
 	# Applies falling effect to player if they are caught inside a wall
@@ -59,8 +66,26 @@ func _physics_process(delta):
 	input_vector.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 	input_vector = input_vector.normalized()
 		
-	# Set velocity based on input_vector
-	velocity = input_vector * curr_speed
+	# Set velocity and animation state based on input_vector
+	if (input_vector != Vector2.ZERO):
+		# Only set blend positions when input vector is not zero
+		animationTree.set("parameters/Idle/blend_position", input_vector)
+		animationTree.set("parameters/Move/blend_position", input_vector)
+		animationTree.set("parameters/Jump/blend_position", input_vector)
+		
+		if (added_height > 0):
+			animationState.travel("Jump")
+		else:
+			animationState.travel("Move")
+		
+		# Walk will move at slower speed
+		if (Input.get_action_strength("walk")):
+			velocity = input_vector * (curr_speed * walk_multiplier)
+		else:
+			velocity = input_vector * curr_speed
+	else:
+		animationState.travel("Idle")
+		velocity = Vector2.ZERO
 		
 	# Move and slide using current velocity, set velocity to maintain velocity after collision
 	velocity = move_and_slide(velocity)
@@ -139,19 +164,20 @@ func _physics_process(delta):
 	#death_check()
 	
 # Set collision masks for collisions with elevation boundary and walls
+# Wall collision should match boundary collision
 func set_elevation_collisions(curr_elevation):
-	# boundary mask layer of elevation 1
+	# Boundary mask layer of elevation 1
 	set_collision_mask_bit(3, curr_elevation < elevations[1] and ground_elevation < elevations[1])
-	# boundary mask layer of elevation 2
+	# Boundary mask layer of elevation 2
 	set_collision_mask_bit(5, curr_elevation < elevations[2] and ground_elevation < elevations[2])
-	# boundary mask layer of elevation 3
+	# Boundary mask layer of elevation 3
 	set_collision_mask_bit(7, curr_elevation < elevations[3] and ground_elevation < elevations[3])
 	
-	# wall mask layer of elevation 1
+	# Wall mask layer of elevation 1
 	set_collision_mask_bit(4, get_collision_mask_bit(3))
-	# wall mask layer of elevation 2
+	# Wall mask layer of elevation 2
 	set_collision_mask_bit(6, get_collision_mask_bit(5))
-	# wall mask layer of elevation 2
+	# Wall mask layer of elevation 2
 	set_collision_mask_bit(8, get_collision_mask_bit(7))
 
 # Check if player is overlapping a wall and set tumbling state and collision shape accordingly
