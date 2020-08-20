@@ -72,9 +72,12 @@ func _physics_process(delta):
 		animationTree.set("parameters/Idle/blend_position", input_vector)
 		animationTree.set("parameters/Move/blend_position", input_vector)
 		animationTree.set("parameters/Jump/blend_position", input_vector)
+		animationTree.set("parameters/Fall/blend_position", input_vector)
 		
-		if (added_height > 0):
+		if (is_jumping):
 			animationState.travel("Jump")
+		elif(is_falling):
+			animationState.travel("Fall")
 		else:
 			animationState.travel("Move")
 		
@@ -225,7 +228,7 @@ func _input(event):
 		is_falling = false
 	elif Input.is_action_just_pressed("jump") and has_jumped and !has_double_jumped:
 		has_double_jumped = true
-		jump_height = added_height + MAX_HEIGHT
+		jump_height = MAX_HEIGHT * 2
 		is_jumping = true
 		is_falling = false
 		
