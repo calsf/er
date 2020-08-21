@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
-export var pos_A = Vector2.ZERO
-export var pos_B = Vector2.ZERO
+onready var pos_A = $Pos_A.global_position
+onready var pos_B = $Pos_B.global_position
 export var move_speed = 0
 onready var next_pos = pos_B
 var knockback_vector = Vector2.ZERO

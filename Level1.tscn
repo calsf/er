@@ -1,35 +1,609 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=58 format=2]
 
 [ext_resource path="res://elevations/Elevation1Collision.tscn" type="PackedScene" id=1]
+[ext_resource path="res://world_objects/saw/saw.png" type="Texture" id=2]
 [ext_resource path="res://world_objects/spiked_ball/SpikedBall.tscn" type="PackedScene" id=4]
-[ext_resource path="res://MovingSpikedBall.tscn" type="PackedScene" id=5]
+[ext_resource path="res://MovingSaw.tscn" type="PackedScene" id=5]
 [ext_resource path="res://elevations/ElevationOverlay.tscn" type="PackedScene" id=6]
 [ext_resource path="res://world_objects/player/Player.tscn" type="PackedScene" id=7]
 [ext_resource path="res://tile1.tres" type="TileSet" id=8]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="Animation" id=1]
+resource_name = "SawMove"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "SawMove"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "SawMove"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "SawMove"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "SawMove"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "SawMove"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "SawMove"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "SawMove"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "SawMove"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "SawMove"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "SawMove"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "SawMove"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "SawMove"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "SawMove"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "SawMove"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=16]
+resource_name = "SawMove"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=17]
+resource_name = "SawMove"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=18]
+resource_name = "SawMove"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=19]
+resource_name = "SawMove"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=20]
+resource_name = "SawMove"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=21]
+resource_name = "SawMove"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=22]
+resource_name = "SawMove"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=23]
+resource_name = "SawMove"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=24]
+resource_name = "SawMove"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=25]
+resource_name = "SawMove"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=26]
+resource_name = "SawMove"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=27]
+resource_name = "SawMove"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=28]
+resource_name = "SawMove"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=29]
+resource_name = "SawMove"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="TileSet" id=30]
+0/name = "saw.png 0"
+0/texture = ExtResource( 2 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 64, 0, 32, 16 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "saw.png 1"
+1/texture = ExtResource( 2 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 96, 0, 32, 16 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "saw.png 2"
+2/texture = ExtResource( 2 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 128, 0, 32, 16 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+
+[sub_resource type="RectangleShape2D" id=31]
 extents = Vector2( 63, 39 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=32]
 extents = Vector2( 63, 39 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=33]
 extents = Vector2( 64, 24 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=34]
 extents = Vector2( 64, 16 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=35]
 extents = Vector2( 7, 23 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=36]
 extents = Vector2( 7, 23 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=37]
 extents = Vector2( 8, 8 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=38]
 extents = Vector2( 8, 16 )
+
+[sub_resource type="RectangleShape2D" id=39]
+extents = Vector2( 63, 23 )
+
+[sub_resource type="RectangleShape2D" id=40]
+extents = Vector2( 63, 23 )
+
+[sub_resource type="RectangleShape2D" id=41]
+extents = Vector2( 64, 8 )
+
+[sub_resource type="RectangleShape2D" id=42]
+extents = Vector2( 64, 16 )
+
+[sub_resource type="RectangleShape2D" id=43]
+extents = Vector2( 23, 23 )
+
+[sub_resource type="RectangleShape2D" id=44]
+extents = Vector2( 23, 23 )
+
+[sub_resource type="RectangleShape2D" id=45]
+extents = Vector2( 24, 8 )
+
+[sub_resource type="RectangleShape2D" id=46]
+extents = Vector2( 24, 16 )
+
+[sub_resource type="RectangleShape2D" id=47]
+extents = Vector2( 95, 159 )
+
+[sub_resource type="RectangleShape2D" id=48]
+extents = Vector2( 95, 159 )
+
+[sub_resource type="RectangleShape2D" id=49]
+extents = Vector2( 96, 144 )
+
+[sub_resource type="RectangleShape2D" id=50]
+extents = Vector2( 96, 16 )
 
 [node name="Level1" type="Node2D"]
 
@@ -37,6 +611,7 @@ extents = Vector2( 8, 16 )
 z_index = 1
 tile_set = ExtResource( 8 )
 collision_layer = 2147483648
+tile_data = PoolIntArray( -917459, 4, 0, -917458, 4, 1, -917457, 4, 1, -917456, 4, 1, -917455, 4, 1, -917454, 4, 1, -917453, 4, 1, -917452, 4, 2, -851923, 4, 65536, -851922, 4, 65537, -851921, 4, 65537, -851920, 4, 65537, -851919, 4, 65537, -851918, 4, 65537, -851917, 4, 65537, -851916, 4, 65538, -786387, 4, 131072, -786386, 4, 131073, -786385, 4, 131073, -786384, 4, 131073, -786383, 4, 131073, -786382, 4, 131073, -786381, 4, 131073, -786380, 4, 131074, -393171, 4, 0, -393170, 4, 1, -393169, 4, 1, -393168, 4, 1, -393167, 4, 1, -393166, 4, 1, -393165, 4, 1, -393164, 4, 2, -327635, 4, 65536, -327634, 4, 65537, -327633, 4, 65537, -327632, 4, 65537, -327631, 4, 65537, -327630, 4, 65537, -327629, 4, 65537, -327628, 4, 65538, -262118, 7, 0, -262110, 7, 0, -262107, 7, 0, -262104, 7, 0, -262099, 4, 131072, -262098, 4, 131073, -262097, 4, 131073, -262096, 4, 131073, -262095, 4, 131073, -262094, 4, 131073, -262093, 4, 131073, -262092, 4, 131074, -131076, 5, 0, -131075, 5, 1, -131074, 5, 1, -131073, 5, 1, -196608, 5, 1, -196607, 5, 1, -196606, 5, 1, -196605, 5, 2, -196598, 5, 0, -196597, 5, 1, -196596, 5, 1, -196595, 5, 1, -196594, 5, 1, -196593, 5, 1, -196592, 5, 1, -196591, 5, 2, -196585, 7, 0, -196582, 8, 0, -196574, 8, 0, -196571, 8, 0, -196568, 8, 0, -65540, 5, 65536, -65539, 5, 65537, -65538, 5, 65537, -65537, 5, 65537, -131072, 5, 65537, -131071, 5, 65537, -131070, 5, 65537, -131069, 5, 65538, -131062, 5, 65536, -131061, 5, 65537, -131060, 5, 65537, -131059, 5, 65537, -131058, 5, 65537, -131057, 5, 65537, -131056, 5, 65537, -131055, 5, 65538, -131052, 10, 0, -131049, 8, 0, -131046, 9, 0, -131038, 9, 0, -131035, 9, 0, -131032, 9, 0, -4, 5, 131072, -3, 5, 131073, -2, 5, 131073, -1, 5, 131073, -65536, 5, 131073, -65535, 5, 131073, -65534, 5, 131073, -65533, 5, 131074, -65526, 5, 131072, -65525, 5, 131073, -65524, 5, 131073, -65523, 5, 131073, -65522, 5, 131073, -65521, 5, 131073, -65520, 5, 131073, -65519, 5, 131074, -65516, 8, 0, -65513, 9, 0, 20, 9, 0 )
 overlay_elevation = 32
 
 [node name="Elevation1TileMap" type="TileMap" parent="."]
@@ -45,7 +620,7 @@ cell_size = Vector2( 16, 16 )
 collision_layer = 2147483648
 collision_mask = 0
 format = 1
-tile_data = PoolIntArray( -917459, 4, 0, -917458, 4, 1, -917457, 4, 1, -917456, 4, 1, -917455, 4, 1, -917454, 4, 1, -917453, 4, 1, -917452, 4, 2, -851923, 4, 65536, -851922, 4, 65537, -851921, 4, 65537, -851920, 4, 65537, -851919, 4, 65537, -851918, 4, 65537, -851917, 4, 65537, -851916, 4, 65538, -786387, 4, 131072, -786386, 4, 131073, -786385, 4, 131073, -786384, 4, 131073, -786383, 4, 131073, -786382, 4, 131073, -786381, 4, 131073, -786380, 4, 131074, -720851, 6, 0, -720850, 6, 1, -720849, 6, 1, -720848, 6, 1, -720847, 6, 1, -720846, 6, 1, -720845, 6, 1, -720844, 6, 2, -655315, 6, 65536, -655314, 6, 65537, -655313, 6, 65537, -655312, 6, 65537, -655311, 6, 65537, -655310, 6, 65537, -655309, 6, 65537, -655308, 6, 65538, -393171, 4, 0, -393170, 4, 1, -393169, 4, 1, -393168, 4, 1, -393167, 4, 1, -393166, 4, 1, -393165, 4, 1, -393164, 4, 2, -327635, 4, 65536, -327634, 4, 65537, -327633, 4, 65537, -327632, 4, 65537, -327631, 4, 65537, -327630, 4, 65537, -327629, 4, 65537, -327628, 4, 65538, -262118, 10, 0, -262110, 10, 0, -262107, 10, 0, -262104, 10, 0, -262099, 4, 131072, -262098, 4, 131073, -262097, 4, 131073, -262096, 4, 131073, -262095, 4, 131073, -262094, 4, 131073, -262093, 4, 131073, -262092, 4, 131074, -131076, 4, 0, -131075, 4, 1, -131074, 4, 1, -131073, 4, 1, -196608, 4, 1, -196607, 4, 1, -196606, 4, 1, -196605, 4, 2, -196598, 4, 0, -196597, 4, 1, -196596, 4, 1, -196595, 4, 1, -196594, 4, 1, -196593, 4, 1, -196592, 4, 1, -196591, 4, 2, -196585, 7, 0, -196582, 11, 0, -196574, 11, 0, -196571, 11, 0, -196568, 8, 0, -196563, 6, 0, -196562, 6, 1, -196561, 6, 1, -196560, 6, 1, -196559, 6, 1, -196558, 6, 1, -196557, 6, 1, -196556, 6, 2, -65540, 4, 65536, -65539, 4, 65537, -65538, 4, 65537, -65537, 4, 65537, -131072, 4, 65537, -131071, 4, 65537, -131070, 4, 65537, -131069, 4, 65538, -131062, 4, 65536, -131061, 4, 65537, -131060, 4, 65537, -131059, 4, 65537, -131058, 4, 65537, -131057, 4, 65537, -131056, 4, 65537, -131055, 4, 65538, -131052, 7, 0, -131049, 8, 0, -131046, 9, 0, -131038, 9, 0, -131035, 9, 0, -131032, 9, 0, -131027, 6, 65536, -131026, 6, 65537, -131025, 6, 65537, -131024, 6, 65537, -131023, 6, 65537, -131022, 6, 65537, -131021, 6, 65537, -131020, 6, 65538, -4, 4, 65536, -3, 4, 65537, -2, 4, 65537, -1, 4, 65537, -65536, 4, 65537, -65535, 4, 65537, -65534, 4, 65537, -65533, 4, 65538, -65526, 4, 65536, -65525, 4, 65537, -65524, 4, 65537, -65523, 4, 65537, -65522, 4, 65537, -65521, 4, 65537, -65520, 4, 65537, -65519, 4, 65538, -65516, 8, 0, -65513, 9, 0, -65510, 12, 0, -65502, 12, 0, -65499, 12, 0, -65496, 12, 0, 65532, 4, 65536, 65533, 4, 65537, 65534, 4, 65537, 65535, 4, 65537, 0, 4, 65537, 1, 4, 65537, 2, 4, 65537, 3, 4, 65538, 10, 4, 65536, 11, 4, 65537, 12, 4, 65537, 13, 4, 65537, 14, 4, 65537, 15, 4, 65537, 16, 4, 65537, 17, 4, 65538, 20, 9, 0, 23, 12, 0, 26, 13, 0, 34, 13, 0, 37, 13, 0, 40, 13, 0, 131068, 4, 131072, 131069, 4, 131073, 131070, 4, 131073, 131071, 4, 131073, 65536, 4, 131073, 65537, 4, 131073, 65538, 4, 131073, 65539, 4, 131074, 65546, 4, 131072, 65547, 4, 131073, 65548, 4, 131073, 65549, 4, 131073, 65550, 4, 131073, 65551, 4, 131073, 65552, 4, 131073, 65553, 4, 131074, 65556, 12, 0, 65559, 13, 0, 196604, 6, 0, 196605, 6, 1, 196606, 6, 1, 196607, 6, 1, 131072, 6, 1, 131073, 6, 1, 131074, 6, 1, 131075, 6, 2, 131082, 6, 0, 131083, 6, 1, 131084, 6, 1, 131085, 6, 1, 131086, 6, 1, 131087, 6, 1, 131088, 6, 1, 131089, 6, 2, 131092, 13, 0, 262140, 6, 65536, 262141, 6, 65537, 262142, 6, 65537, 262143, 6, 65537, 196608, 6, 65537, 196609, 6, 65537, 196610, 6, 65537, 196611, 6, 65538, 196618, 6, 65536, 196619, 6, 65537, 196620, 6, 65537, 196621, 6, 65537, 196622, 6, 65537, 196623, 6, 65537, 196624, 6, 65537, 196625, 6, 65538 )
+tile_data = PoolIntArray( -3211209, 4, 0, -3211208, 4, 1, -3211207, 4, 1, -3211206, 4, 2, -3145673, 4, 65536, -3145672, 4, 65537, -3145671, 4, 65537, -3145670, 4, 65538, -3080137, 4, 131072, -3080136, 4, 131073, -3080135, 4, 131073, -3080134, 4, 131074, -3014601, 6, 0, -3014600, 6, 1, -3014599, 6, 1, -3014598, 6, 2, -2949065, 6, 65536, -2949064, 6, 65537, -2949063, 6, 65537, -2949062, 6, 65538, -2818005, 4, 0, -2818004, 4, 1, -2818003, 4, 1, -2818002, 4, 1, -2818001, 4, 1, -2818000, 4, 1, -2817999, 4, 1, -2817998, 4, 1, -2817997, 4, 1, -2817996, 4, 1, -2817995, 4, 1, -2817994, 4, 2, -2752469, 4, 65536, -2752468, 4, 65537, -2752467, 4, 65537, -2752466, 4, 65537, -2752465, 4, 65537, -2752464, 4, 65537, -2752463, 4, 65537, -2752462, 4, 65537, -2752461, 4, 65537, -2752460, 4, 65537, -2752459, 4, 65537, -2752458, 4, 65538, -2686933, 4, 65536, -2686932, 4, 65537, -2686931, 4, 65537, -2686930, 4, 65537, -2686929, 4, 65537, -2686928, 4, 65537, -2686927, 4, 65537, -2686926, 4, 65537, -2686925, 4, 65537, -2686924, 4, 65537, -2686923, 4, 65537, -2686922, 4, 65538, -2621397, 4, 65536, -2621396, 4, 65537, -2621395, 4, 65537, -2621394, 4, 65537, -2621393, 4, 65537, -2621392, 4, 65537, -2621391, 4, 65537, -2621390, 4, 65537, -2621389, 4, 65537, -2621388, 4, 65537, -2621387, 4, 65537, -2621386, 4, 65538, -2555861, 4, 65536, -2555860, 4, 65537, -2555859, 4, 65537, -2555858, 4, 65537, -2555857, 4, 65537, -2555856, 4, 65537, -2555855, 4, 65537, -2555854, 4, 65537, -2555853, 4, 65537, -2555852, 4, 65537, -2555851, 4, 65537, -2555850, 4, 65538, -2490325, 4, 65536, -2490324, 4, 65537, -2490323, 4, 65537, -2490322, 4, 65537, -2490321, 4, 65537, -2490320, 4, 65537, -2490319, 4, 65537, -2490318, 4, 65537, -2490317, 4, 65537, -2490316, 4, 65537, -2490315, 4, 65537, -2490314, 4, 65538, -2424789, 4, 65536, -2424788, 4, 65537, -2424787, 4, 65537, -2424786, 4, 65537, -2424785, 4, 65537, -2424784, 4, 65537, -2424783, 4, 65537, -2424782, 4, 65537, -2424781, 4, 65537, -2424780, 4, 65537, -2424779, 4, 65537, -2424778, 4, 65538, -2359253, 4, 65536, -2359252, 4, 65537, -2359251, 4, 65537, -2359250, 4, 65537, -2359249, 4, 65537, -2359248, 4, 65537, -2359247, 4, 65537, -2359246, 4, 65537, -2359245, 4, 65537, -2359244, 4, 65537, -2359243, 4, 65537, -2359242, 4, 65538, -2293717, 4, 65536, -2293716, 4, 65537, -2293715, 4, 65537, -2293714, 4, 65537, -2293713, 4, 65537, -2293712, 4, 65537, -2293711, 4, 65537, -2293710, 4, 65537, -2293709, 4, 65537, -2293708, 4, 65537, -2293707, 4, 65537, -2293706, 4, 65538, -2228181, 4, 65536, -2228180, 4, 65537, -2228179, 4, 65537, -2228178, 4, 65537, -2228177, 4, 65537, -2228176, 4, 65537, -2228175, 4, 65537, -2228174, 4, 65537, -2228173, 4, 65537, -2228172, 4, 65537, -2228171, 4, 65537, -2228170, 4, 65538, -2162645, 4, 65536, -2162644, 4, 65537, -2162643, 4, 65537, -2162642, 4, 65537, -2162641, 4, 65537, -2162640, 4, 65537, -2162639, 4, 65537, -2162638, 4, 65537, -2162637, 4, 65537, -2162636, 4, 65537, -2162635, 4, 65537, -2162634, 4, 65538, -2097109, 4, 65536, -2097108, 4, 65537, -2097107, 4, 65537, -2097106, 4, 65537, -2097105, 4, 65537, -2097104, 4, 65537, -2097103, 4, 65537, -2097102, 4, 65537, -2097101, 4, 65537, -2097100, 4, 65537, -2097099, 4, 65537, -2097098, 4, 65538, -2031573, 4, 65536, -2031572, 4, 65537, -2031571, 4, 65537, -2031570, 4, 65537, -2031569, 4, 65537, -2031568, 4, 65537, -2031567, 4, 65537, -2031566, 4, 65537, -2031565, 4, 65537, -2031564, 4, 65537, -2031563, 4, 65537, -2031562, 4, 65538, -1966037, 4, 65536, -1966036, 4, 65537, -1966035, 4, 65537, -1966034, 4, 65537, -1966033, 4, 65537, -1966032, 4, 65537, -1966031, 4, 65537, -1966030, 4, 65537, -1966029, 4, 65537, -1966028, 4, 65537, -1966027, 4, 65537, -1966026, 4, 65538, -1900501, 4, 65536, -1900500, 4, 65537, -1900499, 4, 65537, -1900498, 4, 65537, -1900497, 4, 65537, -1900496, 4, 65537, -1900495, 4, 65537, -1900494, 4, 65537, -1900493, 4, 65537, -1900492, 4, 65537, -1900491, 4, 65537, -1900490, 4, 65538, -1834965, 4, 65536, -1834964, 4, 65537, -1834963, 4, 65537, -1834962, 4, 65537, -1834961, 4, 65537, -1834960, 4, 65537, -1834959, 4, 65537, -1834958, 4, 65537, -1834957, 4, 65537, -1834956, 4, 65537, -1834955, 4, 65537, -1834954, 4, 65538, -1769429, 4, 65536, -1769428, 4, 65537, -1769427, 4, 65537, -1769426, 4, 65537, -1769425, 4, 65537, -1769424, 4, 65537, -1769423, 4, 65537, -1769422, 4, 65537, -1769421, 4, 65537, -1769420, 4, 65537, -1769419, 4, 65537, -1769418, 4, 65538, -1703893, 4, 65536, -1703892, 4, 65537, -1703891, 4, 65537, -1703890, 4, 65537, -1703889, 4, 65537, -1703888, 4, 65537, -1703887, 4, 65537, -1703886, 4, 65537, -1703885, 4, 65537, -1703884, 4, 65537, -1703883, 4, 65537, -1703882, 4, 65538, -1638357, 4, 65536, -1638356, 4, 65537, -1638355, 4, 65537, -1638354, 4, 65537, -1638353, 4, 65537, -1638352, 4, 65537, -1638351, 4, 65537, -1638350, 4, 65537, -1638349, 4, 65537, -1638348, 4, 65537, -1638347, 4, 65537, -1638346, 4, 65538, -1572821, 4, 131072, -1572820, 4, 131073, -1572819, 4, 131073, -1572818, 4, 131073, -1572817, 4, 131073, -1572816, 4, 131073, -1572815, 4, 131073, -1572814, 4, 131073, -1572813, 4, 131073, -1572812, 4, 131073, -1572811, 4, 131073, -1572810, 4, 131074, -1507285, 6, 0, -1507284, 6, 1, -1507283, 6, 1, -1507282, 6, 1, -1507281, 6, 1, -1507280, 6, 1, -1507279, 6, 1, -1507278, 6, 1, -1507277, 6, 1, -1507276, 6, 1, -1507275, 6, 1, -1507274, 6, 2, -1441749, 6, 65536, -1441748, 6, 65537, -1441747, 6, 65537, -1441746, 6, 65537, -1441745, 6, 65537, -1441744, 6, 65537, -1441743, 6, 65537, -1441742, 6, 65537, -1441741, 6, 65537, -1441740, 6, 65537, -1441739, 6, 65537, -1441738, 6, 65538, -1310675, 4, 0, -1310674, 4, 1, -1310673, 4, 2, -1310670, 4, 0, -1310669, 4, 1, -1310668, 4, 2, -1245139, 4, 65536, -1245138, 4, 65537, -1245137, 4, 65538, -1245134, 4, 65536, -1245133, 4, 65537, -1245132, 4, 65538, -1179603, 4, 131072, -1179602, 4, 131073, -1179601, 4, 131074, -1179598, 4, 131072, -1179597, 4, 131073, -1179596, 4, 131074, -1114067, 6, 0, -1114066, 6, 1, -1114065, 6, 2, -1114062, 6, 0, -1114061, 6, 1, -1114060, 6, 2, -1048531, 6, 65536, -1048530, 6, 65537, -1048529, 6, 65538, -1048526, 6, 65536, -1048525, 6, 65537, -1048524, 6, 65538, -917459, 4, 0, -917458, 4, 1, -917457, 4, 1, -917456, 4, 1, -917455, 4, 1, -917454, 4, 1, -917453, 4, 1, -917452, 4, 2, -851923, 4, 65536, -851922, 4, 65537, -851921, 4, 65537, -851920, 4, 65537, -851919, 4, 65537, -851918, 4, 65537, -851917, 4, 65537, -851916, 4, 65538, -786387, 4, 131072, -786386, 4, 131073, -786385, 4, 131073, -786384, 4, 131073, -786383, 4, 131073, -786382, 4, 131073, -786381, 4, 131073, -786380, 4, 131074, -720851, 6, 0, -720850, 6, 1, -720849, 6, 1, -720848, 6, 1, -720847, 6, 1, -720846, 6, 1, -720845, 6, 1, -720844, 6, 2, -655315, 6, 65536, -655314, 6, 65537, -655313, 6, 65537, -655312, 6, 65537, -655311, 6, 65537, -655310, 6, 65537, -655309, 6, 65537, -655308, 6, 65538, -393171, 4, 0, -393170, 4, 1, -393169, 4, 1, -393168, 4, 1, -393167, 4, 1, -393166, 4, 1, -393165, 4, 1, -393164, 4, 2, -327635, 4, 65536, -327634, 4, 65537, -327633, 4, 65537, -327632, 4, 65537, -327631, 4, 65537, -327630, 4, 65537, -327629, 4, 65537, -327628, 4, 65538, -262118, 10, 0, -262110, 10, 0, -262107, 10, 0, -262104, 10, 0, -262099, 4, 131072, -262098, 4, 131073, -262097, 4, 131073, -262096, 4, 131073, -262095, 4, 131073, -262094, 4, 131073, -262093, 4, 131073, -262092, 4, 131074, -131076, 4, 0, -131075, 4, 1, -131074, 4, 1, -131073, 4, 1, -196608, 4, 1, -196607, 4, 1, -196606, 4, 1, -196605, 4, 2, -196598, 4, 0, -196597, 4, 1, -196596, 4, 1, -196595, 4, 1, -196594, 4, 1, -196593, 4, 1, -196592, 4, 1, -196591, 4, 2, -196585, 7, 0, -196582, 11, 0, -196574, 11, 0, -196571, 11, 0, -196568, 8, 0, -196563, 6, 0, -196562, 6, 1, -196561, 6, 1, -196560, 6, 1, -196559, 6, 1, -196558, 6, 1, -196557, 6, 1, -196556, 6, 2, -65540, 4, 65536, -65539, 4, 65537, -65538, 4, 65537, -65537, 4, 65537, -131072, 4, 65537, -131071, 4, 65537, -131070, 4, 65537, -131069, 4, 65538, -131062, 4, 65536, -131061, 4, 65537, -131060, 4, 65537, -131059, 4, 65537, -131058, 4, 65537, -131057, 4, 65537, -131056, 4, 65537, -131055, 4, 65538, -131052, 7, 0, -131049, 8, 0, -131046, 9, 0, -131038, 9, 0, -131035, 9, 0, -131032, 9, 0, -131027, 6, 65536, -131026, 6, 65537, -131025, 6, 65537, -131024, 6, 65537, -131023, 6, 65537, -131022, 6, 65537, -131021, 6, 65537, -131020, 6, 65538, -4, 4, 65536, -3, 4, 65537, -2, 4, 65537, -1, 4, 65537, -65536, 4, 65537, -65535, 4, 65537, -65534, 4, 65537, -65533, 4, 65538, -65526, 4, 65536, -65525, 4, 65537, -65524, 4, 65537, -65523, 4, 65537, -65522, 4, 65537, -65521, 4, 65537, -65520, 4, 65537, -65519, 4, 65538, -65516, 8, 0, -65513, 9, 0, -65510, 12, 0, -65502, 12, 0, -65499, 12, 0, -65496, 12, 0, 65532, 4, 65536, 65533, 4, 65537, 65534, 4, 65537, 65535, 4, 65537, 0, 4, 65537, 1, 4, 65537, 2, 4, 65537, 3, 4, 65538, 10, 4, 65536, 11, 4, 65537, 12, 4, 65537, 13, 4, 65537, 14, 4, 65537, 15, 4, 65537, 16, 4, 65537, 17, 4, 65538, 20, 9, 0, 23, 12, 0, 26, 13, 0, 34, 13, 0, 37, 13, 0, 40, 13, 0, 131068, 4, 131072, 131069, 4, 131073, 131070, 4, 131073, 131071, 4, 131073, 65536, 4, 131073, 65537, 4, 131073, 65538, 4, 131073, 65539, 4, 131074, 65546, 4, 131072, 65547, 4, 131073, 65548, 4, 131073, 65549, 4, 131073, 65550, 4, 131073, 65551, 4, 131073, 65552, 4, 131073, 65553, 4, 131074, 65556, 12, 0, 65559, 13, 0, 196604, 6, 0, 196605, 6, 1, 196606, 6, 1, 196607, 6, 1, 131072, 6, 1, 131073, 6, 1, 131074, 6, 1, 131075, 6, 2, 131082, 6, 0, 131083, 6, 1, 131084, 6, 1, 131085, 6, 1, 131086, 6, 1, 131087, 6, 1, 131088, 6, 1, 131089, 6, 2, 131092, 13, 0, 262140, 6, 65536, 262141, 6, 65537, 262142, 6, 65537, 262143, 6, 65537, 196608, 6, 65537, 196609, 6, 65537, 196610, 6, 65537, 196611, 6, 65538, 196618, 6, 65536, 196619, 6, 65537, 196620, 6, 65537, 196621, 6, 65537, 196622, 6, 65537, 196623, 6, 65537, 196624, 6, 65537, 196625, 6, 65538 )
 
 [node name="YSortWorldObjects" type="YSort" parent="."]
 
@@ -83,14 +658,552 @@ position = Vector2( 224, 24 )
 [node name="Hitbox" parent="YSortWorldObjects/SpikedBalls/SpikedBall4" index="2"]
 elevation = 32
 
-[node name="MovingSpikedBall" parent="YSortWorldObjects" instance=ExtResource( 5 )]
-position = Vector2( 120, -120 )
-pos_A = Vector2( 120, -120 )
-pos_B = Vector2( 120, -140 )
+[node name="SpikedBall5" parent="YSortWorldObjects/SpikedBalls" instance=ExtResource( 4 )]
+position = Vector2( 736, -67 )
+
+[node name="Hitbox" parent="YSortWorldObjects/SpikedBalls/SpikedBall5" index="2"]
+elevation = 32
+
+[node name="SpikedBall6" parent="YSortWorldObjects/SpikedBalls" instance=ExtResource( 4 )]
+position = Vector2( 752, -67 )
+
+[node name="Hitbox" parent="YSortWorldObjects/SpikedBalls/SpikedBall6" index="2"]
+elevation = 32
+
+[node name="SpikedBall7" parent="YSortWorldObjects/SpikedBalls" instance=ExtResource( 4 )]
+position = Vector2( 768, -67 )
+
+[node name="Hitbox" parent="YSortWorldObjects/SpikedBalls/SpikedBall7" index="2"]
+elevation = 32
+
+[node name="SpikedBall8" parent="YSortWorldObjects/SpikedBalls" instance=ExtResource( 4 )]
+position = Vector2( 784, -67 )
+
+[node name="Hitbox" parent="YSortWorldObjects/SpikedBalls/SpikedBall8" index="2"]
+elevation = 32
+
+[node name="SpikedBall9" parent="YSortWorldObjects/SpikedBalls" instance=ExtResource( 4 )]
+position = Vector2( 800, -67 )
+
+[node name="Hitbox" parent="YSortWorldObjects/SpikedBalls/SpikedBall9" index="2"]
+elevation = 32
+
+[node name="SpikedBall10" parent="YSortWorldObjects/SpikedBalls" instance=ExtResource( 4 )]
+position = Vector2( 816, -67 )
+
+[node name="Hitbox" parent="YSortWorldObjects/SpikedBalls/SpikedBall10" index="2"]
+elevation = 32
+
+[node name="SpikedBall11" parent="YSortWorldObjects/SpikedBalls" instance=ExtResource( 4 )]
+position = Vector2( 832, -67 )
+
+[node name="Hitbox" parent="YSortWorldObjects/SpikedBalls/SpikedBall11" index="2"]
+elevation = 32
+
+[node name="SpikedBall12" parent="YSortWorldObjects/SpikedBalls" instance=ExtResource( 4 )]
+position = Vector2( 832, -216 )
+
+[node name="Hitbox" parent="YSortWorldObjects/SpikedBalls/SpikedBall12" index="2"]
+elevation = 32
+
+[node name="SpikedBall13" parent="YSortWorldObjects/SpikedBalls" instance=ExtResource( 4 )]
+position = Vector2( 736, -216 )
+
+[node name="Hitbox" parent="YSortWorldObjects/SpikedBalls/SpikedBall13" index="2"]
+elevation = 32
+
+[node name="SpikedBall14" parent="YSortWorldObjects/SpikedBalls" instance=ExtResource( 4 )]
+position = Vector2( 768, -184 )
+
+[node name="Hitbox" parent="YSortWorldObjects/SpikedBalls/SpikedBall14" index="2"]
+elevation = 32
+
+[node name="SpikedBall15" parent="YSortWorldObjects/SpikedBalls" instance=ExtResource( 4 )]
+position = Vector2( 808, -184 )
+
+[node name="Hitbox" parent="YSortWorldObjects/SpikedBalls/SpikedBall15" index="2"]
+elevation = 32
+
+[node name="SpikedBall16" parent="YSortWorldObjects/SpikedBalls" instance=ExtResource( 4 )]
+position = Vector2( 704, -512 )
+
+[node name="Hitbox" parent="YSortWorldObjects/SpikedBalls/SpikedBall16" index="2"]
+elevation = 32
+
+[node name="SpikedBall17" parent="YSortWorldObjects/SpikedBalls" instance=ExtResource( 4 )]
+position = Vector2( 720, -512 )
+
+[node name="Hitbox" parent="YSortWorldObjects/SpikedBalls/SpikedBall17" index="2"]
+elevation = 32
+
+[node name="SpikedBall18" parent="YSortWorldObjects/SpikedBalls" instance=ExtResource( 4 )]
+position = Vector2( 736, -512 )
+
+[node name="Hitbox" parent="YSortWorldObjects/SpikedBalls/SpikedBall18" index="2"]
+elevation = 32
+
+[node name="SpikedBall19" parent="YSortWorldObjects/SpikedBalls" instance=ExtResource( 4 )]
+position = Vector2( 752, -512 )
+
+[node name="Hitbox" parent="YSortWorldObjects/SpikedBalls/SpikedBall19" index="2"]
+elevation = 32
+
+[node name="SpikedBall20" parent="YSortWorldObjects/SpikedBalls" instance=ExtResource( 4 )]
+position = Vector2( 768, -512 )
+
+[node name="Hitbox" parent="YSortWorldObjects/SpikedBalls/SpikedBall20" index="2"]
+elevation = 32
+
+[node name="SpikedBall21" parent="YSortWorldObjects/SpikedBalls" instance=ExtResource( 4 )]
+position = Vector2( 784, -512 )
+
+[node name="Hitbox" parent="YSortWorldObjects/SpikedBalls/SpikedBall21" index="2"]
+elevation = 32
+
+[node name="SpikedBall22" parent="YSortWorldObjects/SpikedBalls" instance=ExtResource( 4 )]
+position = Vector2( 800, -512 )
+
+[node name="Hitbox" parent="YSortWorldObjects/SpikedBalls/SpikedBall22" index="2"]
+elevation = 32
+
+[node name="SpikedBall23" parent="YSortWorldObjects/SpikedBalls" instance=ExtResource( 4 )]
+position = Vector2( 816, -512 )
+
+[node name="Hitbox" parent="YSortWorldObjects/SpikedBalls/SpikedBall23" index="2"]
+elevation = 32
+
+[node name="SpikedBall24" parent="YSortWorldObjects/SpikedBalls" instance=ExtResource( 4 )]
+position = Vector2( 832, -512 )
+
+[node name="Hitbox" parent="YSortWorldObjects/SpikedBalls/SpikedBall24" index="2"]
+elevation = 32
+
+[node name="SpikedBall25" parent="YSortWorldObjects/SpikedBalls" instance=ExtResource( 4 )]
+position = Vector2( 848, -512 )
+
+[node name="Hitbox" parent="YSortWorldObjects/SpikedBalls/SpikedBall25" index="2"]
+elevation = 32
+
+[node name="SpikedBall26" parent="YSortWorldObjects/SpikedBalls" instance=ExtResource( 4 )]
+position = Vector2( 864, -512 )
+
+[node name="Hitbox" parent="YSortWorldObjects/SpikedBalls/SpikedBall26" index="2"]
+elevation = 32
+
+[node name="MovingSaws" type="YSort" parent="YSortWorldObjects"]
+
+[node name="MovingSaw" parent="YSortWorldObjects/MovingSaws" instance=ExtResource( 5 )]
+position = Vector2( 860, -384 )
 move_speed = 75
 
-[node name="Hitbox" parent="YSortWorldObjects/MovingSpikedBall" index="2"]
+[node name="Hitbox" parent="YSortWorldObjects/MovingSaws/MovingSaw" index="2"]
 elevation = 32
+
+[node name="Pos_A" parent="YSortWorldObjects/MovingSaws/MovingSaw" index="4"]
+position = Vector2( -152, 0 )
+
+[node name="MovingSaw2" parent="YSortWorldObjects/MovingSaws" instance=ExtResource( 5 )]
+position = Vector2( 708, -392 )
+move_speed = 75
+
+[node name="Hitbox" parent="YSortWorldObjects/MovingSaws/MovingSaw2" index="2"]
+elevation = 32
+
+[node name="AnimationPlayer" parent="YSortWorldObjects/MovingSaws/MovingSaw2" index="3"]
+anims/SawMove = SubResource( 1 )
+
+[node name="Pos_B" parent="YSortWorldObjects/MovingSaws/MovingSaw2" index="5"]
+position = Vector2( 152, 0 )
+
+[node name="MovingSaw5" parent="YSortWorldObjects/MovingSaws" instance=ExtResource( 5 )]
+position = Vector2( 796, -400 )
+move_speed = 75
+
+[node name="Hitbox" parent="YSortWorldObjects/MovingSaws/MovingSaw5" index="2"]
+elevation = 32
+
+[node name="AnimationPlayer" parent="YSortWorldObjects/MovingSaws/MovingSaw5" index="3"]
+anims/SawMove = SubResource( 2 )
+
+[node name="Pos_A" parent="YSortWorldObjects/MovingSaws/MovingSaw5" index="4"]
+position = Vector2( -88, 0 )
+
+[node name="Pos_B" parent="YSortWorldObjects/MovingSaws/MovingSaw5" index="5"]
+position = Vector2( 64, 0 )
+
+[node name="MovingSaw6" parent="YSortWorldObjects/MovingSaws" instance=ExtResource( 5 )]
+position = Vector2( 796, -408 )
+move_speed = 75
+
+[node name="Hitbox" parent="YSortWorldObjects/MovingSaws/MovingSaw6" index="2"]
+elevation = 32
+
+[node name="AnimationPlayer" parent="YSortWorldObjects/MovingSaws/MovingSaw6" index="3"]
+anims/SawMove = SubResource( 3 )
+
+[node name="Pos_A" parent="YSortWorldObjects/MovingSaws/MovingSaw6" index="4"]
+position = Vector2( 64, 0 )
+
+[node name="Pos_B" parent="YSortWorldObjects/MovingSaws/MovingSaw6" index="5"]
+position = Vector2( -88, 0 )
+
+[node name="MovingSaw3" parent="YSortWorldObjects/MovingSaws" instance=ExtResource( 5 )]
+position = Vector2( 860, -416 )
+move_speed = 75
+
+[node name="Hitbox" parent="YSortWorldObjects/MovingSaws/MovingSaw3" index="2"]
+elevation = 32
+
+[node name="AnimationPlayer" parent="YSortWorldObjects/MovingSaws/MovingSaw3" index="3"]
+anims/SawMove = SubResource( 4 )
+
+[node name="Pos_A" parent="YSortWorldObjects/MovingSaws/MovingSaw3" index="4"]
+position = Vector2( -152, 0 )
+
+[node name="MovingSaw4" parent="YSortWorldObjects/MovingSaws" instance=ExtResource( 5 )]
+position = Vector2( 708, -424 )
+move_speed = 75
+
+[node name="Hitbox" parent="YSortWorldObjects/MovingSaws/MovingSaw4" index="2"]
+elevation = 32
+
+[node name="AnimationPlayer" parent="YSortWorldObjects/MovingSaws/MovingSaw4" index="3"]
+anims/SawMove = SubResource( 5 )
+
+[node name="Pos_B" parent="YSortWorldObjects/MovingSaws/MovingSaw4" index="5"]
+position = Vector2( 152, 0 )
+
+[node name="MovingSaw7" parent="YSortWorldObjects/MovingSaws" instance=ExtResource( 5 )]
+position = Vector2( 796, -432 )
+move_speed = 75
+
+[node name="Hitbox" parent="YSortWorldObjects/MovingSaws/MovingSaw7" index="2"]
+elevation = 32
+
+[node name="AnimationPlayer" parent="YSortWorldObjects/MovingSaws/MovingSaw7" index="3"]
+anims/SawMove = SubResource( 6 )
+
+[node name="Pos_A" parent="YSortWorldObjects/MovingSaws/MovingSaw7" index="4"]
+position = Vector2( -88, 0 )
+
+[node name="Pos_B" parent="YSortWorldObjects/MovingSaws/MovingSaw7" index="5"]
+position = Vector2( 64, 0 )
+
+[node name="MovingSaw8" parent="YSortWorldObjects/MovingSaws" instance=ExtResource( 5 )]
+position = Vector2( 796, -440 )
+move_speed = 75
+
+[node name="Hitbox" parent="YSortWorldObjects/MovingSaws/MovingSaw8" index="2"]
+elevation = 32
+
+[node name="AnimationPlayer" parent="YSortWorldObjects/MovingSaws/MovingSaw8" index="3"]
+anims/SawMove = SubResource( 7 )
+
+[node name="Pos_A" parent="YSortWorldObjects/MovingSaws/MovingSaw8" index="4"]
+position = Vector2( 64, 0 )
+
+[node name="Pos_B" parent="YSortWorldObjects/MovingSaws/MovingSaw8" index="5"]
+position = Vector2( -88, 0 )
+
+[node name="MovingSaw9" parent="YSortWorldObjects/MovingSaws" instance=ExtResource( 5 )]
+position = Vector2( 860, -448 )
+move_speed = 75
+
+[node name="Hitbox" parent="YSortWorldObjects/MovingSaws/MovingSaw9" index="2"]
+elevation = 32
+
+[node name="AnimationPlayer" parent="YSortWorldObjects/MovingSaws/MovingSaw9" index="3"]
+anims/SawMove = SubResource( 8 )
+
+[node name="Pos_A" parent="YSortWorldObjects/MovingSaws/MovingSaw9" index="4"]
+position = Vector2( -152, 0 )
+
+[node name="MovingSaw10" parent="YSortWorldObjects/MovingSaws" instance=ExtResource( 5 )]
+position = Vector2( 708, -456 )
+move_speed = 75
+
+[node name="Hitbox" parent="YSortWorldObjects/MovingSaws/MovingSaw10" index="2"]
+elevation = 32
+
+[node name="AnimationPlayer" parent="YSortWorldObjects/MovingSaws/MovingSaw10" index="3"]
+anims/SawMove = SubResource( 9 )
+
+[node name="Pos_B" parent="YSortWorldObjects/MovingSaws/MovingSaw10" index="5"]
+position = Vector2( 152, 0 )
+
+[node name="MovingSaw11" parent="YSortWorldObjects/MovingSaws" instance=ExtResource( 5 )]
+position = Vector2( 796, -464 )
+move_speed = 75
+
+[node name="Hitbox" parent="YSortWorldObjects/MovingSaws/MovingSaw11" index="2"]
+elevation = 32
+
+[node name="AnimationPlayer" parent="YSortWorldObjects/MovingSaws/MovingSaw11" index="3"]
+anims/SawMove = SubResource( 10 )
+
+[node name="Pos_A" parent="YSortWorldObjects/MovingSaws/MovingSaw11" index="4"]
+position = Vector2( -88, 0 )
+
+[node name="Pos_B" parent="YSortWorldObjects/MovingSaws/MovingSaw11" index="5"]
+position = Vector2( 64, 0 )
+
+[node name="MovingSaw12" parent="YSortWorldObjects/MovingSaws" instance=ExtResource( 5 )]
+position = Vector2( 796, -472 )
+move_speed = 75
+
+[node name="Hitbox" parent="YSortWorldObjects/MovingSaws/MovingSaw12" index="2"]
+elevation = 32
+
+[node name="AnimationPlayer" parent="YSortWorldObjects/MovingSaws/MovingSaw12" index="3"]
+anims/SawMove = SubResource( 11 )
+
+[node name="Pos_A" parent="YSortWorldObjects/MovingSaws/MovingSaw12" index="4"]
+position = Vector2( 64, 0 )
+
+[node name="Pos_B" parent="YSortWorldObjects/MovingSaws/MovingSaw12" index="5"]
+position = Vector2( -88, 0 )
+
+[node name="MovingSaw13" parent="YSortWorldObjects/MovingSaws" instance=ExtResource( 5 )]
+position = Vector2( 860, -480 )
+move_speed = 75
+
+[node name="Hitbox" parent="YSortWorldObjects/MovingSaws/MovingSaw13" index="2"]
+elevation = 32
+
+[node name="AnimationPlayer" parent="YSortWorldObjects/MovingSaws/MovingSaw13" index="3"]
+anims/SawMove = SubResource( 12 )
+
+[node name="Pos_A" parent="YSortWorldObjects/MovingSaws/MovingSaw13" index="4"]
+position = Vector2( -152, 0 )
+
+[node name="MovingSaw14" parent="YSortWorldObjects/MovingSaws" instance=ExtResource( 5 )]
+position = Vector2( 708, -488 )
+move_speed = 75
+
+[node name="Hitbox" parent="YSortWorldObjects/MovingSaws/MovingSaw14" index="2"]
+elevation = 32
+
+[node name="AnimationPlayer" parent="YSortWorldObjects/MovingSaws/MovingSaw14" index="3"]
+anims/SawMove = SubResource( 13 )
+
+[node name="Pos_B" parent="YSortWorldObjects/MovingSaws/MovingSaw14" index="5"]
+position = Vector2( 152, 0 )
+
+[node name="MovingSaw15" parent="YSortWorldObjects/MovingSaws" instance=ExtResource( 5 )]
+position = Vector2( 860, -552 )
+move_speed = 75
+
+[node name="Hitbox" parent="YSortWorldObjects/MovingSaws/MovingSaw15" index="2"]
+elevation = 32
+
+[node name="AnimationPlayer" parent="YSortWorldObjects/MovingSaws/MovingSaw15" index="3"]
+anims/SawMove = SubResource( 14 )
+
+[node name="Pos_A" parent="YSortWorldObjects/MovingSaws/MovingSaw15" index="4"]
+position = Vector2( -152, 0 )
+
+[node name="MovingSaw16" parent="YSortWorldObjects/MovingSaws" instance=ExtResource( 5 )]
+position = Vector2( 708, -560 )
+move_speed = 75
+
+[node name="Hitbox" parent="YSortWorldObjects/MovingSaws/MovingSaw16" index="2"]
+elevation = 32
+
+[node name="AnimationPlayer" parent="YSortWorldObjects/MovingSaws/MovingSaw16" index="3"]
+anims/SawMove = SubResource( 15 )
+
+[node name="Pos_B" parent="YSortWorldObjects/MovingSaws/MovingSaw16" index="5"]
+position = Vector2( 152, 0 )
+
+[node name="MovingSaw17" parent="YSortWorldObjects/MovingSaws" instance=ExtResource( 5 )]
+position = Vector2( 860, -568 )
+move_speed = 75
+
+[node name="Hitbox" parent="YSortWorldObjects/MovingSaws/MovingSaw17" index="2"]
+elevation = 32
+
+[node name="AnimationPlayer" parent="YSortWorldObjects/MovingSaws/MovingSaw17" index="3"]
+anims/SawMove = SubResource( 16 )
+
+[node name="Pos_A" parent="YSortWorldObjects/MovingSaws/MovingSaw17" index="4"]
+position = Vector2( -152, 0 )
+
+[node name="MovingSaw18" parent="YSortWorldObjects/MovingSaws" instance=ExtResource( 5 )]
+position = Vector2( 708, -576 )
+move_speed = 75
+
+[node name="Hitbox" parent="YSortWorldObjects/MovingSaws/MovingSaw18" index="2"]
+elevation = 32
+
+[node name="AnimationPlayer" parent="YSortWorldObjects/MovingSaws/MovingSaw18" index="3"]
+anims/SawMove = SubResource( 17 )
+
+[node name="Pos_B" parent="YSortWorldObjects/MovingSaws/MovingSaw18" index="5"]
+position = Vector2( 152, 0 )
+
+[node name="MovingSaw19" parent="YSortWorldObjects/MovingSaws" instance=ExtResource( 5 )]
+position = Vector2( 860, -584 )
+move_speed = 75
+
+[node name="Hitbox" parent="YSortWorldObjects/MovingSaws/MovingSaw19" index="2"]
+elevation = 32
+
+[node name="AnimationPlayer" parent="YSortWorldObjects/MovingSaws/MovingSaw19" index="3"]
+anims/SawMove = SubResource( 18 )
+
+[node name="Pos_A" parent="YSortWorldObjects/MovingSaws/MovingSaw19" index="4"]
+position = Vector2( -152, 0 )
+
+[node name="MovingSaw20" parent="YSortWorldObjects/MovingSaws" instance=ExtResource( 5 )]
+position = Vector2( 708, -592 )
+move_speed = 75
+
+[node name="Hitbox" parent="YSortWorldObjects/MovingSaws/MovingSaw20" index="2"]
+elevation = 32
+
+[node name="AnimationPlayer" parent="YSortWorldObjects/MovingSaws/MovingSaw20" index="3"]
+anims/SawMove = SubResource( 19 )
+
+[node name="Pos_B" parent="YSortWorldObjects/MovingSaws/MovingSaw20" index="5"]
+position = Vector2( 152, 0 )
+
+[node name="MovingSaw21" parent="YSortWorldObjects/MovingSaws" instance=ExtResource( 5 )]
+position = Vector2( 860, -600 )
+move_speed = 75
+
+[node name="Hitbox" parent="YSortWorldObjects/MovingSaws/MovingSaw21" index="2"]
+elevation = 32
+
+[node name="AnimationPlayer" parent="YSortWorldObjects/MovingSaws/MovingSaw21" index="3"]
+anims/SawMove = SubResource( 20 )
+
+[node name="Pos_A" parent="YSortWorldObjects/MovingSaws/MovingSaw21" index="4"]
+position = Vector2( -152, 0 )
+
+[node name="MovingSaw22" parent="YSortWorldObjects/MovingSaws" instance=ExtResource( 5 )]
+position = Vector2( 708, -608 )
+move_speed = 75
+
+[node name="Hitbox" parent="YSortWorldObjects/MovingSaws/MovingSaw22" index="2"]
+elevation = 32
+
+[node name="AnimationPlayer" parent="YSortWorldObjects/MovingSaws/MovingSaw22" index="3"]
+anims/SawMove = SubResource( 21 )
+
+[node name="Pos_B" parent="YSortWorldObjects/MovingSaws/MovingSaw22" index="5"]
+position = Vector2( 152, 0 )
+
+[node name="MovingSaw23" parent="YSortWorldObjects/MovingSaws" instance=ExtResource( 5 )]
+position = Vector2( 860, -616 )
+move_speed = 75
+
+[node name="Hitbox" parent="YSortWorldObjects/MovingSaws/MovingSaw23" index="2"]
+elevation = 32
+
+[node name="AnimationPlayer" parent="YSortWorldObjects/MovingSaws/MovingSaw23" index="3"]
+anims/SawMove = SubResource( 22 )
+
+[node name="Pos_A" parent="YSortWorldObjects/MovingSaws/MovingSaw23" index="4"]
+position = Vector2( -152, 0 )
+
+[node name="MovingSaw24" parent="YSortWorldObjects/MovingSaws" instance=ExtResource( 5 )]
+position = Vector2( 708, -624 )
+move_speed = 75
+
+[node name="Hitbox" parent="YSortWorldObjects/MovingSaws/MovingSaw24" index="2"]
+elevation = 32
+
+[node name="AnimationPlayer" parent="YSortWorldObjects/MovingSaws/MovingSaw24" index="3"]
+anims/SawMove = SubResource( 23 )
+
+[node name="Pos_B" parent="YSortWorldObjects/MovingSaws/MovingSaw24" index="5"]
+position = Vector2( 152, 0 )
+
+[node name="MovingSaw25" parent="YSortWorldObjects/MovingSaws" instance=ExtResource( 5 )]
+position = Vector2( 860, -632 )
+move_speed = 75
+
+[node name="Hitbox" parent="YSortWorldObjects/MovingSaws/MovingSaw25" index="2"]
+elevation = 32
+
+[node name="AnimationPlayer" parent="YSortWorldObjects/MovingSaws/MovingSaw25" index="3"]
+anims/SawMove = SubResource( 24 )
+
+[node name="Pos_A" parent="YSortWorldObjects/MovingSaws/MovingSaw25" index="4"]
+position = Vector2( -152, 0 )
+
+[node name="MovingSaw26" parent="YSortWorldObjects/MovingSaws" instance=ExtResource( 5 )]
+position = Vector2( 708, -640 )
+move_speed = 75
+
+[node name="Hitbox" parent="YSortWorldObjects/MovingSaws/MovingSaw26" index="2"]
+elevation = 32
+
+[node name="AnimationPlayer" parent="YSortWorldObjects/MovingSaws/MovingSaw26" index="3"]
+anims/SawMove = SubResource( 25 )
+
+[node name="Pos_B" parent="YSortWorldObjects/MovingSaws/MovingSaw26" index="5"]
+position = Vector2( 152, 0 )
+
+[node name="MovingSaw27" parent="YSortWorldObjects/MovingSaws" instance=ExtResource( 5 )]
+position = Vector2( 860, -648 )
+move_speed = 75
+
+[node name="Hitbox" parent="YSortWorldObjects/MovingSaws/MovingSaw27" index="2"]
+elevation = 32
+
+[node name="AnimationPlayer" parent="YSortWorldObjects/MovingSaws/MovingSaw27" index="3"]
+anims/SawMove = SubResource( 26 )
+
+[node name="Pos_A" parent="YSortWorldObjects/MovingSaws/MovingSaw27" index="4"]
+position = Vector2( -152, 0 )
+
+[node name="MovingSaw28" parent="YSortWorldObjects/MovingSaws" instance=ExtResource( 5 )]
+position = Vector2( 708, -656 )
+move_speed = 75
+
+[node name="Hitbox" parent="YSortWorldObjects/MovingSaws/MovingSaw28" index="2"]
+elevation = 32
+
+[node name="AnimationPlayer" parent="YSortWorldObjects/MovingSaws/MovingSaw28" index="3"]
+anims/SawMove = SubResource( 27 )
+
+[node name="Pos_B" parent="YSortWorldObjects/MovingSaws/MovingSaw28" index="5"]
+position = Vector2( 152, 0 )
+
+[node name="MovingSaw29" parent="YSortWorldObjects/MovingSaws" instance=ExtResource( 5 )]
+position = Vector2( 860, -664 )
+move_speed = 75
+
+[node name="Hitbox" parent="YSortWorldObjects/MovingSaws/MovingSaw29" index="2"]
+elevation = 32
+
+[node name="AnimationPlayer" parent="YSortWorldObjects/MovingSaws/MovingSaw29" index="3"]
+anims/SawMove = SubResource( 28 )
+
+[node name="Pos_A" parent="YSortWorldObjects/MovingSaws/MovingSaw29" index="4"]
+position = Vector2( -152, 0 )
+
+[node name="MovingSaw30" parent="YSortWorldObjects/MovingSaws" instance=ExtResource( 5 )]
+position = Vector2( 708, -672 )
+move_speed = 75
+
+[node name="Hitbox" parent="YSortWorldObjects/MovingSaws/MovingSaw30" index="2"]
+elevation = 32
+
+[node name="AnimationPlayer" parent="YSortWorldObjects/MovingSaws/MovingSaw30" index="3"]
+anims/SawMove = SubResource( 29 )
+
+[node name="Pos_B" parent="YSortWorldObjects/MovingSaws/MovingSaw30" index="5"]
+position = Vector2( 152, 0 )
+
+[node name="SawPath" type="TileMap" parent="YSortWorldObjects"]
+position = Vector2( 0, 1 )
+tile_set = SubResource( 30 )
+cell_size = Vector2( 16, 8 )
+cell_y_sort = true
+format = 1
+tile_data = PoolIntArray( -5636053, 1, 0, -5636051, 0, 0, -5636049, 0, 0, -5636048, 0, 0, -5636047, 0, 0, -5636046, 0, 0, -5636045, 0, 0, -5636043, 2, 0, -5570517, 1, 0, -5570515, 0, 0, -5570513, 0, 0, -5570512, 0, 0, -5570511, 0, 0, -5570510, 0, 0, -5570509, 0, 0, -5570507, 2, 0, -5504981, 1, 0, -5504979, 0, 0, -5504978, 0, 0, -5504977, 0, 0, -5504976, 0, 0, -5504975, 0, 0, -5504974, 0, 0, -5504973, 0, 0, -5504971, 2, 0, -5439445, 1, 0, -5439443, 0, 0, -5439442, 0, 0, -5439441, 0, 0, -5439440, 0, 0, -5439439, 0, 0, -5439438, 0, 0, -5439437, 0, 0, -5439435, 2, 0, -5373909, 1, 0, -5373907, 0, 0, -5373906, 0, 0, -5373905, 0, 0, -5373904, 0, 0, -5373903, 0, 0, -5373902, 0, 0, -5373901, 0, 0, -5373899, 2, 0, -5308373, 1, 0, -5308371, 0, 0, -5308370, 0, 0, -5308369, 0, 0, -5308368, 0, 0, -5308367, 0, 0, -5308366, 0, 0, -5308365, 0, 0, -5308363, 2, 0, -5242837, 1, 0, -5242835, 0, 0, -5242834, 0, 0, -5242833, 0, 0, -5242832, 0, 0, -5242831, 0, 0, -5242830, 0, 0, -5242829, 0, 0, -5242827, 2, 0, -5177301, 1, 0, -5177299, 0, 0, -5177298, 0, 0, -5177297, 0, 0, -5177296, 0, 0, -5177295, 0, 0, -5177294, 0, 0, -5177293, 0, 0, -5177291, 2, 0, -5111765, 1, 0, -5111763, 0, 0, -5111762, 0, 0, -5111761, 0, 0, -5111760, 0, 0, -5111759, 0, 0, -5111758, 0, 0, -5111757, 0, 0, -5111755, 2, 0, -5046229, 1, 0, -5046227, 0, 0, -5046226, 0, 0, -5046225, 0, 0, -5046224, 0, 0, -5046223, 0, 0, -5046222, 0, 0, -5046221, 0, 0, -5046219, 2, 0, -4980693, 1, 0, -4980691, 0, 0, -4980689, 0, 0, -4980688, 0, 0, -4980687, 0, 0, -4980686, 0, 0, -4980685, 0, 0, -4980683, 2, 0, -4915157, 1, 0, -4915155, 0, 0, -4915153, 0, 0, -4915152, 0, 0, -4915151, 0, 0, -4915150, 0, 0, -4915149, 0, 0, -4915147, 2, 0, -4849621, 1, 0, -4849619, 0, 0, -4849618, 0, 0, -4849617, 0, 0, -4849616, 0, 0, -4849614, 0, 0, -4849613, 0, 0, -4849611, 2, 0, -4784085, 1, 0, -4784083, 0, 0, -4784082, 0, 0, -4784081, 0, 0, -4784080, 0, 0, -4784078, 0, 0, -4784077, 0, 0, -4784075, 2, 0, -4718549, 1, 0, -4718547, 0, 0, -4718546, 0, 0, -4718545, 0, 0, -4718544, 0, 0, -4718543, 0, 0, -4718542, 0, 0, -4718541, 0, 0, -4718539, 2, 0, -4653013, 1, 0, -4653011, 0, 0, -4653010, 0, 0, -4653009, 0, 0, -4653008, 0, 0, -4653007, 0, 0, -4653006, 0, 0, -4653005, 0, 0, -4653003, 2, 0, -4128725, 1, 0, -4128723, 0, 0, -4128722, 0, 0, -4128721, 0, 0, -4128720, 0, 0, -4128719, 0, 0, -4128718, 0, 0, -4128717, 0, 0, -4128715, 2, 0, -4063189, 1, 0, -4063187, 0, 0, -4063185, 0, 0, -4063184, 0, 0, -4063183, 0, 0, -4063181, 0, 0, -4063179, 2, 0, -3997653, 1, 0, -3997651, 0, 0, -3997650, 0, 0, -3997649, 0, 0, -3997648, 0, 0, -3997646, 0, 0, -3997645, 0, 0, -3997643, 2, 0, -3932117, 1, 0, -3932115, 0, 0, -3932114, 0, 0, -3932113, 0, 0, -3932112, 0, 0, -3932110, 0, 0, -3932109, 0, 0, -3932107, 2, 0, -3866581, 1, 0, -3866579, 0, 0, -3866578, 0, 0, -3866577, 0, 0, -3866576, 0, 0, -3866575, 0, 0, -3866574, 0, 0, -3866573, 0, 0, -3866571, 2, 0, -3801045, 1, 0, -3801043, 0, 0, -3801042, 0, 0, -3801041, 0, 0, -3801040, 0, 0, -3801039, 0, 0, -3801038, 0, 0, -3801037, 0, 0, -3801035, 2, 0, -3735509, 1, 0, -3735507, 0, 0, -3735506, 0, 0, -3735505, 0, 0, -3735503, 0, 0, -3735501, 0, 0, -3735499, 2, 0, -3669973, 1, 0, -3669971, 0, 0, -3669970, 0, 0, -3669968, 0, 0, -3669967, 0, 0, -3669966, 0, 0, -3669965, 0, 0, -3669963, 2, 0, -3604437, 1, 0, -3604435, 0, 0, -3604434, 0, 0, -3604432, 0, 0, -3604431, 0, 0, -3604430, 0, 0, -3604429, 0, 0, -3604427, 2, 0, -3538901, 1, 0, -3538899, 0, 0, -3538898, 0, 0, -3538897, 0, 0, -3538896, 0, 0, -3538895, 0, 0, -3538894, 0, 0, -3538893, 0, 0, -3538891, 2, 0, -3473365, 1, 0, -3473363, 0, 0, -3473362, 0, 0, -3473361, 0, 0, -3473360, 0, 0, -3473359, 0, 0, -3473358, 0, 0, -3473357, 0, 0, -3473355, 2, 0, -3407829, 1, 0, -3407827, 0, 0, -3407826, 0, 0, -3407825, 0, 0, -3407823, 0, 0, -3407822, 0, 0, -3407821, 0, 0, -3407819, 2, 0, -3342293, 1, 0, -3342291, 0, 0, -3342290, 0, 0, -3342289, 0, 0, -3342288, 0, 0, -3342287, 0, 0, -3342286, 0, 0, -3342285, 0, 0, -3342283, 2, 0, -3276757, 1, 0, -3276755, 0, 0, -3276754, 0, 0, -3276753, 0, 0, -3276752, 0, 0, -3276751, 0, 0, -3276750, 0, 0, -3276749, 0, 0, -3276747, 2, 0 )
 
 [node name="Elevation1Collisions" type="Node" parent="."]
 
@@ -98,150 +1211,242 @@ elevation = 32
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision/EntryArea1" index="0"]
 position = Vector2( 0, 24 )
-shape = SubResource( 1 )
+shape = SubResource( 31 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision/ElevatedArea1" index="0"]
 position = Vector2( 0, -8 )
-shape = SubResource( 2 )
+shape = SubResource( 32 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision/BoundaryBody1" index="0"]
 position = Vector2( 0, 8 )
-shape = SubResource( 3 )
+shape = SubResource( 33 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision/WallBody1" index="0"]
 position = Vector2( 0, 48 )
-shape = SubResource( 4 )
+shape = SubResource( 34 )
 
 [node name="Elevation1Collision2" parent="Elevation1Collisions" instance=ExtResource( 1 )]
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision2/EntryArea1" index="0"]
 position = Vector2( 224, 24 )
-shape = SubResource( 1 )
+shape = SubResource( 31 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision2/ElevatedArea1" index="0"]
 position = Vector2( 224, -8 )
-shape = SubResource( 2 )
+shape = SubResource( 32 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision2/BoundaryBody1" index="0"]
 position = Vector2( 224, 8 )
-shape = SubResource( 3 )
+shape = SubResource( 33 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision2/WallBody1" index="0"]
 position = Vector2( 224, 48 )
-shape = SubResource( 4 )
+shape = SubResource( 34 )
 
 [node name="Elevation1Collision3" parent="Elevation1Collisions" instance=ExtResource( 1 )]
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision3/EntryArea1" index="0"]
 position = Vector2( 328, 24 )
-shape = SubResource( 5 )
+shape = SubResource( 35 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision3/ElevatedArea1" index="0"]
 position = Vector2( 328, -8 )
-shape = SubResource( 6 )
+shape = SubResource( 36 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision3/BoundaryBody1" index="0"]
 position = Vector2( 328, 8 )
-shape = SubResource( 7 )
+shape = SubResource( 37 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision3/WallBody1" index="0"]
 position = Vector2( 328, 32 )
-shape = SubResource( 8 )
+shape = SubResource( 38 )
 
 [node name="Elevation1Collision4" parent="Elevation1Collisions" instance=ExtResource( 1 )]
 position = Vector2( 48, -16 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision4/EntryArea1" index="0"]
 position = Vector2( 328, 24 )
-shape = SubResource( 5 )
+shape = SubResource( 35 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision4/ElevatedArea1" index="0"]
 position = Vector2( 328, -8 )
-shape = SubResource( 6 )
+shape = SubResource( 36 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision4/BoundaryBody1" index="0"]
 position = Vector2( 328, 8 )
-shape = SubResource( 7 )
+shape = SubResource( 37 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision4/WallBody1" index="0"]
 position = Vector2( 328, 32 )
-shape = SubResource( 8 )
+shape = SubResource( 38 )
 
 [node name="Elevation1Collision5" parent="Elevation1Collisions" instance=ExtResource( 1 )]
 position = Vector2( 96, -32 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision5/EntryArea1" index="0"]
 position = Vector2( 328, 24 )
-shape = SubResource( 5 )
+shape = SubResource( 35 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision5/ElevatedArea1" index="0"]
 position = Vector2( 328, -8 )
-shape = SubResource( 6 )
+shape = SubResource( 36 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision5/BoundaryBody1" index="0"]
 position = Vector2( 328, 8 )
-shape = SubResource( 7 )
+shape = SubResource( 37 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision5/WallBody1" index="0"]
 position = Vector2( 328, 32 )
-shape = SubResource( 8 )
+shape = SubResource( 38 )
 
 [node name="Elevation1Collision6" parent="Elevation1Collisions" instance=ExtResource( 1 )]
 position = Vector2( 224, -32 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision6/EntryArea1" index="0"]
 position = Vector2( 328, 24 )
-shape = SubResource( 5 )
+shape = SubResource( 35 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision6/ElevatedArea1" index="0"]
 position = Vector2( 328, -8 )
-shape = SubResource( 6 )
+shape = SubResource( 36 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision6/BoundaryBody1" index="0"]
 position = Vector2( 328, 8 )
-shape = SubResource( 7 )
+shape = SubResource( 37 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision6/WallBody1" index="0"]
 position = Vector2( 328, 32 )
-shape = SubResource( 8 )
+shape = SubResource( 38 )
 
 [node name="Elevation1Collision7" parent="Elevation1Collisions" instance=ExtResource( 1 )]
 position = Vector2( 272, -32 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision7/EntryArea1" index="0"]
 position = Vector2( 328, 24 )
-shape = SubResource( 5 )
+shape = SubResource( 35 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision7/ElevatedArea1" index="0"]
 position = Vector2( 328, -8 )
-shape = SubResource( 6 )
+shape = SubResource( 36 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision7/BoundaryBody1" index="0"]
 position = Vector2( 328, 8 )
-shape = SubResource( 7 )
+shape = SubResource( 37 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision7/WallBody1" index="0"]
 position = Vector2( 328, 32 )
-shape = SubResource( 8 )
+shape = SubResource( 38 )
 
 [node name="Elevation1Collision8" parent="Elevation1Collisions" instance=ExtResource( 1 )]
 position = Vector2( 320, -32 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision8/EntryArea1" index="0"]
 position = Vector2( 328, 24 )
-shape = SubResource( 5 )
+shape = SubResource( 35 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision8/ElevatedArea1" index="0"]
 position = Vector2( 328, -8 )
-shape = SubResource( 6 )
+shape = SubResource( 36 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision8/BoundaryBody1" index="0"]
 position = Vector2( 328, 8 )
-shape = SubResource( 7 )
+shape = SubResource( 37 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision8/WallBody1" index="0"]
 position = Vector2( 328, 32 )
-shape = SubResource( 8 )
+shape = SubResource( 38 )
+
+[node name="Elevation1Collision9" parent="Elevation1Collisions" instance=ExtResource( 1 )]
+
+[node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision9/EntryArea1" index="0"]
+position = Vector2( 784, -40 )
+shape = SubResource( 39 )
+
+[node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision9/ElevatedArea1" index="0"]
+position = Vector2( 784, -72 )
+shape = SubResource( 40 )
+
+[node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision9/BoundaryBody1" index="0"]
+position = Vector2( 784, -56 )
+shape = SubResource( 41 )
+
+[node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision9/WallBody1" index="0"]
+position = Vector2( 784, -32 )
+shape = SubResource( 42 )
+
+[node name="Elevation1Collision10" parent="Elevation1Collisions" instance=ExtResource( 1 )]
+position = Vector2( 0, -128 )
+
+[node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision10/EntryArea1" index="0"]
+position = Vector2( 784, -40 )
+shape = SubResource( 39 )
+
+[node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision10/ElevatedArea1" index="0"]
+position = Vector2( 784, -72 )
+shape = SubResource( 40 )
+
+[node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision10/BoundaryBody1" index="0"]
+position = Vector2( 784, -56 )
+shape = SubResource( 41 )
+
+[node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision10/WallBody1" index="0"]
+position = Vector2( 784, -32 )
+shape = SubResource( 42 )
+
+[node name="Elevation1Collision12" parent="Elevation1Collisions" instance=ExtResource( 1 )]
+
+[node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision12/EntryArea1" index="0"]
+position = Vector2( 744, -264 )
+shape = SubResource( 43 )
+
+[node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision12/ElevatedArea1" index="0"]
+position = Vector2( 744, -296 )
+shape = SubResource( 44 )
+
+[node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision12/BoundaryBody1" index="0"]
+position = Vector2( 744, -280 )
+shape = SubResource( 45 )
+
+[node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision12/WallBody1" index="0"]
+position = Vector2( 744, -256 )
+shape = SubResource( 46 )
+
+[node name="Elevation1Collision13" parent="Elevation1Collisions" instance=ExtResource( 1 )]
+position = Vector2( 80, 0 )
+
+[node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision13/EntryArea1" index="0"]
+position = Vector2( 744, -264 )
+shape = SubResource( 43 )
+
+[node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision13/ElevatedArea1" index="0"]
+position = Vector2( 744, -296 )
+shape = SubResource( 44 )
+
+[node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision13/BoundaryBody1" index="0"]
+position = Vector2( 744, -280 )
+shape = SubResource( 45 )
+
+[node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision13/WallBody1" index="0"]
+position = Vector2( 744, -256 )
+shape = SubResource( 46 )
+
+[node name="Elevation1Collision11" parent="Elevation1Collisions" instance=ExtResource( 1 )]
+
+[node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision11/EntryArea1" index="0"]
+position = Vector2( 784, -496 )
+shape = SubResource( 47 )
+
+[node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision11/ElevatedArea1" index="0"]
+position = Vector2( 784, -528 )
+shape = SubResource( 48 )
+
+[node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision11/BoundaryBody1" index="0"]
+position = Vector2( 784, -512 )
+shape = SubResource( 49 )
+
+[node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision11/WallBody1" index="0"]
+position = Vector2( 784, -352 )
+shape = SubResource( 50 )
 
 [editable path="YSortWorldObjects/SpikedBalls/SpikedBall"]
 
@@ -251,7 +1456,109 @@ shape = SubResource( 8 )
 
 [editable path="YSortWorldObjects/SpikedBalls/SpikedBall4"]
 
-[editable path="YSortWorldObjects/MovingSpikedBall"]
+[editable path="YSortWorldObjects/SpikedBalls/SpikedBall5"]
+
+[editable path="YSortWorldObjects/SpikedBalls/SpikedBall6"]
+
+[editable path="YSortWorldObjects/SpikedBalls/SpikedBall7"]
+
+[editable path="YSortWorldObjects/SpikedBalls/SpikedBall8"]
+
+[editable path="YSortWorldObjects/SpikedBalls/SpikedBall9"]
+
+[editable path="YSortWorldObjects/SpikedBalls/SpikedBall10"]
+
+[editable path="YSortWorldObjects/SpikedBalls/SpikedBall11"]
+
+[editable path="YSortWorldObjects/SpikedBalls/SpikedBall12"]
+
+[editable path="YSortWorldObjects/SpikedBalls/SpikedBall13"]
+
+[editable path="YSortWorldObjects/SpikedBalls/SpikedBall14"]
+
+[editable path="YSortWorldObjects/SpikedBalls/SpikedBall15"]
+
+[editable path="YSortWorldObjects/SpikedBalls/SpikedBall16"]
+
+[editable path="YSortWorldObjects/SpikedBalls/SpikedBall17"]
+
+[editable path="YSortWorldObjects/SpikedBalls/SpikedBall18"]
+
+[editable path="YSortWorldObjects/SpikedBalls/SpikedBall19"]
+
+[editable path="YSortWorldObjects/SpikedBalls/SpikedBall20"]
+
+[editable path="YSortWorldObjects/SpikedBalls/SpikedBall21"]
+
+[editable path="YSortWorldObjects/SpikedBalls/SpikedBall22"]
+
+[editable path="YSortWorldObjects/SpikedBalls/SpikedBall23"]
+
+[editable path="YSortWorldObjects/SpikedBalls/SpikedBall24"]
+
+[editable path="YSortWorldObjects/SpikedBalls/SpikedBall25"]
+
+[editable path="YSortWorldObjects/SpikedBalls/SpikedBall26"]
+
+[editable path="YSortWorldObjects/MovingSaws/MovingSaw"]
+
+[editable path="YSortWorldObjects/MovingSaws/MovingSaw2"]
+
+[editable path="YSortWorldObjects/MovingSaws/MovingSaw5"]
+
+[editable path="YSortWorldObjects/MovingSaws/MovingSaw6"]
+
+[editable path="YSortWorldObjects/MovingSaws/MovingSaw3"]
+
+[editable path="YSortWorldObjects/MovingSaws/MovingSaw4"]
+
+[editable path="YSortWorldObjects/MovingSaws/MovingSaw7"]
+
+[editable path="YSortWorldObjects/MovingSaws/MovingSaw8"]
+
+[editable path="YSortWorldObjects/MovingSaws/MovingSaw9"]
+
+[editable path="YSortWorldObjects/MovingSaws/MovingSaw10"]
+
+[editable path="YSortWorldObjects/MovingSaws/MovingSaw11"]
+
+[editable path="YSortWorldObjects/MovingSaws/MovingSaw12"]
+
+[editable path="YSortWorldObjects/MovingSaws/MovingSaw13"]
+
+[editable path="YSortWorldObjects/MovingSaws/MovingSaw14"]
+
+[editable path="YSortWorldObjects/MovingSaws/MovingSaw15"]
+
+[editable path="YSortWorldObjects/MovingSaws/MovingSaw16"]
+
+[editable path="YSortWorldObjects/MovingSaws/MovingSaw17"]
+
+[editable path="YSortWorldObjects/MovingSaws/MovingSaw18"]
+
+[editable path="YSortWorldObjects/MovingSaws/MovingSaw19"]
+
+[editable path="YSortWorldObjects/MovingSaws/MovingSaw20"]
+
+[editable path="YSortWorldObjects/MovingSaws/MovingSaw21"]
+
+[editable path="YSortWorldObjects/MovingSaws/MovingSaw22"]
+
+[editable path="YSortWorldObjects/MovingSaws/MovingSaw23"]
+
+[editable path="YSortWorldObjects/MovingSaws/MovingSaw24"]
+
+[editable path="YSortWorldObjects/MovingSaws/MovingSaw25"]
+
+[editable path="YSortWorldObjects/MovingSaws/MovingSaw26"]
+
+[editable path="YSortWorldObjects/MovingSaws/MovingSaw27"]
+
+[editable path="YSortWorldObjects/MovingSaws/MovingSaw28"]
+
+[editable path="YSortWorldObjects/MovingSaws/MovingSaw29"]
+
+[editable path="YSortWorldObjects/MovingSaws/MovingSaw30"]
 
 [editable path="Elevation1Collisions/Elevation1Collision"]
 
@@ -268,3 +1575,13 @@ shape = SubResource( 8 )
 [editable path="Elevation1Collisions/Elevation1Collision7"]
 
 [editable path="Elevation1Collisions/Elevation1Collision8"]
+
+[editable path="Elevation1Collisions/Elevation1Collision9"]
+
+[editable path="Elevation1Collisions/Elevation1Collision10"]
+
+[editable path="Elevation1Collisions/Elevation1Collision12"]
+
+[editable path="Elevation1Collisions/Elevation1Collision13"]
+
+[editable path="Elevation1Collisions/Elevation1Collision11"]

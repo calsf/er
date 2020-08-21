@@ -122,8 +122,8 @@ func _physics_process(delta):
 	
 	# Maintain sprite positions when grounded
 	if (added_height <= 0):
-		player_sprite.position.y = -6
-		player_shadow.position.y = 2
+		player_sprite.position.y = -7
+		player_shadow.position.y = 1
 	
 	# Change player sprite's z index based on current height
 	player_sprite.z_index = (ground_elevation + added_height) / GlobalConst.ELEVATION_UNIT
