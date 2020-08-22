@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Time.gd" type="Script" id=1]
+
+[node name="Time" type="Control"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TimeText" type="RichTextLabel" parent="."]
+margin_right = 128.0
+margin_bottom = 32.0
+__meta__ = {
+"_edit_use_anchors_": false
+}

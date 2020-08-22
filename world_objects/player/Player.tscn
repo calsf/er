@@ -970,10 +970,8 @@ blend_point_7/node = SubResource( 89 )
 blend_point_7/pos = Vector2( 0.4, -0.6 )
 blend_mode = 1
 
-[sub_resource type="AnimationNodeAnimation" id=113]
+[sub_resource type="AnimationNodeAnimation" id=91]
 animation = "Respawn"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=91]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=92]
 
@@ -997,19 +995,21 @@ animation = "Respawn"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=102]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=103]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=104]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=105]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=106]
+
 [sub_resource type="AnimationNodeStateMachineTransition" id=107]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=108]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=109]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=110]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=114]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=115]
-
-[sub_resource type="AnimationNodeStateMachine" id=111]
+[sub_resource type="AnimationNodeStateMachine" id=110]
 states/Death/node = SubResource( 54 )
 states/Death/position = Vector2( 863, 326 )
 states/Fall/node = SubResource( 63 )
@@ -1020,13 +1020,13 @@ states/Jump/node = SubResource( 81 )
 states/Jump/position = Vector2( 489, 219 )
 states/Move/node = SubResource( 90 )
 states/Move/position = Vector2( 595, 73 )
-states/Respawn/node = SubResource( 113 )
+states/Respawn/node = SubResource( 91 )
 states/Respawn/position = Vector2( 1103, 229 )
-transitions = [ "Idle", "Move", SubResource( 91 ), "Move", "Idle", SubResource( 92 ), "Idle", "Jump", SubResource( 93 ), "Move", "Jump", SubResource( 94 ), "Jump", "Idle", SubResource( 95 ), "Jump", "Move", SubResource( 96 ), "Idle", "Fall", SubResource( 97 ), "Move", "Fall", SubResource( 98 ), "Jump", "Fall", SubResource( 99 ), "Fall", "Jump", SubResource( 100 ), "Fall", "Move", SubResource( 101 ), "Fall", "Idle", SubResource( 102 ), "Idle", "Death", SubResource( 107 ), "Move", "Death", SubResource( 108 ), "Jump", "Death", SubResource( 109 ), "Fall", "Death", SubResource( 110 ), "Death", "Respawn", SubResource( 114 ), "Respawn", "Idle", SubResource( 115 ) ]
+transitions = [ "Idle", "Move", SubResource( 92 ), "Move", "Idle", SubResource( 93 ), "Idle", "Jump", SubResource( 94 ), "Move", "Jump", SubResource( 95 ), "Jump", "Idle", SubResource( 96 ), "Jump", "Move", SubResource( 97 ), "Idle", "Fall", SubResource( 98 ), "Move", "Fall", SubResource( 99 ), "Jump", "Fall", SubResource( 100 ), "Fall", "Jump", SubResource( 101 ), "Fall", "Move", SubResource( 102 ), "Fall", "Idle", SubResource( 103 ), "Idle", "Death", SubResource( 104 ), "Move", "Death", SubResource( 105 ), "Jump", "Death", SubResource( 106 ), "Fall", "Death", SubResource( 107 ), "Death", "Respawn", SubResource( 108 ), "Respawn", "Idle", SubResource( 109 ) ]
 start_node = "Idle"
 graph_offset = Vector2( -61, 47.801 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=112]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=111]
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 0, -2 )
@@ -1131,10 +1131,10 @@ anims/MoveUpRight = SubResource( 44 )
 anims/Respawn = SubResource( 45 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 111 )
+tree_root = SubResource( 110 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/playback = SubResource( 112 )
+parameters/playback = SubResource( 111 )
 parameters/Death/blend_position = Vector2( 0, 0 )
 parameters/Fall/blend_position = Vector2( 0, 0 )
 parameters/Idle/blend_position = Vector2( 0.00156009, 0.991379 )

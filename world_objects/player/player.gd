@@ -28,6 +28,7 @@ var elevations = [0, GlobalConst.ELEVATION_UNIT * 1, GlobalConst.ELEVATION_UNIT 
 var ground_elevation = elevations[1]	# The elevation of height in which player is considered grounded
 
 # Death
+signal player_reset
 var is_respawning = false
 
 onready var player_shadow = $Shadow
@@ -300,4 +301,5 @@ func _on_RespawnTimer_timeout():
 	# Block execution until reset, also waits for Respawn animation to finish
 	yield(get_tree().create_timer(.9), "timeout")
 	camera.smoothing_enabled = true	# Re-enable camera smoothing
+	emit_signal("player_reset")	# Emit player reset signal
 	is_respawning = false

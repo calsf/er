@@ -1,6 +1,6 @@
 [gd_scene load_steps=21 format=2]
 
-[ext_resource path="res://tile1.tres" type="TileSet" id=1]
+[ext_resource path="res://tilesets/tile1.tres" type="TileSet" id=1]
 [ext_resource path="res://elevations/Elevation1Collision.tscn" type="PackedScene" id=2]
 [ext_resource path="res://world_objects/spiked_ball/SpikedBall.tscn" type="PackedScene" id=3]
 [ext_resource path="res://elevations/Elevation2Collision.tscn" type="PackedScene" id=4]
@@ -8,6 +8,7 @@
 [ext_resource path="res://elevations/ElevationOverlay.tscn" type="PackedScene" id=6]
 [ext_resource path="res://elevations/Elevation3Collision.tscn" type="PackedScene" id=7]
 [ext_resource path="res://world_objects/player/Player.tscn" type="PackedScene" id=8]
+
 
 
 

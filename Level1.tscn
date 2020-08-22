@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=2]
+[gd_scene load_steps=66 format=2]
 
 [ext_resource path="res://elevations/Elevation1Collision.tscn" type="PackedScene" id=1]
 [ext_resource path="res://world_objects/saw/saw.png" type="Texture" id=2]
@@ -7,8 +7,9 @@
 [ext_resource path="res://world_objects/saw/MovingSaw.tscn" type="PackedScene" id=5]
 [ext_resource path="res://elevations/ElevationOverlay.tscn" type="PackedScene" id=6]
 [ext_resource path="res://world_objects/player/Player.tscn" type="PackedScene" id=7]
-[ext_resource path="res://tile1.tres" type="TileSet" id=8]
+[ext_resource path="res://tilesets/tile1.tres" type="TileSet" id=8]
 [ext_resource path="res://tilesets/water_tile.png" type="Texture" id=9]
+[ext_resource path="res://Time.tscn" type="PackedScene" id=10]
 
 [sub_resource type="TileSet" id=1]
 0/name = "water_tile.png 0"
@@ -607,6 +608,14 @@ extents = Vector2( 32, 24 )
 extents = Vector2( 32, 16 )
 
 [node name="Level1" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Time" parent="CanvasLayer" instance=ExtResource( 10 )]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 8.0
+margin_bottom = 8.0
 
 [node name="Elevation1Overlay" parent="." instance=ExtResource( 6 )]
 z_index = 1
