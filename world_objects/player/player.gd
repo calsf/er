@@ -27,17 +27,26 @@ var added_height = 0	# Current number of pixels above ground, grounded at 0
 var elevations = [0, GlobalConst.ELEVATION_UNIT * 1, GlobalConst.ELEVATION_UNIT * 2, GlobalConst.ELEVATION_UNIT * 3]
 var ground_elevation = elevations[1]	# The elevation of height in which player is considered grounded
 
+# Death
+var is_respawning = false
+
 onready var player_shadow = $Shadow
 onready var player_sprite = $PlayerSprite
+onready var camera = $Camera2D
 onready var collision_shape = $CollisionShape2D
 onready var overlapping_wall_area = $OverlappingWallCheck
 onready var hurtbox = $HurtboxArea2D
-onready var timer = $HurtboxArea2D/Timer
+onready var hit_timer = $HurtboxArea2D/Timer
+onready var respawn_timer = $RespawnTimer
 onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
 
 func _physics_process(delta):
+	# Wait for respawn timer to finish and reset is_respawning
+	if (is_respawning):
+		return
+		
 	# Gradually decrease knockback value and knockback strength to 0 and apply current knockback
 	# The knockback and curr_knockback_strength should be equal or decreasing at same rate
 	knockback = knockback.move_toward(Vector2.ZERO, DECEL * delta)
@@ -69,6 +78,7 @@ func _physics_process(delta):
 		animationTree.set("parameters/Move/blend_position", input_vector)
 		animationTree.set("parameters/Jump/blend_position", input_vector)
 		animationTree.set("parameters/Fall/blend_position", input_vector)
+		animationTree.set("parameters/Death/blend_position", input_vector)
 		
 		if (is_jumping):
 			animationState.travel("Jump")
@@ -154,12 +164,31 @@ func _physics_process(delta):
 				knockback = knockback_vector.normalized() * curr_knockback_strength
 				
 				# Prevent getting knocked back by this same area within INVULN_TIME
-				timer.start(INVULN_TIME)
+				hit_timer.start(INVULN_TIME)
 				last_area_hit = area
 				return
-	
-	#death_check()
-	
+				
+	death_check()
+
+# Listen for button press
+func _input(event):
+	# If in knockback, do not listen for inputs
+	if (knockback > Vector2.ZERO):
+		return
+			
+	# Perform normal jump or double jump when button is pressed
+	if Input.is_action_just_pressed("jump") and !has_jumped:
+		has_jumped = true
+		is_jumping = true
+		is_falling = false
+	elif Input.is_action_just_pressed("jump") and has_jumped and !has_double_jumped:
+		has_double_jumped = true
+		jump_height = MAX_HEIGHT + added_height	# Increase target jump height by MAX_HEIGHT
+		is_jumping = true
+		is_falling = false
+
+## FUNCTIONS ##
+
 # Set collision masks for collisions with elevation boundary and walls
 # Wall collision should match boundary collision
 func set_elevation_collisions(curr_elevation):
@@ -182,40 +211,53 @@ func check_overlapping_wall():
 	# get if player area is overlapping a wall, if it is, tumble down
 	# isTumbling will disable player input
 	if overlapping_wall_area.get_overlapping_bodies().size() > 0:
-		collision_shape.disabled = true
+		#collision_shape.disabled = true
 		is_tumbling = true
 	else:
-		collision_shape.disabled = false
+		#collision_shape.disabled = false
 		is_tumbling = false	
 
 # Check if player is dead
 func death_check():
 	# PLAYER DEATH CHECK (ELEVATION 0 and not in air)
-	if ground_elevation == 0 and added_height <= 0:
-		position = Vector2.ZERO
-		ground_elevation = 32
-		
+	if !is_respawning and ground_elevation == 0 and added_height <= 0:
+		is_respawning = true
+		animationState.travel("Death")
+		player_shadow.visible = false
+		respawn_timer.start(1)
+
+# Get current elevation of player
 func get_curr_elevation():
 	# Calculate current elevation and then set collision masks accordingly
 	var curr_elevation = added_height + ground_elevation
 	return curr_elevation
 
-# Listen for button press
-func _input(event):
-	# If in knockback, do not listen for inputs
-	if (knockback > Vector2.ZERO):
-		return
-			
-	# Perform normal jump or double jump when button is pressed
-	if Input.is_action_just_pressed("jump") and !has_jumped:
-		has_jumped = true
-		is_jumping = true
-		is_falling = false
-	elif Input.is_action_just_pressed("jump") and has_jumped and !has_double_jumped:
-		has_double_jumped = true
-		jump_height = MAX_HEIGHT + added_height	# Increase target jump height by MAX_HEIGHT
-		is_jumping = true
-		is_falling = false
+# Resets player properties to default, as if player first started level
+func reset_player():
+	ground_elevation = GlobalConst.ELEVATION_UNIT
+	set_elevation_collisions(get_curr_elevation())
+	camera.smoothing_enabled = false	# Need to turn off smoothing so camera snaps
+	global_position = Vector2.ZERO
+	last_area_hit = null
+	is_jumping = false
+	is_falling = false
+	has_double_jumped = false
+	has_jumped = false
+	is_tumbling = false
+	jump_height = MAX_HEIGHT
+	velocity = Vector2.ZERO
+	knockback = Vector2.ZERO
+	curr_knockback_strength = 0
+	player_sprite.z_index = 1
+	player_shadow.visible = true
+	animationTree.set("parameters/Idle/blend_position", Vector2.DOWN)
+	animationTree.set("parameters/Move/blend_position", Vector2.DOWN)
+	animationTree.set("parameters/Jump/blend_position", Vector2.DOWN)
+	animationTree.set("parameters/Fall/blend_position", Vector2.DOWN)
+	animationTree.set("parameters/Death/blend_position", Vector2.DOWN)
+	animationState.travel("Respawn")	# Travel to respawn animation
+	
+## SIGNALS ##
 		
 # Detect elevation entry
 func _on_DetectElevEntry_area_entered(area):
@@ -250,3 +292,12 @@ func _on_DetectElevArea_area_exited(area):
 # Reset last area hit after timer
 func _on_Timer_timeout():
 	last_area_hit = null
+
+# Reset player properties and respawn player after timer
+func _on_RespawnTimer_timeout():
+	reset_player()
+	
+	# Block execution until reset, also waits for Respawn animation to finish
+	yield(get_tree().create_timer(.9), "timeout")
+	camera.smoothing_enabled = true	# Re-enable camera smoothing
+	is_respawning = false
