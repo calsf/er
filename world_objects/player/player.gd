@@ -193,7 +193,6 @@ func death_check():
 	# PLAYER DEATH CHECK (ELEVATION 0 and not in air)
 	if ground_elevation == 0 and added_height <= 0:
 		position = Vector2.ZERO
-		print("DEAD")
 		ground_elevation = 32
 		
 func get_curr_elevation():
