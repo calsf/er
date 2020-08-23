@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=2]
+[gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://elevations/Elevation1Collision.tscn" type="PackedScene" id=1]
 [ext_resource path="res://world_objects/saw/saw.png" type="Texture" id=2]
@@ -9,9 +9,27 @@
 [ext_resource path="res://world_objects/player/Player.tscn" type="PackedScene" id=7]
 [ext_resource path="res://tilesets/tileset1.tres" type="TileSet" id=8]
 [ext_resource path="res://tilesets/water_tile.png" type="Texture" id=9]
-[ext_resource path="res://Time.tscn" type="PackedScene" id=10]
+[ext_resource path="res://PlayerTime.tscn" type="PackedScene" id=10]
 [ext_resource path="res://tilesets/water_around_tileset.tres" type="TileSet" id=11]
 [ext_resource path="res://world_objects/finish/FinishFlag.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Fade.tscn" type="PackedScene" id=13]
+[ext_resource path="res://start_level.gd" type="Script" id=14]
+
+[sub_resource type="Animation" id=37]
+resource_name = "Countdown"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "3", "2", "1", "GO" ]
+}
 
 [sub_resource type="TileSet" id=1]
 0/name = "water_tile.png 0"
@@ -207,14 +225,43 @@ extents = Vector2( 48, 16 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Time" parent="CanvasLayer" instance=ExtResource( 10 )]
+[node name="StartLevel" type="Control" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Countdown" type="Label" parent="CanvasLayer/StartLevel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -38.5
+margin_top = -44.0
+margin_right = 38.5
+margin_bottom = -20.0
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/StartLevel/Countdown"]
+anims/Countdown = SubResource( 37 )
+
+[node name="PlayerTime" parent="CanvasLayer" instance=ExtResource( 10 )]
 margin_left = 8.0
 margin_top = 8.0
 margin_right = 8.0
 margin_bottom = 8.0
 
+[node name="Fade" parent="CanvasLayer" instance=ExtResource( 13 )]
+
 [node name="Elevation1Overlay" parent="." instance=ExtResource( 6 )]
-visible = false
 z_index = 1
 tile_set = ExtResource( 8 )
 collision_layer = 2147483648
@@ -1213,6 +1260,8 @@ shape = SubResource( 35 )
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision25/WallBody1" index="0"]
 position = Vector2( 1648, -368 )
 shape = SubResource( 36 )
+[connection signal="animation_finished" from="CanvasLayer/StartLevel/Countdown/AnimationPlayer" to="CanvasLayer/StartLevel" method="_on_AnimationPlayer_animation_finished"]
+[connection signal="fade_out_finished" from="CanvasLayer/Fade" to="CanvasLayer/StartLevel" method="_on_Fade_fade_out_finished"]
 
 [editable path="MovingRollers/MovingRoller"]
 

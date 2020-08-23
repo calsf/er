@@ -3,10 +3,10 @@ extends Control
 
 var time = 0
 var minutes = 0
-var is_stopped = false
+var is_stopped = true
 onready var time_text = $TimeText
 onready var player = get_node("../../YSortWorldObjects/Player")
-onready var finish_flag = get_node("../../YSortWorldObjects/FinishFlag/FinishArea")
+onready var finish_flag = get_node("../../YSortWorldObjects/FinishFlag")
 
 func _ready():
 	# When player_died signal is emitted, will reset stop recording time
@@ -25,7 +25,9 @@ func _process(delta):
 	if (time > 60):
 		minutes += 1
 		time = 0
-	time_text.text = str("Time ", minutes, ".", stepify(time, 0.01))
+		
+	# minutes.seconds.milliseconds
+	time_text.text = str("Time ", "%0*d" % [2, minutes], "." , "%0*.*f" % [5, 2, time])
 
 # Reset time values
 func _reset_time():
@@ -33,5 +35,6 @@ func _reset_time():
 	time = 0
 	minutes = 0
 
+# Stop time
 func _stop_time():
 	is_stopped = true

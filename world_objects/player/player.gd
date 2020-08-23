@@ -33,7 +33,7 @@ signal player_reset
 var is_respawning = false
 
 # Stop player input
-var player_stopped = false
+var player_stopped = true
 
 onready var player_shadow = $Shadow
 onready var player_sprite = $PlayerSprite
