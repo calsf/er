@@ -3,6 +3,8 @@ extends KinematicBody2D
 var knockback_vector = Vector2.ZERO
 
 export var move_speed = 0
+
+# If has set knockback, be sure to disable collision
 export var has_set_knockback = false
 
 onready var pos_A = $Pos_A.global_position

@@ -28,8 +28,12 @@ var elevations = [0, GlobalConst.ELEVATION_UNIT * 1, GlobalConst.ELEVATION_UNIT 
 var ground_elevation = elevations[1]	# The elevation of height in which player is considered grounded
 
 # Death
+signal player_died
 signal player_reset
 var is_respawning = false
+
+# Stop player input
+var player_stopped = false
 
 onready var player_shadow = $Shadow
 onready var player_sprite = $PlayerSprite
@@ -39,9 +43,9 @@ onready var overlapping_wall_area = $OverlappingWallCheck
 onready var hurtbox = $HurtboxArea2D
 onready var hit_timer = $HurtboxArea2D/Timer
 onready var respawn_timer = $RespawnTimer
-onready var animationPlayer = $AnimationPlayer
-onready var animationTree = $AnimationTree
-onready var animationState = animationTree.get("parameters/playback")
+onready var animation_player = $AnimationPlayer
+onready var animation_tree = $AnimationTree
+onready var animation_state = animation_tree.get("parameters/playback")
 
 func _physics_process(delta):
 	# Wait for respawn timer to finish and reset is_respawning
@@ -59,7 +63,7 @@ func _physics_process(delta):
 	if is_tumbling and added_height <= 0:
 		velocity.y += MAX_SPEED * delta
 		velocity = move_and_slide(velocity)
-		check_overlapping_wall()
+		_check_overlapping_wall()
 		return
 	
 	# Only collide with world objects when in knockback state
@@ -73,20 +77,20 @@ func _physics_process(delta):
 	input_vector = input_vector.normalized()
 		
 	# Set velocity and animation state based on input_vector
-	if (input_vector != Vector2.ZERO):
+	if (!player_stopped and input_vector != Vector2.ZERO):
 		# Only set blend positions when input vector is not zero
-		animationTree.set("parameters/Idle/blend_position", input_vector)
-		animationTree.set("parameters/Move/blend_position", input_vector)
-		animationTree.set("parameters/Jump/blend_position", input_vector)
-		animationTree.set("parameters/Fall/blend_position", input_vector)
-		animationTree.set("parameters/Death/blend_position", input_vector)
+		animation_tree.set("parameters/Idle/blend_position", input_vector)
+		animation_tree.set("parameters/Move/blend_position", input_vector)
+		animation_tree.set("parameters/Jump/blend_position", input_vector)
+		animation_tree.set("parameters/Fall/blend_position", input_vector)
+		animation_tree.set("parameters/Death/blend_position", input_vector)
 		
 		if (is_jumping):
-			animationState.travel("Jump")
+			animation_state.travel("Jump")
 		elif(is_falling):
-			animationState.travel("Fall")
+			animation_state.travel("Fall")
 		else:
-			animationState.travel("Move")
+			animation_state.travel("Move")
 		
 		# Walk will move at slower speed
 		if (Input.get_action_strength("walk")):
@@ -94,7 +98,7 @@ func _physics_process(delta):
 		else:
 			velocity = input_vector * curr_speed
 	else:
-		animationState.travel("Idle")
+		animation_state.travel("Idle")
 		velocity = Vector2.ZERO
 		
 	# Move and slide using current velocity, set velocity to maintain velocity after collision
@@ -126,10 +130,10 @@ func _physics_process(delta):
 			has_double_jumped = false
 	else:
 		# When grounded, check if player ends up overlapping with a wall
-		check_overlapping_wall()
+		_check_overlapping_wall()
 	
 	# Calculate current elevation and then set collision masks accordingly
-	set_elevation_collisions(get_curr_elevation())
+	_set_elevation_collisions(get_curr_elevation())
 	
 	# Maintain sprite positions when grounded
 	if (added_height <= 0):
@@ -169,12 +173,12 @@ func _physics_process(delta):
 				last_area_hit = area
 				return
 				
-	death_check()
+	_death_check()
 
 # Listen for button press
 func _input(event):
-	# If in knockback, do not listen for inputs
-	if (knockback > Vector2.ZERO):
+	# If in knockback or player is stopped, do not listen for inputs
+	if (knockback > Vector2.ZERO or player_stopped):
 		return
 			
 	# Perform normal jump or double jump when button is pressed
@@ -192,7 +196,7 @@ func _input(event):
 
 # Set collision masks for collisions with elevation boundary and walls
 # Wall collision should match boundary collision
-func set_elevation_collisions(curr_elevation):
+func _set_elevation_collisions(curr_elevation):
 	# Boundary mask layer of elevation 1
 	set_collision_mask_bit(3, curr_elevation < elevations[1] and ground_elevation < elevations[1])
 	# Boundary mask layer of elevation 2
@@ -208,7 +212,7 @@ func set_elevation_collisions(curr_elevation):
 	set_collision_mask_bit(8, get_collision_mask_bit(7))
 
 # Check if player is overlapping a wall and set tumbling state and collision shape accordingly
-func check_overlapping_wall():
+func _check_overlapping_wall():
 	# get if player area is overlapping a wall, if it is, tumble down
 	# isTumbling will disable player input
 	if overlapping_wall_area.get_overlapping_bodies().size() > 0:
@@ -219,12 +223,13 @@ func check_overlapping_wall():
 		is_tumbling = false	
 
 # Check if player is dead
-func death_check():
-	# PLAYER DEATH CHECK (ELEVATION 0 and not in air)
+func _death_check():
+	# Player is dead if elevation is 0 and player is not in air
 	if !is_respawning and ground_elevation == 0 and added_height <= 0:
 		is_respawning = true
-		animationState.travel("Death")
+		animation_state.travel("Death")
 		player_shadow.visible = false
+		emit_signal("player_died")
 		respawn_timer.start(1)
 
 # Get current elevation of player
@@ -236,7 +241,7 @@ func get_curr_elevation():
 # Resets player properties to default, as if player first started level
 func reset_player():
 	ground_elevation = GlobalConst.ELEVATION_UNIT
-	set_elevation_collisions(get_curr_elevation())
+	_set_elevation_collisions(get_curr_elevation())
 	camera.smoothing_enabled = false	# Need to turn off smoothing so camera snaps
 	global_position = Vector2.ZERO
 	last_area_hit = null
@@ -251,12 +256,12 @@ func reset_player():
 	curr_knockback_strength = 0
 	player_sprite.z_index = 1
 	player_shadow.visible = true
-	animationTree.set("parameters/Idle/blend_position", Vector2.DOWN)
-	animationTree.set("parameters/Move/blend_position", Vector2.DOWN)
-	animationTree.set("parameters/Jump/blend_position", Vector2.DOWN)
-	animationTree.set("parameters/Fall/blend_position", Vector2.DOWN)
-	animationTree.set("parameters/Death/blend_position", Vector2.DOWN)
-	animationState.travel("Respawn")	# Travel to respawn animation
+	animation_tree.set("parameters/Idle/blend_position", Vector2.DOWN)
+	animation_tree.set("parameters/Move/blend_position", Vector2.DOWN)
+	animation_tree.set("parameters/Jump/blend_position", Vector2.DOWN)
+	animation_tree.set("parameters/Fall/blend_position", Vector2.DOWN)
+	animation_tree.set("parameters/Death/blend_position", Vector2.DOWN)
+	animation_state.travel("Respawn")	# Travel to respawn animation
 	
 ## SIGNALS ##
 		
