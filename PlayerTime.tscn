@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://player_time.gd" type="Script" id=1]
+[ext_resource path="res://ui/time_icon.png" type="Texture" id=2]
 
 [node name="PlayerTime" type="Control"]
 script = ExtResource( 1 )
@@ -8,10 +9,27 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TimeText" type="RichTextLabel" parent="."]
-margin_right = 128.0
-margin_bottom = 32.0
-text = "Time 00.00.00"
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="TimeIcon" type="TextureRect" parent="HBoxContainer"]
+margin_right = 16.0
+margin_bottom = 16.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TimeText" type="Label" parent="HBoxContainer"]
+margin_left = 20.0
+margin_right = 76.0
+margin_bottom = 14.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "00.00.00"

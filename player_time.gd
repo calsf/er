@@ -4,7 +4,7 @@ extends Control
 var time = 0
 var minutes = 0
 var is_stopped = true
-onready var time_text = $TimeText
+onready var time_text = $HBoxContainer/TimeText
 onready var player = get_node("../../YSortWorldObjects/Player")
 onready var finish_flag = get_node("../../YSortWorldObjects/FinishFlag")
 
@@ -27,7 +27,7 @@ func _process(delta):
 		time = 0
 		
 	# minutes.seconds.milliseconds
-	time_text.text = str("Time ", "%0*d" % [2, minutes], "." , "%0*.*f" % [5, 2, time])
+	time_text.text = str("%0*d" % [2, minutes], "." , "%0*.*f" % [5, 2, time])
 
 # Reset time values
 func _reset_time():
