@@ -1,7 +1,7 @@
 extends Control
 
 
-var time = 0
+var seconds = 0
 var minutes = 0
 var is_stopped = true
 onready var time_text = $HBoxContainer/TimeText
@@ -21,18 +21,18 @@ func _process(delta):
 	if (is_stopped):
 		return
 	
-	time += delta
-	if (time > 60):
+	seconds += delta
+	if (seconds > 60):
 		minutes += 1
-		time = 0
+		seconds = 0
 		
 	# minutes.seconds.milliseconds
-	time_text.text = str("%0*d" % [2, minutes], "." , "%0*.*f" % [5, 2, time])
+	time_text.text = str("%0*d" % [2, minutes], "." , "%0*.*f" % [5, 2, seconds])
 
 # Reset time values
 func _reset_time():
 	is_stopped = false
-	time = 0
+	seconds = 0
 	minutes = 0
 
 # Stop time
