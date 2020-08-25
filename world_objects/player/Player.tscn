@@ -1146,6 +1146,7 @@ one_shot = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+limit_left = -325
 smoothing_enabled = true
 __meta__ = {
 "_editor_description_": ""

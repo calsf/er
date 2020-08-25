@@ -85,11 +85,7 @@ func _physics_process(delta):
 		animation_tree.set("parameters/Fall/blend_position", input_vector)
 		animation_tree.set("parameters/Death/blend_position", input_vector)
 		
-		if (is_jumping):
-			animation_state.travel("Jump")
-		elif(is_falling):
-			animation_state.travel("Fall")
-		else:
+		if (!is_jumping and !is_falling):
 			animation_state.travel("Move")
 		
 		# Walk will move at slower speed
@@ -107,6 +103,8 @@ func _physics_process(delta):
 	# JUMPING AND FALLING MOVEMENT, ELSE PLAYER IS GROUNDED
 	# STILL ENABLED DURING KNOCKBACK BUT PLAYER INPUT TO JUMP SHOULD BE DISABLED
 	if is_jumping:
+		animation_state.travel("Jump")
+		
 		# Increase added height until reaches jump height
 		# Move player sprite up the same amount
 		if added_height < jump_height:
@@ -116,6 +114,8 @@ func _physics_process(delta):
 			is_falling = true	# Once jump_height is reached, set to falling state
 			is_jumping = false	# No longer in jump state
 	elif is_falling:
+		animation_state.travel("Fall")
+		
 		# Subtract from added height until reaches 0 or less
 		# Move player sprite down the same amount
 		if added_height > 0:

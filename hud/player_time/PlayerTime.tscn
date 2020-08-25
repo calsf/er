@@ -1,8 +1,12 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://player_time.gd" type="Script" id=1]
-[ext_resource path="res://ui/time_icon.png" type="Texture" id=2]
+[ext_resource path="res://hud/player_time/player_time.gd" type="Script" id=1]
+[ext_resource path="res://hud/player_time/time_icon.png" type="Texture" id=2]
 [ext_resource path="res://fonts/fffforwa.ttf" type="DynamicFontData" id=3]
+
+
+
+
 
 [sub_resource type="DynamicFont" id=1]
 size = 12

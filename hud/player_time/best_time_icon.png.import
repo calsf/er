@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/best_time_icon.png-20cf94ab1de1f76530426be2d3f110aa.stex"
+path="res://.import/best_time_icon.png-bb7798bcc7234e804643c7faa7719217.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ui/best_time_icon.png"
-dest_files=[ "res://.import/best_time_icon.png-20cf94ab1de1f76530426be2d3f110aa.stex" ]
+source_file="res://hud/player_time/best_time_icon.png"
+dest_files=[ "res://.import/best_time_icon.png-bb7798bcc7234e804643c7faa7719217.stex" ]
 
 [params]
 
