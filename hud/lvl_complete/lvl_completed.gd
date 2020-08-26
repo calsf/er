@@ -10,7 +10,7 @@ onready var press_key_label = $CenterContainer/VBoxContainer/PressAnyKeyLabel
 onready var press_key_anim = $CenterContainer/VBoxContainer/PressAnyKeyLabel/AnimationPlayer
 onready var save_load_manager = $SaveLoadManager
 onready var save_data = save_load_manager.load_data()
-export var level_key = ""
+export var level_num = 0
 var best = 0
 var best_minutes = 0
 var best_seconds = 0.00
@@ -27,7 +27,7 @@ func _ready():
 
 func _input(event):
 	# When any key is pressed, use exit door's behaviour to leave scene
-	if can_return and event is InputEventKey:
+	if can_return and (event is InputEventKey or event is InputEventJoypadButton):
 		if event.pressed:
 			exit_door.start_leaving_scene()
 	
@@ -44,11 +44,11 @@ func _check_time():
 	finish_time.text = str("%0*d" % [2, minutes], "." , "%0*.*f" % [5, 2, seconds])
 	
 	# Update save data with new file and level completed and then save
-	if (new_time < best):
+	if (new_time < best or best == 0):
 		new_best_time.show()
 		
-		save_data[str(level_key, "Time")] = new_time
-		save_data[str(level_key, "Completed")] = true
+		save_data[str("Level", level_num, "Time")] = new_time
+		save_data[str("Level", level_num + 1, "Unlocked")] = true
 		save_load_manager.save_data(save_data)
 		
 		_update_best_time()	# Update best time display
@@ -61,7 +61,7 @@ func _check_time():
 # Get current saved best time and update text display
 func _update_best_time():
 	# Saved best time
-	best = save_data[str(level_key, "Time")]	# Get current saved best time
+	best = save_data[str("Level", level_num, "Time")]	# Get current saved best time
 	best_minutes = best / 60
 	best_seconds = fmod(best, 60.0)
 	

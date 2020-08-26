@@ -4,8 +4,41 @@ const SAVE_PATH = "user://sav.json"
 
 # Default data to be saved with new save file
 var _default_data = {
-	"Level1Time" : 99999.00,
-	"Level1Completed" : false
+	"Level0Time" : 0.00,
+	"Level0Unlocked" : true,
+	
+	"Level1Time" : 0.00,
+	"Level1Unlocked" : true,
+	
+	"Level2Time" : 0.00,
+	"Level2Unlocked" : false,
+	
+	"Level3Time" : 0.00,
+	"Level3Unlocked" : false,
+	
+	"Level4Time" : 0.00,
+	"Level4Unlocked" : false,
+	
+	"Level5Time" : 0.00,
+	"Level5Unlocked" : false,
+	
+	"Level6Time" : 0.00,
+	"Level6Unlocked" : false,
+	
+	"Level7Time" : 0.00,
+	"Level7Unlocked" : false,
+	
+	"Level8Time" : 0.00,
+	"Level8Unlocked" : false,
+	
+	"Level9Time" : 0.00,
+	"Level9Unlocked" : false,
+	
+	"Level10Time" : 0.00,
+	"Level10Unlocked" : false,
+	
+	"Level11Time" : 0.00,
+	"Level11Unlocked" : false
 }
 
 func save_data(data):

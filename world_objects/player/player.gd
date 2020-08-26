@@ -52,6 +52,19 @@ func _physics_process(delta):
 	if (is_respawning):
 		return
 		
+	# Perform normal jump or double jump when button is pressed
+	# If in knockback or player is stopped, do not listen for inputs
+	if (knockback <= Vector2.ZERO and !player_stopped):
+		if Input.is_action_just_pressed("jump") and !has_jumped:
+			has_jumped = true
+			is_jumping = true
+			is_falling = false
+		elif Input.is_action_just_pressed("jump") and has_jumped and !has_double_jumped:
+			has_double_jumped = true
+			jump_height = MAX_HEIGHT + added_height	# Increase target jump height by MAX_HEIGHT
+			is_jumping = true
+			is_falling = false
+		
 	# Gradually decrease knockback value and knockback strength to 0 and apply current knockback
 	# The knockback and curr_knockback_strength should be equal or decreasing at same rate
 	knockback = knockback.move_toward(Vector2.ZERO, DECEL * delta)
@@ -174,23 +187,6 @@ func _physics_process(delta):
 				return
 				
 	_death_check()
-
-# Listen for button press
-func _input(event):
-	# If in knockback or player is stopped, do not listen for inputs
-	if (knockback > Vector2.ZERO or player_stopped):
-		return
-			
-	# Perform normal jump or double jump when button is pressed
-	if Input.is_action_just_pressed("jump") and !has_jumped:
-		has_jumped = true
-		is_jumping = true
-		is_falling = false
-	elif Input.is_action_just_pressed("jump") and has_jumped and !has_double_jumped:
-		has_double_jumped = true
-		jump_height = MAX_HEIGHT + added_height	# Increase target jump height by MAX_HEIGHT
-		is_jumping = true
-		is_falling = false
 
 ## FUNCTIONS ##
 

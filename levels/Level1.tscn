@@ -230,7 +230,7 @@ margin_right = 8.0
 margin_bottom = 8.0
 
 [node name="LvlComplete" parent="PlayerHUD" instance=ExtResource( 11 )]
-level_key = "Level1"
+level_num = 1
 
 [node name="Fade" parent="PlayerHUD" instance=ExtResource( 5 )]
 
