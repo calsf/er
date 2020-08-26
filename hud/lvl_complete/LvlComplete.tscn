@@ -7,7 +7,7 @@
 [ext_resource path="res://save_load/SaveLoadManager.tscn" type="PackedScene" id=5]
 [ext_resource path="res://hud/lvl_complete/lvlcomplete_bg.png" type="Texture" id=6]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=3]
 size = 24
 font_data = ExtResource( 2 )
 
@@ -15,16 +15,15 @@ font_data = ExtResource( 2 )
 size = 12
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=4]
 size = 12
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=5]
 size = 8
 font_data = ExtResource( 2 )
 
-[sub_resource type="Animation" id=5]
-resource_name = "Show"
+[sub_resource type="Animation" id=6]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:rect_scale")
@@ -85,7 +84,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
 margin_right = 234.0
 margin_bottom = 33.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 3 )
 text = "Level Complete"
 valign = 1
 
@@ -162,7 +161,7 @@ visible = false
 margin_top = 97.0
 margin_right = 234.0
 margin_bottom = 114.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 text = "New Best Time!"
 align = 1
 
@@ -172,7 +171,7 @@ margin_top = 97.0
 margin_right = 234.0
 margin_bottom = 108.0
 rect_pivot_offset = Vector2( 117, 5 )
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "Press any key to continue"
 align = 1
 valign = 1
@@ -182,6 +181,6 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CenterContainer/VBoxContainer/PressAnyKeyLabel"]
 autoplay = "Show"
-anims/Show = SubResource( 5 )
+anims/Show = SubResource( 6 )
 
 [node name="SaveLoadManager" parent="." instance=ExtResource( 5 )]

@@ -1,9 +1,11 @@
 extends Control
 
 var scene_to_load = ""
-onready var level_buttons = $LevelButtons
-onready var first_button = $LevelButtons/Level1Button
+onready var level_buttons = $HBoxContainer/LevelButtons
+onready var first_button = $HBoxContainer/LevelButtons/LevelButton0
 onready var fade = $Fade	# Fade will block clicks while shown
+onready var save_load_manager = $SaveLoadManager
+onready var save_data = save_load_manager.load_data()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -20,14 +22,12 @@ func _set_scene_to_load(scene):
 	# Remove focus to prevent input while transitioning scene
 	for button in level_buttons.get_children():
 		button.focus_mode = false
-	fade.show()
 	fade.fade_in()
 
 # Once fade in is finished, change to the scene to be loaded
 func _on_Fade_fade_in_finished():
 	get_tree().change_scene(scene_to_load)
 
-# Once fade out is finished, activate button focus and hide the fade
+# Once fade out is finished, activate button focus
 func _on_Fade_fade_out_finished():
 	first_button.grab_focus()	# Grab focus for keyboard input
-	fade.hide()

@@ -1,9 +1,20 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://levels/level_select/load_scene_button.gd" type="Script" id=1]
 [ext_resource path="res://levels/level_select/level_select.gd" type="Script" id=2]
 [ext_resource path="res://hud/fade/Fade.tscn" type="PackedScene" id=3]
 [ext_resource path="res://fonts/fffforwa_24.tres" type="DynamicFont" id=4]
+[ext_resource path="res://hud/player_time/best_time_icon.png" type="Texture" id=5]
+[ext_resource path="res://fonts/fffforwa.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://save_load/SaveLoadManager.tscn" type="PackedScene" id=7]
+[ext_resource path="res://levels/level_select/level_button_theme.tres" type="Theme" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 12
+font_data = ExtResource( 6 )
 
 [node name="LevelSelect" type="Control"]
 anchor_right = 1.0
@@ -13,66 +24,400 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LevelButtons" type="HBoxContainer" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -300.0
-margin_top = -160.0
-margin_right = 300.0
-margin_bottom = 160.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_constants/separation = 8
+margin_left = -194.0
+margin_top = -64.0
+margin_right = 194.0
+margin_bottom = 100.0
+custom_constants/separation = 16
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Level1Button" type="Button" parent="LevelButtons"]
-margin_left = 168.0
-margin_right = 296.0
-margin_bottom = 320.0
-rect_min_size = Vector2( 128, 16 )
-flat = true
-script = ExtResource( 1 )
-scene_to_load = "res://levels/Level1.tscn"
-
-[node name="Label" type="Label" parent="LevelButtons/Level1Button"]
-margin_right = 40.0
-margin_bottom = 14.0
-custom_fonts/font = ExtResource( 4 )
-custom_colors/font_color_shadow = Color( 0.603922, 1, 0.721569, 1 )
-custom_constants/shadow_offset_x = 0
-custom_constants/shadow_offset_y = 1
-text = "Level 1"
+[node name="LevelButtons" type="GridContainer" parent="HBoxContainer"]
+margin_right = 268.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 268, 192 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 4
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Level2Button" type="Button" parent="LevelButtons"]
-margin_left = 304.0
-margin_right = 432.0
-margin_bottom = 320.0
-rect_min_size = Vector2( 128, 16 )
+[node name="LevelButton0" type="Button" parent="HBoxContainer/LevelButtons"]
+margin_right = 64.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+theme = ExtResource( 8 )
+toggle_mode = true
+text = "0"
+script = ExtResource( 1 )
+scene_to_load = "res://levels/Level1.tscn"
+
+[node name="LevelButton1" type="Button" parent="HBoxContainer/LevelButtons"]
+margin_left = 68.0
+margin_right = 132.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+theme = ExtResource( 8 )
+toggle_mode = true
+text = "1"
+script = ExtResource( 1 )
+__meta__ = {
+"_editor_description_": ""
+}
+scene_to_load = "res://levels/Level1.tscn"
+
+[node name="LevelButton2" type="Button" parent="HBoxContainer/LevelButtons"]
+margin_left = 136.0
+margin_right = 200.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
 flat = true
 script = ExtResource( 1 )
 scene_to_load = "res://levels/level_select/LevelSelect.tscn"
 
-[node name="Label" type="Label" parent="LevelButtons/Level2Button"]
-margin_right = 40.0
-margin_bottom = 14.0
+[node name="Label" type="Label" parent="HBoxContainer/LevelButtons/LevelButton2"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -34.5
+margin_right = 20.0
+margin_bottom = 34.5
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color_shadow = Color( 0.603922, 1, 0.721569, 1 )
 custom_constants/shadow_offset_x = 0
 custom_constants/shadow_offset_y = 1
-text = "Level 2"
+text = "2"
+align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="LevelButton3" type="Button" parent="HBoxContainer/LevelButtons"]
+margin_left = 204.0
+margin_right = 268.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+flat = true
+script = ExtResource( 1 )
+scene_to_load = "res://levels/level_select/LevelSelect.tscn"
+
+[node name="Label" type="Label" parent="HBoxContainer/LevelButtons/LevelButton3"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -34.5
+margin_right = 20.0
+margin_bottom = 34.5
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color_shadow = Color( 0.603922, 1, 0.721569, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/shadow_offset_y = 1
+text = "3"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelButton4" type="Button" parent="HBoxContainer/LevelButtons"]
+margin_top = 68.0
+margin_right = 64.0
+margin_bottom = 132.0
+rect_min_size = Vector2( 64, 64 )
+flat = true
+script = ExtResource( 1 )
+scene_to_load = "res://levels/level_select/LevelSelect.tscn"
+
+[node name="Label" type="Label" parent="HBoxContainer/LevelButtons/LevelButton4"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -34.5
+margin_right = 20.0
+margin_bottom = 34.5
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color_shadow = Color( 0.603922, 1, 0.721569, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/shadow_offset_y = 1
+text = "4"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelButton5" type="Button" parent="HBoxContainer/LevelButtons"]
+margin_left = 68.0
+margin_top = 68.0
+margin_right = 132.0
+margin_bottom = 132.0
+rect_min_size = Vector2( 64, 64 )
+flat = true
+script = ExtResource( 1 )
+scene_to_load = "res://levels/level_select/LevelSelect.tscn"
+
+[node name="Label" type="Label" parent="HBoxContainer/LevelButtons/LevelButton5"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -34.5
+margin_right = 20.0
+margin_bottom = 34.5
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color_shadow = Color( 0.603922, 1, 0.721569, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/shadow_offset_y = 1
+text = "5"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelButton6" type="Button" parent="HBoxContainer/LevelButtons"]
+margin_left = 136.0
+margin_top = 68.0
+margin_right = 200.0
+margin_bottom = 132.0
+rect_min_size = Vector2( 64, 64 )
+flat = true
+script = ExtResource( 1 )
+scene_to_load = "res://levels/level_select/LevelSelect.tscn"
+
+[node name="Label" type="Label" parent="HBoxContainer/LevelButtons/LevelButton6"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -34.5
+margin_right = 20.0
+margin_bottom = 34.5
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color_shadow = Color( 0.603922, 1, 0.721569, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/shadow_offset_y = 1
+text = "6"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelButton7" type="Button" parent="HBoxContainer/LevelButtons"]
+margin_left = 204.0
+margin_top = 68.0
+margin_right = 268.0
+margin_bottom = 132.0
+rect_min_size = Vector2( 64, 64 )
+flat = true
+script = ExtResource( 1 )
+scene_to_load = "res://levels/level_select/LevelSelect.tscn"
+
+[node name="Label" type="Label" parent="HBoxContainer/LevelButtons/LevelButton7"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -34.5
+margin_right = 20.0
+margin_bottom = 34.5
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color_shadow = Color( 0.603922, 1, 0.721569, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/shadow_offset_y = 1
+text = "7"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelButton8" type="Button" parent="HBoxContainer/LevelButtons"]
+margin_top = 136.0
+margin_right = 64.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 64, 64 )
+flat = true
+script = ExtResource( 1 )
+scene_to_load = "res://levels/level_select/LevelSelect.tscn"
+
+[node name="Label" type="Label" parent="HBoxContainer/LevelButtons/LevelButton8"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -34.5
+margin_right = 20.0
+margin_bottom = 34.5
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color_shadow = Color( 0.603922, 1, 0.721569, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/shadow_offset_y = 1
+text = "8"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelButton9" type="Button" parent="HBoxContainer/LevelButtons"]
+margin_left = 68.0
+margin_top = 136.0
+margin_right = 132.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 64, 64 )
+flat = true
+script = ExtResource( 1 )
+scene_to_load = "res://levels/level_select/LevelSelect.tscn"
+
+[node name="Label" type="Label" parent="HBoxContainer/LevelButtons/LevelButton9"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -34.5
+margin_right = 20.0
+margin_bottom = 34.5
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color_shadow = Color( 0.603922, 1, 0.721569, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/shadow_offset_y = 1
+text = "9"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelButton10" type="Button" parent="HBoxContainer/LevelButtons"]
+margin_left = 136.0
+margin_top = 136.0
+margin_right = 200.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 64, 64 )
+flat = true
+script = ExtResource( 1 )
+scene_to_load = "res://levels/level_select/LevelSelect.tscn"
+
+[node name="Label" type="Label" parent="HBoxContainer/LevelButtons/LevelButton10"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -34.5
+margin_right = 20.0
+margin_bottom = 34.5
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color_shadow = Color( 0.603922, 1, 0.721569, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/shadow_offset_y = 1
+text = "10"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelButton11" type="Button" parent="HBoxContainer/LevelButtons"]
+margin_left = 204.0
+margin_top = 136.0
+margin_right = 268.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 64, 64 )
+flat = true
+script = ExtResource( 1 )
+scene_to_load = "res://levels/level_select/LevelSelect.tscn"
+
+[node name="Label" type="Label" parent="HBoxContainer/LevelButtons/LevelButton11"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -34.5
+margin_right = 20.0
+margin_bottom = 34.5
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color_shadow = Color( 0.603922, 1, 0.721569, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/shadow_offset_y = 1
+text = "11"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sidebar" type="VBoxContainer" parent="HBoxContainer"]
+margin_left = 284.0
+margin_right = 388.0
+margin_bottom = 200.0
+custom_constants/separation = 16
+alignment = 1
+
+[node name="Title" type="Label" parent="HBoxContainer/Sidebar"]
+margin_top = 71.0
+margin_right = 104.0
+margin_bottom = 93.0
+custom_fonts/font = SubResource( 1 )
+text = "Best Time"
+align = 1
+valign = 1
+
+[node name="BestTime" type="HBoxContainer" parent="HBoxContainer/Sidebar"]
+margin_top = 109.0
+margin_right = 104.0
+margin_bottom = 129.0
+
+[node name="TimeIcon" type="TextureRect" parent="HBoxContainer/Sidebar/BestTime"]
+margin_right = 16.0
+margin_bottom = 16.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource( 5 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="TimeText" type="Label" parent="HBoxContainer/Sidebar/BestTime"]
+margin_left = 20.0
+margin_right = 84.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 0, 20 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 2 )
+text = "--.--.--"
+valign = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
 [node name="Fade" parent="." instance=ExtResource( 3 )]
 visible = false
+
+[node name="SaveLoadManager" parent="." instance=ExtResource( 7 )]
 [connection signal="fade_in_finished" from="Fade" to="." method="_on_Fade_fade_in_finished"]
 [connection signal="fade_out_finished" from="Fade" to="." method="_on_Fade_fade_out_finished"]
