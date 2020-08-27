@@ -1,0 +1,127 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://tilesets/water_tile.png" type="Texture" id=1]
+[ext_resource path="res://hud/start_level/StartLevel.tscn" type="PackedScene" id=3]
+[ext_resource path="res://hud/fade/Fade.tscn" type="PackedScene" id=5]
+[ext_resource path="res://elevations/ElevationOverlay.tscn" type="PackedScene" id=6]
+[ext_resource path="res://world_objects/exit_door/ExitDoor.tscn" type="PackedScene" id=8]
+[ext_resource path="res://world_objects/player/Player.tscn" type="PackedScene" id=9]
+[ext_resource path="res://hud/player_time/PlayerTime.tscn" type="PackedScene" id=10]
+[ext_resource path="res://hud/lvl_complete/LvlComplete.tscn" type="PackedScene" id=11]
+[ext_resource path="res://elevations/Elevation1Collision.tscn" type="PackedScene" id=13]
+[ext_resource path="res://world_objects/finish/FinishFlag.tscn" type="PackedScene" id=14]
+[ext_resource path="res://tilesets/water_around_tileset.tres" type="TileSet" id=17]
+
+[sub_resource type="TileSet" id=1]
+0/name = "water_tile.png 0"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 128, 128 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 111, 39 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 111, 39 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 112, 24 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 112, 16 )
+
+[node name="LevelTemplate" type="Node2D"]
+
+[node name="PlayerHUD" type="CanvasLayer" parent="."]
+
+[node name="StartLevel" parent="PlayerHUD" instance=ExtResource( 3 )]
+
+[node name="PlayerTime" parent="PlayerHUD" instance=ExtResource( 10 )]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 8.0
+margin_bottom = 8.0
+
+[node name="LvlComplete" parent="PlayerHUD" instance=ExtResource( 11 )]
+level_num = 1
+
+[node name="Fade" parent="PlayerHUD" instance=ExtResource( 5 )]
+
+[node name="Elevation1Overlay" parent="." instance=ExtResource( 6 )]
+z_index = 1
+collision_layer = 2147483648
+overlay_elevation = 32
+
+[node name="Elevation1TileMap" type="TileMap" parent="."]
+cell_size = Vector2( 16, 16 )
+collision_layer = 2147483648
+collision_mask = 0
+format = 1
+
+[node name="Water" type="TileMap" parent="."]
+z_index = -2
+tile_set = SubResource( 1 )
+cell_size = Vector2( 128, 128 )
+format = 1
+tile_data = PoolIntArray( -524296, 0, 0, -524295, 0, 0, -524294, 0, 0, -524293, 0, 0, -524292, 0, 0, -524291, 0, 0, -524290, 0, 0, -524289, 0, 0, -589824, 0, 0, -589823, 0, 0, -589822, 0, 0, -589821, 0, 0, -589820, 0, 0, -589819, 0, 0, -589818, 0, 0, -589817, 0, 0, -589816, 0, 0, -589815, 0, 0, -589814, 0, 0, -589813, 0, 0, -589812, 0, 0, -589811, 0, 0, -589810, 0, 0, -589809, 0, 0, -589808, 0, 0, -589807, 0, 0, -589806, 0, 0, -458760, 0, 0, -458759, 0, 0, -458758, 0, 0, -458757, 0, 0, -458756, 0, 0, -458755, 0, 0, -458754, 0, 0, -458753, 0, 0, -524288, 0, 0, -524287, 0, 0, -524286, 0, 0, -524285, 0, 0, -524284, 0, 0, -524283, 0, 0, -524282, 0, 0, -524281, 0, 0, -524280, 0, 0, -524279, 0, 0, -524278, 0, 0, -524277, 0, 0, -524276, 0, 0, -524275, 0, 0, -524274, 0, 0, -524273, 0, 0, -524272, 0, 0, -524271, 0, 0, -524270, 0, 0, -393224, 0, 0, -393223, 0, 0, -393222, 0, 0, -393221, 0, 0, -393220, 0, 0, -393219, 0, 0, -393218, 0, 0, -393217, 0, 0, -458752, 0, 0, -458751, 0, 0, -458750, 0, 0, -458749, 0, 0, -458748, 0, 0, -458747, 0, 0, -458746, 0, 0, -458745, 0, 0, -458744, 0, 0, -458743, 0, 0, -458742, 0, 0, -458741, 0, 0, -458740, 0, 0, -458739, 0, 0, -458738, 0, 0, -458737, 0, 0, -458736, 0, 0, -458735, 0, 0, -458734, 0, 0, -327688, 0, 0, -327687, 0, 0, -327686, 0, 0, -327685, 0, 0, -327684, 0, 0, -327683, 0, 0, -327682, 0, 0, -327681, 0, 0, -393216, 0, 0, -393215, 0, 0, -393214, 0, 0, -393213, 0, 0, -393212, 0, 0, -393211, 0, 0, -393210, 0, 0, -393209, 0, 0, -393208, 0, 0, -393207, 0, 0, -393206, 0, 0, -393205, 0, 0, -393204, 0, 0, -393203, 0, 0, -393202, 0, 0, -393201, 0, 0, -393200, 0, 0, -393199, 0, 0, -393198, 0, 0, -262152, 0, 0, -262151, 0, 0, -262150, 0, 0, -262149, 0, 0, -262148, 0, 0, -262147, 0, 0, -262146, 0, 0, -262145, 0, 0, -327680, 0, 0, -327679, 0, 0, -327678, 0, 0, -327677, 0, 0, -327676, 0, 0, -327675, 0, 0, -327674, 0, 0, -327673, 0, 0, -327672, 0, 0, -327671, 0, 0, -327670, 0, 0, -327669, 0, 0, -327668, 0, 0, -327667, 0, 0, -327666, 0, 0, -327665, 0, 0, -327664, 0, 0, -327663, 0, 0, -327662, 0, 0, -196616, 0, 0, -196615, 0, 0, -196614, 0, 0, -196613, 0, 0, -196612, 0, 0, -196611, 0, 0, -196610, 0, 0, -196609, 0, 0, -262144, 0, 0, -262143, 0, 0, -262142, 0, 0, -262141, 0, 0, -262140, 0, 0, -262139, 0, 0, -262138, 0, 0, -262137, 0, 0, -262136, 0, 0, -262135, 0, 0, -262134, 0, 0, -262133, 0, 0, -262132, 0, 0, -262131, 0, 0, -262130, 0, 0, -262129, 0, 0, -262128, 0, 0, -262127, 0, 0, -262126, 0, 0, -131080, 0, 0, -131079, 0, 0, -131078, 0, 0, -131077, 0, 0, -131076, 0, 0, -131075, 0, 0, -131074, 0, 0, -131073, 0, 0, -196608, 0, 0, -196607, 0, 0, -196606, 0, 0, -196605, 0, 0, -196604, 0, 0, -196603, 0, 0, -196602, 0, 0, -196601, 0, 0, -196600, 0, 0, -196599, 0, 0, -196598, 0, 0, -196597, 0, 0, -196596, 0, 0, -196595, 0, 0, -196594, 0, 0, -196593, 0, 0, -196592, 0, 0, -196591, 0, 0, -196590, 0, 0, -65544, 0, 0, -65543, 0, 0, -65542, 0, 0, -65541, 0, 0, -65540, 0, 0, -65539, 0, 0, -65538, 0, 0, -65537, 0, 0, -131072, 0, 0, -131071, 0, 0, -131070, 0, 0, -131069, 0, 0, -131068, 0, 0, -131067, 0, 0, -131066, 0, 0, -131065, 0, 0, -131064, 0, 0, -131063, 0, 0, -131062, 0, 0, -131061, 0, 0, -131060, 0, 0, -131059, 0, 0, -131058, 0, 0, -131057, 0, 0, -131056, 0, 0, -131055, 0, 0, -131054, 0, 0, -8, 0, 0, -7, 0, 0, -6, 0, 0, -5, 0, 0, -4, 0, 0, -3, 0, 0, -2, 0, 0, -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 0, 0, -65531, 0, 0, -65530, 0, 0, -65529, 0, 0, -65528, 0, 0, -65527, 0, 0, -65526, 0, 0, -65525, 0, 0, -65524, 0, 0, -65523, 0, 0, -65522, 0, 0, -65521, 0, 0, -65520, 0, 0, -65519, 0, 0, -65518, 0, 0, 65528, 0, 0, 65529, 0, 0, 65530, 0, 0, 65531, 0, 0, 65532, 0, 0, 65533, 0, 0, 65534, 0, 0, 65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 0, 0, 18, 0, 0, 131064, 0, 0, 131065, 0, 0, 131066, 0, 0, 131067, 0, 0, 131068, 0, 0, 131069, 0, 0, 131070, 0, 0, 131071, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 65543, 0, 0, 65544, 0, 0, 65545, 0, 0, 65546, 0, 0, 65547, 0, 0, 65548, 0, 0, 65549, 0, 0, 65550, 0, 0, 65551, 0, 0, 65552, 0, 0, 65553, 0, 0, 65554, 0, 0, 196600, 0, 0, 196601, 0, 0, 196602, 0, 0, 196603, 0, 0, 196604, 0, 0, 196605, 0, 0, 196606, 0, 0, 196607, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 131083, 0, 0, 131084, 0, 0, 131085, 0, 0, 131086, 0, 0, 131087, 0, 0, 131088, 0, 0, 131089, 0, 0, 131090, 0, 0 )
+
+[node name="WaterAround" type="TileMap" parent="."]
+z_index = -2
+tile_set = ExtResource( 17 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -65547, 0, 0, -65546, 0, 2, -65545, 0, 2, -65544, 0, 1, -65543, 0, 1, -65542, 0, 1, -65541, 0, 2, -65540, 0, 3, -65539, 0, 3, -65538, 0, 3, -65537, 0, 1, -131072, 0, 3, -131071, 0, 3, -131070, 0, 3, -131069, 0, 3, -131068, 0, 4, -11, 0, 65536, -10, 0, 65537, -9, 0, 65538, -8, 0, 131074, -7, 0, 196609, -6, 0, 196609, -5, 0, 65539, -4, 0, 196610, -3, 0, 131073, -2, 0, 131074, -1, 0, 65539, -65536, 0, 131074, -65535, 0, 65537, -65534, 0, 65539, -65533, 0, 196609, -65532, 0, 65540, 65525, 0, 196608, 65526, 0, 196610, 65527, 0, 196610, 65528, 0, 131073, 65529, 0, 131074, 65530, 0, 65538, 65531, 0, 65538, 65532, 0, 131074, 65533, 0, 65538, 65534, 0, 131074, 65535, 0, 196609, 0, 0, 65538, 1, 0, 65537, 2, 0, 196609, 3, 0, 131073, 4, 0, 65540, 131061, 0, 65536, 131062, 0, 131074, 131063, 0, 65538, 131064, 0, 131075, 131065, 0, 131073, 131066, 0, 131073, 131067, 0, 65539, 131068, 0, 65539, 131069, 0, 196610, 131070, 0, 131073, 131071, 0, 196609, 65536, 0, 65537, 65537, 0, 196611, 65538, 0, 131073, 65539, 0, 131074, 65540, 0, 131076, 196597, 0, 65536, 196598, 0, 131073, 196599, 0, 65538, 196600, 0, 131073, 196601, 0, 131073, 196602, 0, 131075, 196603, 0, 196611, 196604, 0, 196611, 196605, 0, 131074, 196606, 0, 196609, 196607, 0, 196610, 131072, 0, 196609, 131073, 0, 65539, 131074, 0, 131073, 131075, 0, 131075, 131076, 0, 131076, 262133, 0, 131072, 262134, 0, 131075, 262135, 0, 196609, 262136, 0, 65538, 262137, 0, 65539, 262138, 0, 196609, 262139, 0, 196611, 262140, 0, 131074, 262141, 0, 196610, 262142, 0, 131073, 262143, 0, 131073, 196608, 0, 131073, 196609, 0, 131075, 196610, 0, 131074, 196611, 0, 196610, 196612, 0, 196612, 327669, 0, 262144, 327670, 0, 262147, 327671, 0, 262147, 327672, 0, 262147, 327673, 0, 262146, 327674, 0, 262145, 327675, 0, 262145, 327676, 0, 262145, 327677, 0, 262147, 327678, 0, 262145, 327679, 0, 262147, 262144, 0, 262147, 262145, 0, 262146, 262146, 0, 262145, 262147, 0, 262145, 262148, 0, 262148 )
+
+[node name="WaterAroundAlt" type="TileMap" parent="."]
+z_index = -2
+tile_set = ExtResource( 17 )
+cell_size = Vector2( 16, 16 )
+format = 1
+
+[node name="YSortWorldObjects" type="YSort" parent="."]
+
+[node name="ExitDoor" parent="YSortWorldObjects" instance=ExtResource( 8 )]
+position = Vector2( -128, -8 )
+
+[node name="Player" parent="YSortWorldObjects" instance=ExtResource( 9 )]
+position = Vector2( 0, 0 )
+collision_mask = 481
+
+[node name="FinishFlag" parent="YSortWorldObjects" instance=ExtResource( 14 )]
+position = Vector2( 2032, -432 )
+
+[node name="Elevation1Collisions" type="Node" parent="."]
+
+[node name="Elevation1Collision" parent="Elevation1Collisions" instance=ExtResource( 13 )]
+
+[node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision/EntryArea1" index="0"]
+position = Vector2( -48, 24 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision/ElevatedArea1" index="0"]
+position = Vector2( -48, -8 )
+shape = SubResource( 6 )
+
+[node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision/BoundaryBody1" index="0"]
+position = Vector2( -48, 8 )
+shape = SubResource( 7 )
+
+[node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision/WallBody1" index="0"]
+position = Vector2( -48, 48 )
+shape = SubResource( 8 )
+[connection signal="fade_in_finished" from="PlayerHUD/Fade" to="YSortWorldObjects/ExitDoor" method="_on_Fade_fade_in_finished"]
+[connection signal="fade_out_finished" from="PlayerHUD/Fade" to="PlayerHUD/StartLevel" method="_on_Fade_fade_out_finished"]
+
+[editable path="YSortWorldObjects/FinishFlag"]
+
+[editable path="Elevation1Collisions/Elevation1Collision"]

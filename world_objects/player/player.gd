@@ -40,6 +40,7 @@ onready var player_sprite = $PlayerSprite
 onready var camera = $Camera2D
 onready var collision_shape = $CollisionShape2D
 onready var overlapping_wall_area = $OverlappingWallCheck
+onready var detect_elev_area = $DetectElevArea
 onready var hurtbox = $HurtboxArea2D
 onready var hit_timer = $HurtboxArea2D/Timer
 onready var respawn_timer = $RespawnTimer
@@ -57,6 +58,7 @@ func _physics_process(delta):
 	if (knockback <= Vector2.ZERO and !player_stopped):
 		if Input.is_action_just_pressed("jump") and !has_jumped:
 			has_jumped = true
+			jump_height = MAX_HEIGHT + added_height
 			is_jumping = true
 			is_falling = false
 		elif Input.is_action_just_pressed("jump") and has_jumped and !has_double_jumped:
@@ -164,10 +166,12 @@ func _physics_process(delta):
 				# Init knockback vector to opposite of player input vector (current facing direction)
 				var knockback_vector = -input_vector
 				
-				# Check for set knockback, always apply set knockback if it exists
+				# If area has set knockback, always apply set knockback if it exists
+				# Else if no set knockback, check if player is not moving or if player already in knockback state
+				# Do not let player alter knockback direction with input if already in a knockback state
 				if (area.has_set_knockback):
 					knockback_vector = area.get_owner().knockback_vector
-				elif (input_vector == Vector2.ZERO):	# If no set knockback, check if player is not moving
+				elif (input_vector == Vector2.ZERO or knockback != Vector2.ZERO):
 					# Always apply other object's moving knockback vector if player is not moving
 					# If player is not moving, there is no way for them to collide with the moving object in the wrong direction
 					if (area.is_moving):
@@ -258,6 +262,12 @@ func reset_player():
 	animation_tree.set("parameters/Fall/blend_position", Vector2.DOWN)
 	animation_tree.set("parameters/Death/blend_position", Vector2.DOWN)
 	animation_state.travel("Respawn")	# Travel to respawn animation
+
+# Sorts areas elevation in ascending order
+func _sort_overlapping_elevs_ascending(a, b):
+	if (a.get_owner().elevation < b.get_owner().elevation):
+		return true
+	return false
 	
 ## SIGNALS ##
 		
@@ -268,25 +278,38 @@ func _on_DetectElevEntry_area_entered(area):
 	# Only enter elevations that are higher than current ground elevation
 	if ground_elevation < area_elev:
 		if (ground_elevation + added_height >= area_elev):
+			# Get distance to move up
+			var move_up = area_elev - ground_elevation
+			
 			# Set new ground elevation to the entered elevation
 			ground_elevation = area_elev
 			
-			# Create illusion of going up one elevation
-			jump_height -= GlobalConst.ELEVATION_UNIT
-			added_height -= GlobalConst.ELEVATION_UNIT
-			player_sprite.position.y += GlobalConst.ELEVATION_UNIT
-			position.y -= GlobalConst.ELEVATION_UNIT
+			# Create illusion of going up elevation
+			jump_height -= move_up
+			added_height -= move_up
+			player_sprite.position.y += move_up
+			position.y -= move_up
 
 # Detect elevation area exit
 func _on_DetectElevArea_area_exited(area):
 	var area_elev = area.get_owner().elevation	# Get elevation of exited area
 	if (ground_elevation == area_elev):
-		# Create illusion of dropping down one elevation
-		jump_height += GlobalConst.ELEVATION_UNIT
-		added_height += GlobalConst.ELEVATION_UNIT
-		player_sprite.position.y -= GlobalConst.ELEVATION_UNIT
-		position.y += GlobalConst.ELEVATION_UNIT
-		ground_elevation -= GlobalConst.ELEVATION_UNIT
+		# Get distance to drop down using the overlapping area's elevation difference
+		var overlapping_elevs = detect_elev_area.get_overlapping_areas()
+		overlapping_elevs.sort_custom(Area2D, "_sort_overlapping_elevs_ascending")
+		var drop_down = (ground_elevation - overlapping_elevs[0].get_owner().elevation)
+		
+		# If drop down is 0, then there is no other elevation area upon exit
+		# Should then drop down all the way to 0 ground elevation
+		if (drop_down == 0):
+			drop_down = ground_elevation
+		
+		# Create illusion of dropping down elevation
+		jump_height += drop_down
+		added_height += drop_down
+		player_sprite.position.y -= drop_down
+		position.y += drop_down
+		ground_elevation -= drop_down
 		
 		# Set falling state to true
 		is_falling = true

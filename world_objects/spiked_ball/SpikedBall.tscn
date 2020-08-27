@@ -3,11 +3,6 @@
 [ext_resource path="res://world_objects/spiked_ball/spikeball.png" type="Texture" id=2]
 [ext_resource path="res://world_objects/hitbox_properties.gd" type="Script" id=3]
 
-
-
-
-
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 4.8672, 3.38984 )
 

@@ -63,6 +63,7 @@ level_name = "Level 1"
 [node name="LevelButton2" parent="HBoxContainer/LevelButtons" instance=ExtResource( 1 )]
 margin_left = 136.0
 margin_right = 200.0
+scene_to_load = "res://levels/Level2.tscn"
 level_num = 2
 level_name = "Level 2"
 
