@@ -14,7 +14,7 @@
 [ext_resource path="res://elevations/Elevation1Collision.tscn" type="PackedScene" id=13]
 [ext_resource path="res://world_objects/finish/FinishFlag.tscn" type="PackedScene" id=14]
 [ext_resource path="res://world_objects/saw/MovingSaw.tscn" type="PackedScene" id=15]
-[ext_resource path="res://tilesets/tileset1.tres" type="TileSet" id=16]
+[ext_resource path="res://tilesets/tileset01.tres" type="TileSet" id=16]
 [ext_resource path="res://tilesets/water_around_tileset.tres" type="TileSet" id=17]
 
 [sub_resource type="TileSet" id=1]
