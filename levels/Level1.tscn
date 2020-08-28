@@ -426,7 +426,7 @@ position = Vector2( 704, -512 )
 elevation = 32
 
 [node name="SpikedBall17" parent="YSortWorldObjects/SpikedBalls" instance=ExtResource( 12 )]
-position = Vector2( 720, -512 )
+position = Vector2( 720, -520 )
 
 [node name="Hitbox" parent="YSortWorldObjects/SpikedBalls/SpikedBall17" index="2"]
 elevation = 32
@@ -438,7 +438,7 @@ position = Vector2( 736, -512 )
 elevation = 32
 
 [node name="SpikedBall19" parent="YSortWorldObjects/SpikedBalls" instance=ExtResource( 12 )]
-position = Vector2( 752, -512 )
+position = Vector2( 752, -520 )
 
 [node name="Hitbox" parent="YSortWorldObjects/SpikedBalls/SpikedBall19" index="2"]
 elevation = 32
@@ -450,7 +450,7 @@ position = Vector2( 768, -512 )
 elevation = 32
 
 [node name="SpikedBall21" parent="YSortWorldObjects/SpikedBalls" instance=ExtResource( 12 )]
-position = Vector2( 784, -512 )
+position = Vector2( 784, -520 )
 
 [node name="Hitbox" parent="YSortWorldObjects/SpikedBalls/SpikedBall21" index="2"]
 elevation = 32
@@ -462,7 +462,7 @@ position = Vector2( 800, -512 )
 elevation = 32
 
 [node name="SpikedBall23" parent="YSortWorldObjects/SpikedBalls" instance=ExtResource( 12 )]
-position = Vector2( 816, -512 )
+position = Vector2( 816, -520 )
 
 [node name="Hitbox" parent="YSortWorldObjects/SpikedBalls/SpikedBall23" index="2"]
 elevation = 32
@@ -474,7 +474,7 @@ position = Vector2( 832, -512 )
 elevation = 32
 
 [node name="SpikedBall25" parent="YSortWorldObjects/SpikedBalls" instance=ExtResource( 12 )]
-position = Vector2( 848, -512 )
+position = Vector2( 848, -520 )
 
 [node name="Hitbox" parent="YSortWorldObjects/SpikedBalls/SpikedBall25" index="2"]
 elevation = 32

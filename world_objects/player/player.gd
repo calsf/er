@@ -52,7 +52,7 @@ func _physics_process(delta):
 	# Wait for respawn timer to finish and reset is_respawning
 	if (is_respawning):
 		return
-		
+	
 	# Perform normal jump or double jump when button is pressed
 	# If in knockback or player is stopped, do not listen for inputs
 	if (knockback <= Vector2.ZERO and !player_stopped):
@@ -66,7 +66,7 @@ func _physics_process(delta):
 			jump_height = MAX_HEIGHT + added_height	# Increase target jump height by MAX_HEIGHT
 			is_jumping = true
 			is_falling = false
-		
+
 	# Gradually decrease knockback value and knockback strength to 0 and apply current knockback
 	# The knockback and curr_knockback_strength should be equal or decreasing at same rate
 	knockback = knockback.move_toward(Vector2.ZERO, DECEL * delta)
@@ -188,7 +188,7 @@ func _physics_process(delta):
 				# Prevent getting knocked back by this same area within INVULN_TIME
 				hit_timer.start(INVULN_TIME)
 				last_area_hit = area
-				return
+				return	
 				
 	_death_check()
 
@@ -313,6 +313,7 @@ func _on_DetectElevArea_area_exited(area):
 		
 		# Set falling state to true
 		is_falling = true
+		print(ground_elevation)
 
 # Reset last area hit after timer
 func _on_Timer_timeout():

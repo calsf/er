@@ -9,11 +9,6 @@
 [ext_resource path="res://elevations/Elevation3Collision.tscn" type="PackedScene" id=7]
 [ext_resource path="res://world_objects/player/Player.tscn" type="PackedScene" id=8]
 
-
-
-
-
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 159, 111 )
 
@@ -124,12 +119,6 @@ elevation = 64
 
 [node name="MovingSpikedBall" parent="YSortWorldObjects" instance=ExtResource( 5 )]
 position = Vector2( 206.326, 9.91944 )
-pos_A = Vector2( 132, -21 )
-pos_B = Vector2( 206.3, 9.9 )
-move_speed = 75
-
-[node name="Hitbox" parent="YSortWorldObjects/MovingSpikedBall" index="2"]
-elevation = 32
 
 [node name="Elevation1Collisions" type="Node" parent="."]
 
