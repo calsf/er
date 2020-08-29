@@ -31,14 +31,7 @@ var _default_data = {
 	"Level8Time" : 0.00,
 	"Level8Unlocked" : false,
 	
-	"Level9Time" : 0.00,
-	"Level9Unlocked" : false,
-	
-	"Level10Time" : 0.00,
-	"Level10Unlocked" : false,
-	
-	"Level11Time" : 0.00,
-	"Level11Unlocked" : false
+	"SoundMuted" : false
 }
 
 func save_data(data):

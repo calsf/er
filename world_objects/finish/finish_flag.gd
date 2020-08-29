@@ -6,7 +6,7 @@ signal level_finished
 
 func _ready():
 	# Set z index based on object elevation
-	z_index = elevation / (GlobalConst.ELEVATION_UNIT)
+	z_index = elevation / (Globals.ELEVATION_UNIT)
 
 # When player enters area, level is complete
 func _on_FinishArea_body_entered(body):

@@ -1,5 +1,8 @@
 extends Control
 
+const SOUND_OFF_ICON = preload("res://menu/sound_off.png")
+const SOUND_ON_ICON = preload("res://menu/sound_on.png")
+
 var scene_to_load = ""
 onready var level_buttons = $HBoxContainer/LevelButtons
 onready var first_button = $HBoxContainer/LevelButtons/LevelButton0
@@ -8,6 +11,10 @@ onready var title = $HBoxContainer/Sidebar/Title
 onready var fade = $Fade	# Fade will block clicks while shown
 onready var save_load_manager = $SaveLoadManager
 onready var save_data = save_load_manager.load_data()
+onready var sounds = $Sounds
+onready var keyboard_controls = $KeyboardControls
+onready var gamepad_controls = $GamepadControls
+onready var sound_icon = $SoundIcon
 
 var level_key = ""
 var level_name = ""
@@ -16,6 +23,15 @@ var level_name = ""
 func _ready():
 	fade.show()
 	fade.fade_out()
+	_set_sound_icon()
+	
+	# Set visibility of controls
+	if (Globals.is_keyboard):
+		keyboard_controls.visible = true
+		gamepad_controls.visible = false
+	else:
+		keyboard_controls.visible = false
+		gamepad_controls.visible = true
 	
 	# When any of the buttons are pressed, set scene to load and transition to it
 	# When focused on a button, display the corresponding details about the level
@@ -25,10 +41,27 @@ func _ready():
 		if !save_data[str("Level", button.level_num, "Unlocked")]:
 			button.disabled = true
 			button.focus_mode = false
+			
+func _input(event):
+	# Change visibility of controls based on input type
+	if event is InputEventKey:
+		Globals.is_keyboard = true
+		keyboard_controls.visible = true
+		gamepad_controls.visible = false
+	elif event is InputEventJoypadButton:
+		Globals.is_keyboard = false
+		keyboard_controls.visible = false
+		gamepad_controls.visible = true
+
+	# Toggle sound off or on and save setting
+	if Input.is_key_pressed(KEY_G) or Input.is_joy_button_pressed(0, 3):
+		save_data["SoundMuted"] = !save_data["SoundMuted"]
+		save_load_manager.save_data(save_data)
+		_set_sound_icon()
 
 # Set scene to load and begin fade
 func _set_scene_to_load(scene):
-	$ButtonPressed.play()
+	sounds.play("ButtonPressed")
 	scene_to_load = scene
 	# Remove focus to prevent input while transitioning scene
 	for button in level_buttons.get_children():
@@ -37,7 +70,7 @@ func _set_scene_to_load(scene):
 
 # Display details about selected level
 func _display_focused_level(level_num, level_name):
-	$ButtonFocused.play()
+	sounds.play("ButtonFocused")
 	# Display level name
 	title.text = level_name
 	
@@ -52,6 +85,13 @@ func _display_focused_level(level_num, level_name):
 		
 		# Display time
 		best_time.text = str("%0*d" % [2, best_minutes], "." , "%0*.*f" % [5, 2, best_seconds])
+
+# Set image of sound icon based on saved sound setting
+func _set_sound_icon():
+	if (save_data["SoundMuted"]):
+		sound_icon.set_texture(SOUND_OFF_ICON)
+	else:
+		sound_icon.set_texture(SOUND_ON_ICON)
 
 # Once fade in is finished, change to the scene to be loaded
 func _on_Fade_fade_in_finished():

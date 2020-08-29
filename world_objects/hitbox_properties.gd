@@ -7,4 +7,4 @@ var has_set_knockback = false
 
 func _ready():
 	# Set z index based on object elevation
-	get_owner().z_index = elevation / (GlobalConst.ELEVATION_UNIT)
+	get_owner().z_index = elevation / (Globals.ELEVATION_UNIT)

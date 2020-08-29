@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://hud/player_time/time_icon.png" type="Texture" id=1]
 [ext_resource path="res://fonts/fffforwa.ttf" type="DynamicFontData" id=2]
@@ -6,8 +6,9 @@
 [ext_resource path="res://hud/lvl_complete/lvl_completed.gd" type="Script" id=4]
 [ext_resource path="res://save_load/SaveLoadManager.tscn" type="PackedScene" id=5]
 [ext_resource path="res://hud/lvl_complete/lvlcomplete_bg.png" type="Texture" id=6]
+[ext_resource path="res://hud/lvl_complete/PressAnyKeyLabel.tscn" type="PackedScene" id=7]
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=1]
 size = 24
 font_data = ExtResource( 2 )
 
@@ -15,28 +16,9 @@ font_data = ExtResource( 2 )
 size = 12
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=3]
 size = 12
 font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=5]
-size = 8
-font_data = ExtResource( 2 )
-
-[sub_resource type="Animation" id=6]
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:rect_scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 0.9, 0.9 ) ]
-}
 
 [node name="LvlComplete" type="Control"]
 anchor_right = 1.0
@@ -84,7 +66,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
 margin_right = 234.0
 margin_bottom = 33.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 1 )
 text = "Level Complete"
 valign = 1
 
@@ -161,26 +143,10 @@ visible = false
 margin_top = 97.0
 margin_right = 234.0
 margin_bottom = 114.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 3 )
 text = "New Best Time!"
 align = 1
 
-[node name="PressAnyKeyLabel" type="Label" parent="CenterContainer/VBoxContainer"]
-visible = false
-margin_top = 97.0
-margin_right = 234.0
-margin_bottom = 108.0
-rect_pivot_offset = Vector2( 117, 5 )
-custom_fonts/font = SubResource( 5 )
-text = "Press any key to continue"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CenterContainer/VBoxContainer/PressAnyKeyLabel"]
-autoplay = "Show"
-anims/Show = SubResource( 6 )
+[node name="PressAnyKeyLabel" parent="CenterContainer/VBoxContainer" instance=ExtResource( 7 )]
 
 [node name="SaveLoadManager" parent="." instance=ExtResource( 5 )]

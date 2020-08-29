@@ -5,15 +5,16 @@ const AIR_SPEED = 4
 const MAX_HEIGHT = 44
 const DECEL = 500
 const SOUND_DELAY = .1
+const INVULN_TIME = .1
 
 # Move speed properties
 var velocity = Vector2.ZERO
 var curr_speed = MAX_SPEED
-var walk_multiplier = .5
 
 # Knockback properties
 var knockback = Vector2.ZERO
 var can_play = true
+var last_area_hit = null
 var curr_knockback_strength = 0
 
 # Jumping and elevation properties
@@ -24,7 +25,7 @@ var has_jumped = false
 var is_tumbling = false		# For falling down a wall
 var jump_height = MAX_HEIGHT	# The number of pixels to jump up (the target added_height will try to reach when is jumping)
 var added_height = 0	# Current number of pixels above ground, grounded at 0
-var elevations = [0, GlobalConst.ELEVATION_UNIT * 1, GlobalConst.ELEVATION_UNIT * 2, GlobalConst.ELEVATION_UNIT * 3]
+var elevations = [0, Globals.ELEVATION_UNIT * 1, Globals.ELEVATION_UNIT * 2, Globals.ELEVATION_UNIT * 3]
 var ground_elevation = elevations[1]	# The elevation of height in which player is considered grounded
 
 # Death
@@ -42,11 +43,13 @@ onready var collision_shape = $CollisionShape2D
 onready var overlapping_wall_area = $OverlappingWallCheck
 onready var detect_elev_area = $DetectElevArea
 onready var hurtbox = $HurtboxArea2D
-onready var hit_timer = $HurtboxArea2D/Timer
+onready var hit_timer = $HurtboxArea2D/HitTimer
+onready var invuln_timer = $HurtboxArea2D/InvulnTimer
 onready var respawn_timer = $RespawnTimer
 onready var animation_player = $AnimationPlayer
 onready var animation_tree = $AnimationTree
 onready var animation_state = animation_tree.get("parameters/playback")
+onready var sounds = $Sounds
 
 func _physics_process(delta):
 	# Wait for respawn timer to finish and reset is_respawning
@@ -61,14 +64,13 @@ func _physics_process(delta):
 			jump_height = MAX_HEIGHT + added_height
 			is_jumping = true
 			is_falling = false
-			$Jump.play()
+			sounds.play("Jump")
 		elif Input.is_action_just_pressed("jump") and has_jumped and !has_double_jumped:
 			has_double_jumped = true
 			jump_height = MAX_HEIGHT + added_height	# Increase target jump height by MAX_HEIGHT
 			is_jumping = true
 			is_falling = false
-			$Jump.stop()
-			$Jump.play(0)
+			sounds.play("Jump")
 
 	# Gradually decrease knockback value and knockback strength to 0 and apply current knockback
 	# The knockback and curr_knockback_strength should be equal or decreasing at same rate
@@ -106,11 +108,7 @@ func _physics_process(delta):
 		if (!is_jumping and !is_falling):
 			animation_state.travel("Move")
 		
-		# Walk will move at slower speed
-		if (Input.get_action_strength("walk")):
-			velocity = input_vector * (curr_speed * walk_multiplier)
-		else:
-			velocity = input_vector * curr_speed
+		velocity = input_vector * curr_speed
 	else:
 		animation_state.travel("Idle")
 		velocity = Vector2.ZERO
@@ -159,13 +157,13 @@ func _physics_process(delta):
 		player_shadow.position.y = 1
 	
 	# Change player sprite's z index based on current height
-	player_sprite.z_index = (ground_elevation + added_height) / GlobalConst.ELEVATION_UNIT
+	player_sprite.z_index = (ground_elevation + added_height) / Globals.ELEVATION_UNIT
 	
 	# Check for overlapping WorldObject layer areas in hurtbox and apply hit
 	for area in hurtbox.get_overlapping_areas():
 		if (area.get_owner() != self):
 			var other_elev = area.elevation
-			if (other_elev == get_curr_elevation()):
+			if (last_area_hit != area and other_elev == get_curr_elevation()):
 				# Init knockback vector to opposite of player input vector (current facing direction)
 				var knockback_vector = -input_vector
 				
@@ -188,10 +186,15 @@ func _physics_process(delta):
 					curr_knockback_strength = area.knockback_strength
 				knockback = knockback_vector.normalized() * curr_knockback_strength
 				
+				# Delay before playing hit sound again
 				if (can_play):
 					can_play = false
 					hit_timer.start(SOUND_DELAY)
-					$Hit.play()
+					sounds.play("Hit")
+				
+				# Avoid hitting same area within INVULN_TIME
+				last_area_hit = area
+				invuln_timer.start(INVULN_TIME)
 				return	
 				
 	_death_check()
@@ -235,7 +238,7 @@ func _death_check():
 		player_shadow.visible = false
 		emit_signal("player_died")
 		respawn_timer.start(1)
-		$Splash.play()
+		sounds.play("Splash")
 
 # Get current elevation of player
 func get_curr_elevation():
@@ -245,7 +248,7 @@ func get_curr_elevation():
 
 # Resets player properties to default, as if player first started level
 func reset_player():
-	ground_elevation = GlobalConst.ELEVATION_UNIT
+	ground_elevation = Globals.ELEVATION_UNIT
 	_set_elevation_collisions(get_curr_elevation())
 	camera.smoothing_enabled = false	# Need to turn off smoothing so camera snaps
 	global_position = Vector2.ZERO
@@ -324,6 +327,10 @@ func _on_DetectElevArea_area_exited(area):
 func _on_Timer_timeout():
 	can_play = true
 
+# Reset last area hit after timer
+func _on_InvulnTimer_timeout():
+	last_area_hit = null
+
 # Reset player properties and respawn player after timer
 func _on_RespawnTimer_timeout():
 	reset_player()
@@ -333,3 +340,6 @@ func _on_RespawnTimer_timeout():
 	camera.smoothing_enabled = true	# Re-enable camera smoothing
 	emit_signal("player_reset")	# Emit player reset signal
 	is_respawning = false
+
+
+

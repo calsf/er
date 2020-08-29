@@ -6,9 +6,9 @@ var is_exiting = false
 
 func _ready():
 	# Set z index based on elevation
-	z_index = elevation / (GlobalConst.ELEVATION_UNIT)
+	z_index = elevation / (Globals.ELEVATION_UNIT)
 	# Set collision layer to corresponding elevation but one elevation unit higher so player collides
-	set_collision_layer_bit( 2 + ((elevation / GlobalConst.ELEVATION_UNIT) * 4), true)
+	set_collision_layer_bit( 2 + ((elevation / Globals.ELEVATION_UNIT) * 4), true)
 
 # Player can enter at same elevation or one jump higher
 # One jump will not be enough to jump over door so can still catch entry
@@ -19,7 +19,7 @@ func _on_ExitArea_body_entered(body):
 		body.player_stopped = true
 		start_leaving_scene()
 
-# Once fade in is finished, return to leve select
+# Once fade in is finished, return to level select
 func _on_Fade_fade_in_finished():
 	if (is_exiting):
 		get_tree().change_scene("res://levels/level_select/LevelSelect.tscn")

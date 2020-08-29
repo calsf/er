@@ -235,7 +235,6 @@ level_num = 1
 [node name="Fade" parent="PlayerHUD" instance=ExtResource( 5 )]
 
 [node name="Elevation1Overlay" parent="." instance=ExtResource( 6 )]
-visible = false
 z_index = 1
 tile_set = ExtResource( 16 )
 collision_layer = 2147483648
