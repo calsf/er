@@ -28,6 +28,7 @@ func _ready():
 
 # Set scene to load and begin fade
 func _set_scene_to_load(scene):
+	$ButtonPressed.play()
 	scene_to_load = scene
 	# Remove focus to prevent input while transitioning scene
 	for button in level_buttons.get_children():
@@ -36,6 +37,7 @@ func _set_scene_to_load(scene):
 
 # Display details about selected level
 func _display_focused_level(level_num, level_name):
+	$ButtonFocused.play()
 	# Display level name
 	title.text = level_name
 	
