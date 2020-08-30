@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sound_on.png-4ec2ca7297fc2cf3e1bb579f0ab5f0f0.stex"
+path="res://.import/splash_foreground.png-ae833b317cd3aa2fe74ee81830b8f0e6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://menu/sound_on.png"
-dest_files=[ "res://.import/sound_on.png-4ec2ca7297fc2cf3e1bb579f0ab5f0f0.stex" ]
+source_file="res://levels/title_scene/splash_foreground.png"
+dest_files=[ "res://.import/splash_foreground.png-ae833b317cd3aa2fe74ee81830b8f0e6.stex" ]
 
 [params]
 

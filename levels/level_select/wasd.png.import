@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/space.png-c1cacd94c4d9e02a836eca75014d4138.stex"
+path="res://.import/wasd.png-b3308b0f23eb1ae7b19130b2c691a665.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://menu/space.png"
-dest_files=[ "res://.import/space.png-c1cacd94c4d9e02a836eca75014d4138.stex" ]
+source_file="res://levels/level_select/wasd.png"
+dest_files=[ "res://.import/wasd.png-b3308b0f23eb1ae7b19130b2c691a665.stex" ]
 
 [params]
 

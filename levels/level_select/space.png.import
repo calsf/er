@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sound_off.png-a9cb6836e70a3332c531fb1506c2fecf.stex"
+path="res://.import/space.png-5027bf647beacb699cec553d0cb481cb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://menu/sound_off.png"
-dest_files=[ "res://.import/sound_off.png-a9cb6836e70a3332c531fb1506c2fecf.stex" ]
+source_file="res://levels/level_select/space.png"
+dest_files=[ "res://.import/space.png-5027bf647beacb699cec553d0cb481cb.stex" ]
 
 [params]
 

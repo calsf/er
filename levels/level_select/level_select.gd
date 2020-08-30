@@ -1,7 +1,7 @@
 extends Control
 
-const SOUND_OFF_ICON = preload("res://menu/sound_off.png")
-const SOUND_ON_ICON = preload("res://menu/sound_on.png")
+const SOUND_OFF_ICON = preload("res://levels/level_select/sound_off.png")
+const SOUND_ON_ICON = preload("res://levels/level_select/sound_on.png")
 
 var scene_to_load = ""
 onready var level_buttons = $HBoxContainer/LevelButtons

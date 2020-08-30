@@ -10,14 +10,14 @@
 [ext_resource path="res://sounds/buttonpressed.wav" type="AudioStream" id=8]
 [ext_resource path="res://sounds/buttonfocused.wav" type="AudioStream" id=9]
 [ext_resource path="res://sounds/Sounds.tscn" type="PackedScene" id=10]
-[ext_resource path="res://menu/wasd.png" type="Texture" id=11]
-[ext_resource path="res://menu/space.png" type="Texture" id=12]
+[ext_resource path="res://levels/level_select/wasd.png" type="Texture" id=11]
+[ext_resource path="res://levels/level_select/space.png" type="Texture" id=12]
 [ext_resource path="res://fonts/chava-regular.ttf" type="DynamicFontData" id=13]
-[ext_resource path="res://menu/cross.png" type="Texture" id=14]
-[ext_resource path="res://menu/leftstick.png" type="Texture" id=15]
-[ext_resource path="res://menu/triangle.png" type="Texture" id=16]
-[ext_resource path="res://menu/g_key.png" type="Texture" id=17]
-[ext_resource path="res://menu/sound_on.png" type="Texture" id=18]
+[ext_resource path="res://levels/level_select/cross.png" type="Texture" id=14]
+[ext_resource path="res://levels/level_select/leftstick.png" type="Texture" id=15]
+[ext_resource path="res://levels/level_select/triangle.png" type="Texture" id=16]
+[ext_resource path="res://levels/level_select/g_key.png" type="Texture" id=17]
+[ext_resource path="res://levels/level_select/sound_on.png" type="Texture" id=18]
 
 [sub_resource type="DynamicFont" id=1]
 size = 18
@@ -403,6 +403,5 @@ __meta__ = {
 }
 
 [node name="Fade" parent="." instance=ExtResource( 3 )]
-visible = false
 [connection signal="fade_in_finished" from="Fade" to="." method="_on_Fade_fade_in_finished"]
 [connection signal="fade_out_finished" from="Fade" to="." method="_on_Fade_fade_out_finished"]

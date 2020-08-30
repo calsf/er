@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/wasd.png-ed30b8e4baa6db109825284545fe3318.stex"
+path="res://.import/leftstick.png-84a429bcc4179a5cbee97e6983831875.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://menu/wasd.png"
-dest_files=[ "res://.import/wasd.png-ed30b8e4baa6db109825284545fe3318.stex" ]
+source_file="res://levels/level_select/leftstick.png"
+dest_files=[ "res://.import/leftstick.png-84a429bcc4179a5cbee97e6983831875.stex" ]
 
 [params]
 

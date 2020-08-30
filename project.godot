@@ -16,8 +16,8 @@ _global_script_class_icons={
 [application]
 
 config/name="ss"
-run/main_scene="res://levels/level_select/LevelSelect.tscn"
-config/icon="res://icon.png"
+run/main_scene="res://levels/title_scene/TitleScene.tscn"
+config/icon="res://icon.ico"
 
 [autoload]
 

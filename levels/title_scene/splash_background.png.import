@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/g_key.png-3dd3c0b3be10713c6ea1aeb6d05f8134.stex"
+path="res://.import/splash_background.png-2b64d013b07e80f78e7eeeece611b6f8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://menu/g_key.png"
-dest_files=[ "res://.import/g_key.png-3dd3c0b3be10713c6ea1aeb6d05f8134.stex" ]
+source_file="res://levels/title_scene/splash_background.png"
+dest_files=[ "res://.import/splash_background.png-2b64d013b07e80f78e7eeeece611b6f8.stex" ]
 
 [params]
 

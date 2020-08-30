@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/triangle.png-2a74505de175f43fddda5fe6aa35ece9.stex"
+path="res://.import/sound_off.png-524c9e61b5b78c8d18d5993da489d644.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://menu/triangle.png"
-dest_files=[ "res://.import/triangle.png-2a74505de175f43fddda5fe6aa35ece9.stex" ]
+source_file="res://levels/level_select/sound_off.png"
+dest_files=[ "res://.import/sound_off.png-524c9e61b5b78c8d18d5993da489d644.stex" ]
 
 [params]
 

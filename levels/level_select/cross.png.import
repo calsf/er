@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cross.png-5a04d4f74a14d109bdbf0e526d088c3a.stex"
+path="res://.import/cross.png-fc5098cf6c5eb30dcace08c045c990fe.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://menu/cross.png"
-dest_files=[ "res://.import/cross.png-5a04d4f74a14d109bdbf0e526d088c3a.stex" ]
+source_file="res://levels/level_select/cross.png"
+dest_files=[ "res://.import/cross.png-fc5098cf6c5eb30dcace08c045c990fe.stex" ]
 
 [params]
 
