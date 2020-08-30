@@ -233,6 +233,7 @@ margin_bottom = 8.0
 level_num = 1
 
 [node name="Fade" parent="PlayerHUD" instance=ExtResource( 5 )]
+color = Color( 0, 0, 0, 1 )
 
 [node name="Elevation1Overlay" parent="." instance=ExtResource( 6 )]
 z_index = 1
@@ -353,43 +354,19 @@ position = Vector2( 224, 24 )
 elevation = 32
 
 [node name="SpikedBall5" parent="YSortWorldObjects/SpikedBalls" instance=ExtResource( 12 )]
-position = Vector2( 736, -67 )
+position = Vector2( 736, -88 )
 
 [node name="Hitbox" parent="YSortWorldObjects/SpikedBalls/SpikedBall5" index="2"]
 elevation = 32
 
-[node name="SpikedBall6" parent="YSortWorldObjects/SpikedBalls" instance=ExtResource( 12 )]
-position = Vector2( 752, -67 )
-
-[node name="Hitbox" parent="YSortWorldObjects/SpikedBalls/SpikedBall6" index="2"]
-elevation = 32
-
-[node name="SpikedBall7" parent="YSortWorldObjects/SpikedBalls" instance=ExtResource( 12 )]
-position = Vector2( 768, -67 )
-
-[node name="Hitbox" parent="YSortWorldObjects/SpikedBalls/SpikedBall7" index="2"]
-elevation = 32
-
 [node name="SpikedBall8" parent="YSortWorldObjects/SpikedBalls" instance=ExtResource( 12 )]
-position = Vector2( 784, -67 )
+position = Vector2( 784, -56 )
 
 [node name="Hitbox" parent="YSortWorldObjects/SpikedBalls/SpikedBall8" index="2"]
 elevation = 32
 
-[node name="SpikedBall9" parent="YSortWorldObjects/SpikedBalls" instance=ExtResource( 12 )]
-position = Vector2( 800, -67 )
-
-[node name="Hitbox" parent="YSortWorldObjects/SpikedBalls/SpikedBall9" index="2"]
-elevation = 32
-
-[node name="SpikedBall10" parent="YSortWorldObjects/SpikedBalls" instance=ExtResource( 12 )]
-position = Vector2( 816, -67 )
-
-[node name="Hitbox" parent="YSortWorldObjects/SpikedBalls/SpikedBall10" index="2"]
-elevation = 32
-
 [node name="SpikedBall11" parent="YSortWorldObjects/SpikedBalls" instance=ExtResource( 12 )]
-position = Vector2( 832, -67 )
+position = Vector2( 832, -88 )
 
 [node name="Hitbox" parent="YSortWorldObjects/SpikedBalls/SpikedBall11" index="2"]
 elevation = 32
@@ -1258,15 +1235,7 @@ shape = SubResource( 40 )
 
 [editable path="YSortWorldObjects/SpikedBalls/SpikedBall5"]
 
-[editable path="YSortWorldObjects/SpikedBalls/SpikedBall6"]
-
-[editable path="YSortWorldObjects/SpikedBalls/SpikedBall7"]
-
 [editable path="YSortWorldObjects/SpikedBalls/SpikedBall8"]
-
-[editable path="YSortWorldObjects/SpikedBalls/SpikedBall9"]
-
-[editable path="YSortWorldObjects/SpikedBalls/SpikedBall10"]
 
 [editable path="YSortWorldObjects/SpikedBalls/SpikedBall11"]
 

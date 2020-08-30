@@ -403,5 +403,6 @@ __meta__ = {
 }
 
 [node name="Fade" parent="." instance=ExtResource( 3 )]
+color = Color( 0, 0, 0, 1 )
 [connection signal="fade_in_finished" from="Fade" to="." method="_on_Fade_fade_in_finished"]
 [connection signal="fade_out_finished" from="Fade" to="." method="_on_Fade_fade_out_finished"]
