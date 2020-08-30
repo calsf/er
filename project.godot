@@ -15,7 +15,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="ss"
+config/name="Elevated Rush"
 run/main_scene="res://levels/title_scene/TitleScene.tscn"
 config/icon="res://icon.ico"
 
