@@ -51,6 +51,13 @@ onready var animation_tree = $AnimationTree
 onready var animation_state = animation_tree.get("parameters/playback")
 onready var sounds = $Sounds
 
+func _ready():
+	animation_tree.set("parameters/Idle/blend_position", Vector2.DOWN)
+	animation_tree.set("parameters/Move/blend_position", Vector2.DOWN)
+	animation_tree.set("parameters/Jump/blend_position", Vector2.DOWN)
+	animation_tree.set("parameters/Fall/blend_position", Vector2.DOWN)
+	animation_tree.set("parameters/Death/blend_position", Vector2.DOWN)
+
 func _physics_process(delta):
 	# Wait for respawn timer to finish and reset is_respawning
 	if (is_respawning):

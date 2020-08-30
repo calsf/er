@@ -793,13 +793,13 @@ blend_point_2/pos = Vector2( -1, 0 )
 blend_point_3/node = SubResource( 49 )
 blend_point_3/pos = Vector2( 1, 0 )
 blend_point_4/node = SubResource( 50 )
-blend_point_4/pos = Vector2( -0.4, 0.6 )
+blend_point_4/pos = Vector2( -0.5, 0.5 )
 blend_point_5/node = SubResource( 51 )
-blend_point_5/pos = Vector2( 0.4, 0.6 )
+blend_point_5/pos = Vector2( 0.5, 0.5 )
 blend_point_6/node = SubResource( 52 )
-blend_point_6/pos = Vector2( -0.4, -0.6 )
+blend_point_6/pos = Vector2( -0.5, -0.5 )
 blend_point_7/node = SubResource( 53 )
-blend_point_7/pos = Vector2( 0.4, -0.6 )
+blend_point_7/pos = Vector2( 0.5, -0.5 )
 blend_mode = 1
 
 [sub_resource type="AnimationNodeAnimation" id=55]
@@ -836,13 +836,13 @@ blend_point_2/pos = Vector2( -1, 0 )
 blend_point_3/node = SubResource( 58 )
 blend_point_3/pos = Vector2( 1, 0 )
 blend_point_4/node = SubResource( 59 )
-blend_point_4/pos = Vector2( -0.4, 0.6 )
+blend_point_4/pos = Vector2( -0.5, 0.5 )
 blend_point_5/node = SubResource( 60 )
-blend_point_5/pos = Vector2( 0.4, 0.6 )
+blend_point_5/pos = Vector2( 0.5, 0.5 )
 blend_point_6/node = SubResource( 61 )
-blend_point_6/pos = Vector2( -0.4, -0.6 )
+blend_point_6/pos = Vector2( -0.5, -0.5 )
 blend_point_7/node = SubResource( 62 )
-blend_point_7/pos = Vector2( 0.4, -0.6 )
+blend_point_7/pos = Vector2( 0.5, -0.5 )
 blend_mode = 1
 
 [sub_resource type="AnimationNodeAnimation" id=64]
@@ -879,13 +879,13 @@ blend_point_2/pos = Vector2( 0, -1 )
 blend_point_3/node = SubResource( 67 )
 blend_point_3/pos = Vector2( 1, 0 )
 blend_point_4/node = SubResource( 68 )
-blend_point_4/pos = Vector2( -0.4, 0.6 )
+blend_point_4/pos = Vector2( -0.5, 0.5 )
 blend_point_5/node = SubResource( 69 )
-blend_point_5/pos = Vector2( -0.4, -0.6 )
+blend_point_5/pos = Vector2( -0.5, -0.5 )
 blend_point_6/node = SubResource( 70 )
-blend_point_6/pos = Vector2( 0.4, 0.6 )
+blend_point_6/pos = Vector2( 0.5, 0.5 )
 blend_point_7/node = SubResource( 71 )
-blend_point_7/pos = Vector2( 0.4, -0.6 )
+blend_point_7/pos = Vector2( 0.5, -0.5 )
 blend_mode = 1
 
 [sub_resource type="AnimationNodeAnimation" id=73]
@@ -922,13 +922,13 @@ blend_point_2/pos = Vector2( 1, 0 )
 blend_point_3/node = SubResource( 76 )
 blend_point_3/pos = Vector2( 0, 1 )
 blend_point_4/node = SubResource( 77 )
-blend_point_4/pos = Vector2( -0.4, 0.6 )
+blend_point_4/pos = Vector2( -0.5, 0.5 )
 blend_point_5/node = SubResource( 78 )
-blend_point_5/pos = Vector2( 0.4, 0.6 )
+blend_point_5/pos = Vector2( 0.5, 0.5 )
 blend_point_6/node = SubResource( 79 )
-blend_point_6/pos = Vector2( -0.4, -0.6 )
+blend_point_6/pos = Vector2( -0.5, -0.5 )
 blend_point_7/node = SubResource( 80 )
-blend_point_7/pos = Vector2( 0.4, -0.6 )
+blend_point_7/pos = Vector2( 0.5, -0.5 )
 blend_mode = 1
 
 [sub_resource type="AnimationNodeAnimation" id=82]
@@ -965,13 +965,13 @@ blend_point_2/pos = Vector2( -1, 0 )
 blend_point_3/node = SubResource( 85 )
 blend_point_3/pos = Vector2( 1, 0 )
 blend_point_4/node = SubResource( 86 )
-blend_point_4/pos = Vector2( -0.4, 0.6 )
+blend_point_4/pos = Vector2( -0.5, 0.5 )
 blend_point_5/node = SubResource( 87 )
-blend_point_5/pos = Vector2( -0.4, -0.6 )
+blend_point_5/pos = Vector2( -0.5, -0.5 )
 blend_point_6/node = SubResource( 88 )
-blend_point_6/pos = Vector2( 0.4, 0.6 )
+blend_point_6/pos = Vector2( 0.5, 0.5 )
 blend_point_7/node = SubResource( 89 )
-blend_point_7/pos = Vector2( 0.4, -0.6 )
+blend_point_7/pos = Vector2( 0.5, -0.5 )
 blend_mode = 1
 
 [sub_resource type="AnimationNodeAnimation" id=91]
@@ -1028,7 +1028,7 @@ states/Respawn/node = SubResource( 91 )
 states/Respawn/position = Vector2( 1103, 229 )
 transitions = [ "Idle", "Move", SubResource( 92 ), "Move", "Idle", SubResource( 93 ), "Idle", "Jump", SubResource( 94 ), "Move", "Jump", SubResource( 95 ), "Jump", "Idle", SubResource( 96 ), "Jump", "Move", SubResource( 97 ), "Idle", "Fall", SubResource( 98 ), "Move", "Fall", SubResource( 99 ), "Jump", "Fall", SubResource( 100 ), "Fall", "Jump", SubResource( 101 ), "Fall", "Move", SubResource( 102 ), "Fall", "Idle", SubResource( 103 ), "Idle", "Death", SubResource( 104 ), "Move", "Death", SubResource( 105 ), "Jump", "Death", SubResource( 106 ), "Fall", "Death", SubResource( 107 ), "Death", "Respawn", SubResource( 108 ), "Respawn", "Idle", SubResource( 109 ) ]
 start_node = "Idle"
-graph_offset = Vector2( -61, 47.801 )
+graph_offset = Vector2( -61, 2.13917 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=111]
 
@@ -1051,7 +1051,7 @@ z_index = -1
 texture = ExtResource( 2 )
 vframes = 20
 hframes = 8
-frame = 16
+frame = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = -1.5708
@@ -1143,7 +1143,7 @@ active = true
 parameters/playback = SubResource( 111 )
 parameters/Death/blend_position = Vector2( 0, 0 )
 parameters/Fall/blend_position = Vector2( 0, 0 )
-parameters/Idle/blend_position = Vector2( 0.00156009, 0.991379 )
+parameters/Idle/blend_position = Vector2( 0, 0 )
 parameters/Jump/blend_position = Vector2( 0, 0 )
 parameters/Move/blend_position = Vector2( 0, 0 )
 
