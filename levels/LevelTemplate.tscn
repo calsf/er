@@ -28,17 +28,17 @@
 0/shapes = [  ]
 0/z_index = 0
 
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 95, 39 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 95, 39 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 96, 24 )
+
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 111, 39 )
-
-[sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 111, 39 )
-
-[sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 112, 24 )
-
-[sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 112, 16 )
+extents = Vector2( 96, 16 )
 
 [node name="LevelTemplate" type="Node2D"]
 
@@ -56,6 +56,7 @@ margin_bottom = 8.0
 level_num = 1
 
 [node name="Fade" parent="PlayerHUD" instance=ExtResource( 5 )]
+color = Color( 0, 0, 0, 1 )
 
 [node name="Elevation1Overlay" parent="." instance=ExtResource( 6 )]
 z_index = 1
@@ -91,7 +92,7 @@ format = 1
 [node name="YSortWorldObjects" type="YSort" parent="."]
 
 [node name="ExitDoor" parent="YSortWorldObjects" instance=ExtResource( 8 )]
-position = Vector2( -128, -8 )
+position = Vector2( -96, -8 )
 
 [node name="Player" parent="YSortWorldObjects" instance=ExtResource( 9 )]
 position = Vector2( 0, 0 )
@@ -105,20 +106,20 @@ position = Vector2( 2032, -432 )
 [node name="Elevation1Collision" parent="Elevation1Collisions" instance=ExtResource( 13 )]
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision/EntryArea1" index="0"]
-position = Vector2( -48, 24 )
-shape = SubResource( 5 )
+position = Vector2( -32, 24 )
+shape = SubResource( 2 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision/ElevatedArea1" index="0"]
-position = Vector2( -48, -8 )
-shape = SubResource( 6 )
+position = Vector2( -32, -8 )
+shape = SubResource( 3 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision/BoundaryBody1" index="0"]
-position = Vector2( -48, 8 )
-shape = SubResource( 7 )
+position = Vector2( -32, 8 )
+shape = SubResource( 4 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision/WallBody1" index="0"]
-position = Vector2( -48, 48 )
-shape = SubResource( 8 )
+position = Vector2( -32, 48 )
+shape = SubResource( 5 )
 [connection signal="fade_in_finished" from="PlayerHUD/Fade" to="YSortWorldObjects/ExitDoor" method="_on_Fade_fade_in_finished"]
 [connection signal="fade_out_finished" from="PlayerHUD/Fade" to="PlayerHUD/StartLevel" method="_on_Fade_fade_out_finished"]
 

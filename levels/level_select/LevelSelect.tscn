@@ -67,6 +67,7 @@ __meta__ = {
 }
 
 [node name="LevelButton0" parent="HBoxContainer/LevelButtons" instance=ExtResource( 1 )]
+scene_to_load = "res://levels/Tutorial.tscn"
 level_name = "Tutorial"
 
 [node name="LevelButton1" parent="HBoxContainer/LevelButtons" instance=ExtResource( 1 )]
@@ -85,6 +86,7 @@ level_name = "Level 2"
 [node name="LevelButton3" parent="HBoxContainer/LevelButtons" instance=ExtResource( 1 )]
 margin_top = 68.0
 margin_bottom = 132.0
+scene_to_load = "res://levels/Level3.tscn"
 level_num = 3
 
 [node name="LevelButton4" parent="HBoxContainer/LevelButtons" instance=ExtResource( 1 )]

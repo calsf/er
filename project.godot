@@ -162,6 +162,16 @@ toggle_sound={
 2d_physics/layer_7="Elev2_Wall"
 2d_physics/layer_8="Elev3_Boundary"
 2d_physics/layer_9="Elev3_Wall"
+2d_physics/layer_10="Elev4_Boundary"
+2d_physics/layer_11="Elev4_Wall"
+2d_physics/layer_12="Elev5_Boundary"
+2d_physics/layer_13="Elev5_Wall"
+2d_physics/layer_14="Elev6_Boundary"
+2d_physics/layer_15="Elev6_Wall"
+2d_physics/layer_16="Elev7_Boundary"
+2d_physics/layer_17="Elev7_Wall"
+2d_physics/layer_18="Elev8_Boundary"
+2d_physics/layer_19="Elev8_Wall"
 
 [rendering]
 

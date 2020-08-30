@@ -5,7 +5,7 @@ const AIR_SPEED = 4
 const MAX_HEIGHT = 44
 const DECEL = 500
 const SOUND_DELAY = .1
-const INVULN_TIME = .1
+const INVULN_TIME = .2
 
 # Move speed properties
 var velocity = Vector2.ZERO
@@ -192,6 +192,10 @@ func _physics_process(delta):
 				if (area.knockback_strength > curr_knockback_strength):
 					curr_knockback_strength = area.knockback_strength
 				knockback = knockback_vector.normalized() * curr_knockback_strength
+				
+				# If there is an animation for when player enters area, play it
+				if (area.has_anim):
+					area.get_owner().play_anim()
 				
 				# Delay before playing hit sound again
 				if (can_play):
