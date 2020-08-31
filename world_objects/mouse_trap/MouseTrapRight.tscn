@@ -4,3 +4,6 @@
 
 [node name="MouseTrapRight" instance=ExtResource( 1 )]
 knockback_vector = Vector2( 1, 0 )
+
+[node name="Hitbox" parent="." index="1"]
+knockback_strength = 400

@@ -3,7 +3,7 @@
 [ext_resource path="res://world_objects/mouse_trap/MouseTrap.tscn" type="PackedScene" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 6, 3 )
+extents = Vector2( 8, 3 )
 
 [node name="MouseTrapUp" instance=ExtResource( 1 )]
 knockback_vector = Vector2( 0, -1 )
@@ -11,6 +11,9 @@ anim_name = "SnapVertUp"
 
 [node name="Sprite" parent="." index="0"]
 frame = 3
+
+[node name="Hitbox" parent="." index="1"]
+knockback_strength = 400
 
 [node name="CollisionShape2D" parent="Hitbox" index="0"]
 position = Vector2( 0, -1 )

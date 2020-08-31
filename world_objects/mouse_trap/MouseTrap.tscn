@@ -66,7 +66,7 @@ hframes = 9
 
 [node name="Hitbox" type="Area2D" parent="."]
 script = ExtResource( 1 )
-knockback_strength = 300
+knockback_strength = 400
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2( 0, -2.5 )
