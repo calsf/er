@@ -172,6 +172,7 @@ toggle_sound={
 2d_physics/layer_17="Elev7_Wall"
 2d_physics/layer_18="Elev8_Boundary"
 2d_physics/layer_19="Elev8_Wall"
+2d_physics/layer_20="PermaCollide"
 
 [rendering]
 

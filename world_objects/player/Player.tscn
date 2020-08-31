@@ -1034,7 +1034,7 @@ graph_offset = Vector2( -61, 2.13917 )
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 0, -2 )
-collision_mask = 505
+collision_mask = 524793
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true
