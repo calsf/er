@@ -1034,7 +1034,7 @@ graph_offset = Vector2( -61, 2.13917 )
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 0, -2 )
-collision_mask = 524793
+collision_mask = 1048569
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true
@@ -1051,7 +1051,7 @@ z_index = -1
 texture = ExtResource( 2 )
 vframes = 20
 hframes = 8
-frame = 9
+frame = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = -1.5708

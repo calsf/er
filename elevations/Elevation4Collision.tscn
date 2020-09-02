@@ -1,10 +1,9 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://elevations/Elevation1Collision.tscn" type="PackedScene" id=1]
-[ext_resource path="res://elevations/elevation4.gd" type="Script" id=2]
 
 [node name="Elevation4Collision" instance=ExtResource( 1 )]
-script = ExtResource( 2 )
+elevation_num = 4
 
 [node name="BoundaryBody1" parent="." index="2"]
 collision_layer = 2147484160

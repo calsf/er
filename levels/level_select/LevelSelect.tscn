@@ -88,13 +88,16 @@ margin_top = 68.0
 margin_bottom = 132.0
 scene_to_load = "res://levels/Level3.tscn"
 level_num = 3
+level_name = "Level 3"
 
 [node name="LevelButton4" parent="HBoxContainer/LevelButtons" instance=ExtResource( 1 )]
 margin_left = 68.0
 margin_top = 68.0
 margin_right = 132.0
 margin_bottom = 132.0
+scene_to_load = "res://levels/Level4.tscn"
 level_num = 4
+level_name = "Level 4"
 
 [node name="LevelButton5" parent="HBoxContainer/LevelButtons" instance=ExtResource( 1 )]
 margin_left = 136.0
