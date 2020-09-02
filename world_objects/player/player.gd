@@ -26,7 +26,7 @@ var is_tumbling = false		# For falling down a wall
 var jump_height = MAX_HEIGHT	# The number of pixels to jump up (the target added_height will try to reach when is jumping)
 var added_height = 0	# Current number of pixels above ground, grounded at 0
 var elevations = [0, Globals.ELEVATION_UNIT * 1, Globals.ELEVATION_UNIT * 2, Globals.ELEVATION_UNIT * 3]
-var ground_elevation = elevations[1]	# The elevation of height in which player is considered grounded
+export var ground_elevation = Globals.ELEVATION_UNIT	# The elevation of height in which player is considered grounded
 
 # Death
 signal player_died
@@ -36,6 +36,7 @@ var is_respawning = false
 # Stop player input
 var player_stopped = true
 
+onready var start_elevation = ground_elevation
 onready var player_shadow = $Shadow
 onready var player_sprite = $PlayerSprite
 onready var camera = $Camera2D
@@ -259,7 +260,7 @@ func get_curr_elevation():
 
 # Resets player properties to default, as if player first started level
 func reset_player():
-	ground_elevation = Globals.ELEVATION_UNIT
+	ground_elevation = start_elevation
 	_set_elevation_collisions(get_curr_elevation())
 	camera.smoothing_enabled = false	# Need to turn off smoothing so camera snaps
 	global_position = Vector2.ZERO

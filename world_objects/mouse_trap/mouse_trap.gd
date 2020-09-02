@@ -11,6 +11,7 @@ func _ready():
 	hitbox.elevation = elevation
 	hitbox.has_set_knockback = true
 	hitbox.has_anim = true
+	z_index = elevation / (Globals.ELEVATION_UNIT)
 
 func play_anim():
 	animation_player.play(anim_name)
