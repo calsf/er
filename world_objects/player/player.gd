@@ -30,7 +30,9 @@ var elevations = [
 	Globals.ELEVATION_UNIT * 1, 
 	Globals.ELEVATION_UNIT * 2, 
 	Globals.ELEVATION_UNIT * 3, 
-	Globals.ELEVATION_UNIT * 4
+	Globals.ELEVATION_UNIT * 4,
+	Globals.ELEVATION_UNIT * 5,
+	Globals.ELEVATION_UNIT * 6
 	]
 export var ground_elevation = Globals.ELEVATION_UNIT	# The elevation of height in which player is considered grounded
 
@@ -230,15 +232,23 @@ func _set_elevation_collisions(curr_elevation):
 	set_collision_mask_bit(7, curr_elevation < elevations[3] and ground_elevation < elevations[3])
 	# Boundary mask layer of elevation 4
 	set_collision_mask_bit(9, curr_elevation < elevations[4] and ground_elevation < elevations[4])
+	# Boundary mask layer of elevation 5
+	set_collision_mask_bit(11, curr_elevation < elevations[5] and ground_elevation < elevations[5])
+	# Boundary mask layer of elevation 6
+	set_collision_mask_bit(13, curr_elevation < elevations[6] and ground_elevation < elevations[6])
 	
 	# Wall mask layer of elevation 1
 	set_collision_mask_bit(4, get_collision_mask_bit(3))
 	# Wall mask layer of elevation 2
 	set_collision_mask_bit(6, get_collision_mask_bit(5))
-	# Wall mask layer of elevation 2
+	# Wall mask layer of elevation 3
 	set_collision_mask_bit(8, get_collision_mask_bit(7))
-	# Wall mask layer of elevation 2
+	# Wall mask layer of elevation 4
 	set_collision_mask_bit(10, get_collision_mask_bit(9))
+	# Wall mask layer of elevation 5
+	set_collision_mask_bit(12, get_collision_mask_bit(11))
+	# Wall mask layer of elevation 6
+	set_collision_mask_bit(14, get_collision_mask_bit(13))
 
 # Check if player is overlapping a wall and set tumbling state and collision shape accordingly
 func _check_overlapping_wall():
@@ -343,7 +353,6 @@ func _on_DetectElevArea_area_exited(area):
 		
 		# Set falling state to true
 		is_falling = true
-		print(ground_elevation)
 
 # Reset can play hit sound after timer
 func _on_Timer_timeout():

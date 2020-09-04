@@ -653,7 +653,6 @@ position = Vector2( 0, -24 )
 
 [node name="ExitDoor" parent="YSortWorldObjects" index="0"]
 elevation = 32
-layer_num = 6
 
 [node name="FinishFlag" parent="YSortWorldObjects" index="2"]
 position = Vector2( 2888, -344 )

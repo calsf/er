@@ -1,7 +1,6 @@
 extends StaticBody2D
 
 export var elevation = 0
-export var layer_num = 0
 onready var fade = get_node("../../PlayerHUD/Fade")
 var is_exiting = false
 
@@ -9,7 +8,7 @@ func _ready():
 	# Set z index based on elevation
 	z_index = elevation / (Globals.ELEVATION_UNIT)
 	# Set collision layer to corresponding elevation but one elevation unit higher so player collides
-	set_collision_layer_bit(layer_num, true)
+	set_collision_layer_bit(4 + ((elevation / (Globals.ELEVATION_UNIT)) * 2), true)
 
 # Player can enter at same elevation or one jump higher
 # One jump will not be enough to jump over door so can still catch entry

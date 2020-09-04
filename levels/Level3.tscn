@@ -289,7 +289,6 @@ position = Vector2( 34, -28 )
 [node name="ExitDoor" parent="YSortWorldObjects" index="0"]
 position = Vector2( -64, -96 )
 elevation = 64
-layer_num = 8
 
 [node name="Player" parent="YSortWorldObjects" index="1"]
 collision_mask = 524769
