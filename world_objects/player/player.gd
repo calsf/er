@@ -32,7 +32,9 @@ var elevations = [
 	Globals.ELEVATION_UNIT * 3, 
 	Globals.ELEVATION_UNIT * 4,
 	Globals.ELEVATION_UNIT * 5,
-	Globals.ELEVATION_UNIT * 6
+	Globals.ELEVATION_UNIT * 6,
+	Globals.ELEVATION_UNIT * 7,
+	Globals.ELEVATION_UNIT * 8,
 	]
 export var ground_elevation = Globals.ELEVATION_UNIT	# The elevation of height in which player is considered grounded
 
@@ -236,6 +238,10 @@ func _set_elevation_collisions(curr_elevation):
 	set_collision_mask_bit(11, curr_elevation < elevations[5] and ground_elevation < elevations[5])
 	# Boundary mask layer of elevation 6
 	set_collision_mask_bit(13, curr_elevation < elevations[6] and ground_elevation < elevations[6])
+	# Boundary mask layer of elevation 7
+	set_collision_mask_bit(15, curr_elevation < elevations[7] and ground_elevation < elevations[7])
+	# Boundary mask layer of elevation 8
+	set_collision_mask_bit(17, curr_elevation < elevations[8] and ground_elevation < elevations[8])
 	
 	# Wall mask layer of elevation 1
 	set_collision_mask_bit(4, get_collision_mask_bit(3))
@@ -249,6 +255,10 @@ func _set_elevation_collisions(curr_elevation):
 	set_collision_mask_bit(12, get_collision_mask_bit(11))
 	# Wall mask layer of elevation 6
 	set_collision_mask_bit(14, get_collision_mask_bit(13))
+	# Wall mask layer of elevation 7
+	set_collision_mask_bit(16, get_collision_mask_bit(15))
+	# Wall mask layer of elevation 8
+	set_collision_mask_bit(18, get_collision_mask_bit(17))
 
 # Check if player is overlapping a wall and set tumbling state and collision shape accordingly
 func _check_overlapping_wall():

@@ -43,7 +43,7 @@ shape = SubResource( 1 )
 
 [node name="Hitbox" type="Area2D" parent="."]
 script = ExtResource( 3 )
-knockback_strength = 400
+knockback_strength = 500
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2( 0, -0.5 )
