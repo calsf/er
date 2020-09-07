@@ -1,0 +1,97 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://world_objects/hitbox_properties.gd" type="Script" id=1]
+[ext_resource path="res://world_objects/arrows/arrows.png" type="Texture" id=2]
+
+[sub_resource type="GDScript" id=2]
+script/source = "extends Node2D
+
+export var elevation = 0
+export var knockback_vector = Vector2.ZERO
+export var anim_name = \"Snap\"
+onready var animation_player = $AnimationPlayer
+onready var hitbox = $Hitbox
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	hitbox.elevation = elevation
+	hitbox.has_set_knockback = true
+	hitbox.has_anim = true
+	z_index = elevation / (Globals.ELEVATION_UNIT)
+
+func play_anim():
+	animation_player.play(anim_name)
+
+"
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 26, 4 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "ArrowDown"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 9, 10, 11, 8 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "ArrowHoriz"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 2, 3, 0 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "ArrowUp"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 5, 6, 7, 4 ]
+}
+
+[node name="Arrow" type="Node2D"]
+script = SubResource( 2 )
+anim_name = "ArrowHoriz"
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+hframes = 12
+frame = 8
+
+[node name="Hitbox" type="Area2D" parent="."]
+script = ExtResource( 1 )
+knockback_strength = 500
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/ArrowDown = SubResource( 4 )
+anims/ArrowHoriz = SubResource( 3 )
+anims/ArrowUp = SubResource( 5 )

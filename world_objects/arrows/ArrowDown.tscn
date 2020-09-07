@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://world_objects/arrows/Arrow.tscn" type="PackedScene" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 16, 6 )
+
+[node name="ArrowDown" instance=ExtResource( 1 )]
+knockback_vector = Vector2( 0, 1 )
+anim_name = "ArrowDown"
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+position = Vector2( 0, -2 )
+shape = SubResource( 1 )
