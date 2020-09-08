@@ -46,6 +46,9 @@ var is_respawning = false
 # Stop player input
 var player_stopped = true
 
+# Camera offset amount when elevation changes, will gradually return to 0
+var cam_offset = 0
+
 onready var start_elevation = ground_elevation
 onready var player_shadow = $Shadow
 onready var player_sprite = $PlayerSprite
@@ -220,6 +223,16 @@ func _physics_process(delta):
 				return	
 				
 	_death_check()
+	
+	# Smooth camera when it gets offset by elevation changes
+	# Do not move camera down when jumping to prevent jarring camera movement when jumping between high elevations
+	if (cam_offset < 0):
+		camera.global_position.y -= AIR_SPEED
+		cam_offset += AIR_SPEED
+	elif (cam_offset > 0 and !is_jumping):
+		camera.global_position.y += AIR_SPEED
+		cam_offset -= AIR_SPEED
+		
 
 ## FUNCTIONS ##
 
@@ -339,6 +352,10 @@ func _on_DetectElevEntry_area_entered(area):
 			added_height -= move_up
 			player_sprite.position.y += move_up
 			position.y -= move_up
+			
+			# Maintain camera position and change offset amount
+			camera.global_position.y += move_up
+			cam_offset -= move_up
 
 # Detect elevation area exit
 func _on_DetectElevArea_area_exited(area):
@@ -363,6 +380,10 @@ func _on_DetectElevArea_area_exited(area):
 		
 		# Set falling state to true
 		is_falling = true
+		
+		# Maintain camera position and change offset amount
+		camera.global_position.y -= drop_down
+		cam_offset += drop_down
 
 # Reset can play hit sound after timer
 func _on_Timer_timeout():
