@@ -104,26 +104,34 @@ margin_left = 136.0
 margin_top = 68.0
 margin_right = 200.0
 margin_bottom = 132.0
+scene_to_load = "res://levels/Level5.tscn"
 level_num = 5
+level_name = "Level 5"
 
 [node name="LevelButton6" parent="HBoxContainer/LevelButtons" instance=ExtResource( 1 )]
 margin_top = 136.0
 margin_bottom = 200.0
+scene_to_load = "res://levels/Level6.tscn"
 level_num = 6
+level_name = "Level 6"
 
 [node name="LevelButton7" parent="HBoxContainer/LevelButtons" instance=ExtResource( 1 )]
 margin_left = 68.0
 margin_top = 136.0
 margin_right = 132.0
 margin_bottom = 200.0
+scene_to_load = "res://levels/Level7.tscn"
 level_num = 7
+level_name = "Level 7"
 
 [node name="LevelButton8" parent="HBoxContainer/LevelButtons" instance=ExtResource( 1 )]
 margin_left = 136.0
 margin_top = 136.0
 margin_right = 200.0
 margin_bottom = 200.0
+scene_to_load = "res://levels/Level8.tscn"
 level_num = 8
+level_name = "Level 8"
 
 [node name="Sidebar" type="VBoxContainer" parent="HBoxContainer"]
 margin_left = 220.0
