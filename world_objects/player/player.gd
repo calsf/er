@@ -184,7 +184,7 @@ func _physics_process(delta):
 	for area in hurtbox.get_overlapping_areas():
 		if (area.get_owner() != self):
 			var other_elev = area.elevation
-			if (last_area_hit != area and other_elev == get_curr_elevation()):
+			if (last_area_hit != area and other_elev == get_curr_elevation() and other_elev == ground_elevation):
 				# Init knockback vector to opposite of player input vector (current facing direction)
 				var knockback_vector = -input_vector
 				

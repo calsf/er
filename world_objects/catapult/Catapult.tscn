@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://world_objects/catapult/catapult.png" type="Texture" id=1]
+[ext_resource path="res://world_objects/hitbox_properties.gd" type="Script" id=2]
+[ext_resource path="res://world_objects/set_knockback.gd" type="Script" id=4]
+[ext_resource path="res://world_objects/catapult/launch_up.gd" type="Script" id=5]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 6.0
+
+[sub_resource type="Animation" id=2]
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 1, 0 ]
+}
+
+[node name="Catapult" type="Node2D"]
+script = ExtResource( 4 )
+knockback_vector = Vector2( 0, 1 )
+anim_name = "Launch"
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+hframes = 3
+
+[node name="Hitbox" type="Area2D" parent="."]
+script = ExtResource( 2 )
+knockback_strength = 300
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2( 0, -10.5 )
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Launch = SubResource( 2 )
+
+[node name="LaunchUp" type="Node" parent="."]
+script = ExtResource( 5 )
+launch_strength = 96
+[connection signal="animation_started" from="AnimationPlayer" to="LaunchUp" method="_on_AnimationPlayer_animation_started"]
