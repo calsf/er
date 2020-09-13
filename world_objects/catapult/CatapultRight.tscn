@@ -1,14 +1,16 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://world_objects/catapult/catapult.png" type="Texture" id=1]
-[ext_resource path="res://world_objects/hitbox_properties.gd" type="Script" id=2]
-[ext_resource path="res://world_objects/set_knockback.gd" type="Script" id=4]
-[ext_resource path="res://world_objects/catapult/launch_up.gd" type="Script" id=5]
+[ext_resource path="res://world_objects/set_knockback.gd" type="Script" id=1]
+[ext_resource path="res://world_objects/catapult/launch_up.gd" type="Script" id=3]
+[ext_resource path="res://world_objects/catapult/catapultside.png" type="Texture" id=4]
+[ext_resource path="res://world_objects/hitbox_properties.gd" type="Script" id=5]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 6.0
+radius = 3.5
+height = 7.5
 
 [sub_resource type="Animation" id=2]
+resource_name = "Launch"
 length = 0.6
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -23,22 +25,24 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 1, 0 ]
 }
 
-[node name="Catapult" type="Node2D"]
-script = ExtResource( 4 )
-knockback_vector = Vector2( 0, 1 )
+[node name="CatapultRight" type="Node2D"]
+scale = Vector2( 2, 2 )
+script = ExtResource( 1 )
+knockback_vector = Vector2( 1, 0 )
 anim_name = "Launch"
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 2, 2 )
-texture = ExtResource( 1 )
+position = Vector2( 0, -14 )
+texture = ExtResource( 4 )
 hframes = 3
 
 [node name="Hitbox" type="Area2D" parent="."]
-script = ExtResource( 2 )
+position = Vector2( 0, -14 )
+script = ExtResource( 5 )
 knockback_strength = 300
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2( 0, -10.5 )
+position = Vector2( -20, 12.5 )
 rotation = 1.5708
 shape = SubResource( 1 )
 
@@ -46,7 +50,7 @@ shape = SubResource( 1 )
 anims/Launch = SubResource( 2 )
 
 [node name="LaunchUp" type="Node" parent="."]
-script = ExtResource( 5 )
+script = ExtResource( 3 )
 launch_strength = 96
-player_path = "../../../YSortWorldObjects/Player"
+player_path = "../../../Player"
 [connection signal="animation_started" from="AnimationPlayer" to="LaunchUp" method="_on_AnimationPlayer_animation_started"]
