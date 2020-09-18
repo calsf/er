@@ -1,14 +1,11 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://world_objects/set_knockback.gd" type="Script" id=1]
-[ext_resource path="res://world_objects/launch_up.gd" type="Script" id=3]
-[ext_resource path="res://world_objects/catapult/catapultside.png" type="Texture" id=4]
-[ext_resource path="res://world_objects/hitbox_properties.gd" type="Script" id=5]
+[ext_resource path="res://world_objects/hitbox_properties.gd" type="Script" id=1]
+[ext_resource path="res://world_objects/set_knockback.gd" type="Script" id=2]
+[ext_resource path="res://world_objects/pusher_up/pusher_up.png" type="Texture" id=3]
 
-
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 3.5
-height = 7.5
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10, 3.5 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "Launch"
@@ -26,32 +23,42 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 1, 0 ]
 }
 
-[node name="CatapultRight" type="Node2D"]
-scale = Vector2( 2, 2 )
-script = ExtResource( 1 )
-knockback_vector = Vector2( 1, 0 )
+[sub_resource type="GDScript" id=3]
+script/source = "extends Node
+
+export var launch_strength = 0
+export var player_path = \"\";
+onready var player = get_node(player_path)
+
+func _on_AnimationPlayer_animation_started(anim_name):
+	player.has_jumped = false;
+	player.has_double_jumped = false;
+	player.jump_height = launch_strength;
+	player.is_jumping = true;
+"
+
+[node name="PusherUp" type="Node2D"]
+script = ExtResource( 2 )
 anim_name = "Launch"
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0, -14 )
-texture = ExtResource( 4 )
+position = Vector2( 0, -8 )
+texture = ExtResource( 3 )
 hframes = 3
 
 [node name="Hitbox" type="Area2D" parent="."]
-position = Vector2( 0, -14 )
-script = ExtResource( 5 )
-knockback_strength = 300
+position = Vector2( 0, 8 )
+script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2( -20, 12.5 )
-rotation = 1.5708
+position = Vector2( 0, -5.5 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Launch = SubResource( 2 )
 
 [node name="LaunchUp" type="Node" parent="."]
-script = ExtResource( 3 )
+script = SubResource( 3 )
 launch_strength = 96
 player_path = "../../../Player"
 [connection signal="animation_started" from="AnimationPlayer" to="LaunchUp" method="_on_AnimationPlayer_animation_started"]

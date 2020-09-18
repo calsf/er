@@ -1,67 +1,163 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://elevations/ElevationOverlay.tscn" type="PackedScene" id=1]
 [ext_resource path="res://levels/LevelTemplate.tscn" type="PackedScene" id=2]
+[ext_resource path="res://tilesets/tileset07.tres" type="TileSet" id=3]
+[ext_resource path="res://world_objects/pusher_up/PusherUp.tscn" type="PackedScene" id=4]
+[ext_resource path="res://world_objects/flame_floor/FlameFloor.tscn" type="PackedScene" id=5]
+[ext_resource path="res://world_objects/tornado/Tornado.tscn" type="PackedScene" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 111, 87 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 111, 87 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 112, 72 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 112, 16 )
 
 [node name="Level7" instance=ExtResource( 2 )]
 
 [node name="LvlComplete" parent="PlayerHUD" index="2"]
 level_num = 7
 
+[node name="Fade" parent="PlayerHUD" index="3"]
+visible = false
+
+[node name="Elevation1Overlay" parent="." index="1"]
+tile_set = ExtResource( 3 )
+
+[node name="Elevation1TileMap" parent="." index="2"]
+tile_set = ExtResource( 3 )
+tile_data = PoolIntArray( -524295, 0, 0, -524294, 0, 1, -524293, 0, 1, -524292, 0, 1, -524291, 0, 1, -524290, 0, 1, -524289, 0, 1, -589824, 0, 1, -589823, 0, 1, -589822, 0, 1, -589821, 0, 1, -589820, 0, 1, -589819, 0, 1, -589818, 0, 2, -458759, 0, 65536, -458758, 0, 65537, -458757, 0, 65537, -458756, 0, 65537, -458755, 0, 65537, -458754, 0, 65537, -458753, 0, 65537, -524288, 0, 65537, -524287, 0, 65537, -524286, 0, 65537, -524285, 0, 65537, -524284, 0, 65537, -524283, 0, 65537, -524282, 0, 65538, -393223, 0, 65536, -393222, 0, 65537, -393221, 0, 65537, -393220, 0, 65537, -393219, 0, 65537, -393218, 0, 65537, -393217, 0, 65537, -458752, 0, 65537, -458751, 0, 65537, -458750, 0, 65537, -458749, 0, 65537, -458748, 0, 65537, -458747, 0, 65537, -458746, 0, 65538, -327687, 0, 65536, -327686, 0, 65537, -327685, 0, 65537, -327684, 0, 65537, -327683, 0, 65537, -327682, 0, 65537, -327681, 0, 65537, -393216, 0, 65537, -393215, 0, 65537, -393214, 0, 65537, -393213, 0, 65537, -393212, 0, 65537, -393211, 0, 65537, -393210, 0, 65538, -262151, 0, 65536, -262150, 0, 65537, -262149, 0, 65537, -262148, 0, 65537, -262147, 0, 65537, -262146, 0, 65537, -262145, 0, 65537, -327680, 0, 65537, -327679, 0, 65537, -327678, 0, 65537, -327677, 0, 65537, -327676, 0, 65537, -327675, 0, 65537, -327674, 0, 65538, -196615, 0, 65536, -196614, 0, 65537, -196613, 0, 65537, -196612, 0, 65537, -196611, 0, 65537, -196610, 0, 65537, -196609, 0, 65537, -262144, 0, 65537, -262143, 0, 65537, -262142, 0, 65537, -262141, 0, 65537, -262140, 0, 65537, -262139, 0, 65537, -262138, 0, 65538, -131079, 0, 65536, -131078, 0, 65537, -131077, 0, 65537, -131076, 0, 65537, -131075, 0, 65537, -131074, 0, 65537, -131073, 0, 65537, -196608, 0, 65537, -196607, 0, 65537, -196606, 0, 65537, -196605, 0, 65537, -196604, 0, 65537, -196603, 0, 65537, -196602, 0, 65538, -65543, 0, 65536, -65542, 0, 65537, -65541, 0, 65537, -65540, 0, 65537, -65539, 0, 65537, -65538, 0, 65537, -65537, 0, 65537, -131072, 0, 65537, -131071, 0, 65537, -131070, 0, 65537, -131069, 0, 65537, -131068, 0, 65537, -131067, 0, 65537, -131066, 0, 65538, -7, 0, 65536, -6, 0, 65537, -5, 0, 65537, -4, 0, 65537, -3, 0, 65537, -2, 0, 65537, -1, 0, 65537, -65536, 0, 65537, -65535, 0, 65537, -65534, 0, 65537, -65533, 0, 65537, -65532, 0, 65537, -65531, 0, 65537, -65530, 0, 65538, 65529, 0, 65536, 65530, 0, 65537, 65531, 0, 65537, 65532, 0, 65537, 65533, 0, 65537, 65534, 0, 65537, 65535, 0, 65537, 0, 0, 65537, 1, 0, 65537, 2, 0, 65537, 3, 0, 65537, 4, 0, 65537, 5, 0, 65537, 6, 0, 65538, 131065, 0, 131072, 131066, 0, 131073, 131067, 0, 131073, 131068, 0, 131073, 131069, 0, 131073, 131070, 0, 131073, 131071, 0, 131073, 65536, 0, 131073, 65537, 0, 131073, 65538, 0, 131073, 65539, 0, 131073, 65540, 0, 131073, 65541, 0, 131073, 65542, 0, 131074, 196601, 1, 0, 196602, 1, 1, 196603, 1, 1, 196604, 1, 1, 196605, 1, 1, 196606, 1, 1, 196607, 1, 1, 131072, 1, 1, 131073, 1, 1, 131074, 1, 1, 131075, 1, 1, 131076, 1, 1, 131077, 1, 1, 131078, 1, 2, 262137, 1, 65536, 262138, 1, 65537, 262139, 1, 65537, 262140, 1, 65537, 262141, 1, 65537, 262142, 1, 65537, 262143, 1, 65537, 196608, 1, 65537, 196609, 1, 65537, 196610, 1, 65537, 196611, 1, 65537, 196612, 1, 65537, 196613, 1, 65537, 196614, 1, 65538 )
+
 [node name="Elevation2Overlay" parent="." index="3" instance=ExtResource( 1 )]
+tile_set = ExtResource( 3 )
 overlay_elevation = 64
 
 [node name="Elevation2Tilemap" type="TileMap" parent="." index="4"]
+tile_set = ExtResource( 3 )
 cell_size = Vector2( 16, 16 )
 format = 1
 
 [node name="Elevation3Overlay2" parent="." index="5" instance=ExtResource( 1 )]
+tile_set = ExtResource( 3 )
 overlay_elevation = 96
 
 [node name="Elevation3Tilemap" type="TileMap" parent="." index="6"]
+tile_set = ExtResource( 3 )
 cell_size = Vector2( 16, 16 )
 format = 1
 
 [node name="Elevation4Overlay3" parent="." index="7" instance=ExtResource( 1 )]
+tile_set = ExtResource( 3 )
 overlay_elevation = 128
 
 [node name="Elevation4Tilemap" type="TileMap" parent="." index="8"]
+tile_set = ExtResource( 3 )
 cell_size = Vector2( 16, 16 )
 format = 1
 
 [node name="Elevation5Overlay4" parent="." index="9" instance=ExtResource( 1 )]
+tile_set = ExtResource( 3 )
 overlay_elevation = 160
 
 [node name="Elevation5Tilemap" type="TileMap" parent="." index="10"]
+tile_set = ExtResource( 3 )
 cell_size = Vector2( 16, 16 )
 format = 1
 
 [node name="Elevation6Overlay5" parent="." index="11" instance=ExtResource( 1 )]
+tile_set = ExtResource( 3 )
 overlay_elevation = 192
 
 [node name="Elevation6Tilemap" type="TileMap" parent="." index="12"]
+tile_set = ExtResource( 3 )
 cell_size = Vector2( 16, 16 )
 format = 1
 
 [node name="Elevation7Overlay6" parent="." index="13" instance=ExtResource( 1 )]
+tile_set = ExtResource( 3 )
 overlay_elevation = 224
 
 [node name="Elevation7Tilemap" type="TileMap" parent="." index="14"]
+tile_set = ExtResource( 3 )
 cell_size = Vector2( 16, 16 )
 format = 1
 
-[node name="Elevation2Collisions" type="Node" parent="." index="20"]
+[node name="WaterAround" parent="." index="16"]
+tile_data = PoolIntArray( 65530, 0, 131074, 65531, 0, 131074, 65532, 0, 131074, 65533, 0, 131074, 65534, 0, 131074, 65535, 0, 131074 )
 
-[node name="Elevation3Collisions" type="Node" parent="." index="21"]
+[node name="FlameFloors" type="Node2D" parent="." index="18"]
 
-[node name="Elevation4Collisions" type="Node" parent="." index="22"]
+[node name="FlameFloor" parent="FlameFloors" index="0" instance=ExtResource( 5 )]
+position = Vector2( 176, -8 )
 
-[node name="Elevation5Collisions" type="Node" parent="." index="23"]
+[node name="Hitbox" parent="FlameFloors/FlameFloor" index="1"]
+elevation = 32
 
-[node name="Elevation6Collisions" type="Node" parent="." index="24"]
+[node name="ExitDoor" parent="YSortWorldObjects" index="0"]
+position = Vector2( -80, -8 )
+elevation = 32
 
-[node name="Elevation7Collisions" type="Node" parent="." index="25"]
+[node name="PusherUp" type="YSort" parent="YSortWorldObjects" index="2"]
+
+[node name="PusherUp" parent="YSortWorldObjects/PusherUp" index="0" instance=ExtResource( 4 )]
+position = Vector2( 32, -112 )
+scale = Vector2( 2, 2 )
+elevation = 32
+
+[node name="Tornados" type="YSort" parent="YSortWorldObjects" index="4"]
+
+[node name="Tornado" parent="YSortWorldObjects/Tornados" index="0" instance=ExtResource( 6 )]
+position = Vector2( -40, -56 )
+
+[node name="Sprite" parent="YSortWorldObjects/Tornados/Tornado" index="0"]
+frame = 2
+
+[node name="Hitbox" parent="YSortWorldObjects/Tornados/Tornado" index="2"]
+elevation = 32
+
+[node name="Pos_B" parent="YSortWorldObjects/Tornados/Tornado" index="5"]
+position = Vector2( 52, 0 )
+
+[node name="Elevation1Collision" parent="Elevation1Collisions" index="0"]
+position = Vector2( 32, 0 )
+
+[node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision/EntryArea1" index="0"]
+position = Vector2( -32, -24 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision/ElevatedArea1" index="0"]
+position = Vector2( -32, -56 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision/BoundaryBody1" index="0"]
+position = Vector2( -32, -40 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision/WallBody1" index="0"]
+shape = SubResource( 4 )
+
+[node name="Elevation2Collisions" type="Node" parent="." index="21"]
+
+[node name="Elevation3Collisions" type="Node" parent="." index="22"]
+
+[node name="Elevation4Collisions" type="Node" parent="." index="23"]
+
+[node name="Elevation5Collisions" type="Node" parent="." index="24"]
+
+[node name="Elevation6Collisions" type="Node" parent="." index="25"]
+
+[node name="Elevation7Collisions" type="Node" parent="." index="26"]
+
+[editable path="FlameFloors/FlameFloor"]
 
 [editable path="YSortWorldObjects/FinishFlag"]
+
+[editable path="YSortWorldObjects/Tornados/Tornado"]
 
 [editable path="Elevation1Collisions/Elevation1Collision"]

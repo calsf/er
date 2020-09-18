@@ -179,12 +179,15 @@ func _physics_process(delta):
 	
 	# Change player sprite's z index based on current height
 	player_sprite.z_index = (ground_elevation + added_height) / Globals.ELEVATION_UNIT
+	# Change player shadow z index based on ground elevation only
+	player_shadow.z_index = (ground_elevation) / Globals.ELEVATION_UNIT
 	
 	# Check for overlapping WorldObject layer areas in hurtbox and apply hit
 	for area in hurtbox.get_overlapping_areas():
 		if (area.get_owner() != self):
 			var other_elev = area.elevation
-			if (last_area_hit != area and other_elev == get_curr_elevation() and other_elev == ground_elevation):
+			if (last_area_hit != area and other_elev == get_curr_elevation() and other_elev == ground_elevation
+			or area.cover_all_elev and get_curr_elevation() < area.elevation + area.extra_coverage):
 				# Init knockback vector to opposite of player input vector (current facing direction)
 				var knockback_vector = -input_vector
 				
