@@ -177,4 +177,5 @@ toggle_sound={
 [rendering]
 
 quality/2d/use_pixel_snap=true
+environment/default_clear_color=Color( 0.00784314, 0.623529, 0.909804, 1 )
 environment/default_environment="res://default_env.tres"
