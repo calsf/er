@@ -397,69 +397,135 @@ position = Vector2( 808, -184 )
 elevation = 32
 
 [node name="SpikedBall16" parent="YSortWorldObjects/SpikedBalls" instance=ExtResource( 12 )]
-position = Vector2( 704, -512 )
+position = Vector2( 704, -520 )
 
 [node name="Hitbox" parent="YSortWorldObjects/SpikedBalls/SpikedBall16" index="2"]
 elevation = 32
 
 [node name="SpikedBall17" parent="YSortWorldObjects/SpikedBalls" instance=ExtResource( 12 )]
-position = Vector2( 720, -520 )
+position = Vector2( 720, -496 )
 
 [node name="Hitbox" parent="YSortWorldObjects/SpikedBalls/SpikedBall17" index="2"]
 elevation = 32
 
 [node name="SpikedBall18" parent="YSortWorldObjects/SpikedBalls" instance=ExtResource( 12 )]
-position = Vector2( 736, -512 )
+position = Vector2( 736, -520 )
 
 [node name="Hitbox" parent="YSortWorldObjects/SpikedBalls/SpikedBall18" index="2"]
 elevation = 32
 
 [node name="SpikedBall19" parent="YSortWorldObjects/SpikedBalls" instance=ExtResource( 12 )]
-position = Vector2( 752, -520 )
+position = Vector2( 752, -496 )
 
 [node name="Hitbox" parent="YSortWorldObjects/SpikedBalls/SpikedBall19" index="2"]
 elevation = 32
 
 [node name="SpikedBall20" parent="YSortWorldObjects/SpikedBalls" instance=ExtResource( 12 )]
-position = Vector2( 768, -512 )
+position = Vector2( 768, -520 )
 
 [node name="Hitbox" parent="YSortWorldObjects/SpikedBalls/SpikedBall20" index="2"]
 elevation = 32
 
 [node name="SpikedBall21" parent="YSortWorldObjects/SpikedBalls" instance=ExtResource( 12 )]
-position = Vector2( 784, -520 )
+position = Vector2( 784, -496 )
 
 [node name="Hitbox" parent="YSortWorldObjects/SpikedBalls/SpikedBall21" index="2"]
 elevation = 32
 
 [node name="SpikedBall22" parent="YSortWorldObjects/SpikedBalls" instance=ExtResource( 12 )]
-position = Vector2( 800, -512 )
+position = Vector2( 800, -520 )
 
 [node name="Hitbox" parent="YSortWorldObjects/SpikedBalls/SpikedBall22" index="2"]
 elevation = 32
 
 [node name="SpikedBall23" parent="YSortWorldObjects/SpikedBalls" instance=ExtResource( 12 )]
-position = Vector2( 816, -520 )
+position = Vector2( 816, -496 )
 
 [node name="Hitbox" parent="YSortWorldObjects/SpikedBalls/SpikedBall23" index="2"]
 elevation = 32
 
 [node name="SpikedBall24" parent="YSortWorldObjects/SpikedBalls" instance=ExtResource( 12 )]
-position = Vector2( 832, -512 )
+position = Vector2( 832, -520 )
 
 [node name="Hitbox" parent="YSortWorldObjects/SpikedBalls/SpikedBall24" index="2"]
 elevation = 32
 
 [node name="SpikedBall25" parent="YSortWorldObjects/SpikedBalls" instance=ExtResource( 12 )]
-position = Vector2( 848, -520 )
+position = Vector2( 848, -496 )
 
 [node name="Hitbox" parent="YSortWorldObjects/SpikedBalls/SpikedBall25" index="2"]
 elevation = 32
 
+[node name="SpikedBall53" parent="YSortWorldObjects/SpikedBalls" instance=ExtResource( 12 )]
+position = Vector2( 720, -400 )
+
+[node name="Hitbox" parent="YSortWorldObjects/SpikedBalls/SpikedBall53" index="2"]
+elevation = 32
+
+[node name="SpikedBall54" parent="YSortWorldObjects/SpikedBalls" instance=ExtResource( 12 )]
+position = Vector2( 752, -400 )
+
+[node name="Hitbox" parent="YSortWorldObjects/SpikedBalls/SpikedBall54" index="2"]
+elevation = 32
+
+[node name="SpikedBall55" parent="YSortWorldObjects/SpikedBalls" instance=ExtResource( 12 )]
+position = Vector2( 784, -400 )
+
+[node name="Hitbox" parent="YSortWorldObjects/SpikedBalls/SpikedBall55" index="2"]
+elevation = 32
+
+[node name="SpikedBall56" parent="YSortWorldObjects/SpikedBalls" instance=ExtResource( 12 )]
+position = Vector2( 816, -400 )
+
+[node name="Hitbox" parent="YSortWorldObjects/SpikedBalls/SpikedBall56" index="2"]
+elevation = 32
+
+[node name="SpikedBall57" parent="YSortWorldObjects/SpikedBalls" instance=ExtResource( 12 )]
+position = Vector2( 848, -400 )
+
+[node name="Hitbox" parent="YSortWorldObjects/SpikedBalls/SpikedBall57" index="2"]
+elevation = 32
+
 [node name="SpikedBall26" parent="YSortWorldObjects/SpikedBalls" instance=ExtResource( 12 )]
-position = Vector2( 864, -512 )
+position = Vector2( 864, -520 )
 
 [node name="Hitbox" parent="YSortWorldObjects/SpikedBalls/SpikedBall26" index="2"]
+elevation = 32
+
+[node name="SpikedBall41" parent="YSortWorldObjects/SpikedBalls" instance=ExtResource( 12 )]
+position = Vector2( 704, -448 )
+
+[node name="Hitbox" parent="YSortWorldObjects/SpikedBalls/SpikedBall41" index="2"]
+elevation = 32
+
+[node name="SpikedBall42" parent="YSortWorldObjects/SpikedBalls" instance=ExtResource( 12 )]
+position = Vector2( 736, -448 )
+
+[node name="Hitbox" parent="YSortWorldObjects/SpikedBalls/SpikedBall42" index="2"]
+elevation = 32
+
+[node name="SpikedBall43" parent="YSortWorldObjects/SpikedBalls" instance=ExtResource( 12 )]
+position = Vector2( 768, -448 )
+
+[node name="Hitbox" parent="YSortWorldObjects/SpikedBalls/SpikedBall43" index="2"]
+elevation = 32
+
+[node name="SpikedBall44" parent="YSortWorldObjects/SpikedBalls" instance=ExtResource( 12 )]
+position = Vector2( 800, -448 )
+
+[node name="Hitbox" parent="YSortWorldObjects/SpikedBalls/SpikedBall44" index="2"]
+elevation = 32
+
+[node name="SpikedBall45" parent="YSortWorldObjects/SpikedBalls" instance=ExtResource( 12 )]
+position = Vector2( 832, -448 )
+
+[node name="Hitbox" parent="YSortWorldObjects/SpikedBalls/SpikedBall45" index="2"]
+elevation = 32
+
+[node name="SpikedBall46" parent="YSortWorldObjects/SpikedBalls" instance=ExtResource( 12 )]
+position = Vector2( 864, -448 )
+
+[node name="Hitbox" parent="YSortWorldObjects/SpikedBalls/SpikedBall46" index="2"]
 elevation = 32
 
 [node name="SpikedBall33" parent="YSortWorldObjects/SpikedBalls" instance=ExtResource( 12 )]
@@ -548,108 +614,6 @@ elevation = 32
 
 [node name="MovingSaws" type="YSort" parent="YSortWorldObjects"]
 
-[node name="MovingSaw" parent="YSortWorldObjects/MovingSaws" instance=ExtResource( 15 )]
-position = Vector2( 860, -384 )
-
-[node name="Pos_A" parent="YSortWorldObjects/MovingSaws/MovingSaw" index="4"]
-position = Vector2( -152, 0 )
-
-[node name="MovingSaw2" parent="YSortWorldObjects/MovingSaws" instance=ExtResource( 15 )]
-position = Vector2( 708, -392 )
-
-[node name="Pos_A" parent="YSortWorldObjects/MovingSaws/MovingSaw2" index="4"]
-position = Vector2( 152, 0 )
-
-[node name="MovingSaw5" parent="YSortWorldObjects/MovingSaws" instance=ExtResource( 15 )]
-position = Vector2( 796, -400 )
-
-[node name="Pos_A" parent="YSortWorldObjects/MovingSaws/MovingSaw5" index="4"]
-position = Vector2( -88, 0 )
-
-[node name="Pos_B" parent="YSortWorldObjects/MovingSaws/MovingSaw5" index="5"]
-position = Vector2( 64, 0 )
-
-[node name="MovingSaw6" parent="YSortWorldObjects/MovingSaws" instance=ExtResource( 15 )]
-position = Vector2( 796, -408 )
-
-[node name="Pos_A" parent="YSortWorldObjects/MovingSaws/MovingSaw6" index="4"]
-position = Vector2( 64, 0 )
-
-[node name="Pos_B" parent="YSortWorldObjects/MovingSaws/MovingSaw6" index="5"]
-position = Vector2( -88, 0 )
-
-[node name="MovingSaw3" parent="YSortWorldObjects/MovingSaws" instance=ExtResource( 15 )]
-position = Vector2( 860, -416 )
-
-[node name="Pos_A" parent="YSortWorldObjects/MovingSaws/MovingSaw3" index="4"]
-position = Vector2( -152, 0 )
-
-[node name="MovingSaw4" parent="YSortWorldObjects/MovingSaws" instance=ExtResource( 15 )]
-position = Vector2( 708, -424 )
-
-[node name="Pos_A" parent="YSortWorldObjects/MovingSaws/MovingSaw4" index="4"]
-position = Vector2( 152, 0 )
-
-[node name="MovingSaw7" parent="YSortWorldObjects/MovingSaws" instance=ExtResource( 15 )]
-position = Vector2( 796, -432 )
-
-[node name="Pos_A" parent="YSortWorldObjects/MovingSaws/MovingSaw7" index="4"]
-position = Vector2( -88, 0 )
-
-[node name="Pos_B" parent="YSortWorldObjects/MovingSaws/MovingSaw7" index="5"]
-position = Vector2( 64, 0 )
-
-[node name="MovingSaw8" parent="YSortWorldObjects/MovingSaws" instance=ExtResource( 15 )]
-position = Vector2( 796, -440 )
-
-[node name="Pos_A" parent="YSortWorldObjects/MovingSaws/MovingSaw8" index="4"]
-position = Vector2( 64, 0 )
-
-[node name="Pos_B" parent="YSortWorldObjects/MovingSaws/MovingSaw8" index="5"]
-position = Vector2( -88, 0 )
-
-[node name="MovingSaw9" parent="YSortWorldObjects/MovingSaws" instance=ExtResource( 15 )]
-position = Vector2( 860, -448 )
-
-[node name="Pos_A" parent="YSortWorldObjects/MovingSaws/MovingSaw9" index="4"]
-position = Vector2( -152, 0 )
-
-[node name="MovingSaw10" parent="YSortWorldObjects/MovingSaws" instance=ExtResource( 15 )]
-position = Vector2( 708, -456 )
-
-[node name="Pos_A" parent="YSortWorldObjects/MovingSaws/MovingSaw10" index="4"]
-position = Vector2( 152, 0 )
-
-[node name="MovingSaw11" parent="YSortWorldObjects/MovingSaws" instance=ExtResource( 15 )]
-position = Vector2( 796, -464 )
-
-[node name="Pos_A" parent="YSortWorldObjects/MovingSaws/MovingSaw11" index="4"]
-position = Vector2( -88, 0 )
-
-[node name="Pos_B" parent="YSortWorldObjects/MovingSaws/MovingSaw11" index="5"]
-position = Vector2( 64, 0 )
-
-[node name="MovingSaw12" parent="YSortWorldObjects/MovingSaws" instance=ExtResource( 15 )]
-position = Vector2( 796, -472 )
-
-[node name="Pos_A" parent="YSortWorldObjects/MovingSaws/MovingSaw12" index="4"]
-position = Vector2( 64, 0 )
-
-[node name="Pos_B" parent="YSortWorldObjects/MovingSaws/MovingSaw12" index="5"]
-position = Vector2( -88, 0 )
-
-[node name="MovingSaw13" parent="YSortWorldObjects/MovingSaws" instance=ExtResource( 15 )]
-position = Vector2( 860, -480 )
-
-[node name="Pos_A" parent="YSortWorldObjects/MovingSaws/MovingSaw13" index="4"]
-position = Vector2( -152, 0 )
-
-[node name="MovingSaw14" parent="YSortWorldObjects/MovingSaws" instance=ExtResource( 15 )]
-position = Vector2( 708, -488 )
-
-[node name="Pos_A" parent="YSortWorldObjects/MovingSaws/MovingSaw14" index="4"]
-position = Vector2( 152, 0 )
-
 [node name="MovingSaw15" parent="YSortWorldObjects/MovingSaws" instance=ExtResource( 15 )]
 position = Vector2( 860, -552 )
 
@@ -722,7 +686,7 @@ tile_set = SubResource( 4 )
 cell_size = Vector2( 16, 8 )
 cell_y_sort = true
 format = 1
-tile_data = PoolIntArray( -5308373, 1, 0, -5308371, 0, 0, -5308370, 0, 0, -5308369, 0, 0, -5308368, 0, 0, -5308367, 0, 0, -5308366, 0, 0, -5308365, 0, 0, -5308363, 2, 0, -5242837, 1, 0, -5242835, 0, 0, -5242834, 0, 0, -5242833, 0, 0, -5242832, 0, 0, -5242831, 0, 0, -5242830, 0, 0, -5242829, 0, 0, -5242827, 2, 0, -5177301, 1, 0, -5177299, 0, 0, -5177298, 0, 0, -5177297, 0, 0, -5177296, 0, 0, -5177295, 0, 0, -5177294, 0, 0, -5177293, 0, 0, -5177291, 2, 0, -5111765, 1, 0, -5111763, 0, 0, -5111762, 0, 0, -5111761, 0, 0, -5111760, 0, 0, -5111759, 0, 0, -5111758, 0, 0, -5111757, 0, 0, -5111755, 2, 0, -5046229, 1, 0, -5046227, 0, 0, -5046226, 0, 0, -5046225, 0, 0, -5046224, 0, 0, -5046223, 0, 0, -5046222, 0, 0, -5046221, 0, 0, -5046219, 2, 0, -4980693, 1, 0, -4980691, 0, 0, -4980689, 0, 0, -4980688, 0, 0, -4980687, 0, 0, -4980686, 0, 0, -4980685, 0, 0, -4980683, 2, 0, -4915157, 1, 0, -4915155, 0, 0, -4915153, 0, 0, -4915152, 0, 0, -4915151, 0, 0, -4915150, 0, 0, -4915149, 0, 0, -4915147, 2, 0, -4849621, 1, 0, -4849619, 0, 0, -4849618, 0, 0, -4849617, 0, 0, -4849616, 0, 0, -4849614, 0, 0, -4849613, 0, 0, -4849611, 2, 0, -4784085, 1, 0, -4784083, 0, 0, -4784082, 0, 0, -4784081, 0, 0, -4784080, 0, 0, -4784078, 0, 0, -4784077, 0, 0, -4784075, 2, 0, -4718549, 1, 0, -4718547, 0, 0, -4718546, 0, 0, -4718545, 0, 0, -4718544, 0, 0, -4718543, 0, 0, -4718542, 0, 0, -4718541, 0, 0, -4718539, 2, 0, -4653013, 1, 0, -4653011, 0, 0, -4653010, 0, 0, -4653009, 0, 0, -4653008, 0, 0, -4653007, 0, 0, -4653006, 0, 0, -4653005, 0, 0, -4653003, 2, 0, -4128725, 1, 0, -4128723, 0, 0, -4128722, 0, 0, -4128721, 0, 0, -4128720, 0, 0, -4128719, 0, 0, -4128718, 0, 0, -4128717, 0, 0, -4128715, 2, 0, -4063189, 1, 0, -4063187, 0, 0, -4063185, 0, 0, -4063184, 0, 0, -4063183, 0, 0, -4063181, 0, 0, -4063179, 2, 0, -3997653, 1, 0, -3997651, 0, 0, -3997650, 0, 0, -3997649, 0, 0, -3997648, 0, 0, -3997646, 0, 0, -3997645, 0, 0, -3997643, 2, 0, -3932117, 1, 0, -3932115, 0, 0, -3932114, 0, 0, -3932113, 0, 0, -3932112, 0, 0, -3932110, 0, 0, -3932109, 0, 0, -3932107, 2, 0, -3866581, 1, 0, -3866579, 0, 0, -3866578, 0, 0, -3866577, 0, 0, -3866576, 0, 0, -3866575, 0, 0, -3866574, 0, 0, -3866573, 0, 0, -3866571, 2, 0, -3801045, 1, 0, -3801043, 0, 0, -3801042, 0, 0, -3801041, 0, 0, -3801040, 0, 0, -3801039, 0, 0, -3801038, 0, 0, -3801037, 0, 0, -3801035, 2, 0, -3735509, 1, 0, -3735507, 0, 0, -3735506, 0, 0, -3735505, 0, 0, -3735503, 0, 0, -3735501, 0, 0, -3735499, 2, 0, -3669973, 1, 0, -3669971, 0, 0, -3669970, 0, 0, -3669968, 0, 0, -3669967, 0, 0, -3669966, 0, 0, -3669965, 0, 0, -3669963, 2, 0, -3604437, 1, 0, -3604435, 0, 0, -3604434, 0, 0, -3604432, 0, 0, -3604431, 0, 0, -3604430, 0, 0, -3604429, 0, 0, -3604427, 2, 0, -3538901, 1, 0, -3538899, 0, 0, -3538898, 0, 0, -3538897, 0, 0, -3538896, 0, 0, -3538895, 0, 0, -3538894, 0, 0, -3538893, 0, 0, -3538891, 2, 0, -3473365, 1, 0, -3473363, 0, 0, -3473362, 0, 0, -3473361, 0, 0, -3473360, 0, 0, -3473359, 0, 0, -3473358, 0, 0, -3473357, 0, 0, -3473355, 2, 0, -3407829, 1, 0, -3407827, 0, 0, -3407826, 0, 0, -3407825, 0, 0, -3407823, 0, 0, -3407822, 0, 0, -3407821, 0, 0, -3407819, 2, 0, -3342293, 1, 0, -3342291, 0, 0, -3342290, 0, 0, -3342289, 0, 0, -3342288, 0, 0, -3342287, 0, 0, -3342286, 0, 0, -3342285, 0, 0, -3342283, 2, 0, -3276757, 1, 0, -3276755, 0, 0, -3276754, 0, 0, -3276753, 0, 0, -3276752, 0, 0, -3276751, 0, 0, -3276750, 0, 0, -3276749, 0, 0, -3276747, 2, 0 )
+tile_data = PoolIntArray( -5308373, 1, 0, -5308371, 0, 0, -5308370, 0, 0, -5308369, 0, 0, -5308368, 0, 0, -5308367, 0, 0, -5308366, 0, 0, -5308365, 0, 0, -5308363, 2, 0, -5242837, 1, 0, -5242835, 0, 0, -5242834, 0, 0, -5242833, 0, 0, -5242832, 0, 0, -5242831, 0, 0, -5242830, 0, 0, -5242829, 0, 0, -5242827, 2, 0, -5177301, 1, 0, -5177299, 0, 0, -5177298, 0, 0, -5177297, 0, 0, -5177296, 0, 0, -5177295, 0, 0, -5177294, 0, 0, -5177293, 0, 0, -5177291, 2, 0, -5111765, 1, 0, -5111763, 0, 0, -5111762, 0, 0, -5111761, 0, 0, -5111760, 0, 0, -5111759, 0, 0, -5111758, 0, 0, -5111757, 0, 0, -5111755, 2, 0, -5046229, 1, 0, -5046227, 0, 0, -5046226, 0, 0, -5046225, 0, 0, -5046224, 0, 0, -5046223, 0, 0, -5046222, 0, 0, -5046221, 0, 0, -5046219, 2, 0, -4980693, 1, 0, -4980691, 0, 0, -4980689, 0, 0, -4980688, 0, 0, -4980687, 0, 0, -4980686, 0, 0, -4980685, 0, 0, -4980683, 2, 0, -4915157, 1, 0, -4915155, 0, 0, -4915153, 0, 0, -4915152, 0, 0, -4915151, 0, 0, -4915150, 0, 0, -4915149, 0, 0, -4915147, 2, 0, -4849621, 1, 0, -4849619, 0, 0, -4849618, 0, 0, -4849617, 0, 0, -4849616, 0, 0, -4849614, 0, 0, -4849613, 0, 0, -4849611, 2, 0, -4784085, 1, 0, -4784083, 0, 0, -4784082, 0, 0, -4784081, 0, 0, -4784080, 0, 0, -4784078, 0, 0, -4784077, 0, 0, -4784075, 2, 0, -4718549, 1, 0, -4718547, 0, 0, -4718546, 0, 0, -4718545, 0, 0, -4718544, 0, 0, -4718543, 0, 0, -4718542, 0, 0, -4718541, 0, 0, -4718539, 2, 0, -4653013, 1, 0, -4653011, 0, 0, -4653010, 0, 0, -4653009, 0, 0, -4653008, 0, 0, -4653007, 0, 0, -4653006, 0, 0, -4653005, 0, 0, -4653003, 2, 0 )
 
 [node name="FinishFlag" parent="YSortWorldObjects" instance=ExtResource( 14 )]
 position = Vector2( 2032, -432 )
@@ -1268,7 +1232,29 @@ shape = SubResource( 40 )
 
 [editable path="YSortWorldObjects/SpikedBalls/SpikedBall25"]
 
+[editable path="YSortWorldObjects/SpikedBalls/SpikedBall53"]
+
+[editable path="YSortWorldObjects/SpikedBalls/SpikedBall54"]
+
+[editable path="YSortWorldObjects/SpikedBalls/SpikedBall55"]
+
+[editable path="YSortWorldObjects/SpikedBalls/SpikedBall56"]
+
+[editable path="YSortWorldObjects/SpikedBalls/SpikedBall57"]
+
 [editable path="YSortWorldObjects/SpikedBalls/SpikedBall26"]
+
+[editable path="YSortWorldObjects/SpikedBalls/SpikedBall41"]
+
+[editable path="YSortWorldObjects/SpikedBalls/SpikedBall42"]
+
+[editable path="YSortWorldObjects/SpikedBalls/SpikedBall43"]
+
+[editable path="YSortWorldObjects/SpikedBalls/SpikedBall44"]
+
+[editable path="YSortWorldObjects/SpikedBalls/SpikedBall45"]
+
+[editable path="YSortWorldObjects/SpikedBalls/SpikedBall46"]
 
 [editable path="YSortWorldObjects/SpikedBalls/SpikedBall33"]
 
@@ -1297,34 +1283,6 @@ shape = SubResource( 40 )
 [editable path="YSortWorldObjects/SpikedBalls/SpikedBall37"]
 
 [editable path="YSortWorldObjects/SpikedBalls/SpikedBall39"]
-
-[editable path="YSortWorldObjects/MovingSaws/MovingSaw"]
-
-[editable path="YSortWorldObjects/MovingSaws/MovingSaw2"]
-
-[editable path="YSortWorldObjects/MovingSaws/MovingSaw5"]
-
-[editable path="YSortWorldObjects/MovingSaws/MovingSaw6"]
-
-[editable path="YSortWorldObjects/MovingSaws/MovingSaw3"]
-
-[editable path="YSortWorldObjects/MovingSaws/MovingSaw4"]
-
-[editable path="YSortWorldObjects/MovingSaws/MovingSaw7"]
-
-[editable path="YSortWorldObjects/MovingSaws/MovingSaw8"]
-
-[editable path="YSortWorldObjects/MovingSaws/MovingSaw9"]
-
-[editable path="YSortWorldObjects/MovingSaws/MovingSaw10"]
-
-[editable path="YSortWorldObjects/MovingSaws/MovingSaw11"]
-
-[editable path="YSortWorldObjects/MovingSaws/MovingSaw12"]
-
-[editable path="YSortWorldObjects/MovingSaws/MovingSaw13"]
-
-[editable path="YSortWorldObjects/MovingSaws/MovingSaw14"]
 
 [editable path="YSortWorldObjects/MovingSaws/MovingSaw15"]
 
