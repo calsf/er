@@ -187,7 +187,7 @@ func _physics_process(delta):
 		if (area.get_owner() != self):
 			var other_elev = area.elevation
 			if (last_area_hit != area and other_elev == get_curr_elevation() and other_elev == ground_elevation
-			or area.cover_all_elev and get_curr_elevation() < area.elevation + area.extra_coverage):
+			or area.cover_all_elev and get_curr_elevation() < area.elevation + area.extra_coverage and get_curr_elevation() > area.elevation):
 				# Init knockback vector to opposite of player input vector (current facing direction)
 				var knockback_vector = -input_vector
 				

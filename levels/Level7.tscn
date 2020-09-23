@@ -175,33 +175,6 @@ tracks/1/keys = {
 "values": [ true, false, true ]
 }
 
-[sub_resource type="Animation" id=51]
-resource_name = "Activate"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Hitbox/CollisionShape2D:disabled")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.5, 0.7 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ true, false, true ]
-}
-
 [sub_resource type="Animation" id=7]
 resource_name = "Activate"
 tracks/0/type = "value"
@@ -229,35 +202,7 @@ tracks/1/keys = {
 "values": [ true, false, true ]
 }
 
-[sub_resource type="Animation" id=52]
-resource_name = "Activate"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Hitbox/CollisionShape2D:disabled")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.5, 0.7 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ true, false, true ]
-}
-
 [sub_resource type="Animation" id=8]
-resource_name = "Activate"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -311,7 +256,6 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id=10]
-resource_name = "Activate"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -338,7 +282,6 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id=11]
-resource_name = "Activate"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -365,7 +308,6 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id=12]
-resource_name = "Activate"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -392,7 +334,6 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id=13]
-resource_name = "Activate"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -419,7 +360,6 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id=14]
-resource_name = "Activate"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -446,7 +386,6 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id=15]
-resource_name = "Activate"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -473,7 +412,6 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id=16]
-resource_name = "Activate"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -500,7 +438,6 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id=17]
-resource_name = "Activate"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -527,142 +464,6 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id=18]
-resource_name = "Activate"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Hitbox/CollisionShape2D:disabled")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.5, 0.7 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ true, false, true ]
-}
-
-[sub_resource type="Animation" id=61]
-resource_name = "Activate"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Hitbox/CollisionShape2D:disabled")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.5, 0.7 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ true, false, true ]
-}
-
-[sub_resource type="Animation" id=62]
-resource_name = "Activate"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Hitbox/CollisionShape2D:disabled")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.5, 0.7 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ true, false, true ]
-}
-
-[sub_resource type="Animation" id=63]
-resource_name = "Activate"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Hitbox/CollisionShape2D:disabled")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.5, 0.7 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ true, false, true ]
-}
-
-[sub_resource type="Animation" id=64]
-resource_name = "Activate"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Hitbox/CollisionShape2D:disabled")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.5, 0.7 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ true, false, true ]
-}
-
-[sub_resource type="Animation" id=65]
-resource_name = "Activate"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -689,9 +490,6 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id=19]
-resource_name = "Tornado"
-length = 0.3
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -699,16 +497,25 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Hitbox/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 0.7 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ 0, 1, 2 ]
+"values": [ true, false, true ]
 }
 
 [sub_resource type="Animation" id=20]
-resource_name = "Tornado"
-length = 0.3
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -716,16 +523,26 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Hitbox/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 0.7 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ 0, 1, 2 ]
+"values": [ true, false, true ]
 }
 
 [sub_resource type="Animation" id=21]
-resource_name = "Tornado"
-length = 0.3
-loop = true
+resource_name = "Activate"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -733,13 +550,197 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Hitbox/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 0.7 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ 0, 1, 2 ]
+"values": [ true, false, true ]
 }
 
 [sub_resource type="Animation" id=22]
+resource_name = "Activate"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Hitbox/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true ]
+}
+
+[sub_resource type="Animation" id=23]
+resource_name = "Activate"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Hitbox/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true ]
+}
+
+[sub_resource type="Animation" id=24]
+resource_name = "Activate"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Hitbox/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true ]
+}
+
+[sub_resource type="Animation" id=25]
+resource_name = "Activate"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Hitbox/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true ]
+}
+
+[sub_resource type="Animation" id=26]
+length = 0.3
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2 ]
+}
+
+[sub_resource type="Animation" id=27]
+length = 0.3
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2 ]
+}
+
+[sub_resource type="Animation" id=28]
+length = 0.3
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2 ]
+}
+
+[sub_resource type="Animation" id=29]
+length = 0.3
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2 ]
+}
+
+[sub_resource type="Animation" id=30]
 resource_name = "Tornado"
 length = 0.3
 loop = true
@@ -756,7 +757,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2 ]
 }
 
-[sub_resource type="Animation" id=66]
+[sub_resource type="Animation" id=31]
 resource_name = "Tornado"
 length = 0.3
 loop = true
@@ -773,7 +774,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2 ]
 }
 
-[sub_resource type="Animation" id=67]
+[sub_resource type="Animation" id=32]
 resource_name = "Tornado"
 length = 0.3
 loop = true
@@ -790,7 +791,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2 ]
 }
 
-[sub_resource type="Animation" id=68]
+[sub_resource type="Animation" id=33]
 resource_name = "Tornado"
 length = 0.3
 loop = true
@@ -807,7 +808,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2 ]
 }
 
-[sub_resource type="Animation" id=69]
+[sub_resource type="Animation" id=34]
 resource_name = "Tornado"
 length = 0.3
 loop = true
@@ -824,7 +825,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2 ]
 }
 
-[sub_resource type="Animation" id=75]
+[sub_resource type="Animation" id=35]
 resource_name = "Tornado"
 length = 0.3
 loop = true
@@ -840,154 +841,137 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 0, 1, 2 ]
 }
-
-[sub_resource type="Animation" id=70]
-resource_name = "Tornado"
-length = 0.3
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2 ]
-}
-
-[sub_resource type="RectangleShape2D" id=23]
-extents = Vector2( 111, 87 )
-
-[sub_resource type="RectangleShape2D" id=24]
-extents = Vector2( 111, 87 )
-
-[sub_resource type="RectangleShape2D" id=25]
-extents = Vector2( 112, 72 )
-
-[sub_resource type="RectangleShape2D" id=26]
-extents = Vector2( 112, 16 )
-
-[sub_resource type="RectangleShape2D" id=27]
-extents = Vector2( 47, 47 )
-
-[sub_resource type="RectangleShape2D" id=28]
-extents = Vector2( 47, 47 )
-
-[sub_resource type="RectangleShape2D" id=29]
-extents = Vector2( 48, 32 )
-
-[sub_resource type="RectangleShape2D" id=30]
-extents = Vector2( 48, 16 )
-
-[sub_resource type="RectangleShape2D" id=31]
-extents = Vector2( 271, 63 )
-
-[sub_resource type="RectangleShape2D" id=32]
-extents = Vector2( 271, 63 )
-
-[sub_resource type="RectangleShape2D" id=33]
-extents = Vector2( 272, 32 )
-
-[sub_resource type="RectangleShape2D" id=34]
-extents = Vector2( 272, 32 )
-
-[sub_resource type="RectangleShape2D" id=35]
-extents = Vector2( 55, 223 )
 
 [sub_resource type="RectangleShape2D" id=36]
-extents = Vector2( 55, 223 )
+extents = Vector2( 111, 87 )
 
 [sub_resource type="RectangleShape2D" id=37]
-extents = Vector2( 56, 192 )
+extents = Vector2( 111, 87 )
 
 [sub_resource type="RectangleShape2D" id=38]
-extents = Vector2( 56, 32 )
+extents = Vector2( 112, 72 )
 
 [sub_resource type="RectangleShape2D" id=39]
-extents = Vector2( 47, 87 )
+extents = Vector2( 112, 16 )
 
 [sub_resource type="RectangleShape2D" id=40]
-extents = Vector2( 47, 87 )
+extents = Vector2( 47, 47 )
 
 [sub_resource type="RectangleShape2D" id=41]
-extents = Vector2( 48, 40 )
+extents = Vector2( 47, 47 )
 
 [sub_resource type="RectangleShape2D" id=42]
-extents = Vector2( 48, 48 )
-
-[sub_resource type="RectangleShape2D" id=53]
-extents = Vector2( 63, 55 )
-
-[sub_resource type="RectangleShape2D" id=54]
-extents = Vector2( 63, 55 )
-
-[sub_resource type="RectangleShape2D" id=55]
-extents = Vector2( 64, 8 )
-
-[sub_resource type="RectangleShape2D" id=56]
-extents = Vector2( 64, 48 )
-
-[sub_resource type="RectangleShape2D" id=76]
-extents = Vector2( 23, 55 )
-
-[sub_resource type="RectangleShape2D" id=77]
-extents = Vector2( 23, 55 )
-
-[sub_resource type="RectangleShape2D" id=78]
-extents = Vector2( 24, 8 )
-
-[sub_resource type="RectangleShape2D" id=79]
-extents = Vector2( 24, 48 )
-
-[sub_resource type="RectangleShape2D" id=71]
-extents = Vector2( 23, 87 )
-
-[sub_resource type="RectangleShape2D" id=72]
-extents = Vector2( 23, 87 )
-
-[sub_resource type="RectangleShape2D" id=73]
-extents = Vector2( 24, 8 )
-
-[sub_resource type="RectangleShape2D" id=74]
-extents = Vector2( 24, 80 )
+extents = Vector2( 48, 32 )
 
 [sub_resource type="RectangleShape2D" id=43]
-extents = Vector2( 47, 103 )
+extents = Vector2( 48, 16 )
 
 [sub_resource type="RectangleShape2D" id=44]
-extents = Vector2( 47, 103 )
+extents = Vector2( 271, 63 )
 
 [sub_resource type="RectangleShape2D" id=45]
-extents = Vector2( 48, 8 )
+extents = Vector2( 271, 63 )
 
 [sub_resource type="RectangleShape2D" id=46]
-extents = Vector2( 48, 96 )
+extents = Vector2( 272, 32 )
 
 [sub_resource type="RectangleShape2D" id=47]
-extents = Vector2( 215, 143 )
+extents = Vector2( 272, 32 )
 
 [sub_resource type="RectangleShape2D" id=48]
-extents = Vector2( 215, 143 )
+extents = Vector2( 55, 223 )
 
 [sub_resource type="RectangleShape2D" id=49]
-extents = Vector2( 216, 32 )
+extents = Vector2( 55, 223 )
 
 [sub_resource type="RectangleShape2D" id=50]
-extents = Vector2( 216, 112 )
+extents = Vector2( 56, 192 )
+
+[sub_resource type="RectangleShape2D" id=51]
+extents = Vector2( 56, 32 )
+
+[sub_resource type="RectangleShape2D" id=52]
+extents = Vector2( 47, 87 )
+
+[sub_resource type="RectangleShape2D" id=53]
+extents = Vector2( 47, 87 )
+
+[sub_resource type="RectangleShape2D" id=54]
+extents = Vector2( 48, 40 )
+
+[sub_resource type="RectangleShape2D" id=55]
+extents = Vector2( 48, 48 )
+
+[sub_resource type="RectangleShape2D" id=56]
+extents = Vector2( 63, 55 )
 
 [sub_resource type="RectangleShape2D" id=57]
-extents = Vector2( 95, 263 )
+extents = Vector2( 63, 55 )
 
 [sub_resource type="RectangleShape2D" id=58]
-extents = Vector2( 95, 263 )
+extents = Vector2( 64, 8 )
 
 [sub_resource type="RectangleShape2D" id=59]
-extents = Vector2( 96, 152 )
+extents = Vector2( 64, 48 )
 
 [sub_resource type="RectangleShape2D" id=60]
+extents = Vector2( 23, 55 )
+
+[sub_resource type="RectangleShape2D" id=61]
+extents = Vector2( 23, 55 )
+
+[sub_resource type="RectangleShape2D" id=62]
+extents = Vector2( 24, 8 )
+
+[sub_resource type="RectangleShape2D" id=63]
+extents = Vector2( 24, 48 )
+
+[sub_resource type="RectangleShape2D" id=64]
+extents = Vector2( 23, 87 )
+
+[sub_resource type="RectangleShape2D" id=65]
+extents = Vector2( 23, 87 )
+
+[sub_resource type="RectangleShape2D" id=66]
+extents = Vector2( 24, 8 )
+
+[sub_resource type="RectangleShape2D" id=67]
+extents = Vector2( 24, 80 )
+
+[sub_resource type="RectangleShape2D" id=68]
+extents = Vector2( 47, 103 )
+
+[sub_resource type="RectangleShape2D" id=69]
+extents = Vector2( 47, 103 )
+
+[sub_resource type="RectangleShape2D" id=70]
+extents = Vector2( 48, 8 )
+
+[sub_resource type="RectangleShape2D" id=71]
+extents = Vector2( 48, 96 )
+
+[sub_resource type="RectangleShape2D" id=72]
+extents = Vector2( 215, 143 )
+
+[sub_resource type="RectangleShape2D" id=73]
+extents = Vector2( 215, 143 )
+
+[sub_resource type="RectangleShape2D" id=74]
+extents = Vector2( 216, 32 )
+
+[sub_resource type="RectangleShape2D" id=75]
+extents = Vector2( 216, 112 )
+
+[sub_resource type="RectangleShape2D" id=76]
+extents = Vector2( 95, 263 )
+
+[sub_resource type="RectangleShape2D" id=77]
+extents = Vector2( 95, 263 )
+
+[sub_resource type="RectangleShape2D" id=78]
+extents = Vector2( 96, 152 )
+
+[sub_resource type="RectangleShape2D" id=79]
 extents = Vector2( 96, 112 )
 
 [node name="Level7" instance=ExtResource( 2 )]
@@ -1161,7 +1145,7 @@ delay = 0.8
 elevation = 32
 
 [node name="AnimationPlayer" parent="FlameFloorsIndivid/FlameFloor9" index="2"]
-anims/Activate = SubResource( 51 )
+anims/Activate = SubResource( 7 )
 
 [node name="FlameFloor8" parent="FlameFloorsIndivid" index="8" instance=ExtResource( 5 )]
 position = Vector2( 1600, 96 )
@@ -1171,7 +1155,7 @@ delay = 0.5
 elevation = 32
 
 [node name="AnimationPlayer" parent="FlameFloorsIndivid/FlameFloor8" index="2"]
-anims/Activate = SubResource( 7 )
+anims/Activate = SubResource( 8 )
 
 [node name="FlameFloor10" parent="FlameFloorsIndivid" index="9" instance=ExtResource( 5 )]
 position = Vector2( 1888, 96 )
@@ -1182,7 +1166,7 @@ delay_start = true
 elevation = 32
 
 [node name="AnimationPlayer" parent="FlameFloorsIndivid/FlameFloor10" index="2"]
-anims/Activate = SubResource( 52 )
+anims/Activate = SubResource( 9 )
 
 [node name="FlameFloorsGroup1" type="Node2D" parent="." index="19"]
 
@@ -1201,7 +1185,7 @@ delay = 0.5
 elevation = 224
 
 [node name="AnimationPlayer" parent="FlameFloorsGroup1/FlameFloor2" index="2"]
-anims/Activate = SubResource( 8 )
+anims/Activate = SubResource( 10 )
 
 [node name="FlameFloor3" parent="FlameFloorsGroup1" index="2" instance=ExtResource( 5 )]
 position = Vector2( 332, -560 )
@@ -1212,7 +1196,7 @@ delay_start = true
 elevation = 224
 
 [node name="AnimationPlayer" parent="FlameFloorsGroup1/FlameFloor3" index="2"]
-anims/Activate = SubResource( 9 )
+anims/Activate = SubResource( 11 )
 
 [node name="FlameFloor7" parent="FlameFloorsGroup1" index="3" instance=ExtResource( 5 )]
 position = Vector2( 424, -464 )
@@ -1222,7 +1206,7 @@ delay = 0.5
 elevation = 224
 
 [node name="AnimationPlayer" parent="FlameFloorsGroup1/FlameFloor7" index="2"]
-anims/Activate = SubResource( 10 )
+anims/Activate = SubResource( 12 )
 
 [node name="FlameFloor8" parent="FlameFloorsGroup1" index="4" instance=ExtResource( 5 )]
 position = Vector2( 424, -656 )
@@ -1232,7 +1216,7 @@ delay = 0.5
 elevation = 224
 
 [node name="AnimationPlayer" parent="FlameFloorsGroup1/FlameFloor8" index="2"]
-anims/Activate = SubResource( 11 )
+anims/Activate = SubResource( 13 )
 
 [node name="FlameFloor9" parent="FlameFloorsGroup1" index="5" instance=ExtResource( 5 )]
 position = Vector2( 424, -560 )
@@ -1243,7 +1227,7 @@ delay_start = true
 elevation = 224
 
 [node name="AnimationPlayer" parent="FlameFloorsGroup1/FlameFloor9" index="2"]
-anims/Activate = SubResource( 12 )
+anims/Activate = SubResource( 14 )
 
 [node name="FlameFloor4" parent="FlameFloorsGroup1" index="6" instance=ExtResource( 5 )]
 position = Vector2( 516, -656 )
@@ -1254,7 +1238,7 @@ delay_start = true
 elevation = 224
 
 [node name="AnimationPlayer" parent="FlameFloorsGroup1/FlameFloor4" index="2"]
-anims/Activate = SubResource( 13 )
+anims/Activate = SubResource( 15 )
 
 [node name="FlameFloor6" parent="FlameFloorsGroup1" index="7" instance=ExtResource( 5 )]
 position = Vector2( 516, -560 )
@@ -1264,7 +1248,7 @@ delay = 0.5
 elevation = 224
 
 [node name="AnimationPlayer" parent="FlameFloorsGroup1/FlameFloor6" index="2"]
-anims/Activate = SubResource( 14 )
+anims/Activate = SubResource( 16 )
 
 [node name="FlameFloor5" parent="FlameFloorsGroup1" index="8" instance=ExtResource( 5 )]
 position = Vector2( 516, -464 )
@@ -1275,7 +1259,7 @@ delay_start = true
 elevation = 224
 
 [node name="AnimationPlayer" parent="FlameFloorsGroup1/FlameFloor5" index="2"]
-anims/Activate = SubResource( 15 )
+anims/Activate = SubResource( 17 )
 
 [node name="FlameFloor10" parent="FlameFloorsGroup1" index="9" instance=ExtResource( 5 )]
 position = Vector2( 608, -656 )
@@ -1286,7 +1270,7 @@ delay_start = true
 elevation = 224
 
 [node name="AnimationPlayer" parent="FlameFloorsGroup1/FlameFloor10" index="2"]
-anims/Activate = SubResource( 16 )
+anims/Activate = SubResource( 18 )
 
 [node name="FlameFloor11" parent="FlameFloorsGroup1" index="10" instance=ExtResource( 5 )]
 position = Vector2( 608, -560 )
@@ -1296,7 +1280,7 @@ delay = 0.5
 elevation = 224
 
 [node name="AnimationPlayer" parent="FlameFloorsGroup1/FlameFloor11" index="2"]
-anims/Activate = SubResource( 17 )
+anims/Activate = SubResource( 19 )
 
 [node name="FlameFloor12" parent="FlameFloorsGroup1" index="11" instance=ExtResource( 5 )]
 position = Vector2( 608, -464 )
@@ -1307,7 +1291,7 @@ delay_start = true
 elevation = 224
 
 [node name="AnimationPlayer" parent="FlameFloorsGroup1/FlameFloor12" index="2"]
-anims/Activate = SubResource( 18 )
+anims/Activate = SubResource( 20 )
 
 [node name="FlameFloorsGroup2" type="Node2D" parent="." index="20"]
 
@@ -1326,7 +1310,7 @@ delay_start = true
 elevation = 224
 
 [node name="AnimationPlayer" parent="FlameFloorsGroup2/FlameFloor2" index="2"]
-anims/Activate = SubResource( 61 )
+anims/Activate = SubResource( 21 )
 
 [node name="FlameFloor3" parent="FlameFloorsGroup2" index="2" instance=ExtResource( 5 )]
 position = Vector2( 2288, -288 )
@@ -1336,7 +1320,7 @@ delay_start = true
 elevation = 224
 
 [node name="AnimationPlayer" parent="FlameFloorsGroup2/FlameFloor3" index="2"]
-anims/Activate = SubResource( 62 )
+anims/Activate = SubResource( 22 )
 
 [node name="FlameFloor4" parent="FlameFloorsGroup2" index="3" instance=ExtResource( 5 )]
 position = Vector2( 2192, -384 )
@@ -1346,7 +1330,7 @@ delay = 0.5
 elevation = 224
 
 [node name="AnimationPlayer" parent="FlameFloorsGroup2/FlameFloor4" index="2"]
-anims/Activate = SubResource( 63 )
+anims/Activate = SubResource( 23 )
 
 [node name="FlameFloor5" parent="FlameFloorsGroup2" index="4" instance=ExtResource( 5 )]
 position = Vector2( 2288, -432 )
@@ -1356,7 +1340,7 @@ delay = 0.3
 elevation = 224
 
 [node name="AnimationPlayer" parent="FlameFloorsGroup2/FlameFloor5" index="2"]
-anims/Activate = SubResource( 64 )
+anims/Activate = SubResource( 24 )
 
 [node name="FlameFloor6" parent="FlameFloorsGroup2" index="5" instance=ExtResource( 5 )]
 position = Vector2( 2192, -480 )
@@ -1367,7 +1351,7 @@ delay_start = true
 elevation = 224
 
 [node name="AnimationPlayer" parent="FlameFloorsGroup2/FlameFloor6" index="2"]
-anims/Activate = SubResource( 65 )
+anims/Activate = SubResource( 25 )
 
 [node name="ExitDoor" parent="YSortWorldObjects" index="0"]
 position = Vector2( -80, -8 )
@@ -1472,7 +1456,7 @@ frame = 2
 elevation = 64
 
 [node name="AnimationPlayer" parent="YSortWorldObjects/Tornados/Tornado3" index="3"]
-anims/Tornado = SubResource( 19 )
+anims/Tornado = SubResource( 26 )
 
 [node name="Pos_B" parent="YSortWorldObjects/Tornados/Tornado3" index="5"]
 position = Vector2( 48, 0 )
@@ -1487,7 +1471,7 @@ frame = 2
 elevation = 64
 
 [node name="AnimationPlayer" parent="YSortWorldObjects/Tornados/Tornado2" index="3"]
-anims/Tornado = SubResource( 20 )
+anims/Tornado = SubResource( 27 )
 
 [node name="Pos_B" parent="YSortWorldObjects/Tornados/Tornado2" index="5"]
 position = Vector2( -48, 0 )
@@ -1502,7 +1486,7 @@ frame = 2
 elevation = 64
 
 [node name="AnimationPlayer" parent="YSortWorldObjects/Tornados/Tornado4" index="3"]
-anims/Tornado = SubResource( 21 )
+anims/Tornado = SubResource( 28 )
 
 [node name="Pos_B" parent="YSortWorldObjects/Tornados/Tornado4" index="5"]
 position = Vector2( 0, 44 )
@@ -1517,7 +1501,7 @@ frame = 2
 elevation = 64
 
 [node name="AnimationPlayer" parent="YSortWorldObjects/Tornados/Tornado5" index="3"]
-anims/Tornado = SubResource( 22 )
+anims/Tornado = SubResource( 29 )
 
 [node name="Pos_B" parent="YSortWorldObjects/Tornados/Tornado5" index="5"]
 position = Vector2( 0, -44 )
@@ -1532,7 +1516,7 @@ frame = 2
 elevation = 224
 
 [node name="AnimationPlayer" parent="YSortWorldObjects/Tornados/Tornado6" index="3"]
-anims/Tornado = SubResource( 66 )
+anims/Tornado = SubResource( 30 )
 
 [node name="Pos_B" parent="YSortWorldObjects/Tornados/Tornado6" index="5"]
 position = Vector2( 84, 0 )
@@ -1547,7 +1531,7 @@ frame = 2
 elevation = 224
 
 [node name="AnimationPlayer" parent="YSortWorldObjects/Tornados/Tornado8" index="3"]
-anims/Tornado = SubResource( 67 )
+anims/Tornado = SubResource( 31 )
 
 [node name="Pos_B" parent="YSortWorldObjects/Tornados/Tornado8" index="5"]
 position = Vector2( 84, 0 )
@@ -1562,7 +1546,7 @@ frame = 2
 elevation = 224
 
 [node name="AnimationPlayer" parent="YSortWorldObjects/Tornados/Tornado7" index="3"]
-anims/Tornado = SubResource( 68 )
+anims/Tornado = SubResource( 32 )
 
 [node name="Pos_B" parent="YSortWorldObjects/Tornados/Tornado7" index="5"]
 position = Vector2( -84, 0 )
@@ -1577,7 +1561,7 @@ frame = 2
 elevation = 224
 
 [node name="AnimationPlayer" parent="YSortWorldObjects/Tornados/Tornado9" index="3"]
-anims/Tornado = SubResource( 69 )
+anims/Tornado = SubResource( 33 )
 
 [node name="Pos_B" parent="YSortWorldObjects/Tornados/Tornado9" index="5"]
 position = Vector2( -84, 0 )
@@ -1592,7 +1576,7 @@ frame = 2
 elevation = 224
 
 [node name="AnimationPlayer" parent="YSortWorldObjects/Tornados/Tornado11" index="3"]
-anims/Tornado = SubResource( 75 )
+anims/Tornado = SubResource( 34 )
 
 [node name="Pos_B" parent="YSortWorldObjects/Tornados/Tornado11" index="5"]
 position = Vector2( -32, 0 )
@@ -1607,7 +1591,7 @@ frame = 2
 elevation = 224
 
 [node name="AnimationPlayer" parent="YSortWorldObjects/Tornados/Tornado10" index="3"]
-anims/Tornado = SubResource( 70 )
+anims/Tornado = SubResource( 35 )
 
 [node name="Pos_B" parent="YSortWorldObjects/Tornados/Tornado10" index="5"]
 position = Vector2( 0, 252 )
@@ -1617,131 +1601,131 @@ position = Vector2( 32, 0 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision/EntryArea1" index="0"]
 position = Vector2( -32, -24 )
-shape = SubResource( 23 )
+shape = SubResource( 36 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision/ElevatedArea1" index="0"]
 position = Vector2( -32, -56 )
-shape = SubResource( 24 )
+shape = SubResource( 37 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision/BoundaryBody1" index="0"]
 position = Vector2( -32, -40 )
-shape = SubResource( 25 )
+shape = SubResource( 38 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision/WallBody1" index="0"]
-shape = SubResource( 26 )
+shape = SubResource( 39 )
 
 [node name="Elevation1Collision2" parent="Elevation1Collisions" index="1" instance=ExtResource( 11 )]
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision2/EntryArea1" index="0"]
 position = Vector2( 1456, 128 )
-shape = SubResource( 27 )
+shape = SubResource( 40 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision2/ElevatedArea1" index="0"]
 position = Vector2( 1456, 96 )
-shape = SubResource( 28 )
+shape = SubResource( 41 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision2/BoundaryBody1" index="0"]
 position = Vector2( 1456, 112 )
-shape = SubResource( 29 )
+shape = SubResource( 42 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision2/WallBody1" index="0"]
 position = Vector2( 1456, 160 )
-shape = SubResource( 30 )
+shape = SubResource( 43 )
 
 [node name="Elevation1Collision3" parent="Elevation1Collisions" index="2" instance=ExtResource( 11 )]
 position = Vector2( 144, 0 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision3/EntryArea1" index="0"]
 position = Vector2( 1456, 128 )
-shape = SubResource( 27 )
+shape = SubResource( 40 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision3/ElevatedArea1" index="0"]
 position = Vector2( 1456, 96 )
-shape = SubResource( 28 )
+shape = SubResource( 41 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision3/BoundaryBody1" index="0"]
 position = Vector2( 1456, 112 )
-shape = SubResource( 29 )
+shape = SubResource( 42 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision3/WallBody1" index="0"]
 position = Vector2( 1456, 160 )
-shape = SubResource( 30 )
+shape = SubResource( 43 )
 
 [node name="Elevation1Collision4" parent="Elevation1Collisions" index="3" instance=ExtResource( 11 )]
 position = Vector2( 288, 0 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision4/EntryArea1" index="0"]
 position = Vector2( 1456, 128 )
-shape = SubResource( 27 )
+shape = SubResource( 40 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision4/ElevatedArea1" index="0"]
 position = Vector2( 1456, 96 )
-shape = SubResource( 28 )
+shape = SubResource( 41 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision4/BoundaryBody1" index="0"]
 position = Vector2( 1456, 112 )
-shape = SubResource( 29 )
+shape = SubResource( 42 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision4/WallBody1" index="0"]
 position = Vector2( 1456, 160 )
-shape = SubResource( 30 )
+shape = SubResource( 43 )
 
 [node name="Elevation1Collision5" parent="Elevation1Collisions" index="4" instance=ExtResource( 11 )]
 position = Vector2( 432, 0 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision5/EntryArea1" index="0"]
 position = Vector2( 1456, 128 )
-shape = SubResource( 27 )
+shape = SubResource( 40 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision5/ElevatedArea1" index="0"]
 position = Vector2( 1456, 96 )
-shape = SubResource( 28 )
+shape = SubResource( 41 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision5/BoundaryBody1" index="0"]
 position = Vector2( 1456, 112 )
-shape = SubResource( 29 )
+shape = SubResource( 42 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision5/WallBody1" index="0"]
 position = Vector2( 1456, 160 )
-shape = SubResource( 30 )
+shape = SubResource( 43 )
 
 [node name="Elevation1Collision6" parent="Elevation1Collisions" index="5" instance=ExtResource( 11 )]
 position = Vector2( 1296, -384 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision6/EntryArea1" index="0"]
 position = Vector2( 1456, 128 )
-shape = SubResource( 27 )
+shape = SubResource( 40 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision6/ElevatedArea1" index="0"]
 position = Vector2( 1456, 96 )
-shape = SubResource( 28 )
+shape = SubResource( 41 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision6/BoundaryBody1" index="0"]
 position = Vector2( 1456, 112 )
-shape = SubResource( 29 )
+shape = SubResource( 42 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision6/WallBody1" index="0"]
 position = Vector2( 1456, 160 )
-shape = SubResource( 30 )
+shape = SubResource( 43 )
 
 [node name="Elevation1Collision7" parent="Elevation1Collisions" index="6" instance=ExtResource( 11 )]
 position = Vector2( 1504, -384 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision7/EntryArea1" index="0"]
 position = Vector2( 1456, 128 )
-shape = SubResource( 27 )
+shape = SubResource( 40 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision7/ElevatedArea1" index="0"]
 position = Vector2( 1456, 96 )
-shape = SubResource( 28 )
+shape = SubResource( 41 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision7/BoundaryBody1" index="0"]
 position = Vector2( 1456, 112 )
-shape = SubResource( 29 )
+shape = SubResource( 42 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision7/WallBody1" index="0"]
 position = Vector2( 1456, 160 )
-shape = SubResource( 30 )
+shape = SubResource( 43 )
 
 [node name="Elevation2Collisions" type="Node" parent="." index="23"]
 
@@ -1750,38 +1734,38 @@ position = Vector2( 0, 32 )
 
 [node name="CollisionShape2D" parent="Elevation2Collisions/Elevation2Collision/EntryArea2" index="0"]
 position = Vector2( 1024, -384 )
-shape = SubResource( 31 )
+shape = SubResource( 44 )
 
 [node name="CollisionShape2D" parent="Elevation2Collisions/Elevation2Collision/ElevationArea2" index="0"]
 position = Vector2( 1024, -448 )
-shape = SubResource( 32 )
+shape = SubResource( 45 )
 
 [node name="CollisionShape2D" parent="Elevation2Collisions/Elevation2Collision/BoundaryBody2" index="0"]
 position = Vector2( 1024, -416 )
-shape = SubResource( 33 )
+shape = SubResource( 46 )
 
 [node name="CollisionShape2D" parent="Elevation2Collisions/Elevation2Collision/WallBody2" index="0"]
 position = Vector2( 1024, -352 )
-shape = SubResource( 34 )
+shape = SubResource( 47 )
 
 [node name="Elevation2Collision2" parent="Elevation2Collisions" index="1" instance=ExtResource( 10 )]
 position = Vector2( -32, 0 )
 
 [node name="CollisionShape2D" parent="Elevation2Collisions/Elevation2Collision2/EntryArea2" index="0"]
 position = Vector2( 1448, -192 )
-shape = SubResource( 35 )
+shape = SubResource( 48 )
 
 [node name="CollisionShape2D" parent="Elevation2Collisions/Elevation2Collision2/ElevationArea2" index="0"]
 position = Vector2( 1448, -256 )
-shape = SubResource( 36 )
+shape = SubResource( 49 )
 
 [node name="CollisionShape2D" parent="Elevation2Collisions/Elevation2Collision2/BoundaryBody2" index="0"]
 position = Vector2( 1448, -224 )
-shape = SubResource( 37 )
+shape = SubResource( 50 )
 
 [node name="CollisionShape2D" parent="Elevation2Collisions/Elevation2Collision2/WallBody2" index="0"]
 position = Vector2( 1448, 0 )
-shape = SubResource( 38 )
+shape = SubResource( 51 )
 
 [node name="Elevation3Collisions" type="Node" parent="." index="24"]
 
@@ -1790,55 +1774,55 @@ position = Vector2( 0, -32 )
 
 [node name="CollisionShape2D" parent="Elevation3Collisions/Elevation3Collision/EntryArea3" index="0"]
 position = Vector2( 0, -248 )
-shape = SubResource( 39 )
+shape = SubResource( 52 )
 
 [node name="CollisionShape2D" parent="Elevation3Collisions/Elevation3Collision/ElevationArea3" index="0"]
 position = Vector2( 0, -344 )
-shape = SubResource( 40 )
+shape = SubResource( 53 )
 
 [node name="CollisionShape2D" parent="Elevation3Collisions/Elevation3Collision/BoundaryBody3" index="0"]
 position = Vector2( 0, -296 )
-shape = SubResource( 41 )
+shape = SubResource( 54 )
 
 [node name="CollisionShape2D" parent="Elevation3Collisions/Elevation3Collision/WallBody3" index="0"]
 position = Vector2( 0, -208 )
-shape = SubResource( 42 )
+shape = SubResource( 55 )
 
 [node name="Elevation3Collision2" parent="Elevation3Collisions" index="1" instance=ExtResource( 7 )]
 
 [node name="CollisionShape2D" parent="Elevation3Collisions/Elevation3Collision2/EntryArea3" index="0"]
 position = Vector2( 2032, 120 )
-shape = SubResource( 53 )
+shape = SubResource( 56 )
 
 [node name="CollisionShape2D" parent="Elevation3Collisions/Elevation3Collision2/ElevationArea3" index="0"]
 position = Vector2( 2032, 24 )
-shape = SubResource( 54 )
+shape = SubResource( 57 )
 
 [node name="CollisionShape2D" parent="Elevation3Collisions/Elevation3Collision2/BoundaryBody3" index="0"]
 position = Vector2( 2032, 72 )
-shape = SubResource( 55 )
+shape = SubResource( 58 )
 
 [node name="CollisionShape2D" parent="Elevation3Collisions/Elevation3Collision2/WallBody3" index="0"]
 position = Vector2( 2032, 128 )
-shape = SubResource( 56 )
+shape = SubResource( 59 )
 
 [node name="Elevation3Collision3" parent="Elevation3Collisions" index="2" instance=ExtResource( 7 )]
 
 [node name="CollisionShape2D" parent="Elevation3Collisions/Elevation3Collision3/EntryArea3" index="0"]
 position = Vector2( 2584, -264 )
-shape = SubResource( 76 )
+shape = SubResource( 60 )
 
 [node name="CollisionShape2D" parent="Elevation3Collisions/Elevation3Collision3/ElevationArea3" index="0"]
 position = Vector2( 2584, -360 )
-shape = SubResource( 77 )
+shape = SubResource( 61 )
 
 [node name="CollisionShape2D" parent="Elevation3Collisions/Elevation3Collision3/BoundaryBody3" index="0"]
 position = Vector2( 2584, -312 )
-shape = SubResource( 78 )
+shape = SubResource( 62 )
 
 [node name="CollisionShape2D" parent="Elevation3Collisions/Elevation3Collision3/WallBody3" index="0"]
 position = Vector2( 2584, -256 )
-shape = SubResource( 79 )
+shape = SubResource( 63 )
 
 [node name="Elevation4Collisions" type="Node" parent="." index="25"]
 
@@ -1848,19 +1832,19 @@ shape = SubResource( 79 )
 
 [node name="CollisionShape2D" parent="Elevation5Collisions/Elevation5Collision/EntryArea1" index="0"]
 position = Vector2( 2440, -296 )
-shape = SubResource( 71 )
+shape = SubResource( 64 )
 
 [node name="CollisionShape2D" parent="Elevation5Collisions/Elevation5Collision/ElevatedArea1" index="0"]
 position = Vector2( 2440, -456 )
-shape = SubResource( 72 )
+shape = SubResource( 65 )
 
 [node name="CollisionShape2D" parent="Elevation5Collisions/Elevation5Collision/BoundaryBody1" index="0"]
 position = Vector2( 2440, -376 )
-shape = SubResource( 73 )
+shape = SubResource( 66 )
 
 [node name="CollisionShape2D" parent="Elevation5Collisions/Elevation5Collision/WallBody1" index="0"]
 position = Vector2( 2440, -288 )
-shape = SubResource( 74 )
+shape = SubResource( 67 )
 
 [node name="Elevation6Collisions" type="Node" parent="." index="27"]
 
@@ -1869,19 +1853,19 @@ position = Vector2( 128, 304 )
 
 [node name="CollisionShape2D" parent="Elevation6Collisions/Elevation6Collision/EntryArea1" index="0"]
 position = Vector2( 0, -600 )
-shape = SubResource( 43 )
+shape = SubResource( 68 )
 
 [node name="CollisionShape2D" parent="Elevation6Collisions/Elevation6Collision/ElevatedArea1" index="0"]
 position = Vector2( 0, -792 )
-shape = SubResource( 44 )
+shape = SubResource( 69 )
 
 [node name="CollisionShape2D" parent="Elevation6Collisions/Elevation6Collision/BoundaryBody1" index="0"]
 position = Vector2( 0, -696 )
-shape = SubResource( 45 )
+shape = SubResource( 70 )
 
 [node name="CollisionShape2D" parent="Elevation6Collisions/Elevation6Collision/WallBody1" index="0"]
 position = Vector2( 0, -592 )
-shape = SubResource( 46 )
+shape = SubResource( 71 )
 
 [node name="Elevation7Collisions" type="Node" parent="." index="28"]
 
@@ -1889,37 +1873,37 @@ shape = SubResource( 46 )
 
 [node name="CollisionShape2D" parent="Elevation7Collisions/Elevation7Collision/EntryArea1" index="0"]
 position = Vector2( 440, -336 )
-shape = SubResource( 47 )
+shape = SubResource( 72 )
 
 [node name="CollisionShape2D" parent="Elevation7Collisions/Elevation7Collision/ElevatedArea1" index="0"]
 position = Vector2( 440, -560 )
-shape = SubResource( 48 )
+shape = SubResource( 73 )
 
 [node name="CollisionShape2D" parent="Elevation7Collisions/Elevation7Collision/BoundaryBody1" index="0"]
 position = Vector2( 440, -448 )
-shape = SubResource( 49 )
+shape = SubResource( 74 )
 
 [node name="CollisionShape2D" parent="Elevation7Collisions/Elevation7Collision/WallBody1" index="0"]
 position = Vector2( 440, -304 )
-shape = SubResource( 50 )
+shape = SubResource( 75 )
 
 [node name="Elevation7Collision2" parent="Elevation7Collisions" index="1" instance=ExtResource( 9 )]
 
 [node name="CollisionShape2D" parent="Elevation7Collisions/Elevation7Collision2/EntryArea1" index="0"]
 position = Vector2( 2240, -88 )
-shape = SubResource( 57 )
+shape = SubResource( 76 )
 
 [node name="CollisionShape2D" parent="Elevation7Collisions/Elevation7Collision2/ElevatedArea1" index="0"]
 position = Vector2( 2240, -312 )
-shape = SubResource( 58 )
+shape = SubResource( 77 )
 
 [node name="CollisionShape2D" parent="Elevation7Collisions/Elevation7Collision2/BoundaryBody1" index="0"]
 position = Vector2( 2240, -200 )
-shape = SubResource( 59 )
+shape = SubResource( 78 )
 
 [node name="CollisionShape2D" parent="Elevation7Collisions/Elevation7Collision2/WallBody1" index="0"]
 position = Vector2( 2240, 64 )
-shape = SubResource( 60 )
+shape = SubResource( 79 )
 
 [editable path="FlameFloorsIndivid/FlameFloor"]
 
