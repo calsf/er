@@ -1,9 +1,10 @@
-extends CanvasLayer
+extends Node2D
 
 var is_exiting = false
 var can_input = false
-onready var fade = $Fade
-onready var press_any_key = $PressAnyKeyLabel
+onready var fade = $CanvasLayer/Fade
+onready var press_any_key = $CanvasLayer/PressAnyKeyLabel
+onready var sounds = $Sounds
 
 # Play fade out when scene starts
 func _ready():
@@ -18,6 +19,7 @@ func _input(event):
 		elif event is InputEventJoypadButton:
 			Globals.is_keyboard = false
 		
+		sounds.play("ButtonPressed")
 		start_leaving_scene()
 
 # Once fade in is finished, return to level select

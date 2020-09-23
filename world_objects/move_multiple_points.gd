@@ -30,10 +30,9 @@ func _physics_process(delta):
 		# If next_pos is outside array, wrap back to beginning
 		if (next_pos > positions.size() - 1):
 			next_pos = 0
-		
-		# If not a cycle, reverse positions array to go back
-		if (!is_cycle):
-			positions.invert()
+			# If not a cycle, reverse positions array to go back
+			if (!is_cycle):
+				positions.invert()
 	
 	# Knockback player in direction this object is moving
 	# If has_set_knockback is true, player will always get knocked in this direction
