@@ -8,7 +8,7 @@ var _default_data = {
 	"Level0Unlocked" : true,
 	
 	"Level1Time" : 0.00,
-	"Level1Unlocked" : true,
+	"Level1Unlocked" : false,
 	
 	"Level2Time" : 0.00,
 	"Level2Unlocked" : false,
@@ -37,7 +37,7 @@ var _default_data = {
 func save_data(data):
 	# Create and open file
 	var save_file = File.new()
-	save_file.open_encrypted_with_pass(SAVE_PATH, File.WRITE, "plzdontcheat")
+	save_file.open_encrypted_with_pass(SAVE_PATH, File.WRITE, "")
 	
 	# Convert data to json, store, and close file
 	save_file.store_line(to_json(data))
@@ -50,7 +50,7 @@ func load_data():
 		save_data(_default_data)
 		
 	# Open file
-	save_file.open_encrypted_with_pass(SAVE_PATH, File.READ, "plzdontcheat")
+	save_file.open_encrypted_with_pass(SAVE_PATH, File.READ, "")
 
 	# Parse data then close file
 	var data = parse_json(save_file.get_as_text())

@@ -9,6 +9,7 @@ onready var sounds = $Sounds
 # Play fade out when scene starts
 func _ready():
 	fade.fade_out()
+	sounds.play("TitleSound")
 
 func _input(event):
 	# When any key is pressed, go to level select
