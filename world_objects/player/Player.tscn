@@ -1,4 +1,4 @@
-[gd_scene load_steps=119 format=2]
+[gd_scene load_steps=139 format=2]
 
 [ext_resource path="res://world_objects/player/shadow.png" type="Texture" id=1]
 [ext_resource path="res://world_objects/player/player.png" type="Texture" id=2]
@@ -246,6 +246,134 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ -1 ]
+}
+
+[sub_resource type="Animation" id=112]
+resource_name = "DoubleJumpDown"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("PlayerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 164, 165, 164 ]
+}
+
+[sub_resource type="Animation" id=113]
+resource_name = "DoubleJumpDownLeft"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("PlayerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 162, 163, 162 ]
+}
+
+[sub_resource type="Animation" id=114]
+resource_name = "DoubleJumpDownRight"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("PlayerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 172, 173, 172 ]
+}
+
+[sub_resource type="Animation" id=115]
+resource_name = "DoubleJumpLeft"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("PlayerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 174, 175, 174 ]
+}
+
+[sub_resource type="Animation" id=116]
+resource_name = "DoubleJumpRight"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("PlayerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 168, 169, 168 ]
+}
+
+[sub_resource type="Animation" id=117]
+resource_name = "DoubleJumpUp"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("PlayerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 166, 167, 166 ]
+}
+
+[sub_resource type="Animation" id=118]
+resource_name = "DoubleJumpUpLeft"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("PlayerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 170, 171, 170 ]
+}
+
+[sub_resource type="Animation" id=119]
+resource_name = "DoubleJumpUpRight"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("PlayerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 160, 161, 160 ]
 }
 
 [sub_resource type="Animation" id=13]
@@ -802,6 +930,48 @@ blend_point_7/node = SubResource( 53 )
 blend_point_7/pos = Vector2( 0.5, -0.5 )
 blend_mode = 1
 
+[sub_resource type="AnimationNodeAnimation" id=124]
+animation = "DoubleJumpDown"
+
+[sub_resource type="AnimationNodeAnimation" id=125]
+animation = "DoubleJumpUp"
+
+[sub_resource type="AnimationNodeAnimation" id=126]
+animation = "DoubleJumpLeft"
+
+[sub_resource type="AnimationNodeAnimation" id=127]
+animation = "DoubleJumpRight"
+
+[sub_resource type="AnimationNodeAnimation" id=128]
+animation = "DoubleJumpDownLeft"
+
+[sub_resource type="AnimationNodeAnimation" id=129]
+animation = "DoubleJumpDownRight"
+
+[sub_resource type="AnimationNodeAnimation" id=130]
+animation = "DoubleJumpUpLeft"
+
+[sub_resource type="AnimationNodeAnimation" id=131]
+animation = "DoubleJumpUpRight"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=120]
+blend_point_0/node = SubResource( 124 )
+blend_point_0/pos = Vector2( 0, 1 )
+blend_point_1/node = SubResource( 125 )
+blend_point_1/pos = Vector2( 0, -1 )
+blend_point_2/node = SubResource( 126 )
+blend_point_2/pos = Vector2( -1, 0 )
+blend_point_3/node = SubResource( 127 )
+blend_point_3/pos = Vector2( 1, 0 )
+blend_point_4/node = SubResource( 128 )
+blend_point_4/pos = Vector2( -0.5, 0.5 )
+blend_point_5/node = SubResource( 129 )
+blend_point_5/pos = Vector2( 0.5, 0.5 )
+blend_point_6/node = SubResource( 130 )
+blend_point_6/pos = Vector2( -0.5, -0.5 )
+blend_point_7/node = SubResource( 131 )
+blend_point_7/pos = Vector2( 0.5, -0.5 )
+
 [sub_resource type="AnimationNodeAnimation" id=55]
 animation = "FallDown"
 
@@ -1013,9 +1183,19 @@ animation = "Respawn"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=109]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=121]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=122]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=123]
+
 [sub_resource type="AnimationNodeStateMachine" id=110]
 states/Death/node = SubResource( 54 )
 states/Death/position = Vector2( 863, 326 )
+states/DoubleJump/node = SubResource( 120 )
+states/DoubleJump/position = Vector2( 350, 391.139 )
 states/Fall/node = SubResource( 63 )
 states/Fall/position = Vector2( 172, 281 )
 states/Idle/node = SubResource( 72 )
@@ -1026,9 +1206,9 @@ states/Move/node = SubResource( 90 )
 states/Move/position = Vector2( 595, 73 )
 states/Respawn/node = SubResource( 91 )
 states/Respawn/position = Vector2( 1103, 229 )
-transitions = [ "Idle", "Move", SubResource( 92 ), "Move", "Idle", SubResource( 93 ), "Idle", "Jump", SubResource( 94 ), "Move", "Jump", SubResource( 95 ), "Jump", "Idle", SubResource( 96 ), "Jump", "Move", SubResource( 97 ), "Idle", "Fall", SubResource( 98 ), "Move", "Fall", SubResource( 99 ), "Jump", "Fall", SubResource( 100 ), "Fall", "Jump", SubResource( 101 ), "Fall", "Move", SubResource( 102 ), "Fall", "Idle", SubResource( 103 ), "Idle", "Death", SubResource( 104 ), "Move", "Death", SubResource( 105 ), "Jump", "Death", SubResource( 106 ), "Fall", "Death", SubResource( 107 ), "Death", "Respawn", SubResource( 108 ), "Respawn", "Idle", SubResource( 109 ) ]
+transitions = [ "Idle", "Move", SubResource( 92 ), "Move", "Idle", SubResource( 93 ), "Idle", "Jump", SubResource( 94 ), "Move", "Jump", SubResource( 95 ), "Jump", "Idle", SubResource( 96 ), "Jump", "Move", SubResource( 97 ), "Idle", "Fall", SubResource( 98 ), "Move", "Fall", SubResource( 99 ), "Jump", "Fall", SubResource( 100 ), "Fall", "Jump", SubResource( 101 ), "Fall", "Move", SubResource( 102 ), "Fall", "Idle", SubResource( 103 ), "Idle", "Death", SubResource( 104 ), "Move", "Death", SubResource( 105 ), "Jump", "Death", SubResource( 106 ), "Fall", "Death", SubResource( 107 ), "Death", "Respawn", SubResource( 108 ), "Respawn", "Idle", SubResource( 109 ), "DoubleJump", "Jump", SubResource( 121 ), "Jump", "DoubleJump", SubResource( 122 ), "Fall", "DoubleJump", SubResource( 123 ) ]
 start_node = "Idle"
-graph_offset = Vector2( -61, 2.13917 )
+graph_offset = Vector2( 24, 194.139 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=111]
 
@@ -1041,7 +1221,6 @@ __meta__ = {
 }
 
 [node name="Shadow" type="Sprite" parent="."]
-position = Vector2( 0, 1 )
 scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 1 )
 
@@ -1049,9 +1228,9 @@ texture = ExtResource( 1 )
 position = Vector2( 0, -7 )
 z_index = -1
 texture = ExtResource( 2 )
-vframes = 20
+vframes = 22
 hframes = 8
-frame = 9
+frame = 67
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = -1.5708
@@ -1102,6 +1281,14 @@ anims/DeathRight = SubResource( 9 )
 anims/DeathUp = SubResource( 10 )
 anims/DeathUpLeft = SubResource( 11 )
 anims/DeathUpRight = SubResource( 12 )
+anims/DoubleJumpDown = SubResource( 112 )
+anims/DoubleJumpDownLeft = SubResource( 113 )
+anims/DoubleJumpDownRight = SubResource( 114 )
+anims/DoubleJumpLeft = SubResource( 115 )
+anims/DoubleJumpRight = SubResource( 116 )
+anims/DoubleJumpUp = SubResource( 117 )
+anims/DoubleJumpUpLeft = SubResource( 118 )
+anims/DoubleJumpUpRight = SubResource( 119 )
 anims/FallDown = SubResource( 13 )
 anims/FallDownLeft = SubResource( 14 )
 anims/FallDownRight = SubResource( 15 )
@@ -1142,6 +1329,7 @@ anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource( 111 )
 parameters/Death/blend_position = Vector2( 0, 0 )
+parameters/DoubleJump/blend_position = Vector2( 0, 0 )
 parameters/Fall/blend_position = Vector2( 0, 0 )
 parameters/Idle/blend_position = Vector2( 0, 0 )
 parameters/Jump/blend_position = Vector2( 0, 0 )

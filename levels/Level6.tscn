@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=2]
+[gd_scene load_steps=82 format=2]
 
 [ext_resource path="res://levels/LevelTemplate.tscn" type="PackedScene" id=1]
 [ext_resource path="res://elevations/ElevationOverlay.tscn" type="PackedScene" id=2]
@@ -359,7 +359,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=24]
-length = 0.6
+length = 0.8
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -367,14 +367,26 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.4, 0.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.6, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 0, 1, 2, 1, 0 ]
+"values": [ 0, 1, 2, 3, 2, 1, 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Hitbox/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true ]
 }
 
 [sub_resource type="Animation" id=25]
-length = 0.6
+length = 0.8
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -382,14 +394,26 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.4, 0.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.6, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 0, 1, 2, 1, 0 ]
+"values": [ 0, 1, 2, 3, 2, 1, 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Hitbox/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true ]
 }
 
 [sub_resource type="Animation" id=26]
-length = 0.6
+length = 0.8
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -397,14 +421,27 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.4, 0.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.6, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 0, 1, 2, 1, 0 ]
+"values": [ 0, 1, 2, 3, 2, 1, 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Hitbox/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true ]
 }
 
 [sub_resource type="Animation" id=27]
-length = 0.6
+resource_name = "Activate"
+length = 0.8
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -412,13 +449,26 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.4, 0.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.6, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 0, 1, 2, 1, 0 ]
+"values": [ 0, 1, 2, 3, 2, 1, 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Hitbox/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true ]
 }
 
 [sub_resource type="Animation" id=28]
+resource_name = "Activate"
 length = 0.8
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -446,6 +496,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id=29]
+resource_name = "Activate"
 length = 0.8
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -473,6 +524,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id=30]
+resource_name = "Activate"
 length = 0.8
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -583,224 +635,112 @@ tracks/1/keys = {
 "values": [ true, false, true ]
 }
 
-[sub_resource type="Animation" id=34]
-resource_name = "Activate"
-length = 0.8
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.6, 0.7, 0.8 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3, 2, 1, 0 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Hitbox/CollisionShape2D:disabled")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.3, 0.6 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ true, false, true ]
-}
+[sub_resource type="RectangleShape2D" id=34]
+extents = Vector2( 47, 31 )
 
-[sub_resource type="Animation" id=35]
-resource_name = "Activate"
-length = 0.8
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.6, 0.7, 0.8 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3, 2, 1, 0 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Hitbox/CollisionShape2D:disabled")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.3, 0.6 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ true, false, true ]
-}
+[sub_resource type="RectangleShape2D" id=35]
+extents = Vector2( 47, 31 )
 
-[sub_resource type="Animation" id=36]
-resource_name = "Activate"
-length = 0.8
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.6, 0.7, 0.8 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3, 2, 1, 0 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Hitbox/CollisionShape2D:disabled")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.3, 0.6 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ true, false, true ]
-}
+[sub_resource type="RectangleShape2D" id=36]
+extents = Vector2( 48, 16 )
 
-[sub_resource type="Animation" id=37]
-resource_name = "Activate"
-length = 0.8
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.6, 0.7, 0.8 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3, 2, 1, 0 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Hitbox/CollisionShape2D:disabled")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.3, 0.6 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ true, false, true ]
-}
+[sub_resource type="RectangleShape2D" id=37]
+extents = Vector2( 48, 16 )
 
 [sub_resource type="RectangleShape2D" id=38]
-extents = Vector2( 47, 31 )
+extents = Vector2( 63, 23 )
 
 [sub_resource type="RectangleShape2D" id=39]
-extents = Vector2( 47, 31 )
+extents = Vector2( 63, 23 )
 
 [sub_resource type="RectangleShape2D" id=40]
-extents = Vector2( 48, 16 )
+extents = Vector2( 64, 8 )
 
 [sub_resource type="RectangleShape2D" id=41]
-extents = Vector2( 48, 16 )
-
-[sub_resource type="RectangleShape2D" id=42]
-extents = Vector2( 63, 23 )
-
-[sub_resource type="RectangleShape2D" id=43]
-extents = Vector2( 63, 23 )
-
-[sub_resource type="RectangleShape2D" id=44]
-extents = Vector2( 64, 8 )
-
-[sub_resource type="RectangleShape2D" id=45]
 extents = Vector2( 64, 16 )
 
-[sub_resource type="RectangleShape2D" id=46]
+[sub_resource type="RectangleShape2D" id=42]
 extents = Vector2( 47, 39 )
 
-[sub_resource type="RectangleShape2D" id=47]
+[sub_resource type="RectangleShape2D" id=43]
 extents = Vector2( 47, 39 )
 
-[sub_resource type="RectangleShape2D" id=48]
+[sub_resource type="RectangleShape2D" id=44]
 extents = Vector2( 48, 8 )
 
-[sub_resource type="RectangleShape2D" id=49]
+[sub_resource type="RectangleShape2D" id=45]
 extents = Vector2( 48, 32 )
 
-[sub_resource type="RectangleShape2D" id=50]
+[sub_resource type="RectangleShape2D" id=46]
 extents = Vector2( 63, 39 )
 
-[sub_resource type="RectangleShape2D" id=51]
+[sub_resource type="RectangleShape2D" id=47]
 extents = Vector2( 63, 39 )
 
-[sub_resource type="RectangleShape2D" id=52]
+[sub_resource type="RectangleShape2D" id=48]
 extents = Vector2( 64, 8 )
 
-[sub_resource type="RectangleShape2D" id=53]
+[sub_resource type="RectangleShape2D" id=49]
 extents = Vector2( 64, 32 )
 
-[sub_resource type="RectangleShape2D" id=54]
+[sub_resource type="RectangleShape2D" id=50]
 extents = Vector2( 71, 55 )
 
-[sub_resource type="RectangleShape2D" id=55]
+[sub_resource type="RectangleShape2D" id=51]
 extents = Vector2( 71, 55 )
 
-[sub_resource type="RectangleShape2D" id=56]
+[sub_resource type="RectangleShape2D" id=52]
 extents = Vector2( 72, 8 )
 
-[sub_resource type="RectangleShape2D" id=57]
+[sub_resource type="RectangleShape2D" id=53]
 extents = Vector2( 72, 48 )
 
-[sub_resource type="RectangleShape2D" id=58]
+[sub_resource type="RectangleShape2D" id=54]
 extents = Vector2( 63, 71 )
 
-[sub_resource type="RectangleShape2D" id=59]
+[sub_resource type="RectangleShape2D" id=55]
 extents = Vector2( 63, 71 )
 
-[sub_resource type="RectangleShape2D" id=60]
+[sub_resource type="RectangleShape2D" id=56]
 extents = Vector2( 64, 8 )
 
-[sub_resource type="RectangleShape2D" id=61]
+[sub_resource type="RectangleShape2D" id=57]
 extents = Vector2( 64, 64 )
 
-[sub_resource type="RectangleShape2D" id=62]
+[sub_resource type="RectangleShape2D" id=58]
 extents = Vector2( 127, 271 )
 
-[sub_resource type="RectangleShape2D" id=63]
+[sub_resource type="RectangleShape2D" id=59]
 extents = Vector2( 127, 271 )
 
-[sub_resource type="RectangleShape2D" id=64]
+[sub_resource type="RectangleShape2D" id=60]
 extents = Vector2( 128, 176 )
 
-[sub_resource type="RectangleShape2D" id=65]
+[sub_resource type="RectangleShape2D" id=61]
 extents = Vector2( 128, 96 )
 
-[sub_resource type="RectangleShape2D" id=66]
+[sub_resource type="RectangleShape2D" id=62]
 extents = Vector2( 95, 263 )
 
-[sub_resource type="RectangleShape2D" id=67]
+[sub_resource type="RectangleShape2D" id=63]
 extents = Vector2( 95, 263 )
 
-[sub_resource type="RectangleShape2D" id=68]
+[sub_resource type="RectangleShape2D" id=64]
 extents = Vector2( 96, 168 )
 
-[sub_resource type="RectangleShape2D" id=69]
+[sub_resource type="RectangleShape2D" id=65]
 extents = Vector2( 96, 96 )
 
-[sub_resource type="RectangleShape2D" id=70]
+[sub_resource type="RectangleShape2D" id=66]
 extents = Vector2( 63, 103 )
 
-[sub_resource type="RectangleShape2D" id=71]
+[sub_resource type="RectangleShape2D" id=67]
 extents = Vector2( 63, 103 )
 
-[sub_resource type="RectangleShape2D" id=72]
+[sub_resource type="RectangleShape2D" id=68]
 extents = Vector2( 64, 8 )
 
-[sub_resource type="RectangleShape2D" id=73]
+[sub_resource type="RectangleShape2D" id=69]
 extents = Vector2( 64, 96 )
 
 [node name="Level6" instance=ExtResource( 1 )]
@@ -922,42 +862,42 @@ elevation = 192
 anims/Launch = SubResource( 5 )
 
 [node name="Catapult7" parent="Catapults" index="6" instance=ExtResource( 6 )]
-position = Vector2( -20, 248 )
+position = Vector2( -20, 304 )
 elevation = 192
 
 [node name="AnimationPlayer" parent="Catapults/Catapult7" index="2"]
 anims/Launch = SubResource( 6 )
 
 [node name="Catapult8" parent="Catapults" index="7" instance=ExtResource( 6 )]
-position = Vector2( 20, 248 )
+position = Vector2( 20, 304 )
 elevation = 192
 
 [node name="AnimationPlayer" parent="Catapults/Catapult8" index="2"]
 anims/Launch = SubResource( 7 )
 
 [node name="Catapult9" parent="Catapults" index="8" instance=ExtResource( 6 )]
-position = Vector2( 60, 248 )
+position = Vector2( 60, 304 )
 elevation = 192
 
 [node name="AnimationPlayer" parent="Catapults/Catapult9" index="2"]
 anims/Launch = SubResource( 8 )
 
 [node name="Catapult10" parent="Catapults" index="9" instance=ExtResource( 6 )]
-position = Vector2( 100, 248 )
+position = Vector2( 100, 304 )
 elevation = 192
 
 [node name="AnimationPlayer" parent="Catapults/Catapult10" index="2"]
 anims/Launch = SubResource( 9 )
 
 [node name="Catapult11" parent="Catapults" index="10" instance=ExtResource( 6 )]
-position = Vector2( -60, 248 )
+position = Vector2( -60, 304 )
 elevation = 192
 
 [node name="AnimationPlayer" parent="Catapults/Catapult11" index="2"]
 anims/Launch = SubResource( 10 )
 
 [node name="Catapult12" parent="Catapults" index="11" instance=ExtResource( 6 )]
-position = Vector2( -100, 248 )
+position = Vector2( -100, 304 )
 elevation = 192
 
 [node name="AnimationPlayer" parent="Catapults/Catapult12" index="2"]
@@ -1047,34 +987,6 @@ elevation = 192
 [node name="AnimationPlayer" parent="Catapults/Catapult24" index="2"]
 anims/Launch = SubResource( 23 )
 
-[node name="Catapult25" parent="Catapults" index="24" instance=ExtResource( 6 )]
-position = Vector2( -60, 1592 )
-elevation = 32
-
-[node name="AnimationPlayer" parent="Catapults/Catapult25" index="2"]
-anims/Launch = SubResource( 24 )
-
-[node name="Catapult26" parent="Catapults" index="25" instance=ExtResource( 6 )]
-position = Vector2( -20, 1592 )
-elevation = 32
-
-[node name="AnimationPlayer" parent="Catapults/Catapult26" index="2"]
-anims/Launch = SubResource( 25 )
-
-[node name="Catapult27" parent="Catapults" index="26" instance=ExtResource( 6 )]
-position = Vector2( 20, 1592 )
-elevation = 32
-
-[node name="AnimationPlayer" parent="Catapults/Catapult27" index="2"]
-anims/Launch = SubResource( 26 )
-
-[node name="Catapult28" parent="Catapults" index="27" instance=ExtResource( 6 )]
-position = Vector2( 60, 1592 )
-elevation = 32
-
-[node name="AnimationPlayer" parent="Catapults/Catapult28" index="2"]
-anims/Launch = SubResource( 27 )
-
 [node name="Spikes1" type="Node2D" parent="." index="17"]
 position = Vector2( 0, 672 )
 
@@ -1143,7 +1055,7 @@ delay_start = true
 elevation = 192
 
 [node name="AnimationPlayer" parent="Spikes1/Spikes4" index="2"]
-anims/Activate = SubResource( 28 )
+anims/Activate = SubResource( 24 )
 
 [node name="Spikes17" parent="Spikes1" index="10" instance=ExtResource( 5 )]
 position = Vector2( 0, 408 )
@@ -1153,7 +1065,7 @@ delay_start = true
 elevation = 192
 
 [node name="AnimationPlayer" parent="Spikes1/Spikes17" index="2"]
-anims/Activate = SubResource( 29 )
+anims/Activate = SubResource( 25 )
 
 [node name="Spikes18" parent="Spikes1" index="11" instance=ExtResource( 5 )]
 position = Vector2( 76, 408 )
@@ -1163,7 +1075,7 @@ delay_start = true
 elevation = 192
 
 [node name="AnimationPlayer" parent="Spikes1/Spikes18" index="2"]
-anims/Activate = SubResource( 30 )
+anims/Activate = SubResource( 26 )
 
 [node name="Spikes2" type="Node2D" parent="." index="18"]
 
@@ -1181,7 +1093,7 @@ delay_start = true
 elevation = 192
 
 [node name="AnimationPlayer" parent="Spikes2/Spikes2" index="2"]
-anims/Activate = SubResource( 31 )
+anims/Activate = SubResource( 27 )
 
 [node name="Spikes5" parent="Spikes2" index="2" instance=ExtResource( 5 )]
 position = Vector2( 676, 1320 )
@@ -1190,7 +1102,7 @@ position = Vector2( 676, 1320 )
 elevation = 192
 
 [node name="AnimationPlayer" parent="Spikes2/Spikes5" index="2"]
-anims/Activate = SubResource( 32 )
+anims/Activate = SubResource( 28 )
 
 [node name="Spikes6" parent="Spikes2" index="3" instance=ExtResource( 5 )]
 position = Vector2( 768, 1320 )
@@ -1200,7 +1112,7 @@ delay_start = true
 elevation = 192
 
 [node name="AnimationPlayer" parent="Spikes2/Spikes6" index="2"]
-anims/Activate = SubResource( 33 )
+anims/Activate = SubResource( 29 )
 
 [node name="Spikes3" parent="Spikes2" index="4" instance=ExtResource( 5 )]
 position = Vector2( 676, 1416 )
@@ -1210,7 +1122,7 @@ delay_start = true
 elevation = 192
 
 [node name="AnimationPlayer" parent="Spikes2/Spikes3" index="2"]
-anims/Activate = SubResource( 34 )
+anims/Activate = SubResource( 30 )
 
 [node name="Spikes4" parent="Spikes2" index="5" instance=ExtResource( 5 )]
 position = Vector2( 768, 1416 )
@@ -1219,7 +1131,7 @@ position = Vector2( 768, 1416 )
 elevation = 192
 
 [node name="AnimationPlayer" parent="Spikes2/Spikes4" index="2"]
-anims/Activate = SubResource( 35 )
+anims/Activate = SubResource( 31 )
 
 [node name="Spikes7" parent="Spikes2" index="6" instance=ExtResource( 5 )]
 position = Vector2( 676, 1224 )
@@ -1229,7 +1141,7 @@ delay_start = true
 elevation = 192
 
 [node name="AnimationPlayer" parent="Spikes2/Spikes7" index="2"]
-anims/Activate = SubResource( 36 )
+anims/Activate = SubResource( 32 )
 
 [node name="Spikes8" parent="Spikes2" index="7" instance=ExtResource( 5 )]
 position = Vector2( 768, 1224 )
@@ -1238,7 +1150,7 @@ position = Vector2( 768, 1224 )
 elevation = 192
 
 [node name="AnimationPlayer" parent="Spikes2/Spikes8" index="2"]
-anims/Activate = SubResource( 37 )
+anims/Activate = SubResource( 33 )
 
 [node name="ExitDoor" parent="YSortWorldObjects" index="0"]
 position = Vector2( 0, -72 )
@@ -1451,160 +1363,160 @@ position = Vector2( -136, 16 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision2/EntryArea1" index="0"]
 position = Vector2( 136, 1776 )
-shape = SubResource( 38 )
+shape = SubResource( 34 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision2/ElevatedArea1" index="0"]
 position = Vector2( 136, 1744 )
-shape = SubResource( 39 )
+shape = SubResource( 35 )
 
 [node name="BoundaryBody1" parent="Elevation1Collisions/Elevation1Collision2" index="2"]
 position = Vector2( 136, 1760 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision2/BoundaryBody1" index="0"]
-shape = SubResource( 40 )
+shape = SubResource( 36 )
 
 [node name="WallBody1" parent="Elevation1Collisions/Elevation1Collision2" index="3"]
 position = Vector2( 136, 1792 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision2/WallBody1" index="0"]
-shape = SubResource( 41 )
+shape = SubResource( 37 )
 
 [node name="Elevation1Collision3" parent="Elevation1Collisions" index="2" instance=ExtResource( 9 )]
 position = Vector2( 88, 16 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision3/EntryArea1" index="0"]
 position = Vector2( 136, 1776 )
-shape = SubResource( 38 )
+shape = SubResource( 34 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision3/ElevatedArea1" index="0"]
 position = Vector2( 136, 1744 )
-shape = SubResource( 39 )
+shape = SubResource( 35 )
 
 [node name="BoundaryBody1" parent="Elevation1Collisions/Elevation1Collision3" index="2"]
 position = Vector2( 136, 1760 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision3/BoundaryBody1" index="0"]
-shape = SubResource( 40 )
+shape = SubResource( 36 )
 
 [node name="WallBody1" parent="Elevation1Collisions/Elevation1Collision3" index="3"]
 position = Vector2( 136, 1792 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision3/WallBody1" index="0"]
-shape = SubResource( 41 )
+shape = SubResource( 37 )
 
 [node name="Elevation1Collision4" parent="Elevation1Collisions" index="3" instance=ExtResource( 9 )]
 position = Vector2( -24, 0 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision4/EntryArea1" index="0"]
 position = Vector2( 1240, 1176 )
-shape = SubResource( 42 )
+shape = SubResource( 38 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision4/ElevatedArea1" index="0"]
 position = Vector2( 1240, 1144 )
-shape = SubResource( 43 )
+shape = SubResource( 39 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision4/BoundaryBody1" index="0"]
 position = Vector2( 1240, 1160 )
-shape = SubResource( 44 )
+shape = SubResource( 40 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision4/WallBody1" index="0"]
 position = Vector2( 1240, 1184 )
-shape = SubResource( 45 )
+shape = SubResource( 41 )
 
 [node name="Elevation1Collision5" parent="Elevation1Collisions" index="4" instance=ExtResource( 9 )]
 position = Vector2( 216, -96 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision5/EntryArea1" index="0"]
 position = Vector2( 1240, 1176 )
-shape = SubResource( 42 )
+shape = SubResource( 38 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision5/ElevatedArea1" index="0"]
 position = Vector2( 1240, 1144 )
-shape = SubResource( 43 )
+shape = SubResource( 39 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision5/BoundaryBody1" index="0"]
 position = Vector2( 1240, 1160 )
-shape = SubResource( 44 )
+shape = SubResource( 40 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision5/WallBody1" index="0"]
 position = Vector2( 1240, 1184 )
-shape = SubResource( 45 )
+shape = SubResource( 41 )
 
 [node name="Elevation1Collision7" parent="Elevation1Collisions" index="5" instance=ExtResource( 9 )]
 position = Vector2( 216, -288 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision7/EntryArea1" index="0"]
 position = Vector2( 1240, 1176 )
-shape = SubResource( 42 )
+shape = SubResource( 38 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision7/ElevatedArea1" index="0"]
 position = Vector2( 1240, 1144 )
-shape = SubResource( 43 )
+shape = SubResource( 39 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision7/BoundaryBody1" index="0"]
 position = Vector2( 1240, 1160 )
-shape = SubResource( 44 )
+shape = SubResource( 40 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision7/WallBody1" index="0"]
 position = Vector2( 1240, 1184 )
-shape = SubResource( 45 )
+shape = SubResource( 41 )
 
 [node name="Elevation1Collision6" parent="Elevation1Collisions" index="6" instance=ExtResource( 9 )]
 position = Vector2( -24, -192 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision6/EntryArea1" index="0"]
 position = Vector2( 1240, 1176 )
-shape = SubResource( 42 )
+shape = SubResource( 38 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision6/ElevatedArea1" index="0"]
 position = Vector2( 1240, 1144 )
-shape = SubResource( 43 )
+shape = SubResource( 39 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision6/BoundaryBody1" index="0"]
 position = Vector2( 1240, 1160 )
-shape = SubResource( 44 )
+shape = SubResource( 40 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision6/WallBody1" index="0"]
 position = Vector2( 1240, 1184 )
-shape = SubResource( 45 )
+shape = SubResource( 41 )
 
 [node name="Elevation1Collision9" parent="Elevation1Collisions" index="7" instance=ExtResource( 9 )]
 position = Vector2( 216, -480 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision9/EntryArea1" index="0"]
 position = Vector2( 1240, 1176 )
-shape = SubResource( 42 )
+shape = SubResource( 38 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision9/ElevatedArea1" index="0"]
 position = Vector2( 1240, 1144 )
-shape = SubResource( 43 )
+shape = SubResource( 39 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision9/BoundaryBody1" index="0"]
 position = Vector2( 1240, 1160 )
-shape = SubResource( 44 )
+shape = SubResource( 40 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision9/WallBody1" index="0"]
 position = Vector2( 1240, 1184 )
-shape = SubResource( 45 )
+shape = SubResource( 41 )
 
 [node name="Elevation1Collision8" parent="Elevation1Collisions" index="8" instance=ExtResource( 9 )]
 position = Vector2( -24, -384 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision8/EntryArea1" index="0"]
 position = Vector2( 1240, 1176 )
-shape = SubResource( 42 )
+shape = SubResource( 38 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision8/ElevatedArea1" index="0"]
 position = Vector2( 1240, 1144 )
-shape = SubResource( 43 )
+shape = SubResource( 39 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision8/BoundaryBody1" index="0"]
 position = Vector2( 1240, 1160 )
-shape = SubResource( 44 )
+shape = SubResource( 40 )
 
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision8/WallBody1" index="0"]
 position = Vector2( 1240, 1184 )
-shape = SubResource( 45 )
+shape = SubResource( 41 )
 
 [node name="Elevation2Collisions" type="Node" parent="." index="21"]
 
@@ -1613,57 +1525,57 @@ position = Vector2( -64, -80 )
 
 [node name="CollisionShape2D" parent="Elevation2Collisions/Elevation2Collision/EntryArea2" index="0"]
 position = Vector2( 944, 1240 )
-shape = SubResource( 46 )
+shape = SubResource( 42 )
 
 [node name="CollisionShape2D" parent="Elevation2Collisions/Elevation2Collision/ElevationArea2" index="0"]
 position = Vector2( 944, 1176 )
-shape = SubResource( 47 )
+shape = SubResource( 43 )
 
 [node name="CollisionShape2D" parent="Elevation2Collisions/Elevation2Collision/BoundaryBody2" index="0"]
 position = Vector2( 944, 1208 )
-shape = SubResource( 48 )
+shape = SubResource( 44 )
 
 [node name="CollisionShape2D" parent="Elevation2Collisions/Elevation2Collision/WallBody2" index="0"]
 position = Vector2( 944, 1248 )
-shape = SubResource( 49 )
+shape = SubResource( 45 )
 
 [node name="Elevation2Collision2" parent="Elevation2Collisions" index="1" instance=ExtResource( 12 )]
 position = Vector2( 0, -144 )
 
 [node name="CollisionShape2D" parent="Elevation2Collisions/Elevation2Collision2/EntryArea2" index="0"]
 position = Vector2( 1216, 600 )
-shape = SubResource( 50 )
+shape = SubResource( 46 )
 
 [node name="CollisionShape2D" parent="Elevation2Collisions/Elevation2Collision2/ElevationArea2" index="0"]
 position = Vector2( 1216, 536 )
-shape = SubResource( 51 )
+shape = SubResource( 47 )
 
 [node name="CollisionShape2D" parent="Elevation2Collisions/Elevation2Collision2/BoundaryBody2" index="0"]
 position = Vector2( 1216, 568 )
-shape = SubResource( 52 )
+shape = SubResource( 48 )
 
 [node name="CollisionShape2D" parent="Elevation2Collisions/Elevation2Collision2/WallBody2" index="0"]
 position = Vector2( 1216, 608 )
-shape = SubResource( 53 )
+shape = SubResource( 49 )
 
 [node name="Elevation2Collision3" parent="Elevation2Collisions" index="2" instance=ExtResource( 12 )]
 position = Vector2( 0, 32 )
 
 [node name="CollisionShape2D" parent="Elevation2Collisions/Elevation2Collision3/EntryArea2" index="0"]
 position = Vector2( 1216, 600 )
-shape = SubResource( 50 )
+shape = SubResource( 46 )
 
 [node name="CollisionShape2D" parent="Elevation2Collisions/Elevation2Collision3/ElevationArea2" index="0"]
 position = Vector2( 1216, 536 )
-shape = SubResource( 51 )
+shape = SubResource( 47 )
 
 [node name="CollisionShape2D" parent="Elevation2Collisions/Elevation2Collision3/BoundaryBody2" index="0"]
 position = Vector2( 1216, 568 )
-shape = SubResource( 52 )
+shape = SubResource( 48 )
 
 [node name="CollisionShape2D" parent="Elevation2Collisions/Elevation2Collision3/WallBody2" index="0"]
 position = Vector2( 1216, 608 )
-shape = SubResource( 53 )
+shape = SubResource( 49 )
 
 [node name="Elevation3Collisions" type="Node" parent="." index="22"]
 
@@ -1671,19 +1583,19 @@ shape = SubResource( 53 )
 
 [node name="CollisionShape2D" parent="Elevation3Collisions/Elevation3Collision/EntryArea3" index="0"]
 position = Vector2( 424, 1768 )
-shape = SubResource( 54 )
+shape = SubResource( 50 )
 
 [node name="CollisionShape2D" parent="Elevation3Collisions/Elevation3Collision/ElevationArea3" index="0"]
 position = Vector2( 424, 1672 )
-shape = SubResource( 55 )
+shape = SubResource( 51 )
 
 [node name="CollisionShape2D" parent="Elevation3Collisions/Elevation3Collision/BoundaryBody3" index="0"]
 position = Vector2( 424, 1720 )
-shape = SubResource( 56 )
+shape = SubResource( 52 )
 
 [node name="CollisionShape2D" parent="Elevation3Collisions/Elevation3Collision/WallBody3" index="0"]
 position = Vector2( 424, 1776 )
-shape = SubResource( 57 )
+shape = SubResource( 53 )
 
 [node name="Elevation4Collisions" type="Node" parent="." index="23"]
 
@@ -1692,19 +1604,19 @@ position = Vector2( 368, -576 )
 
 [node name="CollisionShape2D" parent="Elevation4Collisions/Elevation4Collision/EntryArea1" index="0"]
 position = Vector2( 720, 1000 )
-shape = SubResource( 58 )
+shape = SubResource( 54 )
 
 [node name="CollisionShape2D" parent="Elevation4Collisions/Elevation4Collision/ElevatedArea1" index="0"]
 position = Vector2( 720, 872 )
-shape = SubResource( 59 )
+shape = SubResource( 55 )
 
 [node name="CollisionShape2D" parent="Elevation4Collisions/Elevation4Collision/BoundaryBody1" index="0"]
 position = Vector2( 720, 936 )
-shape = SubResource( 60 )
+shape = SubResource( 56 )
 
 [node name="CollisionShape2D" parent="Elevation4Collisions/Elevation4Collision/WallBody1" index="0"]
 position = Vector2( 720, 1008 )
-shape = SubResource( 61 )
+shape = SubResource( 57 )
 
 [node name="Elevation5Collisions" type="Node" parent="." index="24"]
 
@@ -1715,76 +1627,76 @@ position = Vector2( -16, 48 )
 
 [node name="CollisionShape2D" parent="Elevation6Collisions/Elevation6Collision/EntryArea1" index="0"]
 position = Vector2( 16, 320 )
-shape = SubResource( 62 )
+shape = SubResource( 58 )
 
 [node name="CollisionShape2D" parent="Elevation6Collisions/Elevation6Collision/ElevatedArea1" index="0"]
 position = Vector2( 16, 128 )
-shape = SubResource( 63 )
+shape = SubResource( 59 )
 
 [node name="CollisionShape2D" parent="Elevation6Collisions/Elevation6Collision/BoundaryBody1" index="0"]
 position = Vector2( 16, 224 )
-shape = SubResource( 64 )
+shape = SubResource( 60 )
 
 [node name="CollisionShape2D" parent="Elevation6Collisions/Elevation6Collision/WallBody1" index="0"]
 position = Vector2( 16, 496 )
-shape = SubResource( 65 )
+shape = SubResource( 61 )
 
 [node name="Elevation6Collision2" parent="Elevation6Collisions" index="1" instance=ExtResource( 4 )]
 position = Vector2( -16, 816 )
 
 [node name="CollisionShape2D" parent="Elevation6Collisions/Elevation6Collision2/EntryArea1" index="0"]
 position = Vector2( 16, 320 )
-shape = SubResource( 62 )
+shape = SubResource( 58 )
 
 [node name="CollisionShape2D" parent="Elevation6Collisions/Elevation6Collision2/ElevatedArea1" index="0"]
 position = Vector2( 16, 128 )
-shape = SubResource( 63 )
+shape = SubResource( 59 )
 
 [node name="CollisionShape2D" parent="Elevation6Collisions/Elevation6Collision2/BoundaryBody1" index="0"]
 position = Vector2( 16, 224 )
-shape = SubResource( 64 )
+shape = SubResource( 60 )
 
 [node name="CollisionShape2D" parent="Elevation6Collisions/Elevation6Collision2/WallBody1" index="0"]
 position = Vector2( 16, 496 )
-shape = SubResource( 65 )
+shape = SubResource( 61 )
 
 [node name="Elevation6Collision3" parent="Elevation6Collisions" index="2" instance=ExtResource( 4 )]
 position = Vector2( 16, 0 )
 
 [node name="CollisionShape2D" parent="Elevation6Collisions/Elevation6Collision3/EntryArea1" index="0"]
 position = Vector2( 704, 1560 )
-shape = SubResource( 66 )
+shape = SubResource( 62 )
 
 [node name="CollisionShape2D" parent="Elevation6Collisions/Elevation6Collision3/ElevatedArea1" index="0"]
 position = Vector2( 704, 1368 )
-shape = SubResource( 67 )
+shape = SubResource( 63 )
 
 [node name="CollisionShape2D" parent="Elevation6Collisions/Elevation6Collision3/BoundaryBody1" index="0"]
 position = Vector2( 704, 1464 )
-shape = SubResource( 68 )
+shape = SubResource( 64 )
 
 [node name="CollisionShape2D" parent="Elevation6Collisions/Elevation6Collision3/WallBody1" index="0"]
 position = Vector2( 704, 1728 )
-shape = SubResource( 69 )
+shape = SubResource( 65 )
 
 [node name="Elevation6Collision4" parent="Elevation6Collisions" index="3" instance=ExtResource( 4 )]
 position = Vector2( 0, -128 )
 
 [node name="CollisionShape2D" parent="Elevation6Collisions/Elevation6Collision4/EntryArea1" index="0"]
 position = Vector2( 1344, 520 )
-shape = SubResource( 70 )
+shape = SubResource( 66 )
 
 [node name="CollisionShape2D" parent="Elevation6Collisions/Elevation6Collision4/ElevatedArea1" index="0"]
 position = Vector2( 1344, 328 )
-shape = SubResource( 71 )
+shape = SubResource( 67 )
 
 [node name="CollisionShape2D" parent="Elevation6Collisions/Elevation6Collision4/BoundaryBody1" index="0"]
 position = Vector2( 1344, 424 )
-shape = SubResource( 72 )
+shape = SubResource( 68 )
 
 [node name="CollisionShape2D" parent="Elevation6Collisions/Elevation6Collision4/WallBody1" index="0"]
 position = Vector2( 1344, 528 )
-shape = SubResource( 73 )
+shape = SubResource( 69 )
 
 [editable path="Catapults/Catapult"]
 
@@ -1833,14 +1745,6 @@ shape = SubResource( 73 )
 [editable path="Catapults/Catapult23"]
 
 [editable path="Catapults/Catapult24"]
-
-[editable path="Catapults/Catapult25"]
-
-[editable path="Catapults/Catapult26"]
-
-[editable path="Catapults/Catapult27"]
-
-[editable path="Catapults/Catapult28"]
 
 [editable path="Spikes1/Spikes"]
 
