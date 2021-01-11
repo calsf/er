@@ -27,6 +27,35 @@ var _default_data = {
 	"SoundMuted" : false
 }
 
+var time_req = {
+	"Level0Silver" : 6000.00,
+	"Level0Gold" : 6000.00,
+	
+	"Level1Silver" : 24.00,
+	"Level1Gold" : 20.00,
+	
+	"Level2Silver" : 20.00,
+	"Level2Gold" : 18.00,
+	
+	"Level3Silver" : 18.00,
+	"Level3Gold" : 14.00,
+	
+	"Level4Silver" : 22.00,
+	"Level4Gold" : 19.00,
+	
+	"Level5Silver" : 19.00,
+	"Level5Gold" : 16.00,
+	
+	"Level6Silver" : 26.00,
+	"Level6Gold" : 24.00,
+	
+	"Level7Silver" : 25.00,
+	"Level7Gold" : 22.00,
+	
+	"Level8Silver" : 22.00,
+	"Level8Gold" : 19.00
+}
+
 func save_data(data):
 	# Create and open file
 	var save_file = File.new()

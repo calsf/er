@@ -118,16 +118,16 @@ extents = Vector2( 144, 40 )
 [sub_resource type="RectangleShape2D" id=26]
 extents = Vector2( 144, 16 )
 
-[sub_resource type="RectangleShape2D" id=47]
+[sub_resource type="RectangleShape2D" id=27]
 extents = Vector2( 63, 95 )
 
-[sub_resource type="RectangleShape2D" id=48]
+[sub_resource type="RectangleShape2D" id=28]
 extents = Vector2( 63, 95 )
 
-[sub_resource type="RectangleShape2D" id=49]
+[sub_resource type="RectangleShape2D" id=29]
 extents = Vector2( 64, 64 )
 
-[sub_resource type="RectangleShape2D" id=50]
+[sub_resource type="RectangleShape2D" id=30]
 extents = Vector2( 64, 32 )
 
 [sub_resource type="RectangleShape2D" id=31]
@@ -658,19 +658,19 @@ shape = SubResource( 26 )
 
 [node name="CollisionShape2D" parent="Elevation2Collisions/Elevation2Collision/EntryArea2" index="0"]
 position = Vector2( 0, 16 )
-shape = SubResource( 47 )
+shape = SubResource( 27 )
 
 [node name="CollisionShape2D" parent="Elevation2Collisions/Elevation2Collision/ElevationArea2" index="0"]
 position = Vector2( 0, -48 )
-shape = SubResource( 48 )
+shape = SubResource( 28 )
 
 [node name="CollisionShape2D" parent="Elevation2Collisions/Elevation2Collision/BoundaryBody2" index="0"]
 position = Vector2( 0, -16 )
-shape = SubResource( 49 )
+shape = SubResource( 29 )
 
 [node name="CollisionShape2D" parent="Elevation2Collisions/Elevation2Collision/WallBody2" index="0"]
 position = Vector2( 0, 80 )
-shape = SubResource( 50 )
+shape = SubResource( 30 )
 
 [node name="Elevation2Collision2" parent="Elevation2Collisions" index="1" instance=ExtResource( 4 )]
 position = Vector2( 16, 0 )

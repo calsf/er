@@ -2,6 +2,10 @@ extends Control
 
 const SOUND_OFF_ICON = preload("res://levels/level_select/sound_off.png")
 const SOUND_ON_ICON = preload("res://levels/level_select/sound_on.png")
+const BRONZE = preload("res://hud/player_time/time_icon_bronze.png")
+const SILVER = preload("res://hud/player_time/time_icon_silver.png")
+const GOLD = preload("res://hud/player_time/time_icon_gold.png")
+const NONE = preload("res://hud/player_time/time_icon_none.png")
 
 var scene_to_load = ""
 onready var level_buttons = $HBoxContainer/LevelButtons
@@ -15,6 +19,10 @@ onready var sounds = $Sounds
 onready var keyboard_controls = $KeyboardControls
 onready var gamepad_controls = $GamepadControls
 onready var sound_icon = $SoundIcon
+onready var time_icon = $HBoxContainer/Sidebar/BestTime/TimeIcon
+onready var gold_label = $HBoxContainer/Sidebar/TimeReq/Gold/Label
+onready var silver_label = $HBoxContainer/Sidebar/TimeReq/Silver/Label
+onready var bronze_label = $HBoxContainer/Sidebar/TimeReq/Bronze/Label
 
 var level_key = ""
 var level_name = ""
@@ -46,6 +54,8 @@ func _ready():
 	if !save_data["LevelsUnlocked"]:
 		level_buttons.get_node("LevelButton0").disabled = false
 		level_buttons.get_node("LevelButton0").focus_mode = true
+	
+	first_button.grab_focus()	# Grab focus for keyboard input
 			
 func _input(event):
 	# Change visibility of controls based on input type
@@ -83,6 +93,41 @@ func _display_focused_level(level_num, level_name):
 	# Display saved best time
 	var best = save_data[str("Level", level_num, "Time")]	# Get current saved best time
 	
+	# Get requirements for each time ranking
+	var silver_req = save_load_manager.time_req[str("Level", level_num, "Silver")]
+	var gold_req =  save_load_manager.time_req[str("Level", level_num, "Gold")]
+	
+	# Show requirements for each time ranking
+	if level_num == 0:
+		bronze_label.text = "Completion"
+		silver_label.text = "Completion"
+		gold_label.text = "Completion"
+	else:
+		bronze_label.text = "Completion"
+		
+		var silver_min = silver_req / 60
+		var silver_sec = fmod(silver_req, 60.0)
+		
+		var gold_min = gold_req / 60
+		var gold_sec = fmod(gold_req, 60.0)
+		
+		silver_label.text = str("%0*d" % [2, silver_min], "." , "%0*.*f" % [5, 2, silver_sec]) \
+				+ " - " + str("%0*d" % [2, gold_min], "." , "%0*.*f" % [5, 2, gold_sec + 0.01])
+		
+		gold_label.text = str("%0*d" % [2, gold_min], "." , "%0*.*f" % [5, 2, gold_sec]) \
+				+ " or Faster"
+	
+	# Assign appropriate icon to player's best time
+	if best == 0:
+		time_icon.texture = NONE
+	elif best <= gold_req:
+		time_icon.texture = GOLD
+	elif best <= silver_req:
+		time_icon.texture = SILVER
+	elif best != 0:
+		time_icon.texture = BRONZE
+	
+	# Best time display
 	if (best == 0):
 		best_time.text = "--.--.--"
 	else:
@@ -105,4 +150,5 @@ func _on_Fade_fade_in_finished():
 
 # Once fade out is finished, activate button focus
 func _on_Fade_fade_out_finished():
-	first_button.grab_focus()	# Grab focus for keyboard input
+	pass
+	#first_button.grab_focus()	# Grab focus for keyboard input
