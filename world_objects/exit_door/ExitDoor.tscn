@@ -44,6 +44,7 @@ texture = ExtResource( 1 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -8.5 )
 shape = SubResource( 1 )
+disabled = true
 
 [node name="ExitText" type="Sprite" parent="."]
 position = Vector2( 1, -38 )
@@ -59,4 +60,5 @@ collision_layer = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitArea"]
 position = Vector2( 0, -1.5 )
 shape = SubResource( 3 )
+disabled = true
 [connection signal="body_entered" from="ExitArea" to="." method="_on_ExitArea_body_entered"]

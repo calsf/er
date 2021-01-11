@@ -1,5 +1,7 @@
 extends Control
 
+export var unlock_all = false
+
 onready var finish_flag = get_node("../../YSortWorldObjects/FinishFlag")
 onready var exit_door = get_node("../../YSortWorldObjects/ExitDoor")
 onready var player_time = get_node("../PlayerTime")
@@ -48,7 +50,11 @@ func _check_time():
 		new_best_time.show()
 		
 		save_data[str("Level", level_num, "Time")] = new_time
-		save_data[str("Level", level_num + 1, "Unlocked")] = true
+		
+		# If set to true, unlock all other levels upon completion
+		if unlock_all:
+			save_data[str("LevelsUnlocked")] = true
+		
 		save_load_manager.save_data(save_data)
 		
 		_update_best_time()	# Update best time display

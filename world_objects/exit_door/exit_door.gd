@@ -9,6 +9,11 @@ func _ready():
 	z_index = elevation / (Globals.ELEVATION_UNIT)
 	# Set collision layer to corresponding elevation but one elevation unit higher so player collides
 	set_collision_layer_bit(4 + ((elevation / (Globals.ELEVATION_UNIT)) * 2), true)
+	fade.connect("fade_in_finished", self, "_on_Fade_fade_in_finished")
+
+func _input(event):
+	if Input.is_action_just_pressed("leave_level") and not is_exiting:
+		start_leaving_scene()
 
 # Player can enter at same elevation or one jump higher
 # One jump will not be enough to jump over door so can still catch entry

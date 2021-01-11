@@ -38,9 +38,14 @@ func _ready():
 	for button in level_buttons.get_children():
 		button.connect("pressed", self, "_set_scene_to_load", [button.scene_to_load])
 		button.connect("focus_entered", self, "_display_focused_level", [button.level_num, button.level_name])
-		if !save_data[str("Level", button.level_num, "Unlocked")]:
+		if !save_data["LevelsUnlocked"]:
 			button.disabled = true
 			button.focus_mode = false
+	
+	# Always have level 0 unlocked
+	if !save_data["LevelsUnlocked"]:
+		level_buttons.get_node("LevelButton0").disabled = false
+		level_buttons.get_node("LevelButton0").focus_mode = true
 			
 func _input(event):
 	# Change visibility of controls based on input type
@@ -57,6 +62,7 @@ func _input(event):
 	if Input.is_key_pressed(KEY_G) or Input.is_joy_button_pressed(0, 3):
 		save_data["SoundMuted"] = !save_data["SoundMuted"]
 		save_load_manager.save_data(save_data)
+		sounds.load_data()
 		_set_sound_icon()
 
 # Set scene to load and begin fade

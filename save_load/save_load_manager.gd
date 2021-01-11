@@ -5,31 +5,24 @@ const SAVE_PATH = "user://sav.json"
 # Default data to be saved with new save file
 var _default_data = {
 	"Level0Time" : 0.00,
-	"Level0Unlocked" : true,
+	
+	"LevelsUnlocked" : false,
 	
 	"Level1Time" : 0.00,
-	"Level1Unlocked" : false,
 	
 	"Level2Time" : 0.00,
-	"Level2Unlocked" : false,
 	
 	"Level3Time" : 0.00,
-	"Level3Unlocked" : false,
 	
 	"Level4Time" : 0.00,
-	"Level4Unlocked" : false,
 	
 	"Level5Time" : 0.00,
-	"Level5Unlocked" : false,
 	
 	"Level6Time" : 0.00,
-	"Level6Unlocked" : false,
 	
 	"Level7Time" : 0.00,
-	"Level7Unlocked" : false,
 	
 	"Level8Time" : 0.00,
-	"Level8Unlocked" : false,
 	
 	"SoundMuted" : false
 }
@@ -55,5 +48,14 @@ func load_data():
 	# Parse data then close file
 	var data = parse_json(save_file.get_as_text())
 	save_file.close()
-
-	return data
+	
+	# Renew save data if does not match expected structure
+	var is_valid = true
+	for k in _default_data.keys():
+		if not k in data.keys():
+			is_valid = false
+	if not is_valid:
+		save_data(_default_data)
+		return _default_data
+	else:
+		return data
