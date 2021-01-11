@@ -1,7 +1,8 @@
 extends KinematicBody2D
 
-const MAX_SPEED = 125
-const AIR_SPEED = 4
+const MAX_SPEED = 175
+const RISE_SPEED = 2.75
+const FALL_SPEED = 4
 const MAX_HEIGHT = 44
 const DECEL = 500
 const SOUND_DELAY = .1
@@ -18,6 +19,8 @@ var last_area_hit = null
 var curr_knockback_strength = 0
 
 # Jumping and elevation properties
+var change = 0
+var grav = 0
 var is_jumping = false
 var is_falling = false
 var has_double_jumped = false
@@ -69,6 +72,7 @@ func _ready():
 	animation_tree.set("parameters/Idle/blend_position", Vector2.DOWN)
 	animation_tree.set("parameters/Move/blend_position", Vector2.DOWN)
 	animation_tree.set("parameters/Jump/blend_position", Vector2.DOWN)
+	animation_tree.set("parameters/DoubleJump/blend_position", Vector2.DOWN)
 	animation_tree.set("parameters/Fall/blend_position", Vector2.DOWN)
 	animation_tree.set("parameters/Death/blend_position", Vector2.DOWN)
 
@@ -78,15 +82,19 @@ func _physics_process(delta):
 		return
 	
 	# Perform normal jump or double jump when button is pressed
-	# If in knockback or player is stopped, do not listen for inputs
-	if (knockback <= Vector2.ZERO and !player_stopped):
+	# If player is stopped, do not listen for inputs
+	if (!player_stopped):
 		if Input.is_action_just_pressed("jump") and !has_jumped:
+			animation_state.travel("Jump")
+			grav = 0
 			has_jumped = true
 			jump_height = MAX_HEIGHT + added_height
 			is_jumping = true
 			is_falling = false
 			sounds.play("Jump")
 		elif Input.is_action_just_pressed("jump") and has_jumped and !has_double_jumped:
+			animation_state.travel("DoubleJump")
+			grav = 0
 			has_double_jumped = true
 			jump_height = MAX_HEIGHT + added_height	# Increase target jump height by MAX_HEIGHT
 			is_jumping = true
@@ -122,6 +130,7 @@ func _physics_process(delta):
 		# Only set blend positions when input vector is not zero
 		animation_tree.set("parameters/Idle/blend_position", input_vector)
 		animation_tree.set("parameters/Move/blend_position", input_vector)
+		animation_tree.set("parameters/DoubleJump/blend_position", input_vector)
 		animation_tree.set("parameters/Jump/blend_position", input_vector)
 		animation_tree.set("parameters/Fall/blend_position", input_vector)
 		animation_tree.set("parameters/Death/blend_position", input_vector)
@@ -131,7 +140,8 @@ func _physics_process(delta):
 		
 		velocity = input_vector * curr_speed
 	else:
-		animation_state.travel("Idle")
+		if (!is_jumping and !is_falling):
+			animation_state.travel("Idle")
 		velocity = Vector2.ZERO
 		
 	# Move and slide using current velocity, set velocity to maintain velocity after collision
@@ -140,14 +150,17 @@ func _physics_process(delta):
 	# JUMPING AND FALLING MOVEMENT, ELSE PLAYER IS GROUNDED
 	# STILL ENABLED DURING KNOCKBACK BUT PLAYER INPUT TO JUMP SHOULD BE DISABLED
 	if is_jumping:
-		animation_state.travel("Jump")
-		
 		# Increase added height until reaches jump height
 		# Move player sprite up the same amount
 		if added_height < jump_height:
-			added_height += AIR_SPEED
-			player_sprite.position.y -= AIR_SPEED
+			grav += .025 # Apply increasing rise speed
+			# Avoid jumping above jump height
+			change = min(RISE_SPEED + grav, jump_height - added_height)
+			
+			added_height += change
+			player_sprite.position.y -= change
 		else:
+			grav = 0
 			is_falling = true	# Once jump_height is reached, set to falling state
 			is_jumping = false	# No longer in jump state
 	elif is_falling:
@@ -156,12 +169,19 @@ func _physics_process(delta):
 		# Subtract from added height until reaches 0 or less
 		# Move player sprite down the same amount
 		if added_height > 0:
-			added_height -= AIR_SPEED
-			player_sprite.position.y += AIR_SPEED
+			grav += .025	# Apply increasing gravity force
+			change = FALL_SPEED + grav
+			# Avoid added_height going below 0
+			if added_height - change < 0:
+				change = added_height
+			
+			added_height -= change
+			player_sprite.position.y += change
 		else:
 			# Reset jump related values
 			jump_height = MAX_HEIGHT
 			added_height = 0
+			grav = 0 	# Reset gravity
 			is_falling = false
 			has_jumped = false
 			has_double_jumped = false
@@ -230,12 +250,15 @@ func _physics_process(delta):
 	# Smooth camera when it gets offset by elevation changes
 	# Do not move camera down when jumping to prevent jarring camera movement when jumping between high elevations
 	if (cam_offset < 0):
-		camera.global_position.y -= AIR_SPEED
-		cam_offset += AIR_SPEED
+		camera.global_position.y -= FALL_SPEED
+		cam_offset += FALL_SPEED
 	elif (cam_offset > 0 and !is_jumping):
-		camera.global_position.y += AIR_SPEED
-		cam_offset -= AIR_SPEED
-		
+		camera.global_position.y += FALL_SPEED
+		cam_offset -= FALL_SPEED
+	
+	# Scale shadow to be smaller the higher player is above ground
+	var scale_mult = (added_height / 8) / 100
+	player_shadow.scale = Vector2(1.5, 1.5) * (Vector2(1 - scale_mult, 1 - scale_mult))
 
 ## FUNCTIONS ##
 
@@ -324,6 +347,7 @@ func reset_player():
 	player_shadow.visible = true
 	animation_tree.set("parameters/Idle/blend_position", Vector2.DOWN)
 	animation_tree.set("parameters/Move/blend_position", Vector2.DOWN)
+	animation_tree.set("parameters/DoubleJump/blend_position", Vector2.DOWN)
 	animation_tree.set("parameters/Jump/blend_position", Vector2.DOWN)
 	animation_tree.set("parameters/Fall/blend_position", Vector2.DOWN)
 	animation_tree.set("parameters/Death/blend_position", Vector2.DOWN)

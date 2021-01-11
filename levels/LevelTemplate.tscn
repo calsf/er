@@ -92,7 +92,7 @@ format = 1
 [node name="YSortWorldObjects" type="YSort" parent="."]
 
 [node name="ExitDoor" parent="YSortWorldObjects" instance=ExtResource( 8 )]
-position = Vector2( -96, -8 )
+visible = false
 
 [node name="Player" parent="YSortWorldObjects" instance=ExtResource( 9 )]
 position = Vector2( 0, 0 )
@@ -120,7 +120,6 @@ shape = SubResource( 4 )
 [node name="CollisionShape2D" parent="Elevation1Collisions/Elevation1Collision/WallBody1" index="0"]
 position = Vector2( -32, 48 )
 shape = SubResource( 5 )
-[connection signal="fade_in_finished" from="PlayerHUD/Fade" to="YSortWorldObjects/ExitDoor" method="_on_Fade_fade_in_finished"]
 [connection signal="fade_out_finished" from="PlayerHUD/Fade" to="PlayerHUD/StartLevel" method="_on_Fade_fade_out_finished"]
 
 [editable path="YSortWorldObjects/FinishFlag"]

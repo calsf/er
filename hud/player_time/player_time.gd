@@ -25,6 +25,10 @@ func _process(delta):
 	if (seconds > 60):
 		minutes += 1
 		seconds = 0
+	
+	# Cap at 99 minutes
+	if minutes == 99:
+		is_stopped = true
 		
 	# minutes.seconds.milliseconds
 	time_text.text = str("%0*d" % [2, minutes], "." , "%0*.*f" % [5, 2, seconds])

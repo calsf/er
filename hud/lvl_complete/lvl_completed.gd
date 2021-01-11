@@ -1,5 +1,11 @@
 extends Control
 
+const BRONZE = preload("res://hud/player_time/time_icon_bronze.png")
+const SILVER = preload("res://hud/player_time/time_icon_silver.png")
+const GOLD = preload("res://hud/player_time/time_icon_gold.png")
+
+export var unlock_all = false
+
 onready var finish_flag = get_node("../../YSortWorldObjects/FinishFlag")
 onready var exit_door = get_node("../../YSortWorldObjects/ExitDoor")
 onready var player_time = get_node("../PlayerTime")
@@ -10,6 +16,7 @@ onready var press_key_label = $CenterContainer/VBoxContainer/PressAnyKeyLabel
 onready var press_key_anim = $CenterContainer/VBoxContainer/PressAnyKeyLabel/AnimationPlayer
 onready var save_load_manager = $SaveLoadManager
 onready var save_data = save_load_manager.load_data()
+onready var time_icon = $CenterContainer/VBoxContainer/BestTime/TimeIcon
 export var level_num = 0
 var best = 0
 var best_minutes = 0
@@ -48,10 +55,26 @@ func _check_time():
 		new_best_time.show()
 		
 		save_data[str("Level", level_num, "Time")] = new_time
-		save_data[str("Level", level_num + 1, "Unlocked")] = true
+		
+		# If set to true, unlock all other levels upon completion
+		if unlock_all:
+			save_data[str("LevelsUnlocked")] = true
+		
 		save_load_manager.save_data(save_data)
 		
 		_update_best_time()	# Update best time display
+	
+	# Get requirements for each time ranking
+	var silver_req = save_load_manager.time_req[str("Level", level_num, "Silver")]
+	var gold_req =  save_load_manager.time_req[str("Level", level_num, "Gold")]
+	
+	# Assign appropriate icon to player's time
+	if best <= gold_req:
+		time_icon.texture = GOLD
+	elif best <= silver_req:
+		time_icon.texture = SILVER
+	else:
+		time_icon.texture = BRONZE
 	
 	# Wait then toggle can_return tp allow player to leave by pressing any key
 	yield(get_tree().create_timer(1.5), "timeout")
